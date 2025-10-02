@@ -1,12 +1,13 @@
 /* Header Styles */
 header {
-    background-color: var(--cream);
+    background-color: rgba(245, 241, 237, 0.95);
     padding: 1.5rem 0;
     box-shadow: var(--shadow-md);
     position: sticky;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 165, 116, 0.15);
 }
 
 header .container {
@@ -22,6 +23,7 @@ header .container {
     line-height: 1.1;
     letter-spacing: 0.5px;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .logo:hover {
@@ -87,7 +89,7 @@ nav a:hover::after {
 /* Hero Section */
 .hero {
     padding: 8rem 2rem;
-    background: linear-gradient(135deg, #2C1810 0%, #4A3428 100%);
+    background: linear-gradient(135deg, #2C1810 0%, #3d2419 50%, #4A3428 100%);
     position: relative;
     overflow: hidden;
 }
@@ -141,6 +143,7 @@ nav a:hover::after {
     letter-spacing: -1px;
     line-height: 1.1;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .hero p {
@@ -152,6 +155,18 @@ nav a:hover::after {
     margin-left: auto;
     margin-right: auto;
     opacity: 0.95;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Features Section */
@@ -160,11 +175,43 @@ nav a:hover::after {
     background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
 }
 
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--espresso);
+    font-weight: 700;
+    margin-bottom: 3.5rem;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--honey), transparent);
+    border-radius: 2px;
+}
+
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
     margin-top: 2rem;
+}
+
+@media (max-width: 1200px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
 }
 
 .feature-card {
@@ -175,11 +222,31 @@ nav a:hover::after {
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
+    border: 1px solid rgba(212, 165, 116, 0.1);
+    position: relative;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--honey) 0%, var(--honey-dark) 100%);
+    transform: scaleX(0);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left;
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
 }
 
 .feature-card:hover {
     transform: translateY(-12px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 12px 32px rgba(44, 24, 16, 0.18);
+    border-color: rgba(212, 165, 116, 0.25);
 }
 
 .feature-image {
@@ -205,11 +272,11 @@ nav a:hover::after {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .feature-card:hover .feature-image img {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
 .feature-content {
@@ -227,6 +294,11 @@ nav a:hover::after {
     color: var(--espresso);
     font-weight: 600;
     letter-spacing: -0.3px;
+    transition: color 0.3s ease;
+}
+
+.feature-card:hover h3 {
+    color: var(--honey-dark);
 }
 
 .feature-card p {
@@ -237,15 +309,15 @@ nav a:hover::after {
 
 /* Footer */
 footer {
-    background-color: var(--espresso);
+    background: linear-gradient(135deg, #2C1810 0%, #1a0f0a 100%);
     color: var(--white);
     padding: 2.5rem 0;
     text-align: center;
-    border-top: 1px solid rgba(212, 165, 116, 0.1);
+    border-top: 1px solid rgba(212, 165, 116, 0.15);
 }
 
 footer p {
-    opacity: 0.8;
+    opacity: 0.85;
     font-size: 0.95rem;
 }
 
@@ -274,6 +346,10 @@ footer p {
         justify-content: center;
     }
 
+    nav a {
+        font-size: 1.1rem;
+    }
+
     nav a::after {
         display: none;
     }
@@ -294,6 +370,11 @@ footer p {
         padding: 4rem 1.5rem;
     }
 
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+
     .feature-grid {
         gap: 2.5rem;
         grid-template-columns: 1fr;
@@ -305,6 +386,10 @@ footer p {
 
     .feature-content {
         padding: 1.75rem 1.5rem 2rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.6rem;
     }
 }
 
