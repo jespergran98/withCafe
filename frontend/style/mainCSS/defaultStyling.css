@@ -1,3 +1,10 @@
+:root {
+    --espresso: #3E2214;
+    --honey: #FBC708;
+    --cream: #F3EFEA;
+    --white: #FFFFFF;
+}
+
 * {
     margin: 0;
     padding: 0;
