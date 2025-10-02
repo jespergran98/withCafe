@@ -42,6 +42,8 @@ WITHCAFE/
 │   │       ├── coffee.avif
 │   │       ├── cozy.avif
 │   │       └── toys.avif
+│   ├── js/
+│   │   └── scrollHeader.js
 │   └── styles/
 │       ├── main.css
 │       └── components/

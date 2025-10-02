@@ -7,7 +7,13 @@ header {
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(12px);
-    transition: var(--transition);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+header.scrolled {
+    padding: 0.85rem 0;
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 2px 12px rgba(44, 24, 16, 0.08);
 }
 
 header .container {
@@ -22,7 +28,7 @@ header .container {
     font-weight: 600;
     line-height: 1.1;
     letter-spacing: 0.5px;
-    transition: var(--transition);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
 }
 
@@ -35,6 +41,12 @@ header .container {
     letter-spacing: 4px;
     font-weight: 900;
     line-height: 1;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+header.scrolled .logo-top {
+    font-size: 2.45rem;
+    letter-spacing: 3.8px;
 }
 
 .logo-bottom {
@@ -43,6 +55,12 @@ header .container {
     opacity: 0.88;
     margin-top: -2px;
     letter-spacing: 0.5px;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+header.scrolled .logo-bottom {
+    font-size: 1.22rem;
+    opacity: 0.86;
 }
 
 .logo .accent {
@@ -61,7 +79,7 @@ nav a {
     color: var(--espresso);
     font-size: 1.05rem;
     font-weight: 500;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     padding: 0.5rem 0;
     opacity: 0.85;
@@ -445,6 +463,20 @@ footer p {
     header .container {
         flex-direction: column;
         gap: 1.5rem;
+    }
+    
+    header.scrolled {
+        padding: 0.7rem 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 12px rgba(44, 24, 16, 0.1);
+    }
+    
+    header.scrolled .logo-top {
+        font-size: 1.9rem;
+    }
+    
+    header.scrolled .logo-bottom {
+        font-size: 0.95rem;
     }
 
     .logo-top {
