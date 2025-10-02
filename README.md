@@ -30,3 +30,20 @@ cafegratitude.com
 bluebottlecoffee.com
 fourbarrelcoffee.com
 coffeecollective.dk
+
+WITHCAFE/
+├── .qodo/
+├── frontend/
+│   ├── index.html
+│   ├── assets/
+│   │   └── images/
+│   │       ├── beans.avif
+│   │       ├── bread.avif
+│   │       ├── coffee.avif
+│   │       ├── cozy.avif
+│   │       └── toys.avif
+│   └── styles/
+│       ├── main.css
+│       └── components/
+│           └── index.css
+└── README.md
