@@ -10,12 +10,7 @@ Fersk bakst, Kvalitetskaffe, Koselig atmosfære, Lekerom
 Besøk oss i Tønsberg:
 WITH brød & kaffe i Storgaten 29
 WITH bok & kaffe på biblioteket
-WITH brunsj & kaffe på Bydelshuset
-
-Håndverksbrød bakt daglig med lokale ingredienser
-Nøye utvalgte bønner fra bærekraftige gårder
-Den perfekte plassen for møter, arbeid eller avslapning
-God plass til barna i en herlig lekekrok og barnevognvennlig
+Bydelshuset
 
 top 5 Norske café nettsider:
 fuglen.no
@@ -30,6 +25,13 @@ cafegratitude.com
 bluebottlecoffee.com
 fourbarrelcoffee.com
 coffeecollective.dk
+
+
+Vi leverer ferske bakevarer til våre kafeer;
+WITH brød & kaffe i Storgaten 29,
+WITH bok & kaffe på biblioteket,
+WITH brunsj & kaffe på Bydelshuset,
+WITH bakst & kaffe
 
 WITHCAFE/
 ├── .qodo/
