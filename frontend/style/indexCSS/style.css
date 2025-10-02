@@ -1,6 +1,6 @@
 /* Header Styles */
 header {
-    background-color: var(--espresso);
+    background-color: var(--cream);
     padding: 1.5rem 0;
     box-shadow: var(--shadow-md);
     position: sticky;
@@ -17,7 +17,7 @@ header .container {
 
 /* Logo Styles */
 .logo {
-    color: var(--white);
+    color: var(--espresso);
     font-weight: 600;
     line-height: 1.1;
     letter-spacing: 0.5px;
@@ -29,9 +29,9 @@ header .container {
 }
 
 .logo-top {
-    font-size: 3rem;
+    font-size: 2.9rem;
     letter-spacing: 3px;
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .logo-bottom {
@@ -54,7 +54,7 @@ nav ul {
 }
 
 nav a {
-    color: var(--white);
+    color: var(--espresso);
     font-size: 1.2rem;
     font-weight: 500;
     transition: var(--transition);
