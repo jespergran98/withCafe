@@ -6,6 +6,9 @@
     <title>WITH brød & kaffe</title>
     <link rel="stylesheet" href="./styles/mainCSS/importMain.css">
     <link rel="stylesheet" href="./styles/indexCSS/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -30,20 +33,36 @@
         <section class="hero">
             <div class="hero-background">
                 <img src="assets/images/beans.avif" alt="Kaffebønner">
+                <div class="hero-gradient"></div>
             </div>
             <div class="hero-content">
+                <div class="hero-badge">Håndverkskvalitet siden 2020</div>
                 <h1>Velkommen til WITH</h1>
                 <p>Din lokale kafé i Tønsberg for håndverksbakst, fersk kaffe og hyggelige stunder. Vi baker alt på stedet med kjærlighet hver dag.</p>
                 <div class="hero-buttons">
-                    <a href="#meny" class="btn btn-primary">Se menyen</a>
-                    <a href="#lokasjoner" class="btn btn-secondary">Finn oss</a>
+                    <a href="#meny" class="btn btn-primary">
+                        <span>Se menyen</span>
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#lokasjoner" class="btn btn-secondary">
+                        <span>Finn oss</span>
+                    </a>
                 </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
             </div>
         </section>
 
         <section class="features">
             <div class="container">
-                <h2 class="section-title">Hva vi tilbyr</h2>
+                <div class="section-header">
+                    <span class="section-tag">Vårt løfte</span>
+                    <h2 class="section-title">Hva vi tilbyr</h2>
+                    <p class="section-description">Hver dag bringer vi sammen tradisjonelt håndverk og moderne kvalitet</p>
+                </div>
                 <div class="feature-grid">
                     <div class="feature-card">
                         <div class="feature-image">
@@ -51,7 +70,13 @@
                         </div>
                         <div class="feature-content">
                             <h3>Fersk bakst</h3>
-                            <p>Håndverksbakst bakt daglig med lokale råvarer og tradisjonelle metoder</p>
+                            <p>Håndverksbakst bakt daglig med lokale råvarer og tradisjonelle metoder som har stått seg i generasjoner</p>
+                            <div class="feature-link">
+                                <span>Les mer</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                     <div class="feature-card">
@@ -60,7 +85,13 @@
                         </div>
                         <div class="feature-content">
                             <h3>Kvalitetskaffe</h3>
-                            <p>Nøye utvalgte bønner fra bærekraftige gårder, tilberedt med presisjon</p>
+                            <p>Nøye utvalgte bønner fra bærekraftige gårder, tilberedt med presisjon av våre erfarne baristater</p>
+                            <div class="feature-link">
+                                <span>Les mer</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                     <div class="feature-card">
@@ -69,7 +100,13 @@
                         </div>
                         <div class="feature-content">
                             <h3>Koselig atmosfære</h3>
-                            <p>En innbydende plass for møter, konsentrasjon eller avslappende pauser</p>
+                            <p>En innbydende plass for møter, konsentrasjon eller avslappende pauser i varme og stilfulle omgivelser</p>
+                            <div class="feature-link">
+                                <span>Les mer</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -78,8 +115,11 @@
 
         <section id="lokasjoner" class="locations">
             <div class="container">
-                <h2 class="section-title">Våre lokasjoner</h2>
-                <p class="locations-subtitle">Finn din favoritt WITH i Tønsberg</p>
+                <div class="section-header">
+                    <span class="section-tag light">Besøk oss</span>
+                    <h2 class="section-title">Våre lokasjoner</h2>
+                    <p class="section-description light">Finn din favoritt WITH i Tønsberg</p>
+                </div>
                 
                 <div class="locations-grid">
                     <div class="location-card location-card-large">
@@ -99,6 +139,12 @@
                                 Storgaten 29, Tønsberg
                             </p>
                             <p class="location-description">Vår flaggskipbutikk hvor alt bakes fra bunnen hver dag. Her finner du vårt fulle utvalg av håndverksbakst og spesialkaffe.</p>
+                            <a href="#" class="location-cta">
+                                <span>Få veibeskrivelse</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
 
@@ -119,6 +165,12 @@
                                 Biblioteket, Tønsberg
                             </p>
                             <p class="location-description">Kombinasjonen av gode bøker og fersk kaffe. Perfekt for en rolig stund med lesning.</p>
+                            <a href="#" class="location-cta">
+                                <span>Få veibeskrivelse</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
 
@@ -139,6 +191,12 @@
                                 Bydelshuset, Tønsberg
                             </p>
                             <p class="location-description">Start dagen riktig med vår hearty brunsj og nybrygg kaffe i hjertelige omgivelser.</p>
+                            <a href="#" class="location-cta">
+                                <span>Få veibeskrivelse</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -153,6 +211,7 @@
                     <div class="logo-top">WITH</div>
                     <div class="logo-bottom">brød <span class="accent">&</span> kaffe</div>
                 </div>
+                <div class="footer-divider"></div>
                 <p>&copy; 2025 WITH brød & kaffe. Alle rettigheter reservert.</p>
             </div>
         </div>
