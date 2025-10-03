@@ -19,14 +19,14 @@ const createLogoAnimation = (logoSelector) => {
         if (isAnimating) return;
         isAnimating = true;
         
-        // Phase 1: Move WITH up and prepare for text
-        logoTop.style.transform = 'translateY(-14px)';
+        // Phase 1: Move WITH up slightly to make room
+        logoTop.style.transform = 'translateY(-10px)';
         
         // Phase 2: Show first subtitle after WITH moves
         setTimeout(() => {
             logoBottom.innerHTML = names[0];
             logoBottom.style.opacity = '1';
-            logoBottom.style.transform = 'translateY(0)';
+            logoBottom.style.transform = 'translateX(-50%) translateY(0)';
         }, 400);
         
         // Phase 3: Cycle through remaining names
@@ -41,7 +41,7 @@ const createLogoAnimation = (logoSelector) => {
                     // Phase 4: Hide text and return WITH to center
                     setTimeout(() => {
                         logoBottom.style.opacity = '0';
-                        logoBottom.style.transform = 'translateY(8px)';
+                        logoBottom.style.transform = 'translateX(-50%) translateY(6px)';
                         
                         setTimeout(() => {
                             logoTop.style.transform = 'translateY(0)';
@@ -57,18 +57,18 @@ const createLogoAnimation = (logoSelector) => {
                 
                 // Fade out current name
                 logoBottom.style.opacity = '0';
-                logoBottom.style.transform = 'translateY(-6px)';
+                logoBottom.style.transform = 'translateX(-50%) translateY(-6px)';
                 
                 setTimeout(() => {
                     // Update text while invisible
                     currentIndex = (currentIndex + 1) % names.length;
                     logoBottom.innerHTML = names[currentIndex];
-                    logoBottom.style.transform = 'translateY(6px)';
+                    logoBottom.style.transform = 'translateX(-50%) translateY(6px)';
                     
                     // Fade in new name
                     setTimeout(() => {
                         logoBottom.style.opacity = '1';
-                        logoBottom.style.transform = 'translateY(0)';
+                        logoBottom.style.transform = 'translateX(-50%) translateY(0)';
                     }, 50);
                 }, 400);
                 
