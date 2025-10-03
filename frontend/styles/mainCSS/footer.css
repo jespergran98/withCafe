@@ -27,11 +27,16 @@ footer::before {
 .footer-logo {
     opacity: 0.95;
     transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80px;
+    justify-content: center;
 }
 
 .footer-logo:hover {
     opacity: 1;
-    transform: translateY(-2px);
 }
 
 .footer-logo .logo-top {
@@ -39,14 +44,25 @@ footer::before {
     letter-spacing: 5px;
     font-weight: 800;
     color: var(--white);
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    line-height: 1;
 }
 
 .footer-logo .logo-bottom {
     font-size: 1.2rem;
     font-weight: 400;
-    opacity: 0.88;
-    margin-top: 2px;
+    opacity: 0;
+    margin-top: 4px;
     color: var(--white);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+    transform: translateY(8px);
+    position: absolute;
+    top: 50%;
+    margin-top: 18px;
+    white-space: nowrap;
 }
 
 .footer-logo .accent {
@@ -64,4 +80,20 @@ footer p {
     opacity: 0.65;
     font-size: 0.95rem;
     letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+    .footer-logo {
+        min-height: 70px;
+    }
+    
+    .footer-logo .logo-top {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+    
+    .footer-logo .logo-bottom {
+        font-size: 1rem;
+        margin-top: 16px;
+    }
 }

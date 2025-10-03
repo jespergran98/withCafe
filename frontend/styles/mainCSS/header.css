@@ -28,23 +28,25 @@ header .container {
 .logo {
     color: var(--espresso);
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 1;
     letter-spacing: 0.5px;
-    transition: var(--transition);
     cursor: pointer;
-}
-
-.logo:hover {
-    transform: translateY(-2px);
+    position: relative;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .logo-top {
     font-size: 2.75rem;
     letter-spacing: 6px;
     font-weight: 800;
-    line-height: 0.9;
-    transition: var(--transition);
+    line-height: 1;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: 'Playfair Display', Georgia, serif;
+    will-change: transform;
 }
 
 header.scrolled .logo-top {
@@ -53,18 +55,24 @@ header.scrolled .logo-top {
 }
 
 .logo-bottom {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 400;
-    opacity: 0.82;
-    margin-top: 2px;
+    opacity: 0;
+    margin-top: 4px;
     letter-spacing: 1px;
-    transition: var(--transition);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: 'Inter', sans-serif;
+    will-change: opacity, transform;
+    transform: translateY(8px);
+    position: absolute;
+    top: 50%;
+    margin-top: 18px;
+    white-space: nowrap;
 }
 
 header.scrolled .logo-bottom {
-    font-size: 1.25rem;
-    opacity: 0.78;
+    font-size: 1.2rem;
 }
 
 .logo .accent {
@@ -146,6 +154,10 @@ nav a:hover::after {
         padding: 1rem 0;
     }
     
+    .logo {
+        min-height: 60px;
+    }
+    
     .logo-top {
         font-size: 2.25rem;
         letter-spacing: 4px;
@@ -153,6 +165,7 @@ nav a:hover::after {
 
     .logo-bottom {
         font-size: 1.15rem;
+        margin-top: 16px;
     }
     
     header.scrolled .logo-top {
