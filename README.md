@@ -5,10 +5,9 @@ Velkommen
 
 Vi tilbyr:
 
-Fersk bakst, Kvalitetskaffe, Koselig atmosfære, Lekerom
+Fersk bakst, Kvalitetskaffe, Koselig atmosfære, Lekerom?
 
 Besøk oss i Tønsberg:
-WITH brød & kaffe (original)
 WITH brød & kaffe 2.0 i Storgaten 29
 WITH bok & kaffe på biblioteket
 WITH brunsj & kaffe Bydelshuset
@@ -33,12 +32,30 @@ _ og kaffe: Handy Sans https://www.myfonts.com/products/regular-handy-sans-30290
 Original yellow color: #faf207
 
 
+-add awards?
+-add "made fresh every day" marquee line?
+-add opening times in semi footer?
+-add opening times under locations?
+-add social media section? "følg oss på sosiale medier med IG API?
+
+
+Top café websites:
+Cafe Patachou - https://www.cafepatachou.com (good locations)
+Little Bagel Co. - https://littlebagelco.co.uk (good hover effects, marquee, menu wheel, combined blue with orange, good opening times in footer)
+Colectivo Coffee - extremely good drawn design bobby-jones, sans-serif
+https://www.foxinthesnow.com - (good locations design with opening times underneath)
+Dudley’s Coffee - https://www.tea-and-coffee.com
+Felix Roasting Co. - https://lahuella.coffee (unique circle design)
+Campos Coffee - https://www.camposcoffee.com
+NOC Coffee - https://noc.coffee/en
+
 
 Vi leverer ferske bakevarer til våre kafeer;
 WITH brød & kaffe i Storgaten 29,
 WITH bok & kaffe på biblioteket,
 WITH brunsj & kaffe på Bydelshuset,
 WITH bakst & kaffe
+
 
 WITHCAFE/
 ├── .qodo/
@@ -47,20 +64,31 @@ WITHCAFE/
 │   ├── assets/
 │   │   └── images/
 │   │       ├── beans.avif
-│   │       ├── bokOgKaffe.jpg
+│   │       ├── bokOgKaffe.webp
 │   │       ├── bread.avif
-│   │       ├── brodOgKaffe.jpg
-│   │       ├── bydelshuset.jpg
+│   │       ├── brodOgKaffe.webp
+│   │       ├── bydelshuset.webp
+│   │       ├── coffee-icon.png
 │   │       ├── coffee.avif
 │   │       ├── cozy.avif
-│   │       └── toys.avif
+│   │       ├── toys.avif
+│   │       └── wheat-icon.png
 │   ├── js/
-│   │   └── scrollHeader.js
+│   │   └── mainJS/
+│   │       ├── breadAndWheat.js
+│   │       ├── copyrightYear.js
+│   │       ├── logoAnimation.js
+│   │       └── scrollHeader.js
 │   └── styles/
-│       ├── mainCSS/
-│       │   ├── importMain.css
-│       │   └── main.css
-│       └── indexCSS/
-│           ├── importIndex.css
-│           └── index.css
+│       ├── indexCSS/
+│       │   ├── importIndex.css
+│       │   ├── indexFeatures.css
+│       │   ├── indexHero.css
+│       │   └── indexLocations.css
+│       └── mainCSS/
+│           ├── contact.css
+│           ├── footer.css
+│           ├── header.css
+│           ├── importMain.css
+│           └── main.css
 └── README.md
