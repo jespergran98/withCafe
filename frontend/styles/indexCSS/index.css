@@ -400,6 +400,226 @@ nav a:hover::after {
     opacity: 0.9;
 }
 
+/* Locations Section */
+/* Locations Section */
+.locations {
+    padding: 6rem 0 7rem;
+    background: var(--espresso);
+    position: relative;
+    overflow: hidden;
+}
+
+.locations::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse 80% 50% at 20% 40%, rgba(201, 166, 104, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 70% 50% at 80% 60%, rgba(201, 166, 104, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.locations .section-title {
+    color: var(--white);
+    margin-bottom: 1.2rem;
+}
+
+.locations .section-title::after {
+    background: linear-gradient(90deg, transparent, var(--honey), transparent);
+}
+
+.locations-subtitle {
+    text-align: center;
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: -1rem;
+    margin-bottom: 4rem;
+    opacity: 1;
+    font-weight: 400;
+}
+
+.locations-grid {
+    display: flex;
+    gap: 2rem;
+    padding: 0 2.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--honey) rgba(255, 255, 255, 0.1);
+}
+
+.locations-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.locations-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.locations-grid::-webkit-scrollbar-thumb {
+    background: var(--honey);
+    border-radius: 4px;
+}
+
+.location-card {
+    flex: 0 0 380px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    scroll-snap-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.location-card-large {
+    flex: 0 0 480px;
+}
+
+.location-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(201, 166, 104, 0.15) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.location-card:hover::before {
+    opacity: 1;
+}
+
+.location-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(201, 166, 104, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.location-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+
+.location-card-large .location-image {
+    height: 280px;
+}
+
+.location-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(26, 20, 16, 0.6) 100%);
+    z-index: 1;
+}
+
+.location-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.location-card:hover .location-image img {
+    transform: scale(1.1);
+}
+
+.location-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+}
+
+.location-badge {
+    background: var(--honey);
+    color: var(--white);
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.location-card:hover .location-badge {
+    background: var(--honey-dark);
+    transform: scale(1.08);
+}
+
+.location-content {
+    padding: 1.8rem 1.6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    position: relative;
+    z-index: 2;
+}
+
+.location-card-large .location-content {
+    padding: 2rem 1.8rem 2.2rem;
+}
+
+.location-card h3 {
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    transition: color 0.3s ease;
+    line-height: 1.3;
+}
+
+.location-card-large h3 {
+    font-size: 1.75rem;
+    letter-spacing: -0.5px;
+}
+
+.location-card:hover h3 {
+    color: var(--honey);
+}
+
+.location-address {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--honey);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 0.2rem;
+}
+
+.location-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    stroke: var(--honey);
+    stroke-width: 2.5;
+}
+
+.location-description {
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.65;
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+}
+
+.location-card-large .location-description {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
 /* Footer */
 footer {
     background: linear-gradient(135deg, #0f0a07 0%, #1A1410 100%);
@@ -456,6 +676,25 @@ footer p {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .locations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .location-card-large {
+        grid-column: span 1;
+        grid-template-columns: 1fr;
+    }
+    
+    .location-card-large .location-image {
+        min-height: 380px;
+    }
+    
+    .location-card-large .location-content {
+        padding: 2.5rem 2.2rem 2.8rem;
+    }
+}
+
 @media (max-width: 768px) {
     header {
         padding: 1.2rem 0;
@@ -501,105 +740,7 @@ footer p {
         padding: 0.6rem 1.4rem;
     }
 
-    .hero {
-        min-height: 60vh;
+        .hero {
+            min-height: 60vh;
+        }
     }
-
-    .hero-content {
-        padding: 4.5rem 2rem;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-        letter-spacing: -1.2px;
-    }
-
-    .hero p {
-        font-size: 1.15rem;
-        margin-bottom: 2.3rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        padding: 0.9rem 2.2rem;
-        font-size: 1rem;
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .features {
-        padding: 5.5rem 2rem;
-    }
-
-    .section-title {
-        font-size: 2.8rem;
-        margin-bottom: 3.5rem;
-    }
-
-    .feature-grid {
-        gap: 2.8rem;
-        grid-template-columns: 1fr;
-    }
-
-    .feature-image {
-        height: 260px;
-    }
-
-    .feature-content {
-        padding: 2.2rem 1.8rem 2.5rem;
-    }
-
-    .feature-card h3 {
-        font-size: 1.65rem;
-    }
-
-    footer {
-        padding: 3.5rem 0 2.3rem;
-    }
-
-    .footer-logo .logo-top {
-        font-size: 2rem;
-    }
-
-    .footer-logo .logo-bottom {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        min-height: 55vh;
-    }
-
-    .hero-content {
-        padding: 4rem 1.5rem;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.08rem;
-    }
-
-    .section-title {
-        font-size: 2.4rem;
-    }
-
-    .feature-image {
-        height: 240px;
-    }
-
-    .feature-card h3 {
-        font-size: 1.55rem;
-    }
-
-    .feature-card p {
-        font-size: 1rem;
-    }
-}

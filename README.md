@@ -10,7 +10,7 @@ Fersk bakst, Kvalitetskaffe, Koselig atmosfære, Lekerom
 Besøk oss i Tønsberg:
 WITH brød & kaffe i Storgaten 29
 WITH bok & kaffe på biblioteket
-Bydelshuset
+WITH brunsj & kaffe Bydelshuset
 
 top 5 Norske café nettsider:
 fuglen.no
