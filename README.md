@@ -8,7 +8,8 @@ Vi tilbyr:
 Fersk bakst, Kvalitetskaffe, Koselig atmosfære, Lekerom
 
 Besøk oss i Tønsberg:
-WITH brød & kaffe i Storgaten 29
+WITH brød & kaffe (original)
+WITH brød & kaffe 2.0 i Storgaten 29
 WITH bok & kaffe på biblioteket
 WITH brunsj & kaffe Bydelshuset
 
