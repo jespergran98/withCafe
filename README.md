@@ -62,6 +62,8 @@ ting å legge til:
 3. legg til Marquee "Ferske bakevarer hver dag" - "Kvalitetskaffe fra bærekraftige bønner" - "Koselig møteplass i Tønsberg"
 4. legg til åpningstider (finn åpningstidene)
 
+Brød & Kaffe:
+
 
 Create code from html, javascript and css. The task is for me to be able to find my optimal font for my logo.
 The app background should be in color #1A1410
