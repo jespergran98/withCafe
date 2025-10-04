@@ -41,7 +41,7 @@ footer::before {
 
 .footer-logo .logo-top {
     font-size: 3rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.1rem;
     font-weight: 400;
     color: var(--white);
     transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);

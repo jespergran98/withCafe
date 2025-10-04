@@ -4,7 +4,7 @@ const header = document.querySelector('header');
 function handleScroll() {
     const currentScroll = window.pageYOffset;
     
-    if (currentScroll > 50) {
+    if (currentScroll > 20) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
