@@ -32,7 +32,7 @@ class BackgroundPattern {
             width: '100%',
             height: '100%',
             pointerEvents: 'none',
-            opacity: '0.07',
+            opacity: '0.1',
             zIndex: '0'
         });
 

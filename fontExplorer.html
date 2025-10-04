@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WITH Logo Font Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One&family=Lilita+One&family=Paytone+One&family=Rammetto+One&family=Black+Han+Sans&family=Bowlby+One+SC&family=McLaren&family=Sigmar+One&family=Chelsea+Market&family=Freeman&family=Protest+Strike&family=Braah+One&family=Gasoek+One&family=Bungee&family=Rubik+Mono+One&family=Titan+One&family=Secular+One&family=Righteous&family=Caveat&family=Lobster+Two&family=Kalam&family=Francois+One&family=Berkshire+Swash&family=Londrina+Solid&family=Caveat+Brush&family=Grandstander&family=Boogaloo&family=Sansita&family=Belanosima&family=Cabin+Sketch&family=Yuji+Mai&family=Caladea&family=Skranji&family=Mochiy+Pop+One&family=IM+Fell+DW+Pica&family=Wendy+One&family=Darumadrop+One&family=Gorditas&family=Galindo&family=Indie+Flower&family=Patrick+Hand&family=Comfortaa&family=Courgette&family=Quicksand&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1A1410;
+            font-family: 'McLaren', cursive;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            padding: 20px;
+            gap: 30px;
+        }
+
+        .logo-preview {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo-top {
+            color: white;
+            line-height: 0.9;
+            margin: 0;
+        }
+
+        .logo-bottom {
+            color: white;
+            line-height: 0.9;
+            margin: 0;
+        }
+
+        .logo-bottom .ampersand {
+            color: #faf207;
+        }
+
+        .controls-panel {
+            width: 380px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            overflow-y: auto;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .control-section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #faf207;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .control-value {
+            color: #faf207;
+            font-weight: bold;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #faf207;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #faf207;
+            cursor: pointer;
+            border: none;
+        }
+
+        .font-selector {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 4px;
+        }
+
+        .font-option {
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .font-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(250, 242, 7, 0.3);
+        }
+
+        .font-option.active {
+            background: rgba(250, 242, 7, 0.15);
+            border-color: #faf207;
+            color: #faf207;
+        }
+
+        .text-options {
+            display: flex;
+            gap: 8px;
+        }
+
+        .text-option {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .text-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(250, 242, 7, 0.3);
+        }
+
+        .text-option.active {
+            background: rgba(250, 242, 7, 0.15);
+            border-color: #faf207;
+            color: #faf207;
+        }
+
+        .font-selector::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .font-selector::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+
+        .font-selector::-webkit-scrollbar-thumb {
+            background: rgba(250, 242, 7, 0.3);
+            border-radius: 3px;
+        }
+
+        .font-selector::-webkit-scrollbar-thumb:hover {
+            background: rgba(250, 242, 7, 0.5);
+        }
+
+        @media (max-width: 1024px) {
+            body {
+                flex-direction: column;
+            }
+            .controls-panel {
+                width: 100%;
+                max-height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-preview">
+        <div class="logo-container">
+            <h1 class="logo-top" id="logoTop">WITH</h1>
+            <h2 class="logo-bottom" id="logoBottom">brød <span class="ampersand">&</span> kaffe</h2>
+        </div>
+    </div>
+
+    <div class="controls-panel">
+        <div class="control-section">
+            <div class="section-title">Text Variant</div>
+            <div class="text-options">
+                <div class="text-option active" data-text="brød & kaffe">brød & kaffe</div>
+                <div class="text-option" data-text="bok & kaffe">bok & kaffe</div>
+                <div class="text-option" data-text="brunsj & kaffe">brunsj & kaffe</div>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <div class="section-title">"WITH" Controls</div>
+            
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Font Size</span>
+                    <span class="control-value" id="topSizeValue">120px</span>
+                </div>
+                <input type="range" id="topSize" min="40" max="200" value="120" step="5">
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Font Weight</span>
+                    <span class="control-value" id="topWeightValue">700</span>
+                </div>
+                <input type="range" id="topWeight" min="400" max="900" value="700" step="100">
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Letter Spacing</span>
+                    <span class="control-value" id="topSpacingValue">0px</span>
+                </div>
+                <input type="range" id="topSpacing" min="-10" max="30" value="0" step="1">
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Font Family</span>
+                </div>
+                <div class="font-selector" id="topFontSelector"></div>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <div class="section-title">Bottom Text Controls</div>
+            
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Font Size</span>
+                    <span class="control-value" id="bottomSizeValue">48px</span>
+                </div>
+                <input type="range" id="bottomSize" min="20" max="100" value="48" step="2">
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Font Weight</span>
+                    <span class="control-value" id="bottomWeightValue">400</span>
+                </div>
+                <input type="range" id="bottomWeight" min="400" max="900" value="400" step="100">
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Letter Spacing</span>
+                    <span class="control-value" id="bottomSpacingValue">2px</span>
+                </div>
+                <input type="range" id="bottomSpacing" min="-5" max="20" value="2" step="1">
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Gap Between Texts</span>
+                    <span class="control-value" id="gapValue">10px</span>
+                </div>
+                <input type="range" id="gap" min="-20" max="60" value="10" step="2">
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Font Family</span>
+                </div>
+                <div class="font-selector" id="bottomFontSelector"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const topFonts = [
+            'Changa One', 'Lilita One', 'Paytone One', 'Rammetto One',
+            'Black Han Sans', 'Bowlby One SC', 'McLaren', 'Sigmar One',
+            'Chelsea Market', 'Freeman', 'Protest Strike', 'Braah One',
+            'Gasoek One', 'Bungee', 'Rubik Mono One', 'Titan One',
+            'Secular One', 'Righteous'
+        ];
+
+        const bottomFonts = [
+            'Caveat', 'Lobster Two', 'Kalam', 'Francois One',
+            'Berkshire Swash', 'Londrina Solid', 'Caveat Brush', 'Grandstander',
+            'Boogaloo', 'Sansita', 'Belanosima', 'Cabin Sketch',
+            'Yuji Mai', 'Caladea', 'Skranji', 'Mochiy Pop One',
+            'McLaren', 'Chelsea Market', 'IM Fell DW Pica', 'Wendy One',
+            'Darumadrop One', 'Gorditas', 'Galindo', 'Indie Flower',
+            'Patrick Hand', 'Comfortaa', 'Courgette', 'Quicksand'
+        ];
+
+        const state = {
+            topFont: 'Changa One',
+            bottomFont: 'Caveat',
+            topSize: 120,
+            topWeight: 700,
+            topSpacing: 0,
+            bottomSize: 48,
+            bottomWeight: 400,
+            bottomSpacing: 2,
+            gap: 10,
+            bottomText: 'brød & kaffe'
+        };
+
+        function updateLogo() {
+            const logoTop = document.getElementById('logoTop');
+            const logoBottom = document.getElementById('logoBottom');
+            const logoContainer = document.querySelector('.logo-container');
+
+            logoTop.style.fontFamily = `'${state.topFont}', cursive`;
+            logoTop.style.fontSize = `${state.topSize}px`;
+            logoTop.style.fontWeight = state.topWeight;
+            logoTop.style.letterSpacing = `${state.topSpacing}px`;
+
+            logoBottom.style.fontFamily = `'${state.bottomFont}', cursive`;
+            logoBottom.style.fontSize = `${state.bottomSize}px`;
+            logoBottom.style.fontWeight = state.bottomWeight;
+            logoBottom.style.letterSpacing = `${state.bottomSpacing}px`;
+
+            logoContainer.style.gap = `${state.gap}px`;
+
+            const parts = state.bottomText.split(' & ');
+            logoBottom.innerHTML = `${parts[0]} <span class="ampersand">&</span> ${parts[1]}`;
+        }
+
+        function createFontOptions(fonts, containerId, type) {
+            const container = document.getElementById(containerId);
+            fonts.forEach(font => {
+                const option = document.createElement('div');
+                option.className = 'font-option';
+                if ((type === 'top' && font === state.topFont) || 
+                    (type === 'bottom' && font === state.bottomFont)) {
+                    option.classList.add('active');
+                }
+                option.textContent = font;
+                option.style.fontFamily = `'${font}', cursive`;
+                option.addEventListener('click', () => {
+                    container.querySelectorAll('.font-option').forEach(o => o.classList.remove('active'));
+                    option.classList.add('active');
+                    if (type === 'top') {
+                        state.topFont = font;
+                    } else {
+                        state.bottomFont = font;
+                    }
+                    updateLogo();
+                });
+                container.appendChild(option);
+            });
+        }
+
+        function setupControls() {
+            document.getElementById('topSize').addEventListener('input', (e) => {
+                state.topSize = parseInt(e.target.value);
+                document.getElementById('topSizeValue').textContent = `${state.topSize}px`;
+                updateLogo();
+            });
+
+            document.getElementById('topWeight').addEventListener('input', (e) => {
+                state.topWeight = parseInt(e.target.value);
+                document.getElementById('topWeightValue').textContent = state.topWeight;
+                updateLogo();
+            });
+
+            document.getElementById('topSpacing').addEventListener('input', (e) => {
+                state.topSpacing = parseInt(e.target.value);
+                document.getElementById('topSpacingValue').textContent = `${state.topSpacing}px`;
+                updateLogo();
+            });
+
+            document.getElementById('bottomSize').addEventListener('input', (e) => {
+                state.bottomSize = parseInt(e.target.value);
+                document.getElementById('bottomSizeValue').textContent = `${state.bottomSize}px`;
+                updateLogo();
+            });
+
+            document.getElementById('bottomWeight').addEventListener('input', (e) => {
+                state.bottomWeight = parseInt(e.target.value);
+                document.getElementById('bottomWeightValue').textContent = state.bottomWeight;
+                updateLogo();
+            });
+
+            document.getElementById('bottomSpacing').addEventListener('input', (e) => {
+                state.bottomSpacing = parseInt(e.target.value);
+                document.getElementById('bottomSpacingValue').textContent = `${state.bottomSpacing}px`;
+                updateLogo();
+            });
+
+            document.getElementById('gap').addEventListener('input', (e) => {
+                state.gap = parseInt(e.target.value);
+                document.getElementById('gapValue').textContent = `${state.gap}px`;
+                updateLogo();
+            });
+
+            document.querySelectorAll('.text-option').forEach(option => {
+                option.addEventListener('click', () => {
+                    document.querySelectorAll('.text-option').forEach(o => o.classList.remove('active'));
+                    option.classList.add('active');
+                    state.bottomText = option.dataset.text;
+                    updateLogo();
+                });
+            });
+        }
+
+        createFontOptions(topFonts, 'topFontSelector', 'top');
+        createFontOptions(bottomFonts, 'bottomFontSelector', 'bottom');
+        setupControls();
+        updateLogo();
+    </script>
+</body>
+</html>
