@@ -21,7 +21,7 @@ const createLogoAnimation = (logoSelector) => {
         
         // Phase 1: Gently lift WITH with elastic easing
         logoTop.style.transition = 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
-        logoTop.style.transform = 'translateY(-12px)';
+        logoTop.style.transform = 'translateY(-8px)';
         
         // Phase 2: Fade in first location name with slide up
         setTimeout(() => {

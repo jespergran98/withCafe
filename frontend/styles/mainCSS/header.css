@@ -5,7 +5,7 @@ header {
         rgba(250, 248, 245, 1),
         rgba(255, 255, 255, 1)
     );
-    padding: 1.75rem 0;
+    padding: 1.25rem 0;
     border-bottom: 1px solid rgba(26, 20, 16, 0.06);
     position: fixed;
     top: 0;
@@ -38,7 +38,7 @@ header::before {
 }
 
 header.scrolled {
-    padding: 1.25rem 0;
+    padding: 0.75rem 0;
     background: linear-gradient(
         135deg,
         rgba(250, 248, 245, 0.65),
@@ -73,16 +73,11 @@ header .container {
     letter-spacing: 0.5px;
     cursor: pointer;
     position: relative;
-    min-height: 60px;
+    min-height: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    transition: min-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-header.scrolled .logo {
-    min-height: 50px;
+    align-items: center;
 }
 
 .logo-top {
@@ -90,43 +85,27 @@ header.scrolled .logo {
     letter-spacing: 0.1rem;
     font-weight: 400;
     line-height: 1;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-                font-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                letter-spacing 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: 'Black Han Sans', sans-serif;
     will-change: transform;
     position: relative;
     z-index: 1;
 }
 
-header.scrolled .logo-top {
-    font-size: 2.6rem;
-    letter-spacing: 2px;
-}
-
 .logo-bottom {
     font-size: 1.35rem;
     font-weight: 400;
     opacity: 0;
-    margin-top: 2px;
-    letter-spacing: 0.1rem;
+    color: var(--espresso);
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
-                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                font-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: 'Skranji', cursive;
     will-change: opacity, transform;
-    transform: translateY(6px);
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%) translateY(6px);
-    margin-top: 12px;
     white-space: nowrap;
-}
-
-header.scrolled .logo-bottom {
-    font-size: 1.15rem;
-    margin-top: 10px;
 }
 
 .logo .accent {
@@ -212,28 +191,13 @@ nav a:hover::after {
         min-height: 50px;
     }
     
-    header.scrolled .logo {
-        min-height: 45px;
-    }
-    
     .logo-top {
         font-size: 2.25rem;
-        letter-spacing: 4px;
+        letter-spacing: 0.08rem;
     }
 
     .logo-bottom {
         font-size: 1.15rem;
-        margin-top: 10px;
-    }
-    
-    header.scrolled .logo-top {
-        font-size: 2rem;
-        letter-spacing: 3.5px;
-    }
-    
-    header.scrolled .logo-bottom {
-        font-size: 1rem;
-        margin-top: 9px;
     }
 
     nav ul {
