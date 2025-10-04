@@ -1,8 +1,9 @@
 /* Features Section */
 .features {
-    padding: 7rem 0;
+    padding: 6rem 0;
     background: var(--cream);
     position: relative;
+    overflow: hidden;
 }
 
 .features::before {
@@ -23,16 +24,29 @@
 
 .feature-card {
     background-color: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: 20px;
     overflow: hidden;
-    transition: var(--transition);
-    box-shadow: var(--shadow-sm);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(26, 20, 16, 0.06);
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(26, 20, 16, 0.06);
     position: relative;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
+.feature-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animation delays */
+.feature-card:nth-child(1) { transition-delay: 0.1s; }
+.feature-card:nth-child(2) { transition-delay: 0.2s; }
+.feature-card:nth-child(3) { transition-delay: 0.3s; }
+
+/* Top accent bar */
 .feature-card::before {
     content: '';
     position: absolute;
@@ -42,8 +56,9 @@
     height: 4px;
     background: linear-gradient(90deg, var(--honey), var(--honey-dark));
     transform: scaleX(0);
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: left;
+    z-index: 2;
 }
 
 .feature-card:hover::before {
@@ -51,11 +66,14 @@
 }
 
 .feature-card:hover {
-    transform: translateY(-12px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-10px);
+    box-shadow: 
+        0 20px 40px -12px rgba(26, 20, 16, 0.12),
+        0 12px 24px -12px rgba(212, 165, 116, 0.1);
     border-color: rgba(212, 165, 116, 0.2);
 }
 
+/* Image Section */
 .feature-image {
     width: 100%;
     height: 320px;
@@ -68,22 +86,33 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(26, 20, 16, 0.1) 0%, transparent 50%, rgba(26, 20, 16, 0.2) 100%);
+    background: linear-gradient(180deg, 
+        rgba(26, 20, 16, 0.1) 0%, 
+        transparent 50%, 
+        rgba(26, 20, 16, 0.2) 100%);
     pointer-events: none;
     z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+.feature-card:hover .feature-image::after {
+    opacity: 0.7;
 }
 
 .feature-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0.98) contrast(1.02);
 }
 
 .feature-card:hover .feature-image img {
-    transform: scale(1.15);
+    transform: scale(1.08);
+    filter: brightness(1) contrast(1.05);
 }
 
+/* Content Section */
 .feature-content {
     padding: 2.5rem 2rem 2.8rem;
     text-align: center;
@@ -91,7 +120,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1.25rem;
+    gap: 1rem;
 }
 
 .feature-card h3 {
@@ -113,28 +142,44 @@
     font-size: 1.05rem;
     opacity: 0.9;
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
 }
 
+.feature-card:hover p {
+    color: var(--espresso);
+}
+
+/* Link/CTA */
 .feature-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0.6rem;
     color: var(--honey);
     font-weight: 600;
     font-size: 0.95rem;
     margin-top: auto;
-    transition: var(--transition);
+    padding: 0.75rem 1.5rem;
+    background: rgba(212, 165, 116, 0.08);
+    border-radius: 50px;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    transition: all 0.3s ease;
     cursor: pointer;
+    align-self: center;
 }
 
 .feature-link svg {
     width: 18px;
     height: 18px;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .feature-link:hover {
-    color: var(--honey-dark);
+    color: var(--white);
+    background: var(--honey);
+    border-color: var(--honey-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.25);
 }
 
 .feature-link:hover svg {
@@ -145,6 +190,7 @@
 @media (max-width: 1200px) {
     .feature-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 }
 
@@ -156,5 +202,26 @@
     .feature-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .feature-image {
+        height: 280px;
+    }
+
+    .feature-content {
+        padding: 2rem 1.75rem 2.25rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.65rem;
+    }
+
+    .feature-card p {
+        font-size: 1rem;
+    }
+
+    .feature-link {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.9rem;
     }
 }

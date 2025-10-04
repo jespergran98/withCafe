@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Black+Han+Sans&family=Skranji:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
@@ -29,6 +31,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <main>
         <section class="hero">
             <div class="hero-background">
@@ -56,6 +59,7 @@
             </div>
         </section>
 
+        <!-- Features Section -->
         <section class="features">
             <div class="container">
                 <div class="section-header">
@@ -113,7 +117,9 @@
             </div>
         </section>
 
+        <!-- Locations Section -->
         <section id="lokasjoner" class="locations">
+            <div class="locations-decoration"></div>
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag light">våre lokasjoner</span>
@@ -122,11 +128,13 @@
                 </div>
                 
                 <div class="locations-grid">
-                    <div class="location-card location-card-large">
-                        <div class="location-image">
-                            <img src="assets/images/brodOgkaffe.webp" alt="WITH brød & kaffe i Storgaten">
-                            <div class="location-overlay">
-                                <span class="location-badge">Originalen</span>
+                    <div class="location-card location-card-large" data-location="1">
+                        <div class="location-image-wrapper">
+                            <div class="location-image">
+                                <img src="assets/images/brodOgkaffe.webp" alt="WITH brød & kaffe i Storgaten">
+                                <div class="location-overlay">
+                                    <span class="location-badge">Originalen</span>
+                                </div>
                             </div>
                         </div>
                         <div class="location-content">
@@ -140,7 +148,7 @@
                             </p>
                             <p class="location-description">Vår flaggskipbutikk hvor alt bakes fra bunnen hver dag. Her finner du vårt fulle utvalg av håndverksbakst og spesialkaffe.</p>
                             <a href="#" class="location-cta">
-                                <span>veibeskrivelse og åpningstider</span>
+                                <span>Veibeskrivelse og åpningstider</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
@@ -148,11 +156,13 @@
                         </div>
                     </div>
 
-                    <div class="location-card">
-                        <div class="location-image">
-                            <img src="assets/images/bokOgkaffe.webp" alt="WITH bok & kaffe på Biblioteket">
-                            <div class="location-overlay">
-                                <span class="location-badge">Nyhet</span>
+                    <div class="location-card" data-location="2">
+                        <div class="location-image-wrapper">
+                            <div class="location-image">
+                                <img src="assets/images/bokOgkaffe.webp" alt="WITH bok & kaffe på Biblioteket">
+                                <div class="location-overlay">
+                                    <span class="location-badge">Nyhet</span>
+                                </div>
                             </div>
                         </div>
                         <div class="location-content">
@@ -166,7 +176,7 @@
                             </p>
                             <p class="location-description">Kombinasjonen av gode bøker og fersk kaffe. Perfekt for en rolig stund med lesning.</p>
                             <a href="#" class="location-cta">
-                                <span>veibeskrivelse og åpningstider</span>
+                                <span>Veibeskrivelse og åpningstider</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
@@ -174,11 +184,13 @@
                         </div>
                     </div>
 
-                    <div class="location-card">
-                        <div class="location-image">
-                            <img src="assets/images/bydelshuset.webp" alt="WITH brunsj & kaffe på Bydelshuset">
-                            <div class="location-overlay">
-                                <span class="location-badge">Populær</span>
+                    <div class="location-card" data-location="3">
+                        <div class="location-image-wrapper">
+                            <div class="location-image">
+                                <img src="assets/images/bydelshuset.webp" alt="WITH brunsj & kaffe på Bydelshuset">
+                                <div class="location-overlay">
+                                    <span class="location-badge">Populær</span>
+                                </div>
                             </div>
                         </div>
                         <div class="location-content">
@@ -192,7 +204,7 @@
                             </p>
                             <p class="location-description">Start dagen riktig med vår hearty brunsj og nybrygg kaffe i hjertelige omgivelser.</p>
                             <a href="#" class="location-cta">
-                                <span>veibeskrivelse og åpningstider</span>
+                                <span>Veibeskrivelse og åpningstider</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
@@ -301,7 +313,8 @@
     <script src="./js/mainJS/scrollHeader.js"></script>
     <script src="./js/mainJS/breadAndWheat.js"></script>
     <script src="./js/mainJS/logoAnimation.js"></script>
-    <script src="./js/mainJS/copyrightYear.js"></script>
+    <script src="./js/indexJS/features.js"></script>
+    <script src="./js/indexJS/locations.js"></script>
     <script src="./js/mainJS/marquee.js"></script>
 </body>
 </html>
