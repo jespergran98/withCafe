@@ -45,20 +45,20 @@ header.scrolled .logo {
 }
 
 .logo-top {
-    font-size: 2.75rem;
-    letter-spacing: 6px;
-    font-weight: 800;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-weight: 400;
     line-height: 1;
     transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
                 font-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 letter-spacing 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Black Han Sans', sans-serif;
     will-change: transform;
 }
 
 header.scrolled .logo-top {
-    font-size: 2.4rem;
-    letter-spacing: 5px;
+    font-size: 2.6rem;
+    letter-spacing: 2px;
 }
 
 .logo-bottom {
@@ -70,7 +70,7 @@ header.scrolled .logo-top {
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
                 transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
                 font-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Skranji', cursive;
     will-change: opacity, transform;
     transform: translateY(6px);
     position: absolute;
