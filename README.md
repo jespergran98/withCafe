@@ -132,6 +132,12 @@ BEST: Black Han Sans / Change One + Skranji
 
 For the "WITH" part of the logo in the footer and header, use font Black Han Sans, for the "brød/bok/brunsj & kaffe", use font Skranji. Provide the updated codes.
 
+Add a new section to the frontpage named "socials".
+Create a new file in styles/indexCSS named "indexSocials.css"
+Create a new file in js/mainJS named "socials.js", this imports the 9 most recent images from https://www.instagram.com/withtonsberg.
+This section is meant for a cozy and modern café website. Take inspiration from the other css files. the background of this section should be cream.
+Provide the updated index.html, and the new indexSocials.css and socials.js files.
+
 WITHCAFE/
 ├── .qodo/
 ├── frontend/
