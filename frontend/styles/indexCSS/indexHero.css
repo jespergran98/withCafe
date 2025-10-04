@@ -66,11 +66,10 @@
     letter-spacing: 0.1rem;
     line-height: 1.05;
     font-family: 'Black Han Sans', sans-serif;
-    white-space: nowrap;
 }
 
 .hero p {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 3rem;
