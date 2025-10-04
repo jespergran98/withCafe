@@ -1,6 +1,6 @@
 /* Features Section */
 .features {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: var(--cream);
     position: relative;
     overflow: hidden;
@@ -19,7 +19,7 @@
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 1.5rem;
 }
 
 .feature-card {
@@ -76,7 +76,7 @@
 /* Image Section */
 .feature-image {
     width: 100%;
-    height: 320px;
+    height: 240px;
     overflow: hidden;
     position: relative;
     background-color: var(--cream-dark);
@@ -114,17 +114,17 @@
 
 /* Content Section */
 .feature-content {
-    padding: 2.5rem 2rem 2.8rem;
+    padding: 1.75rem 1.75rem 2rem;
     text-align: center;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .feature-card h3 {
-    font-size: 1.85rem;
+    font-size: 1.6rem;
     color: var(--espresso);
     font-weight: 700;
     letter-spacing: -0.5px;
@@ -138,10 +138,10 @@
 
 .feature-card p {
     color: var(--espresso-light);
-    line-height: 1.75;
-    font-size: 1.05rem;
+    line-height: 1.65;
+    font-size: 0.95rem;
     opacity: 0.9;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     transition: color 0.3s ease;
 }
 
@@ -157,9 +157,9 @@
     gap: 0.6rem;
     color: var(--honey);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     margin-top: auto;
-    padding: 0.75rem 1.5rem;
+    padding: 0.65rem 1.25rem;
     background: rgba(212, 165, 116, 0.08);
     border-radius: 50px;
     border: 1px solid rgba(212, 165, 116, 0.2);
@@ -190,38 +190,38 @@
 @media (max-width: 1200px) {
     .feature-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        gap: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
     .features {
-        padding: 6rem 0;
+        padding: 4rem 0;
     }
     
     .feature-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.25rem;
     }
 
     .feature-image {
-        height: 280px;
+        height: 220px;
     }
 
     .feature-content {
-        padding: 2rem 1.75rem 2.25rem;
+        padding: 1.5rem 1.5rem 1.75rem;
     }
 
     .feature-card h3 {
-        font-size: 1.65rem;
+        font-size: 1.45rem;
     }
 
     .feature-card p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .feature-link {
-        padding: 0.65rem 1.25rem;
-        font-size: 0.9rem;
+        padding: 0.6rem 1.15rem;
+        font-size: 0.8rem;
     }
 }
