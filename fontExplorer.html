@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WITH Logo Font Explorer</title>
+    <title>WITH Logo Skriftutforsker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Changa+One&family=Lilita+One&family=Paytone+One&family=Rammetto+One&family=Black+Han+Sans&family=Bowlby+One+SC&family=McLaren&family=Sigmar+One&family=Chelsea+Market&family=Freeman&family=Protest+Strike&family=Braah+One&family=Gasoek+One&family=Bungee&family=Rubik+Mono+One&family=Titan+One&family=Secular+One&family=Righteous&family=Caveat&family=Lobster+Two&family=Kalam&family=Francois+One&family=Berkshire+Swash&family=Londrina+Solid&family=Caveat+Brush&family=Grandstander&family=Boogaloo&family=Sansita&family=Belanosima&family=Cabin+Sketch&family=Yuji+Mai&family=Caladea&family=Skranji&family=Mochiy+Pop+One&family=IM+Fell+DW+Pica&family=Wendy+One&family=Darumadrop+One&family=Gorditas&family=Galindo&family=Indie+Flower&family=Patrick+Hand&family=Comfortaa&family=Courgette&family=Quicksand&display=swap" rel="stylesheet">
@@ -340,7 +340,7 @@
 
     <div class="controls-panel">
         <div class="control-section">
-            <div class="section-title">Text Variant</div>
+            <div class="section-title">Tekstvariant</div>
             <div class="text-options">
                 <div class="text-option active" data-text="brød & kaffe">brød & kaffe</div>
                 <div class="text-option" data-text="bok & kaffe">bok & kaffe</div>
@@ -349,11 +349,11 @@
         </div>
 
         <div class="control-section">
-            <div class="section-title">"WITH" Controls</div>
+            <div class="section-title">"WITH" Kontroller</div>
             
             <div class="control-group">
                 <div class="control-label">
-                    <span>Font Size</span>
+                    <span>Skriftstørrelse</span>
                     <span class="control-value" id="topSizeValue">260px</span>
                 </div>
                 <input type="range" id="topSize" min="60" max="280" value="260" step="5">
@@ -361,15 +361,15 @@
 
             <div class="control-group">
                 <div class="control-label">
-                    <span>Font Weight</span>
+                    <span>Skriftvekt</span>
                     <span class="control-value" id="topWeightValue">500</span>
                 </div>
-                <input type="range" id="topWeight" min="400" max="900" value="500" step="100">
+                <input type="range" id="topWeight" min="400" max="900" value="500" step="400">
             </div>
 
             <div class="control-group">
                 <div class="control-label">
-                    <span>Letter Spacing</span>
+                    <span>Bokstavmellomrom</span>
                     <span class="control-value" id="topSpacingValue">2px</span>
                 </div>
                 <input type="range" id="topSpacing" min="-10" max="30" value="2" step="1">
@@ -377,18 +377,18 @@
 
             <div class="control-group">
                 <div class="control-label">
-                    <span>Font Family</span>
+                    <span>Skriftfamilie</span>
                 </div>
                 <div class="font-selector" id="topFontSelector"></div>
             </div>
         </div>
 
         <div class="control-section">
-            <div class="section-title">Bottom Text Controls</div>
+            <div class="section-title">Undertekst Kontroller</div>
             
             <div class="control-group">
                 <div class="control-label">
-                    <span>Font Size</span>
+                    <span>Skriftstørrelse</span>
                     <span class="control-value" id="bottomSizeValue">122px</span>
                 </div>
                 <input type="range" id="bottomSize" min="30" max="140" value="122" step="2">
@@ -396,15 +396,15 @@
 
             <div class="control-group">
                 <div class="control-label">
-                    <span>Font Weight</span>
+                    <span>Skriftvekt</span>
                     <span class="control-value" id="bottomWeightValue">400</span>
                 </div>
-                <input type="range" id="bottomWeight" min="400" max="900" value="400" step="122">
+                <input type="range" id="bottomWeight" min="400" max="900" value="400" step="400">
             </div>
 
             <div class="control-group">
                 <div class="control-label">
-                    <span>Letter Spacing</span>
+                    <span>Bokstavmellomrom</span>
                     <span class="control-value" id="bottomSpacingValue">0px</span>
                 </div>
                 <input type="range" id="bottomSpacing" min="-5" max="20" value="0" step="1">
@@ -412,15 +412,15 @@
 
             <div class="control-group">
                 <div class="control-label">
-                    <span>Gap Between Texts</span>
+                    <span>Avstand Mellom Tekster</span>
                     <span class="control-value" id="gapValue">0px</span>
                 </div>
-                <input type="range" id="gap" min="-30" max="80" value="0" step="2">
+                <input type="range" id="gap" min="-50" max="80" value="0" step="2">
             </div>
 
             <div class="control-group">
                 <div class="control-label">
-                    <span>Font Family</span>
+                    <span>Skriftfamilie</span>
                 </div>
                 <div class="font-selector" id="bottomFontSelector"></div>
             </div>
@@ -474,7 +474,14 @@
             logoBottom.style.fontWeight = state.bottomWeight;
             logoBottom.style.letterSpacing = `${state.bottomSpacing}px`;
 
-            logoContainer.style.gap = `${state.gap}px`;
+            // Use margin-top for negative gaps instead of CSS gap
+            if (state.gap >= 0) {
+                logoContainer.style.gap = `${state.gap}px`;
+                logoBottom.style.marginTop = '0px';
+            } else {
+                logoContainer.style.gap = '0px';
+                logoBottom.style.marginTop = `${state.gap}px`;
+            }
 
             const parts = state.bottomText.split(' & ');
             logoBottom.innerHTML = `${parts[0]} <span class="ampersand">&</span> ${parts[1]}`;
