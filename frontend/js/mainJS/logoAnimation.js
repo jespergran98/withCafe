@@ -5,7 +5,7 @@ const createLogoAnimation = (logoSelector) => {
     
     const logoTop = logo.querySelector('.logo-top');
     const logoBottom = logo.querySelector('.logo-bottom');
-    
+     
     const names = [
         'brød <span class="accent">&</span> kaffe',
         'bok <span class="accent">&</span> kaffe',
