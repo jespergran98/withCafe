@@ -62,6 +62,14 @@ ting å legge til:
 3. legg til Marquee "Ferske bakevarer hver dag" - "Kvalitetskaffe fra bærekraftige bønner" - "Koselig møteplass i Tønsberg"
 4. legg til åpningstider (finn åpningstidene)
 
+ting å fikse:
+1. 2025 copyright bottom of html
+2. bilder for brød + bok på mobil
+3. Header too big on phone with Kontakt appearing on the next line
+4. scrolling too far down when finn lokasjon is clicked
+5. Header elements take up too much horizontal space before they snap into the phone design. The Meny, Catering, Lokasjoner, Om oss and kontakt should shrink in size before the snap so they fit properly within the header. (The issue appears horizontal phone view and iPads.) On phone when the logo pops to above the Meny, Catering, Lokasjoner, Om oss and kontakt, the "kontakt" appears on the next line. Please overhaul and improve the header design to look as intended across different viewports.
+
+
 Brød & Kaffe:
 
 
@@ -154,13 +162,19 @@ WITHCAFE/
 │   │       ├── coffee-icon.png
 │   │       ├── coffee.avif
 │   │       ├── cozy.avif
+│   │       ├── slottsfjell-icon-high-res.png
+│   │       ├── slottsfjell-icon.png
 │   │       ├── toys.avif
 │   │       └── wheat-icon.png
 │   ├── js/
+│   │   ├── indexJS/
+│   │   │   ├── features.js
+│   │   │   └── locations.js
 │   │   └── mainJS/
 │   │       ├── breadAndWheat.js
 │   │       ├── copyrightYear.js
 │   │       ├── logoAnimation.js
+│   │       ├── marquee.js
 │   │       └── scrollHeader.js
 │   └── styles/
 │       ├── indexCSS/
@@ -173,5 +187,7 @@ WITHCAFE/
 │           ├── footer.css
 │           ├── header.css
 │           ├── importMain.css
-│           └── main.css
+│           ├── main.css
+│           └── marquee.css
+├── fontExplorer.html
 └── README.md
