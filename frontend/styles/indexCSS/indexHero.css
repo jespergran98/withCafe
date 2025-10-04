@@ -35,7 +35,6 @@
 }
 
 .hero-content {
-    max-width: 920px;
     margin: 0 auto;
     padding: 8rem 2.5rem;
     text-align: center;
@@ -63,10 +62,11 @@
     font-size: 5rem;
     margin-bottom: 2rem;
     color: var(--white);
-    font-weight: 700;
-    letter-spacing: -3px;
+    font-weight: 200;
+    letter-spacing: 0.1rem;
     line-height: 1.05;
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Black Han Sans', sans-serif;
+    white-space: nowrap;
 }
 
 .hero p {
