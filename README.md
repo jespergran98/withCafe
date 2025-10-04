@@ -49,6 +49,12 @@ Felix Roasting Co. - https://lahuella.coffee (unique circle design)
 Campos Coffee - https://www.camposcoffee.com
 NOC Coffee - https://noc.coffee/en
 
+Andre kaféer i Tønsberg:
+Bare Barista Kaffebar - https://www.barebarista.no/
+Cafe-M - https://cafe-m.no/
+Kolonihagen - https://www.kolonihagen.no/
+Skaperverket Kafe - https://frelsesarmeen.no/rusomsorg/skaperverket-og-sapa
+
 
 Vi leverer ferske bakevarer til våre kafeer;
 WITH brød & kaffe i Storgaten 29,
