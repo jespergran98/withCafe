@@ -72,12 +72,18 @@ header .container {
     line-height: 1;
     cursor: pointer;
     position: relative;
-    min-height: 4rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-top: 0.75rem;
+    min-height: 4rem;
+    justify-content: center;
+    opacity: 0.95;
+    transition: var(--transition);
+    margin-top: 0.2rem;
+}
+
+.logo:hover {
+    opacity: 1;
 }
 
 .logo-top {
@@ -88,12 +94,11 @@ header .container {
     transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: 'Bowlby One SC', sans-serif;
     will-change: transform;
-    position: relative;
-    z-index: 1;
+    color: var(--espresso);
 }
 
 .logo-bottom {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 400;
     opacity: 0;
     color: var(--espresso);
@@ -102,7 +107,7 @@ header .container {
     font-family: 'Skranji', cursive;
     will-change: opacity, transform;
     position: absolute;
-    bottom: 0;
+    bottom: -0.15rem;
     left: 50%;
     transform: translateX(-50%) translateY(6px);
     white-space: nowrap;
@@ -110,7 +115,6 @@ header .container {
 
 .logo .accent {
     color: var(--honey);
-    font-weight: 700;
 }
 
 /* Navigation Styles */
@@ -192,12 +196,12 @@ nav a:hover::after {
     }
     
     .logo-top {
-        font-size: 2.25rem;
-        letter-spacing: 0.08rem;
+        font-size: 2rem;
+        letter-spacing: 4px;
     }
 
     .logo-bottom {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
 
     nav ul {
