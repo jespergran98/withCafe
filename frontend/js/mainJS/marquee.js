@@ -23,14 +23,14 @@
         // Optional: Adjust speed based on screen size
         const adjustSpeed = () => {
             const screenWidth = window.innerWidth;
-            let duration = 45; // default
+            let duration = 25; // default
             
             if (screenWidth <= 480) {
-                duration = 30;
+                duration = 19;
             } else if (screenWidth <= 768) {
-                duration = 35;
+                duration = 21;
             } else if (screenWidth <= 1024) {
-                duration = 40;
+                duration = 23;
             }
             
             marqueeTrack.style.animationDuration = `${duration}s`;
