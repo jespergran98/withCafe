@@ -38,7 +38,7 @@ header::before {
 }
 
 header.scrolled {
-    padding: 0.75rem 0;
+    padding: 0.6rem 0;
     background: linear-gradient(
         135deg,
         rgba(250, 248, 245, 0.65),
@@ -184,7 +184,7 @@ nav a:hover::after {
     }
     
     header.scrolled {
-        padding: 1rem 0;
+        padding: 0.6rem 0;
     }
     
     .logo {
