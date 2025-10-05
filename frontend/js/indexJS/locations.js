@@ -13,6 +13,7 @@
 
     let hasAnimated = false;
 
+
     /**
      * Initialize location animations
      */
@@ -20,8 +21,11 @@
         const section = document.querySelector('.locations');
         if (!section) return;
 
-        // Wait for images to load before initializing animations
-        preloadImages().then(() => {
+        // Wait for images to load before initializing animations, with timeout fallback
+        const imageLoadPromise = preloadImages();
+        const timeoutPromise = new Promise(resolve => setTimeout(resolve, 2000)); // 2 second max wait
+
+        Promise.race([imageLoadPromise, timeoutPromise]).then(() => {
             observeCards();
             addParallaxDecoration();
         });
