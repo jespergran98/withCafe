@@ -13,7 +13,6 @@
 
     let hasAnimated = false;
 
-
     /**
      * Initialize location animations
      */
@@ -21,35 +20,8 @@
         const section = document.querySelector('.locations');
         if (!section) return;
 
-        // Wait for images to load before initializing animations, with timeout fallback
-        const imageLoadPromise = preloadImages();
-        const timeoutPromise = new Promise(resolve => setTimeout(resolve, 2000)); // 2 second max wait
-
-        Promise.race([imageLoadPromise, timeoutPromise]).then(() => {
-            observeCards();
-            addParallaxDecoration();
-        });
-    }
-
-    /**
-     * Preload all location images
-     */
-    function preloadImages() {
-        const images = document.querySelectorAll('.location-image img');
-        if (!images.length) return Promise.resolve();
-
-        const imagePromises = Array.from(images).map(img => {
-            return new Promise((resolve) => {
-                if (img.complete) {
-                    resolve();
-                } else {
-                    img.addEventListener('load', resolve);
-                    img.addEventListener('error', resolve); // Resolve even on error to not block animation
-                }
-            });
-        });
-
-        return Promise.all(imagePromises);
+        observeCards();
+        addParallaxDecoration();
     }
 
     /**
