@@ -5,7 +5,7 @@ header {
         rgba(250, 248, 245, 1),
         rgba(255, 255, 255, 1)
     );
-    padding: 1.5rem 0;
+    padding: 1.75rem 0;
     border-bottom: 1px solid rgba(26, 20, 16, 0.06);
     position: fixed;
     top: 0;
@@ -38,7 +38,7 @@ header::before {
 }
 
 header.scrolled {
-    padding: 1rem 0;
+    padding: 1.4rem 0;
     background: linear-gradient(
         135deg,
         rgba(250, 248, 245, 0.75),
