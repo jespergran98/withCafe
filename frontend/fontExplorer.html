@@ -7,30 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Changa+One&family=Lilita+One&family=Paytone+One&family=Rammetto+One&family=Black+Han+Sans&family=Bowlby+One+SC&family=McLaren&family=Sigmar+One&family=Chelsea+Market&family=Freeman&family=Protest+Strike&family=Braah+One&family=Gasoek+One&family=Bungee&family=Rubik+Mono+One&family=Titan+One&family=Secular+One&family=Righteous&family=Caveat&family=Lobster+Two&family=Kalam&family=Francois+One&family=Berkshire+Swash&family=Londrina+Solid&family=Caveat+Brush&family=Grandstander&family=Boogaloo&family=Sansita&family=Belanosima&family=Cabin+Sketch&family=Yuji+Mai&family=Caladea&family=Skranji&family=Mochiy+Pop+One&family=IM+Fell+DW+Pica&family=Wendy+One&family=Darumadrop+One&family=Gorditas&family=Galindo&family=Indie+Flower&family=Patrick+Hand&family=Comfortaa&family=Courgette&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/mainCSS/main.css">
     <style>
-        :root {
-            --espresso: #1A1410;
-            --espresso-light: #3D2F24;
-            --espresso-medium: #2d2218;
-            --honey: #D4A574;
-            --honey-dark: #B8926A;
-            --honey-light: #E8C9A0;
-            --honey-lighter: #F5E5D3;
-            --cream: #FAF8F5;
-            --cream-dark: #F0EDE8;
-            --white: #FFFFFF;
-            --shadow-sm: 0 2px 8px rgba(26, 20, 16, 0.06);
-            --shadow-md: 0 8px 24px rgba(26, 20, 16, 0.1);
-            --shadow-lg: 0 16px 48px rgba(26, 20, 16, 0.15);
-            --shadow-xl: 0 24px 64px rgba(26, 20, 16, 0.2);
-            --radius-sm: 10px;
-            --radius-md: 14px;
-            --radius-lg: 18px;
-            --radius-xl: 24px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -69,7 +47,7 @@
             box-shadow: var(--shadow-xl), inset 0 1px 0 rgba(255, 255, 255, 0.05);
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(212, 165, 116, 0.1);
+            border: 1px solid var(--butterscotch);
         }
 
         .logo-preview::before {
@@ -79,7 +57,7 @@
             left: -50%;
             right: -50%;
             bottom: -50%;
-            background: radial-gradient(circle at 50% 50%, rgba(212, 165, 116, 0.08) 0%, transparent 60%);
+            background: radial-gradient(circle at 50% 50%, var(--mocha-mist) 0%, transparent 60%);
             pointer-events: none;
             animation: glow 8s ease-in-out infinite;
         }
@@ -101,8 +79,8 @@
                     45deg,
                     transparent,
                     transparent 100px,
-                    rgba(212, 165, 116, 0.02) 100px,
-                    rgba(212, 165, 116, 0.02) 200px
+                    var(--cappuccino-cream) 100px,
+                    var(--cappuccino-cream) 200px
                 );
             pointer-events: none;
         }
@@ -132,7 +110,7 @@
             color: var(--cream);
             line-height: 0.9;
             margin: 0;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(212, 165, 116, 0.2);
+            text-shadow: 0 4px 20px var(--roasted-shadow), 0 2px 8px var(--butterscotch);
             transition: var(--transition);
         }
 
@@ -140,13 +118,13 @@
             color: var(--cream);
             line-height: 0.9;
             margin: 0;
-            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 3px 12px var(--espresso-veil);
             transition: var(--transition);
         }
 
         .logo-bottom .ampersand {
             color: var(--honey);
-            filter: drop-shadow(0 3px 10px rgba(212, 165, 116, 0.5));
+            filter: drop-shadow(0 3px 10px var(--amber-shine));
             transition: var(--transition);
         }
 
@@ -156,7 +134,7 @@
             border-radius: var(--radius-xl);
             padding: 0;
             overflow: hidden;
-            box-shadow: var(--shadow-xl), 0 0 0 1px rgba(212, 165, 116, 0.1);
+            box-shadow: var(--shadow-xl), 0 0 0 1px var(--butterscotch);
             display: flex;
             flex-direction: column;
             max-height: 100%;
@@ -166,20 +144,20 @@
             background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
             padding: 28px 36px;
             border-bottom: 3px solid var(--honey-dark);
-            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.2);
+            box-shadow: 0 4px 12px var(--butterscotch);
         }
 
         .controls-title {
             font-size: 24px;
             font-weight: bold;
             color: var(--white);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 2px 4px var(--espresso-veil);
             margin: 0;
         }
 
         .controls-subtitle {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.85);
+            color: var(--cotton);
             margin-top: 4px;
         }
 
@@ -277,11 +255,11 @@
             appearance: none;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: inset 0 2px 4px rgba(26, 20, 16, 0.1);
+            box-shadow: inset 0 2px 4px var(--whisper);
         }
 
         input[type="range"]:hover {
-            box-shadow: inset 0 2px 4px rgba(26, 20, 16, 0.15), 0 0 0 4px rgba(212, 165, 116, 0.1);
+            box-shadow: inset 0 2px 4px var(--soft-shadow), 0 0 0 4px var(--butterscotch);
         }
 
         input[type="range"]::-webkit-slider-thumb {
@@ -293,13 +271,13 @@
             background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
             cursor: pointer;
             transition: var(--transition-bounce);
-            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 12px var(--amber-shine), inset 0 1px 2px var(--pearl);
             border: 3px solid var(--white);
         }
 
         input[type="range"]::-webkit-slider-thumb:hover {
             transform: scale(1.2);
-            box-shadow: 0 6px 20px rgba(212, 165, 116, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 6px 20px var(--amber-glow), inset 0 1px 2px var(--pearl);
         }
 
         input[type="range"]::-webkit-slider-thumb:active {
@@ -313,7 +291,7 @@
             background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
             cursor: pointer;
             border: 3px solid var(--white);
-            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.5);
+            box-shadow: 0 4px 12px var(--amber-shine);
             transition: var(--transition-bounce);
         }
 
@@ -328,9 +306,9 @@
             max-height: 220px;
             overflow-y: auto;
             padding: 8px;
-            background: rgba(212, 165, 116, 0.08);
+            background: var(--mocha-mist);
             border-radius: var(--radius-md);
-            border: 2px solid rgba(212, 165, 116, 0.15);
+            border: 2px solid var(--cinnamon-dust);
         }
 
         .font-option {
@@ -356,7 +334,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, var(--butterscotch), transparent);
             transition: left 0.5s;
         }
 
@@ -375,7 +353,7 @@
             background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
             border-color: var(--honey-dark);
             color: var(--white);
-            box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-md), inset 0 1px 0 var(--pearl);
             transform: scale(1.02);
         }
 
@@ -409,7 +387,7 @@
             width: 0;
             height: 0;
             border-radius: 50%;
-            background: rgba(212, 165, 116, 0.2);
+            background: var(--butterscotch);
             transform: translate(-50%, -50%);
             transition: width 0.5s, height 0.5s;
         }
@@ -430,7 +408,7 @@
             background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
             border-color: var(--honey-dark);
             color: var(--white);
-            box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-md), inset 0 1px 0 var(--pearl);
         }
 
         .font-selector::-webkit-scrollbar {
@@ -438,7 +416,7 @@
         }
 
         .font-selector::-webkit-scrollbar-track {
-            background: rgba(212, 165, 116, 0.1);
+            background: var(--latte-layer);
             border-radius: 4px;
         }
 
