@@ -1,7 +1,7 @@
 /* Marquee Section */
 .marquee-section {
     background: linear-gradient(135deg, var(--honey-dark) 0%, var(--honey) 50%, var(--honey-dark) 100%);
-    padding: 1.75rem 0;
+    padding: 1.5rem 0;
     overflow: hidden;
     position: relative;
 }

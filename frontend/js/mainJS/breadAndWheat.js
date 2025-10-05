@@ -1,4 +1,4 @@
-// Optimized Bread and Wheat Background Pattern
+// Enhanced Static Background Pattern - No Animation, Zero Lag
 class BackgroundPattern {
     constructor() {
         this.canvas = null;
@@ -14,10 +14,9 @@ class BackgroundPattern {
         this.createCanvas();
         this.loadImages().then(() => {
             this.generatePattern();
-            this.draw();
+            this.setupObserver();
+            this.setupEventListeners();
         });
-
-        window.addEventListener('resize', this.debounce(() => this.handleResize(), 250));
     }
 
     createCanvas() {
@@ -32,8 +31,9 @@ class BackgroundPattern {
             width: '100%',
             height: '100%',
             pointerEvents: 'none',
-            opacity: '0.1',
-            zIndex: '0'
+            opacity: '0',
+            zIndex: '0',
+            transition: 'opacity 0.8s ease-out'
         });
 
         featuresSection.style.position = 'relative';
@@ -45,7 +45,7 @@ class BackgroundPattern {
 
     updateCanvasSize() {
         const rect = this.canvas.parentElement.getBoundingClientRect();
-        const dpr = Math.min(window.devicePixelRatio, 2); // Cap at 2x for performance
+        const dpr = Math.min(window.devicePixelRatio, 2);
         
         this.canvas.width = rect.width * dpr;
         this.canvas.height = rect.height * dpr;
@@ -77,26 +77,58 @@ class BackgroundPattern {
     }
 
     generatePattern() {
-        const iconSize = 80;
-        const spacing = 140;
-        const rows = Math.ceil(this.canvasHeight / spacing) + 2;
-        const cols = Math.ceil(this.canvasWidth / spacing) + 2;
+        const iconSize = 85;
+        const spacing = 150;
+        const rows = Math.ceil(this.canvasHeight / spacing) + 3;
+        const cols = Math.ceil(this.canvasWidth / spacing) + 3;
 
         this.pattern = [];
+        
         for (let row = 0; row < rows; row++) {
             for (let col = 0; col < cols; col++) {
                 const isCoffee = (row + col) % 2 === 0;
+                const randomOffset = {
+                    x: (Math.random() - 0.5) * 30,
+                    y: (Math.random() - 0.5) * 30
+                };
                 
                 this.pattern.push({
-                    x: col * spacing + (Math.random() - 0.5) * 20,
-                    y: row * spacing + (Math.random() - 0.5) * 20,
+                    x: col * spacing + randomOffset.x,
+                    y: row * spacing + randomOffset.y,
                     icon: isCoffee ? this.icons.coffee : this.icons.wheat,
                     rotation: Math.random() * Math.PI * 2,
-                    scale: 0.8 + Math.random() * 0.4,
-                    size: iconSize
+                    scale: 0.75 + Math.random() * 0.5,
+                    size: iconSize,
+                    opacity: 0.2 + Math.random() * 0.2
                 });
             }
         }
+    }
+
+    setupObserver() {
+        const options = {
+            threshold: 0.1,
+            rootMargin: '100px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && this.canvas.style.opacity === '0') {
+                    this.canvas.style.opacity = '0.12';
+                    this.draw();
+                }
+            });
+        }, options);
+
+        const featuresSection = document.querySelector('.features');
+        if (featuresSection) {
+            observer.observe(featuresSection);
+        }
+    }
+
+    setupEventListeners() {
+        // Resize handling only
+        window.addEventListener('resize', this.debounce(() => this.handleResize(), 250));
     }
 
     draw() {
@@ -104,16 +136,24 @@ class BackgroundPattern {
 
         this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
 
-        // Draw static pattern once
+        // Draw static pattern once - no animations
         this.pattern.forEach(item => {
             this.ctx.save();
             this.ctx.translate(item.x, item.y);
             this.ctx.rotate(item.rotation);
             this.ctx.scale(item.scale, item.scale);
-            this.ctx.globalAlpha = 0.6;
-            this.ctx.filter = 'sepia(100%) saturate(50%) hue-rotate(20deg) brightness(1.3)';
+            this.ctx.globalAlpha = item.opacity;
             
-            this.ctx.drawImage(item.icon, -item.size / 2, -item.size / 2, item.size, item.size);
+            // Warm, sophisticated filter
+            this.ctx.filter = 'sepia(35%) saturate(70%) brightness(1.15) contrast(1.05)';
+            
+            this.ctx.drawImage(
+                item.icon,
+                -item.size / 2,
+                -item.size / 2,
+                item.size,
+                item.size
+            );
             
             this.ctx.restore();
         });
@@ -122,6 +162,7 @@ class BackgroundPattern {
     handleResize() {
         this.updateCanvasSize();
         this.generatePattern();
+        this.draw();
     }
 
     debounce(func, wait) {
@@ -142,9 +183,19 @@ class BackgroundPattern {
     }
 }
 
-// Initialize
+// Initialize with error handling
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => new BackgroundPattern());
+    document.addEventListener('DOMContentLoaded', () => {
+        try {
+            new BackgroundPattern();
+        } catch (error) {
+            console.warn('Background pattern initialization failed:', error);
+        }
+    });
 } else {
-    new BackgroundPattern();
+    try {
+        new BackgroundPattern();
+    } catch (error) {
+        console.warn('Background pattern initialization failed:', error);
+    }
 }
