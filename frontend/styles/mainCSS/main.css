@@ -1,5 +1,5 @@
 :root {
-    /* Original and main Warm Palette - Coffee & Honey Tones */
+    /* Original and main Warm Palette - Coffee, Honey & Cream Tones */
     --espresso: #1A1410;
     --espresso-light: #4A3428;
     --espresso-medium: #2d2218;
@@ -16,9 +16,9 @@
     --french-roast: #0d0a08;
     --burnt-caramel: #141008;
     
-    /* Additional Warm Tones mainly used in the header glass effect */
+    /* Additional Warm Tones mainly used for glass effect */
     --warm-linen: #FAF8F5;
-    --morning-mist: rgba(250, 248, 245, 0.75);
+    --morning-mist: rgba(250, 248, 245, 0.35);
     --porcelain: #FFFFFF;
     --cotton: rgba(255, 255, 255, 0.7);
     --silk: rgba(255, 255, 255, 0.6);
