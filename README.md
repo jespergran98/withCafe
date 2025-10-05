@@ -69,11 +69,7 @@ ting å legge til:
 4. legg til åpningstider (finn åpningstidene)
 
 ting å fikse:
-1. 2025 copyright bottom of html
-2. bilder for brød + bok på mobil
-3. Header too big on phone with Kontakt appearing on the next line
-4. scrolling too far down when finn lokasjon is clicked
-5. Header elements take up too much horizontal space before they snap into the phone design. The Meny, Catering, Lokasjoner, Om oss and kontakt should shrink in size before the snap so they fit properly within the header. (The issue appears horizontal phone view and iPads.) On phone when the logo pops to above the Meny, Catering, Lokasjoner, Om oss and kontakt, the "kontakt" appears on the next line. Please overhaul and improve the header design to look as intended across different viewports.
+1. scrolling too far down when finn lokasjon is clicked
 
 
 Brød & Kaffe:

@@ -69,7 +69,13 @@
     --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-* {
+/* ============================================
+   BASE RESET & DEFAULTS
+   ============================================ */
+
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -78,6 +84,8 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
 }
 
 body {
@@ -88,24 +96,46 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    min-height: 100vh;
 }
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Skranji', cursive;
     font-weight: 200;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
 }
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
 
 .container {
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 2.5rem;
+    width: 100%;
 }
+
+/* ============================================
+   MEDIA ELEMENTS
+   ============================================ */
 
 img {
     max-width: 100%;
     height: auto;
     display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
+
+/* ============================================
+   INTERACTIVE ELEMENTS
+   ============================================ */
 
 a {
     text-decoration: none;
@@ -113,18 +143,39 @@ a {
     transition: var(--transition);
 }
 
+a:focus-visible {
+    outline: 2px solid var(--honey);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
 button {
     font-family: inherit;
     cursor: pointer;
     border: none;
     background: none;
+    transition: var(--transition);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--honey);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 ul {
     list-style: none;
 }
 
-/* Section Headers */
+/* ============================================
+   SECTION HEADERS
+   ============================================ */
+
 .section-header {
     text-align: center;
     margin-bottom: 5rem;
@@ -142,6 +193,12 @@ ul {
     background: linear-gradient(135deg, var(--mocha-mist), var(--cappuccino-cream));
     border-radius: 50px;
     border: 1px solid var(--butterscotch);
+    transition: var(--transition);
+}
+
+.section-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
 }
 
 .section-tag.light {
@@ -151,8 +208,12 @@ ul {
     box-shadow: var(--shadow-md);
 }
 
+.section-tag.light:hover {
+    box-shadow: var(--shadow-lg);
+}
+
 .section-title {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 200;
     margin-bottom: 1.5rem;
     letter-spacing: -2px;
@@ -161,7 +222,7 @@ ul {
 }
 
 .section-description {
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 2vw, 1.125rem);
     color: var(--espresso-light);
     max-width: 640px;
     margin: 0 auto;
@@ -171,6 +232,10 @@ ul {
 .section-description.light {
     color: var(--cotton);
 }
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
 
 @keyframes fadeInUp {
     from {
@@ -192,18 +257,47 @@ ul {
     }
 }
 
-/* Responsive Typography */
+/* ============================================
+   ACCESSIBILITY & MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
 @media (max-width: 768px) {
     .section-title {
-        font-size: 2.5rem;
         letter-spacing: -1.5px;
-    }
-    
-    .section-description {
-        font-size: 1rem;
     }
     
     .container {
         padding: 0 1.5rem;
+    }
+    
+    .section-header {
+        margin-bottom: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .section-tag {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+        letter-spacing: 1.5px;
     }
 }
