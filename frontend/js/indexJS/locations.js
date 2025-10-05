@@ -20,8 +20,32 @@
         const section = document.querySelector('.locations');
         if (!section) return;
 
-        observeCards();
-        addParallaxDecoration();
+        // Wait for images to load before initializing animations
+        preloadImages().then(() => {
+            observeCards();
+            addParallaxDecoration();
+        });
+    }
+
+    /**
+     * Preload all location images
+     */
+    function preloadImages() {
+        const images = document.querySelectorAll('.location-image img');
+        if (!images.length) return Promise.resolve();
+
+        const imagePromises = Array.from(images).map(img => {
+            return new Promise((resolve) => {
+                if (img.complete) {
+                    resolve();
+                } else {
+                    img.addEventListener('load', resolve);
+                    img.addEventListener('error', resolve); // Resolve even on error to not block animation
+                }
+            });
+        });
+
+        return Promise.all(imagePromises);
     }
 
     /**
