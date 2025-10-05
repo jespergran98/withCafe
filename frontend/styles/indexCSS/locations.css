@@ -1,6 +1,6 @@
-/* Locations Section - Cozy Café Design */
+/* Locations Section - Responsive Cozy Café Design */
 .locations {
-    padding: 5rem 0;
+    padding: 4rem 0;
     background: linear-gradient(135deg, #0d0a08 0%, #141008 50%, #0d0a08 100%);
     position: relative;
     overflow: hidden;
@@ -77,7 +77,7 @@
 .locations-grid {
     display: grid;
     grid-template-columns: 1.3fr 1fr 1fr;
-    gap: 1.75rem;
+    gap: 1.5rem;
     max-width: 1320px;
     margin: 0 auto;
 }
@@ -188,13 +188,13 @@
 
 .location-image {
     width: 100%;
-    height: 240px;
+    height: 220px;
     overflow: hidden;
     position: relative;
 }
 
 .location-card-large .location-image {
-    height: 300px;
+    height: 280px;
 }
 
 /* Warm vignette overlay */
@@ -231,8 +231,8 @@
 /* Badge - Cozy Pill Style */
 .location-overlay {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 1.25rem;
+    right: 1.25rem;
     z-index: 2;
 }
 
@@ -241,9 +241,9 @@
         rgba(212, 165, 116, 0.95) 0%, 
         rgba(184, 146, 106, 0.9) 100%);
     color: var(--white);
-    padding: 0.55rem 1.35rem;
+    padding: 0.5rem 1.2rem;
     border-radius: 50px;
-    font-size: 0.65rem;
+    font-size: 0.625rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -268,10 +268,10 @@
 
 /* Content Section */
 .location-content {
-    padding: 1.85rem 1.85rem 2.25rem;
+    padding: 1.5rem 1.5rem 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.65rem;
     position: relative;
     flex-grow: 1;
     background: linear-gradient(to bottom, 
@@ -280,19 +280,20 @@
 }
 
 .location-card-large .location-content {
-    padding: 2.25rem 2.25rem 2.75rem;
+    padding: 1.75rem 1.75rem 2rem;
+    gap: 0.75rem;
 }
 
 .location-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     color: var(--white);
     letter-spacing: -0.3px;
     transition: var(--transition);
     line-height: 1.3;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
-    margin-bottom: 0.35rem;
+    gap: 0.4rem;
+    margin-bottom: 0.25rem;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -308,7 +309,7 @@
 }
 
 .location-card-large h3 {
-    font-size: 1.85rem;
+    font-size: 1.65rem;
 }
 
 .location-card:hover h3 {
@@ -319,17 +320,17 @@
 .location-address {
     display: flex;
     align-items: center;
-    gap: 0.7rem;
+    gap: 0.6rem;
     color: var(--honey-light);
     font-weight: 600;
-    font-size: 0.9rem;
-    margin-top: 0.15rem;
-    padding: 0.4rem 0;
+    font-size: 0.85rem;
+    margin-top: 0.1rem;
+    padding: 0.3rem 0;
 }
 
 .location-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     flex-shrink: 0;
     stroke: var(--honey-light);
     stroke-width: 2.5;
@@ -338,9 +339,9 @@
 
 .location-description {
     color: rgba(255, 255, 255, 0.78);
-    line-height: 1.68;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
+    line-height: 1.6;
+    font-size: 0.875rem;
+    margin-top: 0.35rem;
     flex-grow: 1;
     transition: var(--transition);
 }
@@ -350,20 +351,20 @@
 }
 
 .location-card-large .location-description {
-    font-size: 0.95rem;
-    line-height: 1.72;
+    font-size: 0.9rem;
+    line-height: 1.65;
 }
 
 /* CTA Button - Warm & Inviting */
 .location-cta {
     display: inline-flex;
     align-items: center;
-    gap: 0.7rem;
+    gap: 0.6rem;
     color: var(--white);
     font-weight: 600;
-    font-size: 0.85rem;
-    margin-top: 0.85rem;
-    padding: 0.8rem 1.6rem;
+    font-size: 0.8rem;
+    margin-top: 0.65rem;
+    padding: 0.7rem 1.4rem;
     background: linear-gradient(135deg, 
         rgba(212, 165, 116, 0.18) 0%, 
         rgba(212, 165, 116, 0.12) 100%);
@@ -389,8 +390,8 @@
 }
 
 .location-cta svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     transition: var(--transition-bounce);
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     position: relative;
@@ -421,11 +422,15 @@
     transform: translateX(5px) scale(0.98);
 }
 
-/* Responsive Design */
+/* Responsive Design - Tablet */
 @media (max-width: 1200px) {
+    .locations {
+        padding: 3.5rem 0;
+    }
+
     .locations-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
     
     .location-card-large {
@@ -433,19 +438,36 @@
     }
     
     .locations-decoration {
-        width: 380px;
-        height: 380px;
+        width: 350px;
+        height: 350px;
+    }
+
+    .location-image {
+        height: 200px;
+    }
+
+    .location-card-large .location-image {
+        height: 240px;
+    }
+
+    .location-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .location-card-large h3 {
+        font-size: 1.5rem;
     }
 }
 
+/* Responsive Design - Mobile Large */
 @media (max-width: 768px) {
     .locations {
-        padding: 4rem 0;
+        padding: 3rem 0;
     }
     
     .locations-grid {
         grid-template-columns: 1fr;
-        gap: 1.35rem;
+        gap: 1rem;
     }
     
     .location-card-large {
@@ -453,62 +475,208 @@
     }
     
     .location-image {
-        height: 210px;
+        height: 180px;
     }
     
     .location-card-large .location-image {
-        height: 260px;
+        height: 200px;
     }
 
     .location-content {
-        padding: 1.65rem 1.65rem 1.95rem;
+        padding: 1.25rem 1.25rem 1.5rem;
+        gap: 0.5rem;
     }
 
     .location-card-large .location-content {
-        padding: 1.95rem 1.95rem 2.35rem;
+        padding: 1.4rem 1.4rem 1.65rem;
+        gap: 0.6rem;
     }
 
-    .location-card h3 {
-        font-size: 1.35rem;
-    }
-
-    .location-card-large h3 {
-        font-size: 1.65rem;
-    }
-
-    .location-cta {
-        padding: 0.7rem 1.4rem;
-        font-size: 0.8rem;
-    }
-
-    .locations-decoration {
-        width: 300px;
-        height: 300px;
-        top: 15%;
-        right: -60px;
-    }
-    
-    .location-badge {
-        padding: 0.5rem 1.2rem;
-        font-size: 0.6rem;
-    }
-    
-    .location-overlay {
-        top: 1.35rem;
-        right: 1.35rem;
-    }
-}
-
-@media (max-width: 480px) {
     .location-card h3 {
         font-size: 1.2rem;
     }
-    
+
     .location-card-large h3 {
-        font-size: 1.45rem;
+        font-size: 1.35rem;
+    }
+
+    .location-address {
+        font-size: 0.8rem;
+        gap: 0.5rem;
+    }
+
+    .location-icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .location-description {
+        font-size: 0.8125rem;
+        line-height: 1.55;
+        margin-top: 0.25rem;
+    }
+
+    .location-card-large .location-description {
+        font-size: 0.85rem;
+    }
+
+    .location-cta {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .location-cta svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .locations-decoration {
+        width: 280px;
+        height: 280px;
+        top: 10%;
+        right: -50px;
     }
     
+    .location-badge {
+        padding: 0.45rem 1rem;
+        font-size: 0.575rem;
+        letter-spacing: 1.2px;
+    }
+    
+    .location-overlay {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    /* Disable hover effects on mobile */
+    .location-card:hover {
+        transform: none;
+    }
+
+    .location-card:hover .location-badge {
+        transform: none;
+    }
+}
+
+/* Responsive Design - Mobile Small */
+@media (max-width: 480px) {
+    .locations {
+        padding: 2.5rem 0;
+    }
+
+    .locations-grid {
+        gap: 0.875rem;
+    }
+
+    .location-image {
+        height: 160px;
+    }
+
+    .location-card-large .location-image {
+        height: 180px;
+    }
+
+    .location-content {
+        padding: 1.1rem 1.1rem 1.35rem;
+        gap: 0.45rem;
+    }
+
+    .location-card-large .location-content {
+        padding: 1.25rem 1.25rem 1.5rem;
+        gap: 0.5rem;
+    }
+
+    .location-card h3 {
+        font-size: 1.1rem;
+        gap: 0.35rem;
+    }
+    
+    .location-card-large h3 {
+        font-size: 1.25rem;
+    }
+
+    .location-address {
+        font-size: 0.75rem;
+    }
+
+    .location-icon {
+        width: 14px;
+        height: 14px;
+    }
+
     .location-description {
-        font-size: 0.875rem;
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .location-card-large .location-description {
+        font-size: 0.8125rem;
+    }
+
+    .location-cta {
+        padding: 0.6rem 1.1rem;
+        font-size: 0.7rem;
+        margin-top: 0.4rem;
+    }
+
+    .location-cta svg {
+        width: 13px;
+        height: 13px;
+    }
+
+    .location-badge {
+        padding: 0.4rem 0.9rem;
+        font-size: 0.55rem;
+        letter-spacing: 1px;
+    }
+
+    .location-overlay {
+        top: 0.875rem;
+        right: 0.875rem;
+    }
+
+    .locations-decoration {
+        width: 220px;
+        height: 220px;
+        top: 5%;
+        right: -70px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+    .location-image {
+        height: 140px;
+    }
+
+    .location-card-large .location-image {
+        height: 160px;
+    }
+
+    .location-content {
+        padding: 1rem 1rem 1.2rem;
+    }
+
+    .location-card-large .location-content {
+        padding: 1.15rem 1.15rem 1.35rem;
+    }
+
+    .location-card h3 {
+        font-size: 1.05rem;
+    }
+
+    .location-card-large h3 {
+        font-size: 1.2rem;
+    }
+
+    .location-description {
+        font-size: 0.775rem;
+    }
+
+    .location-cta {
+        padding: 0.55rem 1rem;
+        font-size: 0.675rem;
     }
 }

@@ -1,4 +1,4 @@
-/* Marquee Section */
+/* Streamlined Marquee Section */
 .marquee-section {
     background: linear-gradient(135deg, var(--honey-dark) 0%, var(--honey) 50%, var(--honey-dark) 100%);
     padding: 1.5rem 0;
@@ -38,7 +38,6 @@
     display: flex;
     align-items: center;
     gap: 4rem;
-    animation: marqueeScroll 45s linear infinite;
     will-change: transform;
 }
 
@@ -68,20 +67,10 @@
     margin-left: 0.5rem;
 }
 
-@keyframes marqueeScroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-33.333%);
-    }
-}
-
 /* Responsive Design */
 @media (max-width: 1024px) {
     .marquee-track {
         gap: 3rem;
-        animation-duration: 40s;
     }
 }
 
@@ -92,7 +81,6 @@
     
     .marquee-track {
         gap: 2.5rem;
-        animation-duration: 35s;
     }
     
     .marquee-item {
@@ -113,7 +101,6 @@
     
     .marquee-track {
         gap: 2rem;
-        animation-duration: 30s;
     }
     
     .marquee-item {
