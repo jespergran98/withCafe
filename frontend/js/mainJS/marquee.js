@@ -1,4 +1,4 @@
-// Enhanced Marquee functionality
+// Clean Marquee functionality
 (function() {
     'use strict';
     
@@ -14,27 +14,36 @@
         
         if (!marqueeTrack) return;
         
-        // Clone the marquee content multiple times for seamless loop
-        const marqueeContent = marqueeTrack.innerHTML;
-        // Create enough duplicates to ensure smooth continuous scroll
-        marqueeTrack.innerHTML = marqueeContent + marqueeContent + marqueeContent + marqueeContent;
+        // Store original content
+        const originalContent = marqueeTrack.innerHTML;
         
-        // Calculate and set optimal animation duration
-        const adjustAnimationSpeed = () => {
-            const trackWidth = marqueeTrack.scrollWidth / 4; // Divide by number of duplicates
-            // Speed calculation: higher divisor = slower speed
-            const speed = trackWidth / 50; // Adjusted for smoother speed
-            marqueeTrack.style.animationDuration = `${speed}s`;
+        // Create exactly 3 copies for seamless loop (text icon text icon text icon pattern)
+        marqueeTrack.innerHTML = originalContent + originalContent + originalContent;
+        
+        // Optional: Adjust speed based on screen size
+        const adjustSpeed = () => {
+            const screenWidth = window.innerWidth;
+            let duration = 45; // default
+            
+            if (screenWidth <= 480) {
+                duration = 30;
+            } else if (screenWidth <= 768) {
+                duration = 35;
+            } else if (screenWidth <= 1024) {
+                duration = 40;
+            }
+            
+            marqueeTrack.style.animationDuration = `${duration}s`;
         };
         
-        // Initial speed adjustment
-        adjustAnimationSpeed();
+        // Set initial speed
+        adjustSpeed();
         
-        // Recalculate on window resize with debouncing
+        // Adjust on resize with debounce
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(adjustAnimationSpeed, 250);
+            resizeTimer = setTimeout(adjustSpeed, 200);
         });
     }
 })();
