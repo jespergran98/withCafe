@@ -9,6 +9,21 @@
     --cream: #FBF9F0;
     --cream-dark: #F2EFE0;
     --white: #FFFFFF;
+    
+    /* contrasting Cool Blue Palette - Evening Sky & Twilight Tones */
+    --midnight: #0a1014;
+    --midnight-light: #0d1418;
+    --slate-mist: rgba(40, 55, 63, 0.45);
+    --slate-shadow: rgba(28, 40, 47, 0.35);
+    --twilight: #32657a;
+    --twilight-bright: #40829c;
+    --arctic-frost: #8bc4db;
+    --cool-breeze: #6ba5c2;
+    --steel-blue: #4d8aa3;
+    --deep-ocean: rgba(16, 26, 31, 0.85);
+    --ocean-mist: rgba(16, 26, 31, 0.4);
+    --fog: rgba(16, 26, 31, 0.2);
+    
     --shadow-sm: 0 2px 8px rgba(26, 20, 16, 0.06);
     --shadow-md: 0 8px 24px rgba(26, 20, 16, 0.1);
     --shadow-lg: 0 16px 48px rgba(26, 20, 16, 0.15);
