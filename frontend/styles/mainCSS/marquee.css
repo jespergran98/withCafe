@@ -42,11 +42,6 @@
     will-change: transform;
 }
 
-/* Pause on hover */
-.marquee-track:hover {
-    animation-play-state: paused;
-}
-
 .marquee-item {
     display: flex;
     align-items: center;
