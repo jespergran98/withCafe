@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +10,25 @@
     <style>
         :root {
             --espresso: #1A1410;
-            --espresso-light: #4A3428;
+            --espresso-light: #3D2F24;
             --espresso-medium: #2d2218;
             --honey: #D4A574;
             --honey-dark: #B8926A;
             --honey-light: #E8C9A0;
+            --honey-lighter: #F5E5D3;
             --cream: #FAF8F5;
             --cream-dark: #F0EDE8;
             --white: #FFFFFF;
-            --shadow-sm: 0 2px 8px rgba(26, 20, 16, 0.04);
-            --shadow-md: 0 8px 24px rgba(26, 20, 16, 0.08);
-            --shadow-lg: 0 16px 48px rgba(26, 20, 16, 0.12);
-            --shadow-xl: 0 24px 64px rgba(26, 20, 16, 0.16);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 20px;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --shadow-sm: 0 2px 8px rgba(26, 20, 16, 0.06);
+            --shadow-md: 0 8px 24px rgba(26, 20, 16, 0.1);
+            --shadow-lg: 0 16px 48px rgba(26, 20, 16, 0.15);
+            --shadow-xl: 0 24px 64px rgba(26, 20, 16, 0.2);
+            --radius-sm: 10px;
+            --radius-md: 14px;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         * {
@@ -37,13 +38,24 @@
         }
 
         body {
-            background: linear-gradient(135deg, var(--espresso) 0%, var(--espresso-medium) 100%);
+            background: linear-gradient(135deg, var(--espresso) 0%, var(--espresso-medium) 50%, var(--espresso) 100%);
             font-family: 'McLaren', cursive;
             color: var(--cream);
-            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
             display: flex;
-            padding: 40px;
-            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .app-container {
+            display: flex;
+            gap: 28px;
+            width: 100%;
+            max-width: 1600px;
+            height: 100%;
+            max-height: 900px;
         }
 
         .logo-preview {
@@ -52,21 +64,46 @@
             align-items: center;
             justify-content: center;
             padding: 60px;
-            background: var(--espresso-light);
+            background: linear-gradient(145deg, var(--espresso-light) 0%, #3A2D22 100%);
             border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-xl);
+            box-shadow: var(--shadow-xl), inset 0 1px 0 rgba(255, 255, 255, 0.05);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(212, 165, 116, 0.1);
         }
 
         .logo-preview::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 165, 116, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+            animation: glow 8s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .logo-preview::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(212, 165, 116, 0.05) 0%, transparent 70%);
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 100px,
+                    rgba(212, 165, 116, 0.02) 100px,
+                    rgba(212, 165, 116, 0.02) 200px
+                );
             pointer-events: none;
         }
 
@@ -77,54 +114,129 @@
             text-align: center;
             position: relative;
             z-index: 1;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .logo-top {
             color: var(--cream);
             line-height: 0.9;
             margin: 0;
-            text-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(212, 165, 116, 0.2);
+            transition: var(--transition);
         }
 
         .logo-bottom {
             color: var(--cream);
             line-height: 0.9;
             margin: 0;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
         }
 
         .logo-bottom .ampersand {
             color: var(--honey);
-            filter: drop-shadow(0 2px 8px rgba(212, 165, 116, 0.4));
+            filter: drop-shadow(0 3px 10px rgba(212, 165, 116, 0.5));
+            transition: var(--transition);
         }
 
         .controls-panel {
-            width: 420px;
-            background: var(--cream);
+            width: 440px;
+            background: linear-gradient(to bottom, var(--cream) 0%, var(--cream-dark) 100%);
             border-radius: var(--radius-xl);
-            padding: 36px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl), 0 0 0 1px rgba(212, 165, 116, 0.1);
+            display: flex;
+            flex-direction: column;
+            max-height: 100%;
+        }
+
+        .controls-header {
+            background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
+            padding: 28px 36px;
+            border-bottom: 3px solid var(--honey-dark);
+            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.2);
+        }
+
+        .controls-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 0;
+        }
+
+        .controls-subtitle {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 4px;
+        }
+
+        .controls-content {
+            flex: 1;
             overflow-y: auto;
-            box-shadow: var(--shadow-xl);
-            border: 1px solid var(--cream-dark);
+            padding: 32px 36px;
         }
 
         .control-section {
             margin-bottom: 36px;
+            animation: slideIn 0.4s ease-out backwards;
         }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .control-section:nth-child(1) { animation-delay: 0.1s; }
+        .control-section:nth-child(2) { animation-delay: 0.2s; }
+        .control-section:nth-child(3) { animation-delay: 0.3s; }
 
         .control-section:last-child {
             margin-bottom: 0;
         }
 
         .section-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
             margin-bottom: 20px;
             color: var(--espresso);
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--honey);
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--honey);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-icon {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
         }
 
         .control-group {
@@ -139,7 +251,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 13px;
             color: var(--espresso-light);
             font-weight: 600;
@@ -149,70 +261,76 @@
             color: var(--honey-dark);
             font-weight: bold;
             font-size: 14px;
+            background: var(--honey-lighter);
+            padding: 4px 12px;
+            border-radius: 20px;
+            min-width: 60px;
+            text-align: center;
         }
 
         input[type="range"] {
             width: 100%;
-            height: 8px;
+            height: 10px;
             border-radius: 20px;
             background: var(--cream-dark);
             outline: none;
             appearance: none;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: inset 0 1px 3px rgba(26, 20, 16, 0.1);
+            box-shadow: inset 0 2px 4px rgba(26, 20, 16, 0.1);
         }
 
         input[type="range"]:hover {
-            background: linear-gradient(to right, var(--honey-light) 0%, var(--cream-dark) 0%);
+            box-shadow: inset 0 2px 4px rgba(26, 20, 16, 0.15), 0 0 0 4px rgba(212, 165, 116, 0.1);
         }
 
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
             cursor: pointer;
             transition: var(--transition-bounce);
-            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.3);
             border: 3px solid var(--white);
         }
 
         input[type="range"]::-webkit-slider-thumb:hover {
-            transform: scale(1.25);
-            box-shadow: 0 6px 20px rgba(212, 165, 116, 0.6), inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+            transform: scale(1.2);
+            box-shadow: 0 6px 20px rgba(212, 165, 116, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.3);
         }
 
         input[type="range"]::-webkit-slider-thumb:active {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         input[type="range"]::-moz-range-thumb {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
             cursor: pointer;
             border: 3px solid var(--white);
-            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.5);
             transition: var(--transition-bounce);
         }
 
         input[type="range"]::-moz-range-thumb:hover {
-            transform: scale(1.25);
+            transform: scale(1.2);
         }
 
         .font-selector {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
-            max-height: 240px;
+            max-height: 220px;
             overflow-y: auto;
-            padding: 6px;
-            background: var(--cream-dark);
+            padding: 8px;
+            background: rgba(212, 165, 116, 0.08);
             border-radius: var(--radius-md);
+            border: 2px solid rgba(212, 165, 116, 0.15);
         }
 
         .font-option {
@@ -227,10 +345,27 @@
             color: var(--espresso);
             box-shadow: var(--shadow-sm);
             font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .font-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .font-option:hover::before {
+            left: 100%;
         }
 
         .font-option:hover {
-            background: var(--honey-light);
+            background: var(--honey-lighter);
             border-color: var(--honey);
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
@@ -240,7 +375,7 @@
             background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
             border-color: var(--honey-dark);
             color: var(--white);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.2);
             transform: scale(1.02);
         }
 
@@ -251,7 +386,7 @@
 
         .text-option {
             flex: 1;
-            padding: 14px 12px;
+            padding: 16px 12px;
             background: var(--white);
             border: 2px solid transparent;
             border-radius: var(--radius-md);
@@ -262,10 +397,30 @@
             color: var(--espresso);
             box-shadow: var(--shadow-sm);
             font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .text-option::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(212, 165, 116, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+
+        .text-option:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .text-option:hover {
-            background: var(--honey-light);
+            background: var(--honey-lighter);
             border-color: var(--honey);
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
@@ -275,7 +430,7 @@
             background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
             border-color: var(--honey-dark);
             color: var(--white);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
         .font-selector::-webkit-scrollbar {
@@ -283,12 +438,12 @@
         }
 
         .font-selector::-webkit-scrollbar-track {
-            background: var(--cream);
+            background: rgba(212, 165, 116, 0.1);
             border-radius: 4px;
         }
 
         .font-selector::-webkit-scrollbar-thumb {
-            background: var(--honey);
+            background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
             border-radius: 4px;
             transition: var(--transition);
         }
@@ -297,132 +452,190 @@
             background: var(--honey-dark);
         }
 
-        .controls-panel::-webkit-scrollbar {
+        .controls-content::-webkit-scrollbar {
             width: 10px;
         }
 
-        .controls-panel::-webkit-scrollbar-track {
+        .controls-content::-webkit-scrollbar-track {
             background: transparent;
         }
 
-        .controls-panel::-webkit-scrollbar-thumb {
-            background: var(--honey-light);
+        .controls-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--honey-light) 0%, var(--honey) 100%);
             border-radius: 5px;
             border: 2px solid var(--cream);
         }
 
-        .controls-panel::-webkit-scrollbar-thumb:hover {
+        .controls-content::-webkit-scrollbar-thumb:hover {
             background: var(--honey);
         }
 
-        @media (max-width: 1024px) {
-            body {
+        @media (max-width: 1200px) {
+            .app-container {
                 flex-direction: column;
-                padding: 20px;
+                max-height: none;
+                height: auto;
+                overflow-y: auto;
             }
+            
+            body {
+                height: auto;
+                min-height: 100vh;
+                overflow-y: auto;
+            }
+            
             .controls-panel {
                 width: 100%;
-                max-height: 600px;
+                max-height: 700px;
             }
+            
             .logo-preview {
                 min-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px;
+            }
+            
+            .app-container {
+                gap: 16px;
+            }
+            
+            .logo-preview {
+                padding: 40px 20px;
+            }
+            
+            .controls-header {
+                padding: 20px 24px;
+            }
+            
+            .controls-content {
+                padding: 24px;
+            }
+            
+            .font-selector {
+                grid-template-columns: 1fr;
+            }
+            
+            .text-options {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <div class="logo-preview">
-        <div class="logo-container">
-            <h1 class="logo-top" id="logoTop">WITH</h1>
-            <h2 class="logo-bottom" id="logoBottom">brød <span class="ampersand">&</span> kaffe</h2>
-        </div>
-    </div>
-
-    <div class="controls-panel">
-        <div class="control-section">
-            <div class="section-title">Tekstvariant</div>
-            <div class="text-options">
-                <div class="text-option active" data-text="brød & kaffe">brød & kaffe</div>
-                <div class="text-option" data-text="bok & kaffe">bok & kaffe</div>
-                <div class="text-option" data-text="brunsj & kaffe">brunsj & kaffe</div>
+    <div class="app-container">
+        <div class="logo-preview">
+            <div class="logo-container">
+                <h1 class="logo-top" id="logoTop">WITH</h1>
+                <h2 class="logo-bottom" id="logoBottom">brød <span class="ampersand">&</span> kaffe</h2>
             </div>
         </div>
 
-        <div class="control-section">
-            <div class="section-title">"WITH" Kontroller</div>
+        <div class="controls-panel">
+            <div class="controls-header">
+                <h2 class="controls-title">Logo Designer</h2>
+                <p class="controls-subtitle">Tilpass din koseligere kafé-logo</p>
+            </div>
             
-            <div class="control-group">
-                <div class="control-label">
-                    <span>Skriftstørrelse</span>
-                    <span class="control-value" id="topSizeValue">260px</span>
+            <div class="controls-content">
+                <div class="control-section">
+                    <div class="section-title">
+                        <span class="section-icon">📝</span>
+                        Tekstvariant
+                    </div>
+                    <div class="text-options">
+                        <div class="text-option active" data-text="brød & kaffe">brød & kaffe</div>
+                        <div class="text-option" data-text="bok & kaffe">bok & kaffe</div>
+                        <div class="text-option" data-text="brunsj & kaffe">brunsj & kaffe</div>
+                    </div>
                 </div>
-                <input type="range" id="topSize" min="60" max="280" value="260" step="5">
-            </div>
 
-            <div class="control-group">
-                <div class="control-label">
-                    <span>Skriftvekt</span>
-                    <span class="control-value" id="topWeightValue">500</span>
-                </div>
-                <input type="range" id="topWeight" min="400" max="900" value="500" step="100">
-            </div>
+                <div class="control-section">
+                    <div class="section-title">
+                        <span class="section-icon">W</span>
+                        "WITH" Kontroller
+                    </div>
+                    
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Skriftstørrelse</span>
+                            <span class="control-value" id="topSizeValue">260px</span>
+                        </div>
+                        <input type="range" id="topSize" min="60" max="350" value="260" step="5">
+                    </div>
 
-            <div class="control-group">
-                <div class="control-label">
-                    <span>Bokstavmellomrom</span>
-                    <span class="control-value" id="topSpacingValue">2px</span>
-                </div>
-                <input type="range" id="topSpacing" min="-10" max="30" value="2" step="1">
-            </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Skriftvekt</span>
+                            <span class="control-value" id="topWeightValue">500</span>
+                        </div>
+                        <input type="range" id="topWeight" min="400" max="900" value="500" step="100">
+                    </div>
 
-            <div class="control-group">
-                <div class="control-label">
-                    <span>Skriftfamilie</span>
-                </div>
-                <div class="font-selector" id="topFontSelector"></div>
-            </div>
-        </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Bokstavmellomrom</span>
+                            <span class="control-value" id="topSpacingValue">2px</span>
+                        </div>
+                        <input type="range" id="topSpacing" min="-10" max="30" value="2" step="1">
+                    </div>
 
-        <div class="control-section">
-            <div class="section-title">Undertekst Kontroller</div>
-            
-            <div class="control-group">
-                <div class="control-label">
-                    <span>Skriftstørrelse</span>
-                    <span class="control-value" id="bottomSizeValue">122px</span>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Skriftfamilie</span>
+                        </div>
+                        <div class="font-selector" id="topFontSelector"></div>
+                    </div>
                 </div>
-                <input type="range" id="bottomSize" min="30" max="140" value="122" step="2">
-            </div>
 
-            <div class="control-group">
-                <div class="control-label">
-                    <span>Skriftvekt</span>
-                    <span class="control-value" id="bottomWeightValue">400</span>
-                </div>
-                <input type="range" id="bottomWeight" min="400" max="900" value="400" step="100">
-            </div>
+                <div class="control-section">
+                    <div class="section-title">
+                        <span class="section-icon">☕</span>
+                        Undertekst Kontroller
+                    </div>
+                    
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Skriftstørrelse</span>
+                            <span class="control-value" id="bottomSizeValue">122px</span>
+                        </div>
+                        <input type="range" id="bottomSize" min="30" max="200" value="122" step="2">
+                    </div>
 
-            <div class="control-group">
-                <div class="control-label">
-                    <span>Bokstavmellomrom</span>
-                    <span class="control-value" id="bottomSpacingValue">0px</span>
-                </div>
-                <input type="range" id="bottomSpacing" min="-5" max="20" value="0" step="1">
-            </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Skriftvekt</span>
+                            <span class="control-value" id="bottomWeightValue">400</span>
+                        </div>
+                        <input type="range" id="bottomWeight" min="400" max="900" value="400" step="100">
+                    </div>
 
-            <div class="control-group">
-                <div class="control-label">
-                    <span>Avstand Mellom Tekster</span>
-                    <span class="control-value" id="gapValue">0px</span>
-                </div>
-                <input type="range" id="gap" min="-50" max="80" value="0" step="2">
-            </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Bokstavmellomrom</span>
+                            <span class="control-value" id="bottomSpacingValue">0px</span>
+                        </div>
+                        <input type="range" id="bottomSpacing" min="-5" max="20" value="0" step="1">
+                    </div>
 
-            <div class="control-group">
-                <div class="control-label">
-                    <span>Skriftfamilie</span>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Avstand Mellom Tekster</span>
+                            <span class="control-value" id="gapValue">0px</span>
+                        </div>
+                        <input type="range" id="gap" min="-50" max="80" value="0" step="2">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Skriftfamilie</span>
+                        </div>
+                        <div class="font-selector" id="bottomFontSelector"></div>
+                    </div>
                 </div>
-                <div class="font-selector" id="bottomFontSelector"></div>
             </div>
         </div>
     </div>
@@ -474,7 +687,6 @@
             logoBottom.style.fontWeight = state.bottomWeight;
             logoBottom.style.letterSpacing = `${state.bottomSpacing}px`;
 
-            // Use margin-top for negative gaps instead of CSS gap
             if (state.gap >= 0) {
                 logoContainer.style.gap = `${state.gap}px`;
                 logoBottom.style.marginTop = '0px';
@@ -488,10 +700,10 @@
         }
 
         function updateSliderBackground(slider, value) {
-            const min = slider.min;
-            const max = slider.max;
+            const min = parseFloat(slider.min);
+            const max = parseFloat(slider.max);
             const percentage = ((value - min) / (max - min)) * 100;
-            slider.style.background = `linear-gradient(to right, #E8C9A0 0%, #E8C9A0 ${percentage}%, #F0EDE8 ${percentage}%, #F0EDE8 100%)`;
+            slider.style.background = `linear-gradient(to right, var(--honey-light) 0%, var(--honey-light) ${percentage}%, var(--cream-dark) ${percentage}%, var(--cream-dark) 100%)`;
         }
 
         function createFontOptions(fonts, containerId, type) {
@@ -520,68 +732,26 @@
         }
 
         function setupControls() {
-            const topSizeSlider = document.getElementById('topSize');
-            topSizeSlider.addEventListener('input', (e) => {
-                state.topSize = parseInt(e.target.value);
-                document.getElementById('topSizeValue').textContent = `${state.topSize}px`;
-                updateSliderBackground(topSizeSlider, state.topSize);
-                updateLogo();
-            });
-            updateSliderBackground(topSizeSlider, state.topSize);
+            const sliders = [
+                { id: 'topSize', prop: 'topSize', value: 'topSizeValue', suffix: 'px' },
+                { id: 'topWeight', prop: 'topWeight', value: 'topWeightValue', suffix: '' },
+                { id: 'topSpacing', prop: 'topSpacing', value: 'topSpacingValue', suffix: 'px' },
+                { id: 'bottomSize', prop: 'bottomSize', value: 'bottomSizeValue', suffix: 'px' },
+                { id: 'bottomWeight', prop: 'bottomWeight', value: 'bottomWeightValue', suffix: '' },
+                { id: 'bottomSpacing', prop: 'bottomSpacing', value: 'bottomSpacingValue', suffix: 'px' },
+                { id: 'gap', prop: 'gap', value: 'gapValue', suffix: 'px' }
+            ];
 
-            const topWeightSlider = document.getElementById('topWeight');
-            topWeightSlider.addEventListener('input', (e) => {
-                state.topWeight = parseInt(e.target.value);
-                document.getElementById('topWeightValue').textContent = state.topWeight;
-                updateSliderBackground(topWeightSlider, state.topWeight);
-                updateLogo();
+            sliders.forEach(({ id, prop, value, suffix }) => {
+                const slider = document.getElementById(id);
+                slider.addEventListener('input', (e) => {
+                    state[prop] = parseFloat(e.target.value);
+                    document.getElementById(value).textContent = `${state[prop]}${suffix}`;
+                    updateSliderBackground(slider, state[prop]);
+                    updateLogo();
+                });
+                updateSliderBackground(slider, state[prop]);
             });
-            updateSliderBackground(topWeightSlider, state.topWeight);
-
-            const topSpacingSlider = document.getElementById('topSpacing');
-            topSpacingSlider.addEventListener('input', (e) => {
-                state.topSpacing = parseInt(e.target.value);
-                document.getElementById('topSpacingValue').textContent = `${state.topSpacing}px`;
-                updateSliderBackground(topSpacingSlider, state.topSpacing);
-                updateLogo();
-            });
-            updateSliderBackground(topSpacingSlider, state.topSpacing);
-
-            const bottomSizeSlider = document.getElementById('bottomSize');
-            bottomSizeSlider.addEventListener('input', (e) => {
-                state.bottomSize = parseInt(e.target.value);
-                document.getElementById('bottomSizeValue').textContent = `${state.bottomSize}px`;
-                updateSliderBackground(bottomSizeSlider, state.bottomSize);
-                updateLogo();
-            });
-            updateSliderBackground(bottomSizeSlider, state.bottomSize);
-
-            const bottomWeightSlider = document.getElementById('bottomWeight');
-            bottomWeightSlider.addEventListener('input', (e) => {
-                state.bottomWeight = parseInt(e.target.value);
-                document.getElementById('bottomWeightValue').textContent = state.bottomWeight;
-                updateSliderBackground(bottomWeightSlider, state.bottomWeight);
-                updateLogo();
-            });
-            updateSliderBackground(bottomWeightSlider, state.bottomWeight);
-
-            const bottomSpacingSlider = document.getElementById('bottomSpacing');
-            bottomSpacingSlider.addEventListener('input', (e) => {
-                state.bottomSpacing = parseInt(e.target.value);
-                document.getElementById('bottomSpacingValue').textContent = `${state.bottomSpacing}px`;
-                updateSliderBackground(bottomSpacingSlider, state.bottomSpacing);
-                updateLogo();
-            });
-            updateSliderBackground(bottomSpacingSlider, state.bottomSpacing);
-
-            const gapSlider = document.getElementById('gap');
-            gapSlider.addEventListener('input', (e) => {
-                state.gap = parseInt(e.target.value);
-                document.getElementById('gapValue').textContent = `${state.gap}px`;
-                updateSliderBackground(gapSlider, state.gap);
-                updateLogo();
-            });
-            updateSliderBackground(gapSlider, state.gap);
 
             document.querySelectorAll('.text-option').forEach(option => {
                 option.addEventListener('click', () => {
