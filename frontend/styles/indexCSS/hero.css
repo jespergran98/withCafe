@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #0a0705 0%, #0d0a08 50%, #141008 100%);
+    background: linear-gradient(135deg, var(--dark-roast) 0%, var(--french-roast) 50%, var(--burnt-caramel) 100%);
     margin-top: 88px;
 }
 
@@ -63,8 +63,8 @@
     position: absolute;
     inset: 0;
     background: 
-        radial-gradient(ellipse 120% 100% at 50% 50%, transparent 30%, rgba(13, 10, 8, 0.8) 75%, #0d0a08 95%),
-        linear-gradient(180deg, rgba(13, 10, 8, 0.5) 0%, #0d0a08 100%);
+        radial-gradient(ellipse 120% 100% at 50% 50%, transparent 30%, rgba(13, 10, 8, 0.8) 75%, var(--french-roast) 95%),
+        linear-gradient(180deg, rgba(13, 10, 8, 0.5) 0%, var(--french-roast) 100%);
     z-index: 1;
 }
 

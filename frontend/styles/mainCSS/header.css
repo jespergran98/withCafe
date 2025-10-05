@@ -2,11 +2,11 @@
 header {
     background: linear-gradient(
         135deg,
-        rgba(250, 248, 245, 1),
-        rgba(255, 255, 255, 1)
+        var(--warm-linen),
+        var(--porcelain)
     );
     padding: 1.75rem 0;
-    border-bottom: 1px solid rgba(26, 20, 16, 0.06);
+    border-bottom: 1px solid var(--whisper);
     position: fixed;
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@ header {
     z-index: 1000;
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
-    box-shadow: 0 1px 0 rgba(26, 20, 16, 0.06);
+    box-shadow: 0 1px 0 var(--whisper);
     transition: 
         background 0.8s cubic-bezier(0.4, 0, 0.2, 1),
         padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
@@ -29,7 +29,7 @@ header::before {
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0.3),
+        var(--lace),
         transparent
     );
     pointer-events: none;
@@ -41,17 +41,17 @@ header.scrolled {
     padding: 1.4rem 0;
     background: linear-gradient(
         135deg,
-        rgba(250, 248, 245, 0.75),
-        rgba(255, 255, 255, 0.7)
+        var(--morning-mist),
+        var(--cotton)
     );
     backdrop-filter: blur(28px) saturate(200%);
     -webkit-backdrop-filter: blur(28px) saturate(200%);
     box-shadow: 
-        0 8px 32px rgba(26, 20, 16, 0.08),
-        0 2px 8px rgba(26, 20, 16, 0.04),
-        0 1px 0 rgba(255, 255, 255, 0.6) inset,
-        0 -1px 0 rgba(255, 255, 255, 0.3) inset;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        0 8px 32px var(--soft-shadow),
+        0 2px 8px var(--gentle-shadow),
+        0 1px 0 var(--silk) inset,
+        0 -1px 0 var(--lace) inset;
+    border-bottom: 1px solid var(--pearl);
 }
 
 header.scrolled::before {
@@ -163,7 +163,7 @@ nav a:hover::after {
     opacity: 1;
     font-weight: 600;
     transition: var(--transition);
-    box-shadow: 0 4px 16px rgba(212, 165, 116, 0.3);
+    box-shadow: 0 4px 16px var(--amber-glow);
 }
 
 .nav-cta::after {
@@ -172,7 +172,7 @@ nav a:hover::after {
 
 .nav-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(212, 165, 116, 0.4);
+    box-shadow: 0 8px 24px var(--amber-shine);
 }
 
 /* Responsive Design */

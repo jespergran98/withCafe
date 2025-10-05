@@ -1,4 +1,5 @@
 :root {
+    /* Original and main Warm Palette - Coffee & Honey Tones */
     --espresso: #1A1410;
     --espresso-light: #4A3428;
     --espresso-medium: #2d2218;
@@ -10,7 +11,38 @@
     --cream-dark: #F2EFE0;
     --white: #FFFFFF;
     
-    /* contrasting Cool Blue Palette - Evening Sky & Twilight Tones */
+    /* Deep Roast */
+    --dark-roast: #0a0705;
+    --french-roast: #0d0a08;
+    --burnt-caramel: #141008;
+    
+    /* Additional Warm Tones mainly used in the header glass effect */
+    --warm-linen: #FAF8F5;
+    --morning-mist: rgba(250, 248, 245, 0.75);
+    --porcelain: #FFFFFF;
+    --cotton: rgba(255, 255, 255, 0.7);
+    --silk: rgba(255, 255, 255, 0.6);
+    --lace: rgba(255, 255, 255, 0.3);
+    --pearl: rgba(255, 255, 255, 0.25);
+    --whisper: rgba(26, 20, 16, 0.06);
+    --soft-shadow: rgba(26, 20, 16, 0.08);
+    --gentle-shadow: rgba(26, 20, 16, 0.04);
+    --amber-glow: rgba(212, 165, 116, 0.3);
+    --amber-shine: rgba(212, 165, 116, 0.4);
+    
+    /* Café Features - Additional Warm Palette Extensions */
+    --vanilla-foam: rgba(250, 248, 245, 0.98);
+    --cappuccino-cream: rgba(212, 165, 116, 0.04);
+    --caramel-swirl: rgba(212, 165, 116, 0.03);
+    --latte-layer: rgba(212, 165, 116, 0.08);
+    --mocha-mist: rgba(212, 165, 116, 0.1);
+    --cinnamon-dust: rgba(212, 165, 116, 0.12);
+    --toffee-glaze: rgba(212, 165, 116, 0.15);
+    --butterscotch: rgba(212, 165, 116, 0.25);
+    --espresso-veil: rgba(26, 20, 16, 0.12);
+    --roasted-shadow: rgba(26, 20, 16, 0.25);
+    
+    /* Contrasting Cool Blue Palette - Evening Sky & Twilight Tones */
     --midnight: #0a1014;
     --midnight-light: #0d1418;
     --slate-mist: rgba(40, 55, 63, 0.45);
@@ -24,6 +56,7 @@
     --ocean-mist: rgba(16, 26, 31, 0.4);
     --fog: rgba(16, 26, 31, 0.2);
     
+    /* Shadow & Effects */
     --shadow-sm: 0 2px 8px rgba(26, 20, 16, 0.06);
     --shadow-md: 0 8px 24px rgba(26, 20, 16, 0.1);
     --shadow-lg: 0 16px 48px rgba(26, 20, 16, 0.15);

@@ -15,8 +15,8 @@
     height: 1px;
     background: linear-gradient(90deg, 
         transparent, 
-        rgba(255, 255, 255, 0.3) 20%, 
-        rgba(255, 255, 255, 0.3) 80%, 
+        var(--pearl) 20%, 
+        var(--pearl) 80%, 
         transparent
     );
 }
@@ -50,7 +50,7 @@
     font-size: 1.125rem;
     font-weight: 400;
     letter-spacing: 0.5px;
-    text-shadow: 0 2px 4px rgba(26, 20, 16, 0.15);
+    text-shadow: 0 2px 4px var(--whisper);
 }
 
 .marquee-text {
