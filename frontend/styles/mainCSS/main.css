@@ -1,66 +1,66 @@
 :root {
     /* Original and main Warm Palette - Coffee, Honey & Cream Tones */
-    --espresso: #1A1410;
-    --espresso-light: #4A3428;
-    --espresso-medium: #2d2218;
-    --honey: #D4AC5C;
-    --honey-dark: #B8925A;
-    --honey-light: #E8CA8E;
-    --honey-lighter: #F5E6C0;
-    --cream: #FBF9F0;
-    --cream-dark: #F2EFE0;
+    --espresso: #1C1410;
+    --espresso-light: #5A4538;
+    --espresso-medium: #342820;
+    --honey: #D9A856;
+    --honey-dark: #C49548;
+    --honey-light: #EBCF88;
+    --honey-lighter: #F7E9C8;
+    --cream: #FBF8F2;
+    --cream-dark: #F5F0E4;
     --white: #FFFFFF;
     
     /* Deep Roast */
-    --dark-roast: #0a0705;
-    --french-roast: #0d0a08;
-    --burnt-caramel: #141008;
+    --dark-roast: #0D0907;
+    --french-roast: #110D0B;
+    --burnt-caramel: #18120A;
+
+    /* Additional Warm Palette Extensions */
+    --vanilla-foam: rgba(251, 248, 242, 0.98);
+    --cappuccino-cream: rgba(217, 168, 86, 0.05);
+    --caramel-swirl: rgba(217, 168, 86, 0.04);
+    --latte-layer: rgba(217, 168, 86, 0.09);
+    --mocha-mist: rgba(217, 168, 86, 0.12);
+    --cinnamon-dust: rgba(217, 168, 86, 0.14);
+    --toffee-glaze: rgba(217, 168, 86, 0.18);
+    --butterscotch: rgba(217, 168, 86, 0.28);
+    --espresso-veil: rgba(28, 20, 16, 0.14);
+    --roasted-shadow: rgba(28, 20, 16, 0.28);
     
     /* Additional Warm Tones mainly used for glass effect */
-    --warm-linen: #FAF8F5;
-    --morning-mist: rgba(250, 248, 245, 0.35);
+    --warm-linen: #FAF7F3;
+    --morning-mist: rgba(250, 247, 243, 0.40);
     --porcelain: #FFFFFF;
-    --cotton: rgba(255, 255, 255, 0.7);
-    --silk: rgba(255, 255, 255, 0.6);
-    --lace: rgba(255, 255, 255, 0.3);
-    --pearl: rgba(255, 255, 255, 0.25);
-    --whisper: rgba(26, 20, 16, 0.06);
-    --soft-shadow: rgba(26, 20, 16, 0.08);
-    --gentle-shadow: rgba(26, 20, 16, 0.04);
-    --amber-glow: rgba(212, 165, 116, 0.3);
-    --amber-shine: rgba(212, 165, 116, 0.4);
-    
-    /* Café Features - Additional Warm Palette Extensions */
-    --vanilla-foam: rgba(250, 248, 245, 0.98);
-    --cappuccino-cream: rgba(212, 165, 116, 0.04);
-    --caramel-swirl: rgba(212, 165, 116, 0.03);
-    --latte-layer: rgba(212, 165, 116, 0.08);
-    --mocha-mist: rgba(212, 165, 116, 0.1);
-    --cinnamon-dust: rgba(212, 165, 116, 0.12);
-    --toffee-glaze: rgba(212, 165, 116, 0.15);
-    --butterscotch: rgba(212, 165, 116, 0.25);
-    --espresso-veil: rgba(26, 20, 16, 0.12);
-    --roasted-shadow: rgba(26, 20, 16, 0.25);
+    --cotton: rgba(255, 255, 255, 0.75);
+    --silk: rgba(255, 255, 255, 0.65);
+    --lace: rgba(255, 255, 255, 0.35);
+    --pearl: rgba(255, 255, 255, 0.28);
+    --whisper: rgba(28, 20, 16, 0.05);
+    --soft-shadow: rgba(28, 20, 16, 0.10);
+    --gentle-shadow: rgba(28, 20, 16, 0.04);
+    --amber-glow: rgba(217, 168, 86, 0.35);
+    --amber-shine: rgba(217, 168, 86, 0.45);
     
     /* Contrasting Cool Blue Palette - Evening Sky & Twilight Tones */
-    --midnight: #0a1014;
-    --midnight-light: #0d1418;
-    --slate-mist: rgba(40, 55, 63, 0.45);
-    --slate-shadow: rgba(28, 40, 47, 0.35);
-    --twilight: #32657a;
-    --twilight-bright: #40829c;
-    --arctic-frost: #8bc4db;
-    --cool-breeze: #6ba5c2;
-    --steel-blue: #4d8aa3;
-    --deep-ocean: rgba(16, 26, 31, 0.85);
-    --ocean-mist: rgba(16, 26, 31, 0.4);
-    --fog: rgba(16, 26, 31, 0.2);
+    --midnight: #0B1216;
+    --midnight-light: #0F161B;
+    --slate-mist: rgba(42, 58, 68, 0.48);
+    --slate-shadow: rgba(30, 42, 50, 0.38);
+    --twilight: #367089;
+    --twilight-bright: #4488A8;
+    --arctic-frost: #8FCCE3;
+    --cool-breeze: #72AEC9;
+    --steel-blue: #5291AC;
+    --deep-ocean: rgba(17, 28, 34, 0.88);
+    --ocean-mist: rgba(17, 28, 34, 0.42);
+    --fog: rgba(17, 28, 34, 0.22);
     
     /* Shadow & Effects */
-    --shadow-sm: 0 2px 8px rgba(26, 20, 16, 0.06);
-    --shadow-md: 0 8px 24px rgba(26, 20, 16, 0.1);
-    --shadow-lg: 0 16px 48px rgba(26, 20, 16, 0.15);
-    --shadow-xl: 0 24px 64px rgba(26, 20, 16, 0.2);
+    --shadow-sm: 0 2px 8px rgba(28, 20, 16, 0.07);
+    --shadow-md: 0 8px 24px rgba(28, 20, 16, 0.11);
+    --shadow-lg: 0 16px 48px rgba(28, 20, 16, 0.16);
+    --shadow-xl: 0 24px 64px rgba(28, 20, 16, 0.22);
     --radius-sm: 10px;
     --radius-md: 14px;
     --radius-lg: 18px;
@@ -137,19 +137,18 @@ ul {
     font-weight: 200;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--honey);
     margin-bottom: 1rem;
     padding: 0.5rem 1.25rem;
-    background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(212, 165, 116, 0.05));
+    background: linear-gradient(135deg, var(--mocha-mist), var(--cappuccino-cream));
     border-radius: 50px;
-    border: 1px solid rgba(212, 165, 116, 0.2);
+    border: 1px solid var(--butterscotch);
 }
 
 .section-tag.light {
     color: var(--white);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, var(--lace), var(--gentle-shadow));
+    border: 1px solid var(--pearl);
+    box-shadow: var(--shadow-md);
 }
 
 .section-title {
@@ -170,7 +169,7 @@ ul {
 }
 
 .section-description.light {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--cotton);
 }
 
 @keyframes fadeInUp {
