@@ -516,6 +516,15 @@
         padding: 2.5rem 0;
     }
     
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card:nth-child(3) {
+        grid-column: 1;
+        max-width: 100%;
+    }
+    
     .feature-image {
         height: 160px;
     }
