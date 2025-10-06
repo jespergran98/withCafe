@@ -140,7 +140,12 @@ header .container {
     transform-origin: center;
 }
 
-.hamburger:hover .hamburger-line {
+@media (hover: hover) {
+    .hamburger:hover .hamburger-line {
+        background: var(--honey);
+    }
+}
+.hamburger.active .hamburger-line {
     background: var(--honey);
 }
 
