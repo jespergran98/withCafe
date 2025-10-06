@@ -462,23 +462,23 @@
     }
     
     .location-image {
-        height: 220px;
+        height: 200px;
     }
 
     .location-content {
-        padding: 1.35rem 1.35rem 1.5rem;
-        gap: 0.6rem;
+        padding: 1.2rem 1.2rem 1.4rem;
+        gap: 0.55rem;
     }
 
     .location-card h3 {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         letter-spacing: -0.4px;
         margin-bottom: 0.2rem;
     }
 
     .location-address {
-        font-size: 0.825rem;
-        gap: 0.55rem;
+        font-size: 0.8rem;
+        gap: 0.5rem;
         padding: 0.25rem 0;
     }
 
@@ -489,23 +489,51 @@
     }
 
     .location-description {
-        font-size: 0.85rem;
-        line-height: 1.6;
-        margin-top: 0.3rem;
+        font-size: 0.8rem;
+        line-height: 1.55;
+        margin-top: 0.25rem;
         color: rgba(255, 255, 255, 0.82);
     }
 
+    /* Mobile CTA text change to "Les mer" */
     .location-cta {
-        padding: 0.7rem 1.3rem;
-        font-size: 0.775rem;
-        margin-top: 0.6rem;
-        gap: 0.55rem;
+        padding: 0.65rem 1.1rem;
+        font-size: 0.75rem;
+        margin-top: 0.55rem;
+        gap: 0.5rem;
         border-width: 1.5px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .location-cta span {
+        font-size: 0;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    .location-cta::after {
+        content: 'Les mer';
+        position: relative;
+        z-index: 2;
+        font-weight: 600;
+        color: var(--white);
+        order: -1;
+    }
+
+    /* Larger arrows for cards 2 and 3 on mobile */
+    .location-card:nth-child(2) .location-cta svg,
+    .location-card:nth-child(3) .location-cta svg {
+        width: 18px;
+        height: 18px;
     }
 
     .location-cta svg {
-        width: 15px;
-        height: 15px;
+        width: 16px;
+        height: 16px;
+        z-index: 2;
     }
 
     .locations-decoration {
@@ -585,23 +613,23 @@
     }
 
     .location-image {
-        height: 200px;
+        height: 180px;
     }
 
     .location-content {
-        padding: 1.25rem 1.25rem 1.4rem;
-        gap: 0.55rem;
+        padding: 1.1rem 1.1rem 1.3rem;
+        gap: 0.5rem;
     }
 
     .location-card h3 {
-        font-size: 1.15rem;
-        gap: 0.35rem;
+        font-size: 1.05rem;
+        gap: 0.3rem;
         letter-spacing: -0.5px;
     }
 
     .location-address {
-        font-size: 0.8rem;
-        gap: 0.5rem;
+        font-size: 0.75rem;
+        gap: 0.45rem;
     }
 
     .location-icon {
@@ -611,22 +639,34 @@
     }
 
     .location-description {
-        font-size: 0.825rem;
-        line-height: 1.55;
-        margin-top: 0.25rem;
+        font-size: 0.775rem;
+        line-height: 1.5;
+        margin-top: 0.2rem;
         color: rgba(255, 255, 255, 0.8);
     }
 
+    /* Improved mobile CTA */
     .location-cta {
-        padding: 0.65rem 1.2rem;
+        padding: 0.7rem 1rem;
         font-size: 0.75rem;
-        margin-top: 0.55rem;
-        gap: 0.5rem;
+        margin-top: 0.5rem;
+        gap: 0.55rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Larger arrows for cards 2 and 3 */
+    .location-card:nth-child(2) .location-cta svg,
+    .location-card:nth-child(3) .location-cta svg {
+        width: 20px;
+        height: 20px;
+        stroke-width: 2.2;
     }
 
     .location-cta svg {
-        width: 14px;
-        height: 14px;
+        width: 17px;
+        height: 17px;
+        stroke-width: 2.2;
     }
 
     .location-badge {
@@ -665,37 +705,40 @@
     }
     
     .location-image {
-        height: 200px;
+        height: 180px;
     }
 
     .location-content {
-        padding: 1.2rem 1.2rem 1.35rem;
-        gap: 0.5rem;
+        padding: 1rem 1rem 1.2rem;
+        gap: 0.45rem;
     }
 
     .location-card h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
         letter-spacing: -0.4px;
     }
 
     .location-address {
-        font-size: 0.775rem;
+        font-size: 0.725rem;
     }
 
     .location-description {
-        font-size: 0.8rem;
-        line-height: 1.55;
+        font-size: 0.75rem;
+        line-height: 1.5;
     }
 
+    /* Single column on extra small - all cards same size */
     .location-cta {
-        padding: 0.6rem 1.15rem;
+        padding: 0.7rem 1rem;
         font-size: 0.725rem;
-        margin-top: 0.5rem;
+        margin-top: 0.45rem;
+        justify-content: center;
+        width: 100%;
     }
 
     .location-cta svg {
-        width: 13px;
-        height: 13px;
+        width: 17px;
+        height: 17px;
     }
 
     .location-badge {
