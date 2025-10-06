@@ -511,7 +511,7 @@
 }
 
 /* Extra small devices */
-@media (max-width: 360px) {
+@media (max-width: 420px) {
     .features {
         padding: 2.5rem 0;
     }
