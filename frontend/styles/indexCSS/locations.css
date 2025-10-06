@@ -530,8 +530,15 @@
     }
 
     .locations-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.875rem;
+    }
+    
+    .location-card:nth-child(1) {
+        grid-column: 1 / -1;
+        max-width: 600px;
+        margin: 0 auto;
+        width: 100%;
     }
 
     .location-image {
@@ -594,6 +601,15 @@
 
 /* Extra Small Devices */
 @media (max-width: 360px) {
+    .locations-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .location-card:nth-child(1) {
+        grid-column: 1;
+    }
+    
     .location-image {
         height: 160px;
     }
