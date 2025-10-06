@@ -466,12 +466,12 @@
     }
     
     .locations-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
     
     .location-card-large {
-        grid-column: span 1;
+        grid-column: span 2;
     }
     
     .location-image {

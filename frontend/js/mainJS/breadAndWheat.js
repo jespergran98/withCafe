@@ -1,4 +1,4 @@
-// Enhanced Static Background Pattern - No Animation, Zero Lag
+// Enhanced Static Background Pattern
 class BackgroundPattern {
     constructor() {
         this.canvas = null;
