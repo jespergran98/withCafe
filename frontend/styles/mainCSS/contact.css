@@ -29,8 +29,8 @@
 }
 
 .contact-center {
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    align-items: flex-start;
 }
 
 .contact-heading {
@@ -114,7 +114,7 @@
 .social-links {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 0.5rem;
 }
 
@@ -207,6 +207,12 @@
         order: -1;
         max-width: 600px;
         margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .social-links {
+        justify-content: center;
     }
     
     .contact-heading {
@@ -234,6 +240,12 @@
         order: -1;
         max-width: 600px;
         margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .social-links {
+        justify-content: center;
     }
     
     .contact-column {
