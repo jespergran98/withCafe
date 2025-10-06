@@ -201,19 +201,17 @@ header .container {
     width: 100%;
 }
 
-/* Enhanced Kontakt Button */
-.nav-cta {
+/* Enhanced Kontakt Button - Refined Café Design */
+a.nav-cta {
     background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
     color: var(--white);
-    padding: 0.85rem 2rem;
+    padding: 0.75rem 1.85rem;
     border-radius: var(--radius-sm);
     opacity: 1;
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
-        0 4px 16px var(--amber-glow),
-        0 2px 8px var(--gentle-shadow);
+    box-shadow: 0 4px 16px var(--amber-glow);
     position: relative;
     overflow: hidden;
 }
@@ -221,17 +219,10 @@ header .container {
 .nav-cta::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--lace),
-        transparent
-    );
-    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    inset: 0;
+    background: linear-gradient(135deg, var(--honey-dark) 0%, var(--honey) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .nav-cta::after {
@@ -240,22 +231,22 @@ header .container {
 
 .nav-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 
-        0 8px 24px var(--amber-shine),
-        0 4px 12px var(--soft-shadow),
-        0 0 0 1px var(--honey-light) inset;
-    background: linear-gradient(135deg, var(--honey-dark) 0%, var(--honey) 100%);
+    box-shadow: 0 8px 24px var(--amber-shine);
 }
 
 .nav-cta:hover::before {
-    left: 100%;
+    opacity: 1;
 }
 
 .nav-cta:active {
     transform: translateY(0);
-    box-shadow: 
-        0 4px 12px var(--amber-glow),
-        0 2px 6px var(--gentle-shadow);
+    box-shadow: 0 4px 12px var(--amber-glow);
+}
+
+/* Ensure text stays on top */
+.nav-cta span {
+    position: relative;
+    z-index: 1;
 }
 
 /* Responsive Design */
@@ -341,14 +332,53 @@ header .container {
         padding: 0.4rem 0;
     }
 
-    .nav-cta {
-        padding: 0.75rem 1.65rem;
+    a.nav-cta {
+        padding: 0.95rem 1.8rem;
         font-size: 0.9rem;
     }
 }
 
-/* Mobile menu breakpoint - Show hamburger at 400px and below */
-@media (max-width: 400px) {
+@media (max-width: 640px) {
+    header {
+        padding: 1rem 0 1.3rem 0;
+    }
+    
+    header.scrolled {
+        padding: 0.75rem 0 0.95rem 0;
+    }
+    
+    .logo {
+        height: 2.3rem;
+        margin-top: 0.25rem;
+    }
+    
+    .logo-top {
+        font-size: 2rem;
+        letter-spacing: 0.06rem;
+    }
+
+    .logo-bottom {
+        font-size: 1.15rem;
+        bottom: -0.5rem;
+        transform: translateX(-50%) translateY(4px);
+    }
+
+    .nav-menu ul {
+        gap: 1.25rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.875rem;
+    }
+
+    .nav-cta {
+        padding: 0.6rem 1.35rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Mobile menu breakpoint - Show hamburger at 480px and below */
+@media (max-width: 480px) {
     header {
         padding: 1rem 0;
     }
@@ -444,15 +474,12 @@ header .container {
     }
 
     .nav-cta {
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         text-align: center;
-        padding: 0.9rem 1.35rem;
+        padding: 0.85rem 1.5rem;
         font-size: 0.95rem;
-        border-radius: var(--radius-md);
-    }
-
-    .nav-cta::before {
-        display: none;
+        border-radius: var(--radius-sm);
+        display: block;
     }
 
     /* Overlay when menu is open */
@@ -481,7 +508,7 @@ header .container {
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 380px) {
     header {
         padding: 0.95rem 0;
     }
@@ -533,7 +560,7 @@ header .container {
     }
 
     .nav-cta {
-        padding: 0.85rem 1.2rem;
+        padding: 0.8rem 1.35rem;
         font-size: 0.9rem;
     }
 }
