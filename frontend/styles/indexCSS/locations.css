@@ -439,32 +439,164 @@
 /* Responsive Design - Mobile Large */
 @media (max-width: 768px) {
     .locations {
-        padding: 3rem 0;
+        padding: 3.5rem 0;
     }
     
     .locations-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 1.15rem;
+        padding: 0 0.5rem;
     }
     
     .location-card:nth-child(1) {
         grid-column: 1 / -1;
-        max-width: 600px;
-        margin: 0 auto;
-        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
     
+    .location-card {
+        border-width: 1.5px;
+        box-shadow: 
+            0 10px 28px rgba(0, 0, 0, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+    
+    .location-image {
+        height: 220px;
+    }
+
+    .location-content {
+        padding: 1.35rem 1.35rem 1.5rem;
+        gap: 0.6rem;
+    }
+
+    .location-card h3 {
+        font-size: 1.25rem;
+        letter-spacing: -0.4px;
+        margin-bottom: 0.2rem;
+    }
+
+    .location-address {
+        font-size: 0.825rem;
+        gap: 0.55rem;
+        padding: 0.25rem 0;
+    }
+
+    .location-icon {
+        width: 15px;
+        height: 15px;
+        stroke-width: 2.8;
+    }
+
+    .location-description {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        margin-top: 0.3rem;
+        color: rgba(255, 255, 255, 0.82);
+    }
+
+    .location-cta {
+        padding: 0.7rem 1.3rem;
+        font-size: 0.775rem;
+        margin-top: 0.6rem;
+        gap: 0.55rem;
+        border-width: 1.5px;
+    }
+
+    .location-cta svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .locations-decoration {
+        width: 320px;
+        height: 320px;
+        top: 15%;
+        right: -40px;
+    }
+    
+    .location-badge {
+        padding: 0.5rem 1.1rem;
+        font-size: 0.6rem;
+        letter-spacing: 1.3px;
+        border-width: 1.5px;
+    }
+    
+    .location-overlay {
+        top: 1.1rem;
+        right: 1.1rem;
+    }
+
+    /* Disable hover effects on mobile */
+    .location-card:hover {
+        transform: none;
+        box-shadow: 
+            0 10px 28px rgba(0, 0, 0, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .location-card:hover::before {
+        opacity: 0;
+    }
+
+    .location-card:hover .location-badge {
+        transform: none;
+    }
+    
+    .location-card:hover h3 {
+        color: var(--white);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+    
+    .location-card:hover .location-description {
+        color: rgba(255, 255, 255, 0.82);
+    }
+    
+    .location-cta:hover {
+        transform: none;
+        border-color: rgba(50, 101, 122, 0.4);
+    }
+    
+    .location-cta:hover::before {
+        opacity: 0;
+    }
+}
+
+/* Responsive Design - Mobile Small */
+@media (max-width: 480px) {
+    .locations {
+        padding: 3rem 0;
+    }
+
+    .locations-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 0.75rem;
+    }
+    
+    .location-card:nth-child(1) {
+        grid-column: 1 / -1;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .location-card {
+        border-radius: 1.25rem;
+    }
+
     .location-image {
         height: 200px;
     }
 
     .location-content {
-        padding: 1.25rem 1.25rem 1.5rem;
-        gap: 0.5rem;
+        padding: 1.25rem 1.25rem 1.4rem;
+        gap: 0.55rem;
     }
 
     .location-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
+        gap: 0.35rem;
+        letter-spacing: -0.5px;
     }
 
     .location-address {
@@ -473,20 +605,22 @@
     }
 
     .location-icon {
-        width: 15px;
-        height: 15px;
+        width: 14px;
+        height: 14px;
+        stroke-width: 3;
     }
 
     .location-description {
-        font-size: 0.8125rem;
+        font-size: 0.825rem;
         line-height: 1.55;
         margin-top: 0.25rem;
+        color: rgba(255, 255, 255, 0.8);
     }
 
     .location-cta {
-        padding: 0.65rem 1.25rem;
+        padding: 0.65rem 1.2rem;
         font-size: 0.75rem;
-        margin-top: 0.5rem;
+        margin-top: 0.55rem;
         gap: 0.5rem;
     }
 
@@ -495,84 +629,68 @@
         height: 14px;
     }
 
-    .locations-decoration {
-        width: 280px;
-        height: 280px;
-        top: 10%;
-        right: -50px;
-    }
-    
     .location-badge {
         padding: 0.45rem 1rem;
         font-size: 0.575rem;
         letter-spacing: 1.2px;
     }
-    
+
     .location-overlay {
         top: 1rem;
         right: 1rem;
     }
 
-    /* Disable hover effects on mobile */
-    .location-card:hover {
-        transform: none;
-    }
-
-    .location-card:hover .location-badge {
-        transform: none;
+    .locations-decoration {
+        width: 260px;
+        height: 260px;
+        top: 10%;
+        right: -60px;
     }
 }
 
-/* Responsive Design - Mobile Small */
-@media (max-width: 480px) {
+/* Extra Small Devices */
+@media (max-width: 360px) {
     .locations {
         padding: 2.5rem 0;
     }
 
     .locations-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.875rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 0.875rem;
     }
     
     .location-card:nth-child(1) {
-        grid-column: 1 / -1;
-        max-width: 600px;
-        margin: 0 auto;
-        width: 100%;
+        grid-column: 1;
     }
-
+    
     .location-image {
-        height: 180px;
+        height: 200px;
     }
 
     .location-content {
-        padding: 1.1rem 1.1rem 1.35rem;
-        gap: 0.45rem;
+        padding: 1.2rem 1.2rem 1.35rem;
+        gap: 0.5rem;
     }
 
     .location-card h3 {
         font-size: 1.1rem;
-        gap: 0.35rem;
+        letter-spacing: -0.4px;
     }
 
     .location-address {
-        font-size: 0.75rem;
-    }
-
-    .location-icon {
-        width: 14px;
-        height: 14px;
+        font-size: 0.775rem;
     }
 
     .location-description {
         font-size: 0.8rem;
-        line-height: 1.5;
+        line-height: 1.55;
     }
 
     .location-cta {
-        padding: 0.6rem 1.1rem;
-        font-size: 0.7rem;
-        margin-top: 0.4rem;
+        padding: 0.6rem 1.15rem;
+        font-size: 0.725rem;
+        margin-top: 0.5rem;
     }
 
     .location-cta svg {
@@ -581,53 +699,20 @@
     }
 
     .location-badge {
-        padding: 0.4rem 0.9rem;
+        padding: 0.4rem 0.95rem;
         font-size: 0.55rem;
-        letter-spacing: 1px;
+        letter-spacing: 1.1px;
     }
 
     .location-overlay {
-        top: 0.875rem;
-        right: 0.875rem;
+        top: 0.9rem;
+        right: 0.9rem;
     }
 
     .locations-decoration {
-        width: 220px;
-        height: 220px;
-        top: 5%;
+        width: 240px;
+        height: 240px;
+        top: 8%;
         right: -70px;
-    }
-}
-
-/* Extra Small Devices */
-@media (max-width: 360px) {
-    .locations-grid {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-    }
-    
-    .location-card:nth-child(1) {
-        grid-column: 1;
-    }
-    
-    .location-image {
-        height: 160px;
-    }
-
-    .location-content {
-        padding: 1rem 1rem 1.2rem;
-    }
-
-    .location-card h3 {
-        font-size: 1.05rem;
-    }
-
-    .location-description {
-        font-size: 0.775rem;
-    }
-
-    .location-cta {
-        padding: 0.55rem 1rem;
-        font-size: 0.675rem;
     }
 }
