@@ -288,6 +288,14 @@
     animation: float 2.5s ease-in-out infinite;
     opacity: 0.8;
     transition: opacity 0.3s ease;
+    display: none; /* Hidden by default on mobile */
+}
+
+/* Show scroll indicator only on desktop devices */
+@media (min-width: 1025px) and (hover: hover) and (pointer: fine) {
+    .scroll-indicator {
+        display: block;
+    }
 }
 
 .scroll-indicator:hover {
