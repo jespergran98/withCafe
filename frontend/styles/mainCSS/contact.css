@@ -225,17 +225,19 @@
     }
     
     .contact-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 2.5rem;
+    }
+    
+    .contact-center {
+        grid-column: 1 / -1;
+        order: -1;
+        max-width: 600px;
+        margin: 0 auto;
     }
     
     .contact-column {
         gap: 1.25rem;
-    }
-    
-    .contact-center {
-        text-align: center;
-        padding: 0 1rem;
     }
     
     .contact-heading {
