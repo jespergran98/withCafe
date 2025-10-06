@@ -76,7 +76,7 @@
 /* Grid Layout */
 .locations-grid {
     display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     max-width: 1320px;
     margin: 0 auto;
@@ -188,13 +188,9 @@
 
 .location-image {
     width: 100%;
-    height: 220px;
+    height: 240px;
     overflow: hidden;
     position: relative;
-}
-
-.location-card-large .location-image {
-    height: 280px;
 }
 
 /* Cool vignette overlay */
@@ -279,11 +275,6 @@
         rgba(16, 26, 31, 0.25) 100%);
 }
 
-.location-card-large .location-content {
-    padding: 1.75rem 1.75rem 2rem;
-    gap: 0.75rem;
-}
-
 .location-card h3 {
     font-size: 1.35rem;
     color: var(--white);
@@ -306,10 +297,6 @@
 .location-card h3 .suffix-text {
     font-family: 'Skranji', cursive;
     font-weight: 400;
-}
-
-.location-card-large h3 {
-    font-size: 1.65rem;
 }
 
 .location-card:hover h3 {
@@ -348,11 +335,6 @@
 
 .location-card:hover .location-description {
     color: rgba(255, 255, 255, 0.92);
-}
-
-.location-card-large .location-description {
-    font-size: 0.9rem;
-    line-height: 1.65;
 }
 
 /* CTA Button - Cool & Inviting */
@@ -429,12 +411,15 @@
     }
 
     .locations-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.25rem;
     }
     
-    .location-card-large {
-        grid-column: span 2;
+    .location-card:nth-child(1) {
+        grid-column: 1 / -1;
+        max-width: 600px;
+        margin: 0 auto;
+        width: 100%;
     }
     
     .locations-decoration {
@@ -443,19 +428,11 @@
     }
 
     .location-image {
-        height: 200px;
-    }
-
-    .location-card-large .location-image {
-        height: 240px;
+        height: 220px;
     }
 
     .location-card h3 {
         font-size: 1.25rem;
-    }
-
-    .location-card-large h3 {
-        font-size: 1.5rem;
     }
 }
 
@@ -466,19 +443,18 @@
     }
     
     .locations-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
     
-    .location-card-large {
-        grid-column: span 2;
+    .location-card:nth-child(1) {
+        grid-column: 1 / -1;
+        max-width: 600px;
+        margin: 0 auto;
+        width: 100%;
     }
     
     .location-image {
-        height: 180px;
-    }
-    
-    .location-card-large .location-image {
         height: 200px;
     }
 
@@ -487,17 +463,8 @@
         gap: 0.5rem;
     }
 
-    .location-card-large .location-content {
-        padding: 1.4rem 1.4rem 1.65rem;
-        gap: 0.6rem;
-    }
-
     .location-card h3 {
         font-size: 1.2rem;
-    }
-
-    .location-card-large h3 {
-        font-size: 1.35rem;
     }
 
     .location-address {
@@ -514,10 +481,6 @@
         font-size: 0.8125rem;
         line-height: 1.55;
         margin-top: 0.25rem;
-    }
-
-    .location-card-large .location-description {
-        font-size: 0.85rem;
     }
 
     .location-cta {
@@ -567,14 +530,11 @@
     }
 
     .locations-grid {
+        grid-template-columns: 1fr;
         gap: 0.875rem;
     }
 
     .location-image {
-        height: 160px;
-    }
-
-    .location-card-large .location-image {
         height: 180px;
     }
 
@@ -583,18 +543,9 @@
         gap: 0.45rem;
     }
 
-    .location-card-large .location-content {
-        padding: 1.25rem 1.25rem 1.5rem;
-        gap: 0.5rem;
-    }
-
     .location-card h3 {
         font-size: 1.1rem;
         gap: 0.35rem;
-    }
-    
-    .location-card-large h3 {
-        font-size: 1.25rem;
     }
 
     .location-address {
@@ -609,10 +560,6 @@
     .location-description {
         font-size: 0.8rem;
         line-height: 1.5;
-    }
-
-    .location-card-large .location-description {
-        font-size: 0.8125rem;
     }
 
     .location-cta {
@@ -648,10 +595,6 @@
 /* Extra Small Devices */
 @media (max-width: 360px) {
     .location-image {
-        height: 140px;
-    }
-
-    .location-card-large .location-image {
         height: 160px;
     }
 
@@ -659,16 +602,8 @@
         padding: 1rem 1rem 1.2rem;
     }
 
-    .location-card-large .location-content {
-        padding: 1.15rem 1.15rem 1.35rem;
-    }
-
     .location-card h3 {
         font-size: 1.05rem;
-    }
-
-    .location-card-large h3 {
-        font-size: 1.2rem;
     }
 
     .location-description {
