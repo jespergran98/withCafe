@@ -163,6 +163,10 @@ header .container {
     transform: translateY(-9.5px) rotate(-45deg);
 }
 
+.hamburger:not(.active) .hamburger-line {
+    background: var(--espresso);
+}
+
 /* Navigation Styles */
 .nav-menu {
     display: block;
@@ -324,7 +328,7 @@ a.nav-cta {
 
     .logo-bottom {
         font-size: 1.25rem;
-        bottom: -0.55rem;
+        bottom: -0.35rem;
         transform: translateX(-50%) translateY(5px);
     }
 
@@ -364,7 +368,7 @@ a.nav-cta {
 
     .logo-bottom {
         font-size: 1.15rem;
-        bottom: -0.5rem;
+        bottom: -0.3rem;
         transform: translateX(-50%) translateY(4px);
     }
 
@@ -382,8 +386,8 @@ a.nav-cta {
     }
 }
 
-/* Mobile menu breakpoint - Show hamburger at 480px and below */
-@media (max-width: 480px) {
+/* Mobile menu breakpoint - Show hamburger at 432px and below */
+@media (max-width: 432px) {
     header {
         padding: 1rem 0;
     }
@@ -399,7 +403,7 @@ a.nav-cta {
     
     .logo {
         height: 2.1rem;
-        margin-top: 0;
+        margin-top: 0.3rem;
     }
     
     .logo-top {
@@ -409,7 +413,7 @@ a.nav-cta {
 
     .logo-bottom {
         font-size: 1.05rem;
-        bottom: -0.48rem;
+        bottom: -0.25rem;
         transform: translateX(-50%) translateY(3px);
     }
 
