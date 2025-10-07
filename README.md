@@ -381,4 +381,4 @@ Og kaffe/te
 79,-
 
 
-Improve the visual design on PCs using three columns with custom height for each section depending on how much the section contains. Påsmurt and Smøre selv should appear in the left column, mellommåltider, salat and wrap in the center column and toast and morgenmat tilbut in the right section. Remove the section tag from morgenmat tilbut and simplify its design to match the other cards. Overhaul the menu with a new cozy café aestetic and utulize the colors from main.css. Provide the updated files.
+Improve the visual design on PCs using three columns with custom height for each section depending on how much the section contains. Påsmurt and Smøre selv should appear in the left column, mellommåltider, salat and wrap in the center column and toast and morgenmat tilbut in the right section. Remove the section tag from morgenmat tilbud and simplify its design to match the other cards. Overhaul the menu with a new cozy café aesthetic and utilize the colors from main.css. Provide the updated files.
