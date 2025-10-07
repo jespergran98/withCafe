@@ -1,0 +1,501 @@
+/* ============================================
+   MENU HERO SECTION
+   ============================================ */
+
+.menu-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    max-height: 600px;
+    overflow: hidden;
+    margin-bottom: 6rem;
+}
+
+.menu-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.menu-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(28, 20, 16, 0.35) 0%,
+        rgba(28, 20, 16, 0.45) 100%
+    );
+}
+
+.menu-hero-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.menu-hero-title {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+    letter-spacing: -2px;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out;
+}
+
+.menu-hero-subtitle {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    color: var(--honey-lighter);
+    font-weight: 400;
+    letter-spacing: 1px;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+/* ============================================
+   MENU SECTION LAYOUT
+   ============================================ */
+
+.menu-section {
+    padding: 4rem 0 6rem;
+    background: var(--cream);
+}
+
+.menu-category {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 8rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.menu-category:nth-child(1) { animation-delay: 0.1s; }
+.menu-category:nth-child(2) { animation-delay: 0.2s; }
+.menu-category:nth-child(3) { animation-delay: 0.3s; }
+.menu-category:nth-child(4) { animation-delay: 0.4s; }
+.menu-category:nth-child(5) { animation-delay: 0.5s; }
+.menu-category:nth-child(6) { animation-delay: 0.6s; }
+
+.menu-category:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   IMAGE POSITIONING
+   ============================================ */
+
+.menu-image-left .menu-content {
+    order: 2;
+}
+
+.menu-image-left .menu-image {
+    order: 1;
+}
+
+.menu-image-right .menu-content {
+    order: 1;
+}
+
+.menu-image-right .menu-image {
+    order: 2;
+}
+
+/* ============================================
+   MENU IMAGES
+   ============================================ */
+
+.menu-image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    aspect-ratio: 4/3;
+}
+
+.menu-image:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.menu-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-image:hover img {
+    transform: scale(1.05);
+}
+
+.menu-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(28, 20, 16, 0.08) 100%
+    );
+    pointer-events: none;
+}
+
+/* ============================================
+   MENU CONTENT
+   ============================================ */
+
+.menu-content {
+    padding: 2rem;
+}
+
+.menu-category-title {
+    font-size: clamp(2.25rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--espresso);
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+    position: relative;
+    display: inline-block;
+}
+
+.menu-category-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--honey) 0%, var(--honey-light) 100%);
+    border-radius: 2px;
+}
+
+/* ============================================
+   MENU ITEMS
+   ============================================ */
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.menu-item {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--butterscotch);
+    transition: var(--transition);
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.menu-item:hover {
+    transform: translateX(8px);
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item-name {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 600;
+    color: var(--espresso);
+    flex: 1;
+}
+
+.menu-item-price {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 700;
+    color: var(--honey-dark);
+    white-space: nowrap;
+}
+
+.menu-item-description {
+    font-size: 0.95rem;
+    color: var(--espresso-light);
+    line-height: 1.6;
+    margin-top: 0.5rem;
+}
+
+/* ============================================
+   MENU EXTRAS
+   ============================================ */
+
+.menu-item-extras {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--cappuccino-cream);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--honey);
+}
+
+.extras-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 0.5rem;
+}
+
+.extras-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.extra-item {
+    font-size: 0.875rem;
+    color: var(--espresso-light);
+    padding: 0.375rem 0.875rem;
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--butterscotch);
+    transition: var(--transition);
+}
+
+.extra-item:hover {
+    background: var(--honey-lighter);
+    border-color: var(--honey);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   SPECIAL MENU SECTION (MORGENMAT)
+   ============================================ */
+
+.menu-special {
+    background: linear-gradient(135deg, var(--honey-lighter) 0%, var(--cream) 100%);
+    padding: 3rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-special::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--honey-light) 0%, transparent 70%);
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.menu-special .menu-content {
+    position: relative;
+    z-index: 1;
+}
+
+.special-badge {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.special-badge span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.5rem 1.25rem;
+    background: var(--honey);
+    color: var(--white);
+    border-radius: 50px;
+    box-shadow: var(--shadow-sm);
+    display: inline-block;
+}
+
+.menu-time {
+    font-size: 0.95rem;
+    color: var(--espresso-light);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    display: inline-block;
+    border-left: 3px solid var(--honey-dark);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .menu-category {
+        gap: 3rem;
+        margin-bottom: 6rem;
+    }
+    
+    .menu-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-hero {
+        height: 50vh;
+        min-height: 350px;
+        margin-bottom: 4rem;
+    }
+    
+    .menu-hero-title {
+        letter-spacing: -1px;
+    }
+    
+    .menu-section {
+        padding: 3rem 0 4rem;
+    }
+    
+    .menu-category {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+    
+    .menu-image-left .menu-content,
+    .menu-image-right .menu-content {
+        order: 2;
+    }
+    
+    .menu-image-left .menu-image,
+    .menu-image-right .menu-image {
+        order: 1;
+    }
+    
+    .menu-content {
+        padding: 1rem;
+    }
+    
+    .menu-category-title {
+        margin-bottom: 1.5rem;
+    }
+    
+    .menu-items {
+        gap: 1.5rem;
+    }
+    
+    .menu-item {
+        padding-bottom: 1.5rem;
+    }
+    
+    .menu-item:hover {
+        transform: translateX(4px);
+    }
+    
+    .menu-special {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-hero {
+        height: 40vh;
+        min-height: 300px;
+        margin-bottom: 3rem;
+    }
+    
+    .menu-section {
+        padding: 2rem 0 3rem;
+    }
+    
+    .menu-category {
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .menu-content {
+        padding: 0.5rem;
+    }
+    
+    .menu-category-title {
+        margin-bottom: 1.25rem;
+    }
+    
+    .menu-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .menu-item-price {
+        margin-top: 0.25rem;
+    }
+    
+    .extras-list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .menu-special {
+        padding: 1.5rem;
+        border-radius: var(--radius-md);
+    }
+    
+    .special-badge span {
+        font-size: 0.7rem;
+        padding: 0.4rem 1rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .menu-time {
+        font-size: 0.875rem;
+        padding: 0.625rem 1rem;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .menu-hero-title,
+    .menu-hero-subtitle,
+    .menu-category {
+        animation: none;
+        opacity: 1;
+    }
+    
+    .menu-image img,
+    .menu-item,
+    .extra-item {
+        transition: none;
+    }
+    
+    .menu-image:hover {
+        transform: none;
+    }
+    
+    .menu-image:hover img {
+        transform: none;
+    }
+    
+    .menu-item:hover {
+        transform: none;
+    }
+    
+    .extra-item:hover {
+        transform: none;
+    }
+}

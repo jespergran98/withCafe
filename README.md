@@ -301,7 +301,9 @@ morgenmat
 
 --
 
-Create a new menu section for my café website. My website is a high end website, 
+Create a new menu section for my café website featuring the food at my café. My website is a well designed modern café website with high standards, importing the base css styling from main.css.
+
+Your task now is to improve the menu.html with the menu items and provide a new menu.css file located in styles/menuCSS folder. 
 
 Here is the full menu, and the images I want you to include for each section in a creative display with alternating images left and right of the menu:
 
