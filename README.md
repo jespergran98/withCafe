@@ -298,3 +298,78 @@ salat
 wrap
 toast
 morgenmat
+
+--
+
+FROKOST & LUNSJ MENY PÅ WITH
+
+PÅSMURT
+Club Tønsberg – klassikern vår!
+Kylling, bacon, WITH’s ravigotte, salat, tomat og rødløk
+109,-
+
+Brie & rød pesto
+109,-
+
+Ost & skinke
+Med rødløk, paprika og salat
+89,-
+
+Spicy Avocado
+129,-
+
+SMØRE SELV
+Rundstykke med syltetøy eller ost
+49,-
+
+MELLOMMÅLTIDER
+
+Chia- & havregrøt
+79,-
+
+Yoghurt med musli
+69,-
+
+SALAT
+Bydelshusets drømmesalat
+Quinoa, grønnkål, marinert rødkål, ristede kikerter, krydret blomkål, saltbakte kjerner (gresskar & solsikke), granateple, bakt gulrot, syltet rødløk og store blåbær
+155,-
+
+Tilvalg:
+
+Kylling +25,-
+
+Fetaost +15,-
+
+WRAP
+Kylling med karri-majones
+89,-
+
+TOAST
+WITH-brød med ost & skinke
+79,-
+
+Focaccia toast med tomat, mozzarella & rød pesto
+119,-
+
+Tilvalg:
+Salat ved siden av toasten +39,-
+
+MORGENMAT TILBUD
+(kl. 09–11, mandag–lørdag)
+
+Havregrøt
+Med kanel, sukker & smør
+39,-
+
+Havregrøt
+Med nøttesmør, frukt, bær & sprø topping
+79,-
+
+Croissant
+Med ost eller syltetøy og kaffe
+69,-
+
+Scones med ost eller syltetøy
+Og kaffe/te
+79,-
