@@ -325,18 +325,18 @@ Med rødløk, paprika og salat
 Spicy Avocado
 129,-
 
-SMØRE SELV
+SMØRE SELV (smoreSelv.avif left side)
 Rundstykke med syltetøy eller ost
 49,-
 
-MELLOMMÅLTIDER (mellommaltider.avif left side)
+MELLOMMÅLTIDER (mellommaltider.avif right side)
 Chia- & havregrøt
 79,-
 
 Yoghurt med musli
 69,-
 
-SALAT (salat.avif right side)
+SALAT (salat.avif left side)
 Bydelshusets drømmesalat
 Quinoa, grønnkål, marinert rødkål, ristede kikerter, krydret blomkål, saltbakte kjerner (gresskar & solsikke), granateple, bakt gulrot, syltet rødløk og store blåbær
 155,-
@@ -347,11 +347,11 @@ Kylling +25,-
 
 Fetaost +15,-
 
-WRAP (wrap.avif left side)
+WRAP (wrap.avif right side)
 Kylling med karri-majones
 89,-
 
-TOAST (toast.avif right side)
+TOAST (toast.avif left side)
 WITH-brød med ost & skinke
 79,-
 
@@ -361,7 +361,7 @@ Focaccia toast med tomat, mozzarella & rød pesto
 Tilvalg:
 Salat ved siden av toasten +39,-
 
-MORGENMAT TILBUD (morgenmat.avif left side)
+MORGENMAT TILBUD (morgenmat.avif right side)
 (kl. 09–11, mandag–lørdag)
 
 Havregrøt
