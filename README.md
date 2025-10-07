@@ -301,9 +301,14 @@ morgenmat
 
 --
 
-FROKOST & LUNSJ MENY PÅ WITH
+Create a new menu section for my café website. My website is a high end website, 
 
-PÅSMURT
+Here is the full menu, and the images I want you to include for each section in a creative display with alternating images left and right of the menu:
+
+FROKOST & LUNSJ MENY PÅ WITH
+(topimage.png for hero)
+
+PÅSMURT (pasmurt.avif image right side)
 Club Tønsberg – klassikern vår!
 Kylling, bacon, WITH’s ravigotte, salat, tomat og rødløk
 109,-
@@ -322,15 +327,14 @@ SMØRE SELV
 Rundstykke med syltetøy eller ost
 49,-
 
-MELLOMMÅLTIDER
-
+MELLOMMÅLTIDER (mellommaltider.avif left side)
 Chia- & havregrøt
 79,-
 
 Yoghurt med musli
 69,-
 
-SALAT
+SALAT (salat.avif right side)
 Bydelshusets drømmesalat
 Quinoa, grønnkål, marinert rødkål, ristede kikerter, krydret blomkål, saltbakte kjerner (gresskar & solsikke), granateple, bakt gulrot, syltet rødløk og store blåbær
 155,-
@@ -341,11 +345,11 @@ Kylling +25,-
 
 Fetaost +15,-
 
-WRAP
+WRAP (wrap.avif left side)
 Kylling med karri-majones
 89,-
 
-TOAST
+TOAST (toast.avif right side)
 WITH-brød med ost & skinke
 79,-
 
@@ -355,7 +359,7 @@ Focaccia toast med tomat, mozzarella & rød pesto
 Tilvalg:
 Salat ved siden av toasten +39,-
 
-MORGENMAT TILBUD
+MORGENMAT TILBUD (morgenmat.avif left side)
 (kl. 09–11, mandag–lørdag)
 
 Havregrøt
