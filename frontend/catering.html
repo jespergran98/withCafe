@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WITH - Meny</title>
+    <link rel="stylesheet" href="./styles/mainCSS/importMain.css">
+    <link rel="stylesheet" href="./styles/menuCSS/importMenu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Bowlby+One+SC&family=Skranji:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <div class="logo-top">WITH</div>
+                    <div class="logo-bottom">brød <span class="accent">&</span> kaffe</div>
+                </div>
+            </a>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">Meny</a></li>
+                    <li><a href="catering.html">Catering</a></li>
+                    <li><a href="#">Lokasjoner</a></li>
+                    <li><a href="#">Om oss</a></li>
+                    <li><a href="#" class="nav-cta"><span>Kontakt</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Menu Hero Section -->
+        <section class="menu-hero">
+            <div class="menu-hero-image">
+                <img src="./assets/images/menu/topImage.png" alt="WITH Frokost og Lunsj">
+                <div class="menu-hero-overlay"></div>
+            </div>
+            <div class="menu-hero-content">
+                <div class="container">
+                    <h1 class="menu-hero-title">Frokost & Lunsj</h1>
+                    <p class="menu-hero-subtitle">Håndverksbakst og kvalitetskaffe</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Section -->
+        <section class="marquee-section">
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <div class="marquee-item">
+                        <span class="marquee-text">Ferske bakevarer hver dag</span>
+                        <img src="assets/images/wheat-icon.png" alt="" class="marquee-icon">
+                    </div>
+                    <div class="marquee-item">
+                        <span class="marquee-text">Kvalitetskaffe fra bærekraftige gårder</span>
+                        <img src="assets/images/coffee-icon.png" alt="" class="marquee-icon">
+                    </div>
+                    <div class="marquee-item">
+                        <span class="marquee-text">Koselig møteplass i Tønsberg</span>
+                        <img src="assets/images/slottsfjell-icon.png" alt="" class="marquee-icon">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Categories Grid -->
+        <section class="menu-section">
+            <div class="container">
+                <div class="menu-grid">
+
+                    <!-- Påsmurt -->
+                    <div class="menu-category">
+                        <div class="menu-image">
+                            <img src="./assets/images/menu/pasmurt.avif" alt="Påsmurt">
+                        </div>
+                        <div class="menu-content">
+                            <h2 class="menu-category-title">Påsmurt</h2>
+                            <div class="menu-items">
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Club Tønsberg</h3>
+                                        <span class="menu-item-price">109,-</span>
+                                    </div>
+                                    <p class="menu-item-description">Klassikern vår! Kylling, bacon, WITH's ravigotte, salat, tomat og rødløk</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Brie & rød pesto</h3>
+                                        <span class="menu-item-price">109,-</span>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Ost & skinke</h3>
+                                        <span class="menu-item-price">89,-</span>
+                                    </div>
+                                    <p class="menu-item-description">Med rødløk, paprika og salat</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Spicy Avocado</h3>
+                                        <span class="menu-item-price">129,-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Smøre Selv -->
+                    <div class="menu-category">
+                        <div class="menu-image">
+                            <img src="./assets/images/menu/smoreSelv.avif" alt="Smøre Selv">
+                        </div>
+                        <div class="menu-content">
+                            <h2 class="menu-category-title">Smøre Selv</h2>
+                            <div class="menu-items">
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Rundstykke med syltetøy eller ost</h3>
+                                        <span class="menu-item-price">49,-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mellommåltider -->
+                    <div class="menu-category">
+                        <div class="menu-image">
+                            <img src="./assets/images/menu/mellommaltider.avif" alt="Mellommåltider">
+                        </div>
+                        <div class="menu-content">
+                            <h2 class="menu-category-title">Mellommåltider</h2>
+                            <div class="menu-items">
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Chia- & havregrøt</h3>
+                                        <span class="menu-item-price">79,-</span>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Yoghurt med musli</h3>
+                                        <span class="menu-item-price">69,-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Salat -->
+                    <div class="menu-category">
+                        <div class="menu-image">
+                            <img src="./assets/images/menu/salat.avif" alt="Salat">
+                        </div>
+                        <div class="menu-content">
+                            <h2 class="menu-category-title">Salat</h2>
+                            <div class="menu-items">
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Bydelshusets drømmesalat</h3>
+                                        <span class="menu-item-price">155,-</span>
+                                    </div>
+                                    <p class="menu-item-description">Quinoa, grønnkål, marinert rødkål, ristede kikerter, krydret blomkål, saltbakte kjerner (gresskar & solsikke), granateple, bakt gulrot, syltet rødløk og store blåbær</p>
+                                    <div class="menu-item-extras">
+                                        <p class="extras-title">Tilvalg:</p>
+                                        <div class="extras-list">
+                                            <span class="extra-item">Kylling +25,-</span>
+                                            <span class="extra-item">Fetaost +15,-</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wrap -->
+                    <div class="menu-category">
+                        <div class="menu-image">
+                            <img src="./assets/images/menu/wrap.avif" alt="Wrap">
+                        </div>
+                        <div class="menu-content">
+                            <h2 class="menu-category-title">Wrap</h2>
+                            <div class="menu-items">
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Kylling med karri-majones</h3>
+                                        <span class="menu-item-price">89,-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Toast -->
+                    <div class="menu-category">
+                        <div class="menu-image">
+                            <img src="./assets/images/menu/toast.avif" alt="Toast">
+                        </div>
+                        <div class="menu-content">
+                            <h2 class="menu-category-title">Toast</h2>
+                            <div class="menu-items">
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">WITH-brød med ost & skinke</h3>
+                                        <span class="menu-item-price">79,-</span>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Focaccia toast</h3>
+                                        <span class="menu-item-price">119,-</span>
+                                    </div>
+                                    <p class="menu-item-description">Med tomat, mozzarella & rød pesto</p>
+                                    <div class="menu-item-extras">
+                                        <p class="extras-title">Tilvalg:</p>
+                                        <div class="extras-list">
+                                            <span class="extra-item">Salat ved siden av toasten +39,-</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Morgenmat Tilbud (Full Width Special) -->
+                    <div class="menu-category menu-special">
+                        <div class="menu-image">
+                            <img src="./assets/images/menu/morgenmat.avif" alt="Morgenmat">
+                        </div>
+                        <div class="menu-content">
+                            <div class="special-badge">
+                                <span>Morgenmat Tilbud</span>
+                            </div>
+                            <h2 class="menu-category-title">Morgenmat</h2>
+                            <p class="menu-time">kl. 09–11, mandag–lørdag</p>
+                            <div class="menu-items">
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Havregrøt</h3>
+                                        <span class="menu-item-price">39,-</span>
+                                    </div>
+                                    <p class="menu-item-description">Med kanel, sukker & smør</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Havregrøt</h3>
+                                        <span class="menu-item-price">79,-</span>
+                                    </div>
+                                    <p class="menu-item-description">Med nøttesmør, frukt, bær & sprø topping</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Croissant</h3>
+                                        <span class="menu-item-price">69,-</span>
+                                    </div>
+                                    <p class="menu-item-description">Med ost eller syltetøy og kaffe</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item-header">
+                                        <h3 class="menu-item-name">Scones med ost eller syltetøy</h3>
+                                        <span class="menu-item-price">79,-</span>
+                                    </div>
+                                    <p class="menu-item-description">Og kaffe/te</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    
+        <!-- Contact Details -->
+        <section id="kontakt" class="contact-info">
+            <div class="container">
+                <div class="contact-grid">
+
+                    <!-- Left: Contact Details -->
+                    <div class="contact-column">
+                        <h3 class="contact-heading">Kontakt oss</h3>
+                        <div class="contact-details">
+                            <a href="tel:98901886" class="contact-item">
+                                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <div class="contact-text">
+                                    <span class="contact-label">Telefon</span>
+                                    <span class="contact-value">989 01 886</span>
+                                </div>
+                            </a>
+                            <a href="mailto:kjerstiwith@hotmail.com" class="contact-item">
+                                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <div class="contact-text">
+                                    <span class="contact-label">E-post</span>
+                                    <span class="contact-value">kjerstiwith@hotmail.com</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Center: Purpose & Socials -->
+                    <div class="contact-column contact-center">
+                        <h3 class="contact-heading">Vårt formål</h3>
+                        <p class="contact-tagline">Å skape Tønsbergs varmeste møteplass. Drevet av kjærlighet for håndverksbakst, kvalitetskaffe og de gode samtalene som oppstår når mennesker kommer sammen.</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/withbrodogkaffe/?locale=nb_NO" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/withtonsberg/?hl=en" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Quick Links -->
+                    <div class="contact-column">
+                        <h3 class="contact-heading">Utforsk</h3>
+                        <nav class="quick-links">
+                            <a href="#jobb" class="quick-link">Jobb</a>
+                            <a href="#om-oss" class="quick-link">Om oss</a>
+                            <a href="catering.html" class="quick-link">Catering</a>
+                            <a href="menu.html" class="quick-link">Meny</a>
+                            <a href="#bydelshuset" class="quick-link">Bydelshuset</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer logo and copyright -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-top">WITH</div>
+                    <div class="logo-bottom">brød <span class="accent">&</span> kaffe</div>
+                </div>
+                <div class="footer-divider"></div>
+                <p>&copy; <span id="copyright-year"></span> WITH. Alle rettigheter reservert.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/mainJS/hamburger.js"></script>
+    <script src="./js/mainJS/scrollHeader.js"></script>
+    <script src="./js/mainJS/logoAnimation.js"></script>
+    <script src="./js/menuJS/menu.js"></script>
+    <script src="./js/mainJS/marquee.js"></script>
+    <script src="./js/mainJS/copyrightYear.js"></script>
+</body>
+</html>
