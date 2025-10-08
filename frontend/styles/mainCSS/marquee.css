@@ -4,6 +4,10 @@
     padding: 1.5rem 0;
     overflow: hidden;
     position: relative;
+    /* Prevent scrolling issues on mobile */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .marquee-section::before,
@@ -32,6 +36,8 @@
 .marquee-container {
     width: 100%;
     position: relative;
+    /* Prevent layout shifts on mobile */
+    contain: layout style paint;
 }
 
 .marquee-track {
@@ -39,6 +45,13 @@
     align-items: center;
     gap: 4rem;
     will-change: transform;
+    /* Hardware acceleration for smooth animation */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Prevent subpixel rendering issues */
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .marquee-item {
@@ -51,6 +64,8 @@
     font-weight: 400;
     letter-spacing: 0.5px;
     text-shadow: 0 2px 4px var(--whisper);
+    /* Prevent layout calculations */
+    contain: layout style;
 }
 
 .marquee-text {
@@ -65,6 +80,9 @@
     opacity: 0.9;
     flex-shrink: 0;
     margin-left: 0.5rem;
+    /* Prevent image loading shifts */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 /* Responsive Design */
