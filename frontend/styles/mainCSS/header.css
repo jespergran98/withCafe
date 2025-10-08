@@ -1,10 +1,6 @@
 /* Header Styles */
 header {
-    background: linear-gradient(
-        135deg,
-        var(--warm-linen),
-        var(--porcelain)
-    );
+    background: linear-gradient(135deg, var(--warm-linen), var(--porcelain));
     padding: 1.75rem 0;
     border-bottom: 1px solid var(--whisper);
     position: fixed;
@@ -12,50 +8,17 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
     box-shadow: 0 1px 0 var(--whisper);
-    transition: 
-        background 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-        padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-        backdrop-filter 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-        border-bottom 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        var(--lace),
-        transparent
-    );
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: padding 0.3s ease;
 }
 
 header.scrolled {
     padding: 1.4rem 0;
-    background: linear-gradient(
-        135deg,
-        var(--morning-mist),
-        var(--cotton)
-    );
-    backdrop-filter: blur(28px) saturate(200%);
-    -webkit-backdrop-filter: blur(28px) saturate(200%);
-    box-shadow: 
-        0 8px 32px var(--soft-shadow),
-        0 2px 8px var(--gentle-shadow),
-        0 1px 0 var(--silk) inset,
-        0 -1px 0 var(--lace) inset;
-    border-bottom: 1px solid var(--pearl);
-}
-
-header.scrolled::before {
-    opacity: 1;
+    background: rgba(250, 248, 245, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 header .container {
@@ -78,7 +41,7 @@ header .container {
     height: 3rem;
     justify-content: center;
     opacity: 0.95;
-    transition: var(--transition);
+    transition: opacity 0.3s ease;
 }
 
 .logo:hover {
@@ -90,9 +53,7 @@ header .container {
     letter-spacing: 0.1rem;
     font-weight: 400;
     line-height: 1;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: 'Bowlby One SC', sans-serif;
-    will-change: transform;
     color: var(--espresso);
 }
 
@@ -101,10 +62,8 @@ header .container {
     font-weight: 400;
     opacity: 0;
     color: var(--espresso);
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
-                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.3s ease;
     font-family: 'Skranji', cursive;
-    will-change: opacity, transform;
     position: absolute;
     bottom: -0.65rem;
     left: 50%;
@@ -128,7 +87,6 @@ header .container {
     cursor: pointer;
     padding: 0;
     z-index: 1001;
-    transition: var(--transition);
 }
 
 .hamburger-line {
@@ -136,7 +94,7 @@ header .container {
     height: 3px;
     background: var(--espresso);
     border-radius: 3px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
     transform-origin: center;
 }
 
@@ -145,11 +103,11 @@ header .container {
         background: var(--honey);
     }
 }
+
 .hamburger.active .hamburger-line {
     background: var(--honey);
 }
 
-/* Hamburger animation when active */
 .hamburger.active .hamburger-line:nth-child(1) {
     transform: translateY(9.5px) rotate(45deg);
 }
@@ -161,10 +119,6 @@ header .container {
 
 .hamburger.active .hamburger-line:nth-child(3) {
     transform: translateY(-9.5px) rotate(-45deg);
-}
-
-.hamburger:not(.active) .hamburger-line {
-    background: var(--espresso);
 }
 
 /* Navigation Styles */
@@ -182,7 +136,7 @@ header .container {
     color: var(--espresso);
     font-size: 1rem;
     font-weight: 500;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     position: relative;
     padding: 0.5rem 0;
     opacity: 0.75;
@@ -197,7 +151,7 @@ header .container {
     width: 0;
     height: 2px;
     background: linear-gradient(90deg, var(--honey), var(--honey-dark));
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 0.3s ease;
     border-radius: 2px;
 }
 
@@ -210,7 +164,7 @@ header .container {
     width: 100%;
 }
 
-/* Enhanced Kontakt Button - Refined Café Design */
+/* Enhanced Kontakt Button */
 a.nav-cta {
     background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
     color: var(--white);
@@ -219,10 +173,11 @@ a.nav-cta {
     opacity: 1;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 16px var(--amber-glow);
     position: relative;
     overflow: hidden;
+    border: 1px solid var(--honey-dark);
 }
 
 .nav-cta::before {
@@ -231,7 +186,8 @@ a.nav-cta {
     inset: 0;
     background: linear-gradient(135deg, var(--honey-dark) 0%, var(--honey) 100%);
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: var(--radius-sm);
 }
 
 .nav-cta::after {
@@ -239,8 +195,9 @@ a.nav-cta {
 }
 
 .nav-cta:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.02);
     box-shadow: 0 8px 24px var(--amber-shine);
+    border-color: var(--honey);
 }
 
 .nav-cta:hover::before {
@@ -248,11 +205,10 @@ a.nav-cta {
 }
 
 .nav-cta:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     box-shadow: 0 4px 12px var(--amber-glow);
 }
 
-/* Ensure text stays on top */
 .nav-cta span {
     position: relative;
     z-index: 1;
@@ -386,7 +342,7 @@ a.nav-cta {
     }
 }
 
-/* Mobile menu breakpoint - Show hamburger at 432px and below */
+/* Mobile menu breakpoint */
 @media (max-width: 432px) {
     header {
         padding: 1rem 0;
@@ -417,7 +373,6 @@ a.nav-cta {
         transform: translateX(-50%) translateY(3px);
     }
 
-    /* Show hamburger menu */
     .hamburger {
         display: flex;
         width: 26px;
@@ -436,22 +391,17 @@ a.nav-cta {
         transform: translateY(-8.75px) rotate(-45deg);
     }
 
-    /* Hide navigation by default on mobile */
     .nav-menu {
         position: fixed;
         top: 0;
         right: -100%;
         width: 260px;
         height: 100vh;
-        background: linear-gradient(
-            135deg,
-            var(--warm-linen),
-            var(--porcelain)
-        );
-        backdrop-filter: blur(28px) saturate(200%);
-        -webkit-backdrop-filter: blur(28px) saturate(200%);
-        box-shadow: -8px 0 32px var(--soft-shadow);
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: rgba(250, 248, 245, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
+        transition: right 0.3s ease;
         z-index: 999;
         padding: 5.5rem 1.5rem 1.5rem;
         overflow-y: auto;
@@ -491,12 +441,11 @@ a.nav-cta {
         display: block;
     }
 
-    /* Overlay when menu is open */
     body.menu-open::before {
         content: '';
         position: fixed;
         inset: 0;
-        background: var(--espresso-veil);
+        background: rgba(30, 20, 10, 0.4);
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
         z-index: 998;
