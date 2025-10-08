@@ -1,4 +1,6 @@
 
+(README er notater enn så lenge, ikke en faktisk readme for oppgaven)
+
 Hovedside:
 
 Velkommen
