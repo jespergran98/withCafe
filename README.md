@@ -1,5 +1,84 @@
 
-(README er notater enn så lenge, ikke en faktisk readme for oppgaven)
+(har brukt README til notater enn så lenge, ikke en faktisk readme for repositoriet)
+
+File structure:
+
+WITHCAFE/
+├── .qodo/
+├── frontend/
+│   ├── index.html
+│   ├── menu.html
+│   ├── catering.html
+│   ├── fontExplorer.html
+│   ├── assets/
+│   │   └── images/
+│   │       ├── menu/
+│   │       │   ├── catering.avif
+│   │       │   ├── mellommalttider.avif
+│   │       │   ├── morgenmat.avif
+│   │       │   ├── pasmurt.avif
+│   │       │   ├── salat.avif
+│   │       │   ├── smoreSelv.avif
+│   │       │   ├── toast.avif
+│   │       │   ├── topImage.png
+│   │       │   └── wrap.avif
+│   │       ├── beans.avif
+│   │       ├── bokOgKaffe.webp
+│   │       ├── bread.avif
+│   │       ├── brodOgKaffe.webp
+│   │       ├── bydelshuset.webp
+│   │       ├── coffee-icon-high-res.png
+│   │       ├── coffee-icon.png
+│   │       ├── coffee.avif
+│   │       ├── cozy.avif
+│   │       ├── slottsfjell-icon-high-res.png
+│   │       ├── slottsfjell-icon.png
+│   │       ├── toys.avif
+│   │       ├── wheat-icon-high-res.png
+│   │       └── wheat-icon.png
+│   ├── js/
+│   │   ├── cateringJS/
+│   │   │   └── catering.js
+│   │   ├── indexJS/
+│   │   │   ├── features.js
+│   │   │   ├── hero.js
+│   │   │   └── locations.js
+│   │   ├── mainJS/
+│   │   │   ├── breadAndWheat.js
+│   │   │   ├── copyrightYear.js
+│   │   │   ├── hamburger.js
+│   │   │   ├── logoAnimation.js
+│   │   │   ├── marquee.js
+│   │   │   └── scrollHeader.js
+│   │   └── menuJS/
+│   │       └── menu.js
+│   └── styles/
+│       ├── cateringCSS/
+│       │   └── catering.css
+│       ├── indexCSS/
+│       │   ├── importIndex.css
+│       │   ├── features.css
+│       │   ├── hero.css
+│       │   └── locations.css
+│       ├── mainCSS/
+│       │   ├── importMain.css
+│       │   ├── contact.css
+│       │   ├── footer.css
+│       │   ├── header.css
+│       │   ├── main.css
+│       │   └── marquee.css
+│       └── menuCSS/
+│           ├── importMenu.css
+│           ├── menu-accessibility.css
+│           ├── menu-content.css
+│           ├── menu-extras.css
+│           ├── menu-hero.css
+│           ├── menu-images.css
+│           ├── menu-items.css
+│           ├── menu-layout.css
+│           ├── menu-responsive.css
+│           └── menu-special.css
+└── README.md
 
 Hovedside:
 
