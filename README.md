@@ -382,3 +382,29 @@ Og kaffe/te
 
 
 Improve the visual design on PCs using three columns with custom height for each section depending on how much the section contains. Påsmurt and Smøre selv should appear in the left column, mellommåltider, salat and wrap in the center column and toast and morgenmat tilbut in the right section. Remove the section tag from morgenmat tilbud and simplify its design to match the other cards. Overhaul the menu with a new cozy café aesthetic and utilize the colors from main.css. Provide the updated files.
+
+
+Create a new section above the menu and below the marquee line for the catering description. Create a new catering.css file and update the HTML file. Here is the new text I want you to add. The catering html also imports the main.css, so only use colors from the main.css file:
+
+Catering for enhver anledning
+Gjør det enkelt å servere god mat. Vi tilbyr smakfull og hjemmelaget catering som passer perfekt til møter, selskaper, bursdager og andre arrangementer.
+
+Fra vår meny:
+
+Deilige sandwicher og wraps – perfekt for en stående buffet.
+
+Friske og fargerike salater – servert i praktiske porsjonsstørrelser.
+
+Klassiske smørbrød – med et rikt utvalg av kvalitets-pålegg.
+
+Søte fristelser – som saftige kakestykker, ferske kanelboller og kardemommeboller.
+
+Bestilling og levering:
+
+Vi leverer gjerne til deg, eller du kan hente maten hos oss.
+
+For å sikre den beste kvaliteten, ber vi om at bestillinger gjøres senest to dager i forveien.
+
+E-post: post@bydelshuset.com
+
+Haster det? Ring oss på 98 90 18 83, så ser vi hva vi får til.

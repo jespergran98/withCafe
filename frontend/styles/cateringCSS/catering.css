@@ -1,0 +1,701 @@
+/* Enhanced Catering Description Section */
+.catering-description {
+    padding: 6rem 0;
+    background: linear-gradient(to bottom, var(--cream) 0%, var(--cream-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle top divider */
+.catering-description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--mocha-mist), transparent);
+}
+
+/* Soft ambient background pattern with animation */
+.catering-description::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, var(--cappuccino-cream) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, var(--caramel-swirl) 0%, transparent 40%);
+    pointer-events: none;
+    animation: ambientPulse 12s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+@keyframes ambientPulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+/* Ambient decoration */
+.catering-decoration {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--latte-layer) 0%, transparent 65%);
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    animation: gentleFloat 20s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+    0%, 100% { transform: translate(0, 0); opacity: 0.6; }
+    33% { transform: translate(20px, -25px); opacity: 0.9; }
+    66% { transform: translate(-20px, 25px); opacity: 0.7; }
+}
+
+.catering-description .container {
+    max-width: 1200px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Intro Section */
+.catering-intro {
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.catering-intro.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced Section Tag - Matching Location Badge Style */
+.section-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, 
+        var(--honey) 0%, 
+        var(--honey-dark) 100%);
+    color: var(--white);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    box-shadow: 
+        0 4px 16px rgba(217, 168, 86, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-shadow: 0 1px 2px rgba(28, 20, 16, 0.3);
+}
+
+.section-tag:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 
+        0 6px 20px rgba(217, 168, 86, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, 
+        var(--honey-dark) 0%, 
+        var(--honey) 100%);
+}
+
+.catering-intro h2 {
+    font-size: 2.75rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.catering-intro p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    color: var(--text-medium);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.92;
+}
+
+/* Catering Grid */
+.catering-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Catering Cards */
+.catering-card {
+    background: linear-gradient(145deg, var(--white) 0%, var(--vanilla-foam) 100%);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+}
+
+.catering-card.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.catering-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.catering-card:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+/* Warm accent bar */
+.catering-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        var(--honey) 0%, 
+        var(--honey-dark) 50%, 
+        var(--honey) 100%);
+    border-radius: 16px 16px 0 0;
+    transform: scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: left;
+}
+
+.catering-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Warm glow on hover */
+.catering-card::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg, 
+        var(--toffee-glaze) 0%, 
+        transparent 50%, 
+        var(--mocha-mist) 100%);
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(8px);
+}
+
+.catering-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 
+        0 20px 48px rgba(0, 0, 0, 0.1),
+        0 12px 28px rgba(217, 168, 86, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.catering-card:hover::after {
+    opacity: 1;
+}
+
+/* Highlight Card */
+.catering-card-highlight {
+    background: linear-gradient(145deg, 
+        var(--honey) 0%, 
+        var(--honey-dark) 100%);
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.catering-card-highlight::before {
+    background: linear-gradient(90deg, 
+        var(--white) 0%, 
+        rgba(255, 255, 255, 0.8) 50%, 
+        var(--white) 100%);
+}
+
+.catering-card-highlight h3,
+.catering-card-highlight p {
+    color: var(--white);
+}
+
+.catering-card-highlight .catering-note {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Card Icon */
+.catering-card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 
+        0 4px 16px rgba(217, 168, 86, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.25);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.catering-card-highlight .catering-card-icon {
+    background: linear-gradient(135deg, var(--white) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.catering-card:hover .catering-card-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 
+        0 6px 20px rgba(217, 168, 86, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.catering-card-icon svg {
+    width: 30px;
+    height: 30px;
+    color: var(--white);
+    stroke-width: 2.5;
+}
+
+.catering-card-highlight .catering-card-icon svg {
+    color: var(--honey-dark);
+}
+
+/* Card Content */
+.catering-card-content h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.3px;
+}
+
+/* Catering List */
+.catering-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.catering-list li {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--text-medium);
+    line-height: 1.8;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+.catering-list li:last-child {
+    border-bottom: none;
+}
+
+.catering-list li::before {
+    content: "•";
+    color: var(--honey);
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    line-height: 1.4;
+    flex-shrink: 0;
+}
+
+.catering-list li:hover {
+    padding-left: 8px;
+    color: var(--text-dark);
+}
+
+.catering-list strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* Highlight Text */
+.catering-highlight-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.catering-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Contact Box */
+.catering-contact-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+}
+
+.contact-method:first-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-method svg {
+    width: 20px;
+    height: 20px;
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.catering-contact-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.catering-contact-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--white);
+    transition: width 0.3s ease;
+}
+
+.catering-contact-link:hover {
+    transform: translateX(5px);
+}
+
+.catering-contact-link:hover::after {
+    width: 100%;
+}
+
+.catering-urgent {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Responsive Design */
+
+/* Large tablets and small desktops */
+@media (max-width: 1200px) {
+    .catering-grid {
+        gap: 1.75rem;
+    }
+    
+    .catering-card {
+        padding: 2.25rem;
+    }
+    
+    .catering-decoration {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .catering-description {
+        padding: 4.5rem 0;
+    }
+    
+    .catering-intro h2 {
+        font-size: 2.25rem;
+    }
+    
+    .catering-intro p {
+        font-size: 1.05rem;
+    }
+    
+    .catering-card {
+        padding: 2rem;
+    }
+    
+    .catering-card-content h3 {
+        font-size: 1.6rem;
+    }
+    
+    .catering-decoration {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+/* Mobile landscape and small tablets */
+@media (max-width: 768px) {
+    .catering-description {
+        padding: 3.5rem 0;
+    }
+    
+    .catering-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .catering-intro {
+        margin-bottom: 50px;
+    }
+    
+    .catering-intro h2 {
+        font-size: 2rem;
+    }
+    
+    .catering-intro p {
+        font-size: 1rem;
+    }
+    
+    .catering-card {
+        padding: 1.85rem;
+    }
+    
+    .catering-card-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 1.25rem;
+    }
+    
+    .catering-card-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .catering-card-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .catering-list li {
+        font-size: 0.95rem;
+        padding: 0.75rem 0;
+    }
+    
+    .catering-highlight-text {
+        font-size: 1.05rem;
+    }
+    
+    .catering-note {
+        font-size: 0.9rem;
+    }
+    
+    .catering-contact-box {
+        padding: 1.25rem;
+    }
+    
+    .contact-method {
+        font-size: 0.95rem;
+    }
+    
+    .section-tag {
+        padding: 0.45rem 1.1rem;
+        font-size: 0.575rem;
+        letter-spacing: 1.3px;
+    }
+    
+    .catering-decoration {
+        width: 240px;
+        height: 240px;
+        top: 10%;
+        left: -50px;
+    }
+    
+    /* Disable hover effects on mobile */
+    .catering-card:hover {
+        transform: translateY(0) scale(1);
+        box-shadow: 
+            0 4px 16px rgba(0, 0, 0, 0.06),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+    
+    .catering-card:hover::before {
+        transform: scaleX(0);
+    }
+    
+    .catering-card:hover::after {
+        opacity: 0;
+    }
+    
+    .section-tag:hover {
+        transform: none;
+    }
+    
+    .catering-card:hover .catering-card-icon {
+        transform: none;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .catering-description {
+        padding: 3rem 0;
+    }
+    
+    .catering-intro {
+        margin-bottom: 40px;
+    }
+    
+    .catering-intro h2 {
+        font-size: 1.75rem;
+    }
+    
+    .catering-intro p {
+        font-size: 0.95rem;
+    }
+    
+    .catering-card {
+        padding: 1.6rem;
+    }
+    
+    .catering-card-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+    }
+    
+    .catering-card-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+    
+    .catering-card-content h3 {
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+    }
+    
+    .catering-list li {
+        font-size: 0.9rem;
+        padding: 0.65rem 0;
+    }
+    
+    .catering-list li::before {
+        font-size: 1.3rem;
+        margin-right: 12px;
+    }
+    
+    .catering-highlight-text {
+        font-size: 1rem;
+    }
+    
+    .catering-note {
+        font-size: 0.85rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .catering-contact-box {
+        padding: 1.15rem;
+    }
+    
+    .contact-method {
+        font-size: 0.9rem;
+        gap: 0.85rem;
+    }
+    
+    .contact-method svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .catering-urgent {
+        font-size: 0.9rem;
+    }
+    
+    .section-tag {
+        padding: 0.4rem 1rem;
+        font-size: 0.55rem;
+        letter-spacing: 1.2px;
+    }
+    
+    .catering-decoration {
+        width: 200px;
+        height: 200px;
+        left: -60px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+    .catering-description {
+        padding: 2.5rem 0;
+    }
+    
+    .catering-intro h2 {
+        font-size: 1.6rem;
+    }
+    
+    .catering-intro p {
+        font-size: 0.9rem;
+    }
+    
+    .catering-card {
+        padding: 1.4rem;
+    }
+    
+    .catering-card-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .catering-card-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .catering-card-content h3 {
+        font-size: 1.25rem;
+    }
+    
+    .catering-list li {
+        font-size: 0.85rem;
+    }
+    
+    .section-tag {
+        padding: 0.375rem 0.95rem;
+        font-size: 0.525rem;
+        letter-spacing: 1.1px;
+    }
+    
+    .catering-decoration {
+        width: 180px;
+        height: 180px;
+    }
+}

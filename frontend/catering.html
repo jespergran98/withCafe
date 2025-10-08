@@ -6,6 +6,7 @@
     <title>WITH - Meny</title>
     <link rel="stylesheet" href="./styles/mainCSS/importMain.css">
     <link rel="stylesheet" href="./styles/menuCSS/importMenu.css">
+    <link rel="stylesheet" href="./styles/cateringCSS/catering.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Bowlby+One+SC&family=Skranji:wght@400;700&display=swap" rel="stylesheet">
@@ -31,7 +32,7 @@
             
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="#">Meny</a></li>
+                    <li><a href="menu.html">Meny</a></li>
                     <li><a href="catering.html">Catering</a></li>
                     <li><a href="#">Lokasjoner</a></li>
                     <li><a href="#">Om oss</a></li>
@@ -45,13 +46,13 @@
         <!-- Menu Hero Section -->
         <section class="menu-hero">
             <div class="menu-hero-image">
-                <img src="./assets/images/menu/topImage.png" alt="WITH Frokost og Lunsj">
+                <img src="./assets/images/menu/catering.avif" alt="WITH Frokost og Lunsj">
                 <div class="menu-hero-overlay"></div>
             </div>
             <div class="menu-hero-content">
                 <div class="container">
-                    <h1 class="menu-hero-title">Frokost & Lunsj</h1>
-                    <p class="menu-hero-subtitle">Håndverksbakst og kvalitetskaffe</p>
+                    <h1 class="menu-hero-title">Bydelshuset Catering</h1>
+                    <p class="menu-hero-subtitle">Enkle arrangementer, Eksepsjonell mat.</p>
                 </div>
             </div>
         </section>
@@ -71,6 +72,71 @@
                     <div class="marquee-item">
                         <span class="marquee-text">Koselig møteplass i Tønsberg</span>
                         <img src="assets/images/slottsfjell-icon.png" alt="" class="marquee-icon">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Catering Description Section -->
+        <section class="catering-description">
+            <div class="catering-decoration"></div>
+            <div class="container">
+                <div class="catering-intro">
+                    <span class="section-tag">Catering Tjenester</span>
+                    <h2>Catering for enhver anledning</h2>
+                    <p>Gjør det enkelt å servere god mat. Vi tilbyr smakfull og hjemmelaget catering som passer perfekt til møter, selskaper, bursdager og andre arrangementer.</p>
+                </div>
+
+                <div class="catering-grid">
+                    <!-- Menu Options Card -->
+                    <div class="catering-card">
+                        <div class="catering-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z"></path>
+                                <path d="M2 17L12 22L22 17"></path>
+                                <path d="M2 12L12 17L22 12"></path>
+                            </svg>
+                        </div>
+                        <div class="catering-card-content">
+                            <h3>Fra vår meny</h3>
+                            <ul class="catering-list">
+                                <li><strong>Deilige sandwicher og wraps</strong> – perfekt for en stående buffet</li>
+                                <li><strong>Friske og fargerike salater</strong> – servert i praktiske porsjonsstørrelser</li>
+                                <li><strong>Klassiske smørbrød</strong> – med et rikt utvalg av kvalitets-pålegg</li>
+                                <li><strong>Søte fristelser</strong> – som saftige kakestykker, ferske kanelboller og kardemommeboller</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Ordering Card -->
+                    <div class="catering-card catering-card-highlight">
+                        <div class="catering-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="catering-card-content">
+                            <h3>Bestilling og levering</h3>
+                            <p class="catering-highlight-text">Vi leverer gjerne til deg, eller du kan hente maten hos oss.</p>
+                            <p class="catering-note">For å sikre den beste kvaliteten, ber vi om at bestillinger gjøres senest to dager i forveien.</p>
+                            <div class="catering-contact-box">
+                                <div class="contact-method">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    <a href="mailto:post@bydelshuset.com" class="catering-contact-link">post@bydelshuset.com</a>
+                                </div>
+                                <div class="contact-method">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                    <a href="tel:98901883" class="catering-contact-link">98 90 18 83</a>
+                                </div>
+                            </div>
+                            <p class="catering-urgent">Haster det? Ring oss, så ser vi hva vi får til.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -367,6 +433,7 @@
     <script src="./js/mainJS/hamburger.js"></script>
     <script src="./js/mainJS/scrollHeader.js"></script>
     <script src="./js/mainJS/logoAnimation.js"></script>
+    <script src="./js/cateringJS/catering.js"></script>
     <script src="./js/menuJS/menu.js"></script>
     <script src="./js/mainJS/marquee.js"></script>
     <script src="./js/mainJS/copyrightYear.js"></script>
