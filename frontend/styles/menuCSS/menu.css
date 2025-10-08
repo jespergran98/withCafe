@@ -109,7 +109,7 @@
 }
 
 /* ============================================
-   MENU SECTION LAYOUT - ENHANCED WITH RICH COLORS
+   MENU SECTION LAYOUT - ENHANCED WITH 3D WOOD PLANK PATTERN
    ============================================ */
 
 .menu-section {
@@ -140,16 +140,58 @@
     );
 }
 
+/* 3D Wood Plank Pattern Overlay - Warm Coffee & Honey Tones */
 .menu-section::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background: radial-gradient(
-        ellipse at center top,
-        var(--roasted-shadow) 0%,
-        transparent 60%
-    );
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            /* Wide light plank surface with warm honey highlight */
+            rgba(217, 168, 86, 0.025) 0px,
+            rgba(235, 207, 136, 0.035) 20px,
+            rgba(247, 233, 200, 0.04) 40px,
+            rgba(235, 207, 136, 0.035) 60px,
+            rgba(217, 168, 86, 0.025) 74px,
+            
+            /* Deep shadow groove between planks */
+            rgba(13, 9, 7, 0.22) 74px,
+            rgba(17, 13, 11, 0.32) 77px,
+            rgba(11, 8, 6, 0.45) 80px,
+            rgba(17, 13, 11, 0.32) 83px,
+            rgba(13, 9, 7, 0.22) 86px,
+            
+            /* Next wide light plank with highlight */
+            rgba(217, 168, 86, 0.025) 86px,
+            rgba(235, 207, 136, 0.035) 106px,
+            rgba(247, 233, 200, 0.04) 126px,
+            rgba(235, 207, 136, 0.035) 146px,
+            rgba(217, 168, 86, 0.025) 160px,
+            
+            /* Shadow groove */
+            rgba(13, 9, 7, 0.22) 160px,
+            rgba(17, 13, 11, 0.32) 163px,
+            rgba(11, 8, 6, 0.45) 166px,
+            rgba(17, 13, 11, 0.32) 169px,
+            rgba(13, 9, 7, 0.22) 172px,
+            
+            /* Return to start */
+            rgba(217, 168, 86, 0.025) 172px
+        ),
+        /* Subtle perpendicular grain texture */
+        repeating-linear-gradient(
+            135deg,
+            transparent 0px,
+            rgba(217, 168, 86, 0.015) 1px,
+            transparent 2px,
+            transparent 240px
+        );
     pointer-events: none;
+    z-index: 0;
 }
 
 /* ============================================
@@ -1111,6 +1153,10 @@
     
     .menu-section {
         background: var(--white);
+    }
+    
+    .menu-section::after {
+        display: none;
     }
     
     .menu-category {
