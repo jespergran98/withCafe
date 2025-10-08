@@ -1,0 +1,198 @@
+/* ============================================
+   MENU SECTION LAYOUT - ENHANCED WITH 3D WOOD PLANK PATTERN
+   ============================================ */
+
+.menu-section {
+    padding: 6rem 0;
+    background: linear-gradient(
+        to bottom,
+        var(--espresso-medium) 0%,
+        var(--burnt-caramel) 30%,
+        var(--french-roast) 70%,
+        var(--dark-roast) 100%
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--honey),
+        transparent
+    );
+}
+
+/* 3D Wood Plank Pattern Overlay - Warm Coffee & Honey Tones */
+.menu-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            /* Wide light plank surface with warm honey highlight */
+            rgba(217, 168, 86, 0.025) 0px,
+            rgba(235, 207, 136, 0.035) 20px,
+            rgba(247, 233, 200, 0.04) 40px,
+            rgba(235, 207, 136, 0.035) 60px,
+            rgba(217, 168, 86, 0.025) 74px,
+            
+            /* Deep shadow groove between planks */
+            rgba(13, 9, 7, 0.22) 74px,
+            rgba(17, 13, 11, 0.32) 77px,
+            rgba(11, 8, 6, 0.45) 80px,
+            rgba(17, 13, 11, 0.32) 83px,
+            rgba(13, 9, 7, 0.22) 86px,
+            
+            /* Next wide light plank with highlight */
+            rgba(217, 168, 86, 0.025) 86px,
+            rgba(235, 207, 136, 0.035) 106px,
+            rgba(247, 233, 200, 0.04) 126px,
+            rgba(235, 207, 136, 0.035) 146px,
+            rgba(217, 168, 86, 0.025) 160px,
+            
+            /* Shadow groove */
+            rgba(13, 9, 7, 0.22) 160px,
+            rgba(17, 13, 11, 0.32) 163px,
+            rgba(11, 8, 6, 0.45) 166px,
+            rgba(17, 13, 11, 0.32) 169px,
+            rgba(13, 9, 7, 0.22) 172px,
+            
+            /* Return to start */
+            rgba(217, 168, 86, 0.025) 172px
+        ),
+        /* Subtle perpendicular grain texture */
+        repeating-linear-gradient(
+            135deg,
+            transparent 0px,
+            rgba(217, 168, 86, 0.015) 1px,
+            transparent 2px,
+            transparent 240px
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ============================================
+   DESKTOP TWO-COLUMN ALTERNATING LAYOUT - ENHANCED
+   ============================================ */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.menu-category {
+    background: linear-gradient(
+        135deg,
+        var(--cream-dark) 0%,
+        var(--warm-linen) 50%,
+        var(--cream) 100%
+    );
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                0 2px 8px rgba(217, 168, 86, 0.2);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(40px);
+    border: 1px solid var(--toffee-glaze);
+    position: relative;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 0;
+    align-items: stretch;
+}
+
+.menu-category::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(
+        135deg,
+        var(--honey) 0%,
+        var(--amber-shine) 50%,
+        var(--honey-dark) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.menu-category:hover::before {
+    opacity: 1;
+}
+
+.menu-category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4),
+                0 4px 16px rgba(217, 168, 86, 0.3);
+}
+
+.menu-category.animate-in {
+    animation: slideInCategory 0.8s ease-out forwards;
+}
+
+@keyframes slideInCategory {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Alternating pattern for desktop */
+/* Left column - image on left */
+.menu-category:nth-child(4n+1) .menu-image {
+    order: 1;
+}
+
+.menu-category:nth-child(4n+1) .menu-content {
+    order: 2;
+}
+
+/* Left column - image on right */
+.menu-category:nth-child(4n+3) .menu-image {
+    order: 2;
+}
+
+.menu-category:nth-child(4n+3) .menu-content {
+    order: 1;
+}
+
+/* Right column - image on right */
+.menu-category:nth-child(4n+2) .menu-image {
+    order: 2;
+}
+
+.menu-category:nth-child(4n+2) .menu-content {
+    order: 1;
+}
+
+/* Right column - image on left */
+.menu-category:nth-child(4n) .menu-image {
+    order: 1;
+}
+
+.menu-category:nth-child(4n) .menu-content {
+    order: 2;
+}

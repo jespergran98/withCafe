@@ -1,0 +1,66 @@
+/* ============================================
+   MENU CONTENT - ENHANCED
+   ============================================ */
+
+.menu-content {
+    padding: 2.5rem;
+    background: linear-gradient(
+        135deg,
+        var(--cream) 0%,
+        var(--warm-linen) 50%,
+        var(--cream-dark) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 400px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    position: relative;
+}
+
+.menu-content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top right,
+        var(--cappuccino-cream) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+.menu-category-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--espresso);
+    margin-bottom: 1.75rem;
+    letter-spacing: -1px;
+    position: relative;
+    display: inline-block;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+    line-height: 1.2;
+    z-index: 1;
+}
+
+.menu-category-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--honey), var(--honey-dark));
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    box-shadow: 0 2px 8px rgba(217, 168, 86, 0.4);
+}
+
+.menu-category:hover .menu-category-title::after {
+    width: 90px;
+}

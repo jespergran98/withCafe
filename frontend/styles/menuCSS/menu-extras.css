@@ -1,0 +1,52 @@
+/* ============================================
+   MENU EXTRAS - ENHANCED
+   ============================================ */
+
+.menu-item-extras {
+    margin-top: 1rem;
+    padding: 1.25rem;
+    background: linear-gradient(
+        135deg,
+        var(--latte-layer) 0%,
+        var(--cappuccino-cream) 100%
+    );
+    border-radius: 12px;
+    border-left: 4px solid var(--honey);
+    box-shadow: inset 0 1px 3px rgba(28, 20, 16, 0.05);
+}
+
+.extras-title {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--espresso);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.extras-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.extra-item {
+    font-size: 0.8125rem;
+    color: var(--espresso-light);
+    padding: 0.5rem 1rem;
+    background: var(--white);
+    border-radius: 50px;
+    border: 1.5px solid var(--butterscotch);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(28, 20, 16, 0.08);
+}
+
+.extra-item:hover {
+    background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+    border-color: var(--honey-dark);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(217, 168, 86, 0.4);
+}

@@ -1,0 +1,74 @@
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .menu-category {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .menu-category:hover,
+    .menu-item:hover,
+    .extra-item:hover {
+        transform: none;
+    }
+    
+    .menu-category:hover .menu-image img {
+        transform: none;
+    }
+    
+    .special-badge::before,
+    .special-badge::after {
+        animation: none;
+    }
+}
+
+/* ============================================
+   FOCUS STATES FOR ACCESSIBILITY
+   ============================================ */
+
+.extra-item:focus-visible,
+.special-badge span:focus-visible {
+    outline: 3px solid var(--honey);
+    outline-offset: 3px;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .menu-hero {
+        height: auto;
+        min-height: auto;
+        page-break-after: avoid;
+    }
+    
+    .menu-section {
+        background: var(--white);
+    }
+    
+    .menu-section::after {
+        display: none;
+    }
+    
+    .menu-category {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        background: var(--white);
+    }
+    
+    .menu-category:hover {
+        transform: none;
+    }
+}

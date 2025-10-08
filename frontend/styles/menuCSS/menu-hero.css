@@ -1,0 +1,109 @@
+/* ============================================
+   MENU HERO SECTION - ENHANCED
+   ============================================ */
+
+.menu-hero {
+    position: relative;
+    height: 65vh;
+    min-height: 450px;
+    max-height: 650px;
+    overflow: hidden;
+}
+
+.menu-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.85) contrast(1.08);
+    transform: scale(1.02);
+    transition: transform 8s ease-out;
+}
+
+.menu-hero:hover .menu-hero-image img {
+    transform: scale(1.08);
+}
+
+.menu-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(28, 20, 16, 0.25) 0%,
+        rgba(28, 20, 16, 0.6) 100%
+    );
+    z-index: 1;
+}
+
+.menu-hero-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(28, 20, 16, 0.3) 100%
+    );
+}
+
+.menu-hero-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.menu-hero-title {
+    font-size: clamp(3.5rem, 9vw, 6.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.25rem;
+    letter-spacing: -3px;
+    text-shadow: 0 6px 32px rgba(0, 0, 0, 0.5),
+                 0 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out;
+    position: relative;
+}
+
+.menu-hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--honey), transparent);
+    border-radius: 2px;
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.menu-hero-subtitle {
+    font-size: clamp(1.25rem, 2.8vw, 1.75rem);
+    color: var(--honey-lighter);
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
