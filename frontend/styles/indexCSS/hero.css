@@ -49,8 +49,8 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    opacity: 0.18;
-    filter: blur(2px) brightness(0.9);
+    opacity: 0.30;
+    filter: blur(1px) brightness(1.0);
     animation: subtleZoom 20s ease-in-out infinite;
 }
 
@@ -63,8 +63,8 @@
     position: absolute;
     inset: 0;
     background: 
-        radial-gradient(ellipse 120% 100% at 50% 50%, transparent 30%, rgba(13, 10, 8, 0.8) 75%, var(--french-roast) 95%),
-        linear-gradient(180deg, rgba(13, 10, 8, 0.5) 0%, var(--french-roast) 100%);
+        radial-gradient(ellipse 120% 100% at 50% 50%, transparent 30%, rgba(13, 10, 8, 0.7) 75%, var(--french-roast) 95%),
+        linear-gradient(180deg, rgba(13, 10, 8, 0.4) 0%, rgba(13, 10, 8, 0.8) 100%);
     z-index: 1;
 }
 
