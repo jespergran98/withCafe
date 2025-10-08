@@ -3,6 +3,7 @@
 
 File structure:
 
+```
 WITHCAFE/
 ├── .qodo/
 ├── frontend/
@@ -79,6 +80,7 @@ WITHCAFE/
 │           ├── menu-responsive.css
 │           └── menu-special.css
 └── README.md
+```
 
 Hovedside:
 
@@ -86,21 +88,21 @@ Velkommen
 
 Vi tilbyr:
 
-Fersk bakst, Kvalitetskaffe, Koselig atmosfære, Lekerom?
+Fersk bakst, Kvalitetskaffe, Koselig atmosfære, (Lekerom?)
 
 Besøk oss i Tønsberg:
 WITH brød & kaffe 2.0 i Storgaten 29
 WITH bok & kaffe på biblioteket
 WITH brunsj & kaffe Bydelshuset
 
-top 5 Norske café nettsider:
+top 5 Norske kafé nettsider:
 fuglen.no
 timwendelboe.no
 srw.no
 kaffebrenneriet.no
 heyhoney.no
 
-top 5 globale café nettsider:
+top 5 globale kafé nettsider:
 bluestonelane.com
 cafegratitude.com
 bluebottlecoffee.com
