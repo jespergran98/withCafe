@@ -689,7 +689,7 @@
 }
 
 /* Extra Small Devices */
-@media (max-width: 420px) {
+@media (max-width: 400px) {
     .locations {
         padding: 2.5rem 0;
     }
