@@ -24,7 +24,7 @@
     50% { opacity: 1; }
 }
 
-/* Soft pattern overlay */
+/* 3D Wood Plank Pattern Overlay */
 .locations::after {
     content: '';
     position: absolute;
@@ -35,10 +35,44 @@
     background: 
         repeating-linear-gradient(
             45deg,
-            transparent,
-            transparent 80px,
-            rgba(50, 101, 122, 0.02) 80px,
-            rgba(50, 101, 122, 0.02) 160px
+            /* Wide light plank surface with subtle highlight */
+            rgba(50, 101, 122, 0.025) 0px,
+            rgba(60, 115, 138, 0.035) 20px,
+            rgba(65, 120, 142, 0.04) 40px,
+            rgba(60, 115, 138, 0.035) 60px,
+            rgba(50, 101, 122, 0.025) 74px,
+            
+            /* Deep shadow groove between planks */
+            rgba(20, 35, 45, 0.22) 74px,
+            rgba(15, 25, 35, 0.32) 77px,
+            rgba(8, 15, 22, 0.45) 80px,
+            rgba(15, 25, 35, 0.32) 83px,
+            rgba(20, 35, 45, 0.22) 86px,
+            
+            /* Next wide light plank with highlight */
+            rgba(50, 101, 122, 0.025) 86px,
+            rgba(60, 115, 138, 0.035) 106px,
+            rgba(65, 120, 142, 0.04) 126px,
+            rgba(60, 115, 138, 0.035) 146px,
+            rgba(50, 101, 122, 0.025) 160px,
+            
+            /* Shadow groove */
+            rgba(20, 35, 45, 0.22) 160px,
+            rgba(15, 25, 35, 0.32) 163px,
+            rgba(8, 15, 22, 0.45) 166px,
+            rgba(15, 25, 35, 0.32) 169px,
+            rgba(20, 35, 45, 0.22) 172px,
+            
+            /* Return to start */
+            rgba(50, 101, 122, 0.025) 172px
+        ),
+        /* Subtle perpendicular grain texture */
+        repeating-linear-gradient(
+            135deg,
+            transparent 0px,
+            rgba(50, 101, 122, 0.015) 1px,
+            transparent 2px,
+            transparent 240px
         );
     pointer-events: none;
 }
