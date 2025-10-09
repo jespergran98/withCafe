@@ -519,3 +519,11 @@ Improve the map zoom level. Make sure all the three locations fit perfectly on t
 Include images of each location into the card design and overhaul the card layout from assets/images/ folder: brodOgKaffe.webp, bokOgKaffe.webp and bydelshuset.webp (brunsj og kaffe).
 Make sure all three cards fit horizontally on phones above the map. The user should be able to see all three locations above the map, and the map underneath all without scrolling.
 If a user clicks the map marker, open the html for that location, similar to when Les mer is clicked.
+
+--
+
+On PCs, move the three location cards to the left side of the map instead of the right side.
+Add two buttons to each card: "Les mer ->" and "Åpne i Maps". clicking "Les mer" opens the html files similar to the markers, clicking "Åpne i Maps" opens the location in google/apple maps depending on the users device:
+brød & kaffe: https://maps.app.goo.gl/5giPNg4azWkEryim8
+bok & kaffe: https://maps.app.goo.gl/JXQ5EGL2xrizdM9d6
+brunsj & kaffe: https://maps.app.goo.gl/iCgr4oSVEzeE4tE86
