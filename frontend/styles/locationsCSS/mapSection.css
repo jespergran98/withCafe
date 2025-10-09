@@ -116,7 +116,8 @@
     gap: 2rem;
     position: relative;
     z-index: 1;
-    height: calc(100vh - 88px);
+    height: calc(100vh - 88px - 4rem);
+    max-height: calc(100vh - 88px - 4rem);
 }
 
 /* ============================================
@@ -127,7 +128,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    height: fit-content;
+    height: 100%;
     max-height: 100%;
     overflow-y: auto;
     padding-right: 0.5rem;
@@ -168,6 +169,7 @@
     display: flex;
     flex-direction: column;
     text-decoration: none;
+    flex-shrink: 0;
 }
 
 /* Card Glow Effect */
@@ -225,14 +227,18 @@
     position: relative;
     width: 100%;
     height: 160px;
+    min-height: 120px;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.6s ease;
+    display: block;
 }
 
 .location-card:hover .card-image img {
@@ -441,7 +447,7 @@
     box-shadow: var(--shadow-xl);
     border: 3px solid rgba(50, 101, 122, 0.3);
     transition: var(--transition);
-    min-height: 100px;
+    min-height: 400px;
     order: 2;
 }
 
@@ -645,6 +651,7 @@
 
     .card-image {
         height: 150px;
+        min-height: 110px;
     }
 }
 
@@ -663,6 +670,7 @@
 
     .card-image {
         height: 140px;
+        min-height: 100px;
     }
 
     .name-with {
@@ -682,6 +690,8 @@
     .locations-container {
         padding: 1.75rem 1.5rem;
         grid-template-columns: 320px 1fr;
+        height: calc(100vh - 88px - 3.5rem);
+        max-height: calc(100vh - 88px - 3.5rem);
     }
 
     .location-cards {
@@ -690,6 +700,7 @@
 
     .card-image {
         height: 130px;
+        min-height: 95px;
     }
 
     .card-content {
@@ -723,6 +734,10 @@
         width: 14px;
         height: 14px;
     }
+
+    .map-container {
+        min-height: 350px;
+    }
 }
 
 /* ============================================
@@ -732,13 +747,14 @@
 
 @media (max-width: 900px) {
     .locations-section {
-        min-height: 95vh;
+        min-height: 100vh;
         margin-top: 100px;
     }
 
     .locations-container {
         padding: 1.5rem 1rem;
-        height: calc(100vh - 128px);
+        height: calc(100vh - 100px - 3rem);
+        max-height: calc(100vh - 100px - 3rem);
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
         gap: 1.5rem;
@@ -749,13 +765,20 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 0.75rem;
         overflow-y: visible;
+        overflow-x: auto;
         padding-right: 0;
         max-height: none;
+        height: auto;
         order: 1;
+    }
+
+    .location-card {
+        min-width: 0;
     }
 
     .card-image {
         height: 110px;
+        min-height: 90px;
     }
 
     .card-content {
@@ -805,7 +828,7 @@
     }
 
     .map-container {
-        min-height: 100px;
+        min-height: 300px;
         order: 2;
     }
 
@@ -825,7 +848,8 @@
 
     .locations-container {
         padding: 1.25rem 1rem;
-        height: calc(100vh - 128px);
+        height: calc(100vh - 80px - 2.5rem);
+        max-height: calc(100vh - 80px - 2.5rem);
     }
 
     .location-cards {
@@ -834,6 +858,7 @@
 
     .card-image {
         height: 100px;
+        min-height: 80px;
     }
 
     .card-content {
@@ -880,7 +905,7 @@
     }
 
     .map-container {
-        min-height: 75px;
+        min-height: 250px;
     }
 
     .marker-pin {
