@@ -23,8 +23,8 @@ function initMap() {
         },
         {
             name: 'WITH bok og kaffe',
-            lat: 59.265927064880344,
-            lng: 10.409967287073954,
+            lat: 59.2658847584103,
+            lng: 10.409450787493633,
             address: 'Nedre Langgate 32, 3126 Tønsberg',
             hours: 'Man-Fre: 08:00-16:00<br>Lør-Søn: 09:00-16:00'
         },
@@ -42,8 +42,8 @@ function initMap() {
         className: 'custom-marker',
         html: `<div style="
             background: #d4a373;
-            width: 30px;
-            height: 30px;
+            width: 60px;
+            height: 60px;
             border-radius: 50% 50% 50% 0;
             transform: rotate(-45deg);
             border: 3px solid #fff;
