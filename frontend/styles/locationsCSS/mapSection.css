@@ -820,12 +820,12 @@
 
 @media (max-width: 640px) {
     .locations-section {
-        margin-top: 108px;
+        margin-top: 80px;
     }
 
     .locations-container {
         padding: 1.25rem 1rem;
-        height: calc(100vh - 108px);
+        height: calc(100vh - 128px);
     }
 
     .location-cards {
