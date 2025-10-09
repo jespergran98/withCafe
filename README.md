@@ -466,3 +466,5 @@ Provide a new mapSection.css file, and update the locations.html.
 -
 
 Update the visual style of the markers to match the mapSection.css styling. Include the names of the cafés inside the markers. ("WITH" large on top written in font Bowlby One SC, "_ og kaffe" written smaller in font Skranji). Provide the updated files.
+
+Update the visual style of the map section to use a warm palette from main.css. locations.html already imports main.css, so use the var colors from this file. All "WITH" and "_ og kaffe" should be in color --espresso, but the & symbol should be in color --honey. Everything must change to the warmer tone. Also simplify the background and make sure the design is perfect for my cozy modern café website.

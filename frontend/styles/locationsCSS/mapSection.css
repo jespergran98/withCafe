@@ -799,39 +799,6 @@
         0 0 12px rgba(100, 181, 246, 0.4);
 }
 
-/* Marker Point Circle at Bottom */
-.marker-point {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 12px;
-    height: 12px;
-    background: radial-gradient(circle, 
-        var(--twilight-bright) 0%, 
-        rgba(50, 101, 122, 0.9) 100%);
-    border-radius: 50%;
-    border: 2px solid var(--arctic-frost);
-    z-index: 3;
-    box-shadow: 
-        0 3px 8px rgba(0, 0, 0, 0.5),
-        0 0 12px rgba(100, 181, 246, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-}
-
-.marker-pin:hover .marker-point {
-    background: radial-gradient(circle, 
-        var(--white) 0%, 
-        var(--twilight-bright) 100%);
-    border-color: var(--white);
-    transform: translateX(-50%) scale(1.3);
-    box-shadow: 
-        0 4px 12px rgba(0, 0, 0, 0.6),
-        0 0 20px rgba(100, 181, 246, 0.7),
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
-}
-
 /* Ambient Glow Effect */
 .marker-pin::before {
     content: '';
@@ -922,11 +889,6 @@
     .marker-type {
         font-size: 0.68rem;
     }
-
-    .marker-point {
-        width: 10px;
-        height: 10px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -964,12 +926,6 @@
     .marker-type {
         font-size: 0.64rem;
     }
-
-    .marker-point {
-        width: 9px;
-        height: 9px;
-        border-width: 1.5px;
-    }
 }
 
 /* Reduce motion for accessibility */
@@ -981,8 +937,7 @@
 
     .marker-content,
     .marker-with,
-    .marker-type,
-    .marker-point {
+    .marker-type {
         transition: none !important;
     }
 }
