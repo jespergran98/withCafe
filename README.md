@@ -512,3 +512,10 @@ Torsdag - 10-16
 Fredag - 10-16
 Lørdag - 10-16
 Søndag - 12-16
+
+--
+
+Improve the map zoom level. Make sure all the three locations fit perfectly on the map regardless of device.
+Include images of each location into the card design and overhaul the card layout from assets/images/ folder: brodOgKaffe.webp, bokOgKaffe.webp and bydelshuset.webp (brunsj og kaffe).
+Make sure all three cards fit horizontally on phones above the map. The user should be able to see all three locations above the map, and the map underneath all without scrolling.
+If a user clicks the map marker, open the html for that location, similar to when Les mer is clicked.
