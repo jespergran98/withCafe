@@ -468,3 +468,47 @@ Provide a new mapSection.css file, and update the locations.html.
 Update the visual style of the markers to match the mapSection.css styling. Include the names of the cafés inside the markers. ("WITH" large on top written in font Bowlby One SC, "_ og kaffe" written smaller in font Skranji). Provide the updated files.
 
 Update the visual style of the map section to use a warm palette from main.css. locations.html already imports main.css, so use the var colors from this file. All "WITH" and "_ og kaffe" should be in color --espresso, but the & symbol should be in color --honey. Everything must change to the warmer tone. Also simplify the background and make sure the design is perfect for my cozy modern café website.
+
+---
+
+Overhaul the cards on the map section of the location page:
+
+Remove the "Vis på Kart" button, and add two vertical buttons instead: "les mer" and "navigasjon".
+clicking the "navigasjon" opens and navigates the users to these google maps positions:
+brød & kaffe: https://maps.app.goo.gl/5giPNg4azWkEryim8
+bok & kaffe: https://maps.app.goo.gl/JXQ5EGL2xrizdM9d6
+brunsj & kaffe: https://maps.app.goo.gl/iCgr4oSVEzeE4tE86
+(This means the code that moves the map when a button is clicked can be removed)
+
+clicking "les mer" opens:
+brodOgKaffe.html
+bokOgKaffe.html
+brunsjOgKaffe.html
+
+Also update the times for the three cafés:
+brød & kaffe:
+Mandag - 08-18
+Tirsdag - 08-18
+Onsdag - 08-18
+Torsdag - 08-18
+Fredag - 08-18
+Lørdag - 09-18
+Søndag - 09-18
+
+Bok & kaffe:
+Mandag - 09-19
+Tirsdag - 09-19
+Onsdag - 09-19
+Torsdag - 09-19
+Fredag - 09-16
+Lørdag - 09-16
+Søndag - 12-16
+
+Brunsj & kaffe:
+Mandag - 10-16
+Tirsdag - 10-16
+Onsdag - 10-16
+Torsdag - 10-16
+Fredag - 10-16
+Lørdag - 10-16
+Søndag - 12-16
