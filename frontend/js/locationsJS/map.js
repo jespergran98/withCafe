@@ -16,22 +16,22 @@ function initMap() {
     const locations = [
         {
             name: 'WITH brød og kaffe',
-            lat: 59.2682,
-            lng: 10.4075,
+            lat: 59.26694458677926,
+            lng:  10.40858159245786,
             address: 'Storgaten 28, 3126 Tønsberg',
             hours: 'Man-Fre: 08:00-16:00<br>Lør-Søn: 09:00-16:00'
         },
         {
             name: 'WITH bok og kaffe',
-            lat: 59.2695,
-            lng: 10.4082,
+            lat: 59.265927064880344,
+            lng: 10.409967287073954,
             address: 'Nedre Langgate 32, 3126 Tønsberg',
             hours: 'Man-Fre: 08:00-16:00<br>Lør-Søn: 09:00-16:00'
         },
         {
             name: 'WITH brunsj og kaffe',
-            lat: 59.2670,
-            lng: 10.4090,
+            lat: 59.269995481439274,
+            lng: 10.407405253049253,
             address: 'Ollebukta 3, 3118 Tønsberg',
             hours: 'Man-Fre: 08:00-16:00<br>Lør-Søn: 09:00-17:00'
         }
