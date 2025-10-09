@@ -1,6 +1,5 @@
 // Initialize map centered on Tønsberg
 let map;
-let markers = {};
 
 function initMap() {
     // Create map centered on Tønsberg
@@ -55,22 +54,7 @@ function initMap() {
 
         const marker = L.marker([location.lat, location.lng], { icon: customIcon })
             .addTo(map);
-
-        markers[location.name] = marker;
     });
-}
-
-// Function to focus on a specific location
-function focusLocation(lat, lng, name) {
-    map.setView([lat, lng], 16, {
-        animate: true,
-        duration: 1
-    });
-
-    // Open the popup for this location
-    if (markers[name]) {
-        markers[name].openPopup();
-    }
 }
 
 // Initialize map when DOM is ready

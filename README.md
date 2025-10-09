@@ -478,7 +478,7 @@ clicking the "navigasjon" opens and navigates the users to these google maps pos
 brød & kaffe: https://maps.app.goo.gl/5giPNg4azWkEryim8
 bok & kaffe: https://maps.app.goo.gl/JXQ5EGL2xrizdM9d6
 brunsj & kaffe: https://maps.app.goo.gl/iCgr4oSVEzeE4tE86
-(This means the code that moves the map when a button is clicked can be removed)
+(Or on phones if possible, open the corresponding app, for example apple maps on apple products with navigation to the locations)
 
 clicking "les mer" opens:
 brodOgKaffe.html
