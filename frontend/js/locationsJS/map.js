@@ -1,0 +1,108 @@
+// Initialize map centered on Tønsberg
+let map;
+let markers = {};
+
+function initMap() {
+    // Create map centered on Tønsberg
+    map = L.map('map').setView([59.2682, 10.4075], 14);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+    }).addTo(map);
+
+    // Define locations
+    const locations = [
+        {
+            name: 'WITH brød og kaffe',
+            lat: 59.2682,
+            lng: 10.4075,
+            address: 'Storgaten 28, 3126 Tønsberg',
+            hours: 'Man-Fre: 08:00-16:00<br>Lør-Søn: 09:00-16:00'
+        },
+        {
+            name: 'WITH bok og kaffe',
+            lat: 59.2695,
+            lng: 10.4082,
+            address: 'Nedre Langgate 32, 3126 Tønsberg',
+            hours: 'Man-Fre: 08:00-16:00<br>Lør-Søn: 09:00-16:00'
+        },
+        {
+            name: 'WITH brunsj og kaffe',
+            lat: 59.2670,
+            lng: 10.4090,
+            address: 'Ollebukta 3, 3118 Tønsberg',
+            hours: 'Man-Fre: 08:00-16:00<br>Lør-Søn: 09:00-17:00'
+        }
+    ];
+
+    // Custom icon
+    const customIcon = L.divIcon({
+        className: 'custom-marker',
+        html: `<div style="
+            background: #d4a373;
+            width: 30px;
+            height: 30px;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            border: 3px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        "></div>`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 30],
+        popupAnchor: [0, -30]
+    });
+
+    // Add markers for each location
+    locations.forEach(location => {
+        const marker = L.marker([location.lat, location.lng], { icon: customIcon })
+            .addTo(map);
+
+        const nameParts = location.name.split(' ');
+        const withPart = nameParts[0];
+        const typePart = nameParts.slice(1).join(' ');
+
+        const popupContent = `
+            <div style="font-family: 'Inter', sans-serif;">
+                <div style="font-family: 'Bowlby One SC', cursive; font-size: 1.1rem; color: #2c1810; margin-bottom: 0.25rem;">
+                    ${withPart}
+                </div>
+                <div style="font-family: 'Skranji', cursive; font-size: 0.95rem; color: #d4a373; margin-bottom: 0.75rem;">
+                    ${typePart}
+                </div>
+                <div style="font-size: 0.85rem; color: #5a4a3a; line-height: 1.6;">
+                    <strong>Adresse:</strong><br>${location.address}<br><br>
+                    <strong>Åpningstider:</strong><br>${location.hours}
+                </div>
+            </div>
+        `;
+
+        marker.bindPopup(popupContent, {
+            maxWidth: 250,
+            className: 'custom-popup'
+        });
+
+        markers[location.name] = marker;
+    });
+}
+
+// Function to focus on a specific location
+function focusLocation(lat, lng, name) {
+    map.setView([lat, lng], 16, {
+        animate: true,
+        duration: 1
+    });
+
+    // Open the popup for this location
+    if (markers[name]) {
+        markers[name].openPopup();
+    }
+}
+
+// Initialize map when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+} else {
+    initMap();
+}
