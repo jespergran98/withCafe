@@ -461,4 +461,8 @@ On phones, these three cards are positioned horizontally above the map.
 
 Use locations.css from the index page as inspiration for the design of this section.
 
-Provide a new mapSection.css file, and update the locations.html
+Provide a new mapSection.css file, and update the locations.html.
+
+-
+
+Update the visual style of the markers to match the mapSection.css styling. Include the names of the cafés inside the markers. ("WITH" large on top written in font Bowlby One SC, "_ og kaffe" written smaller in font Skranji). Provide the updated files.

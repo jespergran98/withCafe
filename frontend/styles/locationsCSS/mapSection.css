@@ -653,38 +653,336 @@
 }
 
 /* ============================================
-   RESPONSIVE DESIGN - EXTRA SMALL MOBILE
+   CUSTOM MAP MARKER STYLES
+   Add this section to the end of mapSection.css
    ============================================ */
 
-@media (max-width: 380px) {
-    .locations-container {
-        gap: 1rem;
-    }
+/* Remove default Leaflet marker styles */
+.custom-marker-container {
+    background: transparent !important;
+    border: none !important;
+}
 
-    .location-cards {
-        gap: 0.85rem;
-    }
+/* Marker Pin Container */
+.marker-pin {
+    position: relative;
+    width: 140px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.5));
+    animation: markerFloat 3s ease-in-out infinite;
+}
 
-    .map-container {
-        height: 38vh;
-        min-height: 300px;
+@keyframes markerFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* Marker Content Box with Attached Triangle */
+.marker-content {
+    background: linear-gradient(145deg, 
+        rgba(50, 101, 122, 0.95) 0%, 
+        rgba(40, 85, 105, 0.98) 100%);
+    border: 3px solid var(--arctic-frost);
+    border-radius: 16px;
+    padding: 10px 14px 12px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(12px);
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(50, 101, 122, 0.5);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    min-width: 120px;
+}
+
+/* Triangle pointing down - attached to the box */
+.marker-content::after {
+    content: '';
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 20px solid rgba(40, 85, 105, 0.98);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Triangle border effect */
+.marker-content::before {
+    content: '';
+    position: absolute;
+    bottom: -21px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 22px solid var(--arctic-frost);
+    z-index: -1;
+}
+
+/* Hover state for marker box */
+.marker-pin:hover .marker-content {
+    background: linear-gradient(145deg, 
+        rgba(64, 130, 156, 0.98) 0%, 
+        rgba(50, 101, 122, 0.98) 100%);
+    border-color: var(--twilight-bright);
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 
+        0 12px 32px rgba(0, 0, 0, 0.5),
+        inset 0 2px 0 rgba(255, 255, 255, 0.25),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+        0 0 0 2px rgba(100, 181, 246, 0.4),
+        0 0 20px rgba(100, 181, 246, 0.3);
+}
+
+.marker-pin:hover .marker-content::after {
+    border-top-color: rgba(50, 101, 122, 0.98);
+}
+
+.marker-pin:hover .marker-content::before {
+    border-top-color: var(--twilight-bright);
+}
+
+/* WITH Text */
+.marker-with {
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 1.2rem;
+    color: var(--white);
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-shadow: 
+        0 3px 8px rgba(0, 0, 0, 0.6),
+        0 1px 3px rgba(0, 0, 0, 0.8),
+        0 0 12px rgba(100, 181, 246, 0.3);
+    margin-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.marker-pin:hover .marker-with {
+    color: var(--twilight-bright);
+    text-shadow: 
+        0 3px 12px rgba(0, 0, 0, 0.7),
+        0 1px 4px rgba(0, 0, 0, 0.9),
+        0 0 20px rgba(100, 181, 246, 0.6);
+    transform: scale(1.05);
+}
+
+/* Type Text */
+.marker-type {
+    font-family: 'Skranji', cursive;
+    font-size: 0.72rem;
+    color: var(--arctic-frost);
+    font-weight: 400;
+    line-height: 1.2;
+    text-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.6),
+        0 1px 2px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.marker-pin:hover .marker-type {
+    color: var(--white);
+    text-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.7),
+        0 0 12px rgba(100, 181, 246, 0.4);
+}
+
+/* Marker Point Circle at Bottom */
+.marker-point {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, 
+        var(--twilight-bright) 0%, 
+        rgba(50, 101, 122, 0.9) 100%);
+    border-radius: 50%;
+    border: 2px solid var(--arctic-frost);
+    z-index: 3;
+    box-shadow: 
+        0 3px 8px rgba(0, 0, 0, 0.5),
+        0 0 12px rgba(100, 181, 246, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.marker-pin:hover .marker-point {
+    background: radial-gradient(circle, 
+        var(--white) 0%, 
+        var(--twilight-bright) 100%);
+    border-color: var(--white);
+    transform: translateX(-50%) scale(1.3);
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(100, 181, 246, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Ambient Glow Effect */
+.marker-pin::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 70px;
+    background: radial-gradient(ellipse at center, 
+        rgba(100, 181, 246, 0.2) 0%, 
+        rgba(50, 101, 122, 0.15) 40%,
+        transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(8px);
+}
+
+.marker-pin:hover::before {
+    opacity: 1;
+    animation: markerGlowPulse 2s ease-in-out infinite;
+}
+
+@keyframes markerGlowPulse {
+    0%, 100% { 
+        transform: translateX(-50%) scale(1); 
+        opacity: 0.8; 
+    }
+    50% { 
+        transform: translateX(-50%) scale(1.15); 
+        opacity: 1; 
     }
 }
 
-/* ============================================
-   ACCESSIBILITY & MOTION
-   ============================================ */
+/* Shine Effect on Hover */
+.marker-content .marker-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.2) 50%, 
+        transparent 100%);
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
 
+.marker-pin:hover .marker-content .marker-shine {
+    left: 100%;
+}
+
+/* Responsive Marker Sizes */
+@media (max-width: 768px) {
+    .marker-pin {
+        width: 125px;
+        height: 70px;
+    }
+
+    .marker-content {
+        padding: 9px 12px 10px;
+        border-width: 2.5px;
+        min-width: 105px;
+    }
+
+    .marker-content::after {
+        bottom: -16px;
+        border-left-width: 14px;
+        border-right-width: 14px;
+        border-top-width: 18px;
+    }
+
+    .marker-content::before {
+        bottom: -18px;
+        border-left-width: 16px;
+        border-right-width: 16px;
+        border-top-width: 20px;
+    }
+
+    .marker-with {
+        font-size: 1.05rem;
+    }
+
+    .marker-type {
+        font-size: 0.68rem;
+    }
+
+    .marker-point {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .marker-pin {
+        width: 110px;
+        height: 65px;
+    }
+
+    .marker-content {
+        padding: 8px 10px 9px;
+        border-radius: 12px;
+        border-width: 2px;
+        min-width: 95px;
+    }
+
+    .marker-content::after {
+        bottom: -14px;
+        border-left-width: 12px;
+        border-right-width: 12px;
+        border-top-width: 16px;
+    }
+
+    .marker-content::before {
+        bottom: -16px;
+        border-left-width: 14px;
+        border-right-width: 14px;
+        border-top-width: 18px;
+    }
+
+    .marker-with {
+        font-size: 0.95rem;
+        letter-spacing: 0.08em;
+    }
+
+    .marker-type {
+        font-size: 0.64rem;
+    }
+
+    .marker-point {
+        width: 9px;
+        height: 9px;
+        border-width: 1.5px;
+    }
+}
+
+/* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
-    .locations-section::before,
-    .locations-decoration,
-    .location-card::after {
+    .marker-pin,
+    .marker-pin::before {
         animation: none !important;
     }
 
-    .location-card,
-    .view-map-btn,
-    .card-header::after {
-        transition-duration: 0.01ms !important;
+    .marker-content,
+    .marker-with,
+    .marker-type,
+    .marker-point {
+        transition: none !important;
     }
 }
