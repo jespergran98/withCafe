@@ -223,7 +223,7 @@ Belonosima
 Skranji
 Chelsea Market
 
-BEST: Black Han Sans / Change One + Skranji
+BEST: Black Han Sans / Change One + Skranji (endret)
 
 For the "WITH" part of the logo in the footer and header, use font Black Han Sans, for the "brød/bok/brunsj & kaffe", use font Skranji. Provide the updated codes.
 
@@ -232,51 +232,6 @@ Create a new file in styles/indexCSS named "indexSocials.css"
 Create a new file in js/mainJS named "socials.js", this imports the 9 most recent images from https://www.instagram.com/withtonsberg.
 This section is meant for a cozy and modern café website. Take inspiration from the other css files. the background of this section should be cream.
 Provide the updated index.html, and the new indexSocials.css and socials.js files.
-
-WITHCAFE/
-├── .qodo/
-├── frontend/
-│   ├── index.html
-│   ├── assets/
-│   │   └── images/
-│   │       ├── beans.avif
-│   │       ├── bokOgKaffe.webp
-│   │       ├── bread.avif
-│   │       ├── brodOgKaffe.webp
-│   │       ├── bydelshuset.webp
-│   │       ├── coffee-icon.png
-│   │       ├── coffee.avif
-│   │       ├── cozy.avif
-│   │       ├── slottsfjell-icon-high-res.png
-│   │       ├── slottsfjell-icon.png
-│   │       ├── toys.avif
-│   │       └── wheat-icon.png
-│   ├── js/
-│   │   ├── indexJS/
-│   │   │   ├── features.js
-│   │   │   └── locations.js
-│   │   └── mainJS/
-│   │       ├── breadAndWheat.js
-│   │       ├── copyrightYear.js
-│   │       ├── logoAnimation.js
-│   │       ├── marquee.js
-│   │       └── scrollHeader.js
-│   └── styles/
-│       ├── indexCSS/
-│       │   ├── importIndex.css
-│       │   ├── indexFeatures.css
-│       │   ├── indexHero.css
-│       │   └── indexLocations.css
-│       └── mainCSS/
-│           ├── contact.css
-│           ├── footer.css
-│           ├── header.css
-│           ├── importMain.css
-│           ├── main.css
-│           └── marquee.css
-├── fontExplorer.html
-└── README.md
-
 
 
 FROKOST & LUNSJ MENY PÅ WITH
@@ -372,7 +327,7 @@ Allergener: gluten, laktose
 
 ----
 
-Bilder:
+Bilder navn:
 
 pasmurt
 smoreSelv

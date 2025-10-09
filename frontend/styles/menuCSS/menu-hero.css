@@ -9,6 +9,7 @@
     max-height: 700px;
     overflow: hidden;
     background: var(--espresso);
+    margin-top: 88px;
 }
 
 .menu-hero-image {
@@ -269,4 +270,17 @@
     );
     z-index: 2;
     pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-hero {
+        margin-top: 108px;
+    }
+}
+
+@media (max-width: 432px) {
+    .menu-hero {
+        margin-top: 4rem;
+    }
 }
