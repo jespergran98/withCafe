@@ -733,7 +733,7 @@
 @media (max-width: 768px) {
     .locations-section {
         min-height: 100vh;
-        margin-top: 88px;
+        margin-top: 108px;
     }
 
     .locations-container {
@@ -1029,5 +1029,11 @@
     .card-image img,
     .card-btn {
         transition: none !important;
+    }
+}
+
+@media (max-width: 432px) {
+    .menu-hero {
+        margin-top: 4rem;
     }
 }
