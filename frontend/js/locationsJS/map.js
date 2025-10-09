@@ -3,7 +3,7 @@ let map;
 
 function initMap() {
     // Create map centered on Tønsberg
-    map = L.map('map').setView([59.2682, 10.4075], 16);
+    map = L.map('map').setView([59.2682, 10.4075], 15);
 
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
