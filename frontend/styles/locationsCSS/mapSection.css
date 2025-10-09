@@ -747,8 +747,8 @@
 
 @media (max-width: 900px) {
     .locations-section {
-        min-height: 100vh;
-        margin-top: 100px;
+        min-height: 95vh;
+        margin-top: 80px;
     }
 
     .locations-container {
@@ -843,7 +843,7 @@
 
 @media (max-width: 640px) {
     .locations-section {
-        margin-top: 80px;
+        margin-top: 88px;
     }
 
     .locations-container {
@@ -1060,6 +1060,7 @@
 /* Responsive Design */
 @media (max-width: 432px) {
     .locations-section {
-        margin-top: 4rem;
+        margin-top: 1.5em;
+        min-height: 98vh;
     }
 }
