@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WITH - Meny</title>
+    <title>WITH - Lokasjoner</title>
     <link rel="stylesheet" href="./styles/mainCSS/importMain.css">
-    <link rel="stylesheet" href="./styles/menuCSS/importMenu.css">
+    <link rel="stylesheet" href="./styles/locationsCSS/mapSection.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Bowlby+One+SC&family=Skranji:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
 </head>
 <body>
 
@@ -42,6 +45,103 @@
     </header>
     
     <main>
+        <!-- Locations Map Section -->
+        <section class="locations-section">
+            <div class="locations-container">
+                <!-- Location Cards -->
+                <div class="location-cards">
+                    <div class="location-card" data-lat="59.2682" data-lng="10.4075">
+                        <div class="card-header">
+                            <h3 class="location-name">
+                                <span class="name-with">WITH</span>
+                                <span class="name-type">brød og kaffe</span>
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="location-detail">
+                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Storgaten 28, 3126 Tønsberg</span>
+                            </div>
+                            <div class="location-detail">
+                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>Man-Fre: 08:00-16:00<br>Lør-Søn: 09:00-16:00</span>
+                            </div>
+                            <button class="view-map-btn" onclick="focusLocation(59.2682, 10.4075, 'WITH brød og kaffe')">
+                                Vis på kart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="location-card" data-lat="59.2695" data-lng="10.4082">
+                        <div class="card-header">
+                            <h3 class="location-name">
+                                <span class="name-with">WITH</span>
+                                <span class="name-type">bok og kaffe</span>
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="location-detail">
+                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Nedre Langgate 32, 3126 Tønsberg</span>
+                            </div>
+                            <div class="location-detail">
+                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>Man-Fre: 08:00-16:00<br>Lør-Søn: 09:00-16:00</span>
+                            </div>
+                            <button class="view-map-btn" onclick="focusLocation(59.2695, 10.4082, 'WITH bok og kaffe')">
+                                Vis på kart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="location-card" data-lat="59.2670" data-lng="10.4090">
+                        <div class="card-header">
+                            <h3 class="location-name">
+                                <span class="name-with">WITH</span>
+                                <span class="name-type">brunsj og kaffe</span>
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="location-detail">
+                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Ollebukta 3, 3118 Tønsberg</span>
+                            </div>
+                            <div class="location-detail">
+                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>Man-Fre: 08:00-16:00<br>Lør-Søn: 09:00-17:00</span>
+                            </div>
+                            <button class="view-map-btn" onclick="focusLocation(59.2670, 10.4090, 'WITH brunsj og kaffe')">
+                                Vis på kart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Container -->
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Details -->
         <section id="kontakt" class="contact-info">
             <div class="container">
@@ -121,6 +221,9 @@
         </div>
     </footer>
 
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    
     <!-- JavaScript -->
     <script src="./js/mainJS/hamburger.js"></script>
     <script src="./js/mainJS/scrollHeader.js"></script>
@@ -128,5 +231,6 @@
     <script src="./js/menuJS/menu.js"></script>
     <script src="./js/mainJS/marquee.js"></script>
     <script src="./js/mainJS/copyrightYear.js"></script>
+    <script src="./js/locationsJS/map.js"></script>
 </body>
 </html>
