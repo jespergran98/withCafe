@@ -730,15 +730,15 @@
    Switch to horizontal cards above map
    ============================================ */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .locations-section {
         min-height: 95vh;
-        margin-top: 108px;
+        margin-top: 100px;
     }
 
     .locations-container {
         padding: 1.5rem 1rem;
-        height: calc(100vh - 88px);
+        height: calc(100vh - 128px);
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
         gap: 1.5rem;
@@ -1032,9 +1032,9 @@
     }
 }
 
+/* Responsive Design */
 @media (max-width: 432px) {
     .locations-section {
-        min-height: 95vh;
         margin-top: 4rem;
     }
 }
