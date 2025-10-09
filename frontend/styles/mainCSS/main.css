@@ -56,6 +56,55 @@
     --deep-ocean: rgba(14, 25, 33, 0.90);
     --ocean-mist: rgba(14, 25, 33, 0.45);
     --fog: rgba(14, 25, 33, 0.24);
+
+    /* Cool Blue Palette Extensions */
+    --ocean-teal-15: rgba(50, 101, 122, 0.15);
+    --ocean-teal-25: rgba(50, 101, 122, 0.25);
+    --ocean-teal-30: rgba(50, 101, 122, 0.3);
+    --ocean-teal-45: rgba(50, 101, 122, 0.45);
+    --ocean-teal-50: rgba(50, 101, 122, 0.5);
+    --ocean-teal-10: rgba(50, 101, 122, 0.1);
+    --ocean-teal-20: rgba(50, 101, 122, 0.2);
+    --sky-azure-15: rgba(64, 130, 156, 0.08);
+    --sky-azure-40: rgba(64, 130, 156, 0.4);
+    --ocean-teal-025: rgba(50, 101, 122, 0.025);
+    --sky-azure-035: rgba(60, 115, 138, 0.035);
+    --ocean-deep-04: rgba(65, 120, 142, 0.04);
+    --shadow-deep-22: rgba(20, 35, 45, 0.22);
+    --shadow-deeper-32: rgba(15, 25, 35, 0.32);
+    --shadow-deepest-45: rgba(8, 15, 22, 0.45);
+    --ocean-teal-015: rgba(50, 101, 122, 0.015);
+    --ocean-teal-12: rgba(50, 101, 122, 0.12);
+    --azure-glow-30: rgba(100, 181, 246, 0.3);
+    --azure-glow-40: rgba(100, 181, 246, 0.4);
+    --azure-glow-20: rgba(100, 181, 246, 0.2);
+    --ocean-teal: rgba(50, 101, 122, 1);
+    --ocean-teal-95: rgba(50, 101, 122, 0.95);
+    --ocean-deep: rgba(40, 85, 105, 1);
+    --ocean-deep-98: rgba(40, 85, 105, 0.98);
+    --sky-azure: rgba(64, 130, 156, 1);
+    --sky-azure-98: rgba(64, 130, 156, 0.98);
+    --shadow-dark-70: rgba(15, 25, 35, 0.7);
+    --azure-glow-60: rgba(100, 181, 246, 0.6);
+    --azure-glow-15: rgba(100, 181, 246, 0.15);
+
+
+    /* Black and white shades */
+    --white-15: rgba(255, 255, 255, 0.15);
+    --white-25: rgba(255, 255, 255, 0.25);
+    --white-85: rgba(255, 255, 255, 0.85);
+    --white-95: rgba(255, 255, 255, 0.95);
+    --white-10: rgba(255, 255, 255, 0.1);
+    --white-05: rgba(255, 255, 255, 0.05);
+    --black-40: rgba(0, 0, 0, 0.4);
+    --black-45: rgba(0, 0, 0, 0.45);
+    --black-50: rgba(0, 0, 0, 0.5);
+    --black-30: rgba(0, 0, 0, 0.3);
+    --black-20: rgba(0, 0, 0, 0.2);
+    --black-60: rgba(0, 0, 0, 0.6);
+    --black-80: rgba(0, 0, 0, 0.8);
+    --black-70: rgba(0, 0, 0, 0.7);
+    --black-90: rgba(0, 0, 0, 0.9);
     
     /* Shadow & Effects */
     --shadow-sm: 0 2px 8px rgba(28, 20, 16, 0.07);
