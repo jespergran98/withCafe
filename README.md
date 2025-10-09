@@ -446,3 +446,19 @@ For å sikre den beste kvaliteten, ber vi om at bestillinger gjøres senest to d
 E-post: post@bydelshuset.com
 
 Haster det? Ring oss på 98 90 18 83, så ser vi hva vi får til.
+
+---
+
+Create a new section on the locations.html page. This section includes:
+
+A large map from leaflet on the right side of the screen.
+
+Three cards positioned vertically on the left side of the screen representing WITH brød og kaffe, WITH bok og kaffe and WITH brunsj og kaffe.
+
+("WITH" written in font Bowlby One SC, "_ og kaffe" written in font Skranji)
+
+On phones, these three cards are positioned horizontally above the map.
+
+Use locations.css from the index page as inspiration for the design of this section.
+
+Provide a new mapSection.css file, and update the locations.html
