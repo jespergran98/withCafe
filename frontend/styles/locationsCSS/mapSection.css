@@ -10,7 +10,7 @@
         var(--midnight) 100%);
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -441,7 +441,7 @@
     box-shadow: var(--shadow-xl);
     border: 3px solid rgba(50, 101, 122, 0.3);
     transition: var(--transition);
-    min-height: 500px;
+    min-height: 100px;
     order: 2;
 }
 
@@ -732,7 +732,7 @@
 
 @media (max-width: 768px) {
     .locations-section {
-        min-height: 100vh;
+        min-height: 95vh;
         margin-top: 108px;
     }
 
@@ -805,7 +805,7 @@
     }
 
     .map-container {
-        min-height: 300px;
+        min-height: 100px;
         order: 2;
     }
 
@@ -880,7 +880,7 @@
     }
 
     .map-container {
-        min-height: 250px;
+        min-height: 75px;
     }
 
     .marker-pin {
@@ -973,7 +973,7 @@
     }
 
     .map-container {
-        min-height: 220px;
+        min-height: 50px;
     }
 
     .marker-pin {
@@ -1033,7 +1033,8 @@
 }
 
 @media (max-width: 432px) {
-    .menu-hero {
+    .locations-section {
+        min-height: 95vh;
         margin-top: 4rem;
     }
 }
