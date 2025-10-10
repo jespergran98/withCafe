@@ -1,14 +1,14 @@
 /* ============================================
-   CAFE OPENING HOURS SECTION
+   CAFE INFO SECTION - CONSOLIDATED
    ============================================ */
 
-.cafe-times {
+.cafe-info-section {
     background-color: var(--espresso);
-    padding: 5rem 0;
+    padding: 3.5rem 0;
     position: relative;
 }
 
-.cafe-times::before {
+.cafe-info-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -24,135 +24,178 @@
     opacity: 0.3;
 }
 
-.times-content {
-    max-width: 600px;
+/* ============================================
+   INFO GRID LAYOUT
+   ============================================ */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
     margin: 0 auto;
-    text-align: center;
 }
 
 /* ============================================
-   HEADER
+   INFO CARDS
    ============================================ */
 
-.times-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-}
-
-.times-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    color: var(--honey);
-    stroke-width: 2;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-.times-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 600;
-    color: var(--cream);
-    margin: 0;
-    letter-spacing: 0.5px;
-}
-
-/* ============================================
-   TIMES GRID
-   ============================================ */
-
-.times-grid {
+.info-card {
     background: linear-gradient(
         135deg,
         var(--espresso-light) 0%,
         var(--espresso-medium) 100%
     );
     border-radius: var(--radius-lg);
-    padding: 2.5rem 3rem;
+    padding: 2rem;
     box-shadow: 
         0 8px 24px rgba(0, 0, 0, 0.3),
         0 2px 8px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 var(--white-15);
     border: 1px solid var(--espresso-light);
-    margin-bottom: 2rem;
+    transition: var(--transition);
 }
 
-.time-row {
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 12px 32px rgba(0, 0, 0, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 var(--white-15);
+}
+
+/* ============================================
+   CARD HEADER
+   ============================================ */
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--white-10);
+}
+
+.info-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    color: var(--honey);
+    stroke-width: 2;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    flex-shrink: 0;
+}
+
+.info-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   OPENING HOURS
+   ============================================ */
+
+.hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hours-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 0.875rem 0;
     border-bottom: 1px solid var(--white-10);
     transition: all 0.3s ease;
 }
 
-.time-row:last-child {
+.hours-item:last-child {
     border-bottom: none;
+    padding-bottom: 0;
 }
 
-.time-row:hover {
+.hours-item:hover {
     transform: translateX(4px);
 }
 
-.time-row.weekend {
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        var(--honey-dark) 2%,
-        transparent 98%
-    );
-    opacity: 0.95;
+.hours-item.weekend {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin: 0 -0.5rem;
+    border-radius: var(--radius-sm);
 }
 
-.time-row.weekend .day-name {
+.hours-item.weekend .hours-days {
     color: var(--honey-light);
 }
 
-.day-name {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.125rem;
+.hours-days {
+    font-size: 1rem;
     font-weight: 500;
     color: var(--cream);
-    letter-spacing: 0.5px;
-    text-align: left;
+    letter-spacing: 0.3px;
 }
 
-.time-separator {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        var(--honey-dark) 20%,
-        var(--honey-dark) 80%,
-        transparent 100%
-    );
-    margin: 0 1.5rem;
-    opacity: 0.3;
-}
-
-.time-hours {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.125rem;
+.hours-time {
+    font-size: 1rem;
     font-weight: 600;
     color: var(--honey);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-align: right;
-    min-width: 80px;
 }
 
 /* ============================================
-   NOTE
+   LOCATION
    ============================================ */
 
-.times-note {
-    font-family: 'Inter', sans-serif;
+.location-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.location-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+.location-address {
     font-size: 1rem;
+    font-weight: 400;
+    color: var(--honey);
+    line-height: 1.6;
+    text-decoration: underline;
+    text-decoration-color: var(--honey-dark);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.location-address:hover {
+    color: var(--honey-light);
+    text-decoration-color: var(--honey-light);
+    transform: translateX(2px);
+}
+
+.location-address:focus-visible {
+    outline: 2px solid var(--honey);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.location-note {
+    font-size: 0.9375rem;
     color: var(--cream);
     opacity: 0.8;
-    margin: 0;
+    margin: 0.5rem 0 0 0;
     font-style: italic;
     letter-spacing: 0.3px;
 }
@@ -162,68 +205,95 @@
    ============================================ */
 
 @media (max-width: 768px) {
-    .cafe-times {
-        padding: 4rem 0;
+    .cafe-info-section {
+        padding: 3rem 0;
     }
 
-    .times-header {
-        margin-bottom: 2.5rem;
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
-    .times-icon {
-        width: 2rem;
-        height: 2rem;
+    .info-card {
+        padding: 1.75rem;
     }
 
-    .times-grid {
-        padding: 2rem 2rem;
+    .info-header {
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.875rem;
     }
 
-    .day-name,
-    .time-hours {
-        font-size: 1rem;
+    .info-icon {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
-    .time-separator {
-        margin: 0 1rem;
+    .info-title {
+        font-size: 1.375rem;
+    }
+
+    .hours-days,
+    .hours-time {
+        font-size: 0.9375rem;
+    }
+
+    .location-name {
+        font-size: 1.0625rem;
+    }
+
+    .location-address {
+        font-size: 0.9375rem;
     }
 }
 
 @media (max-width: 480px) {
-    .cafe-times {
-        padding: 3rem 0;
+    .cafe-info-section {
+        padding: 2.5rem 0;
     }
 
-    .times-header {
-        gap: 0.75rem;
-        margin-bottom: 2rem;
+    .info-grid {
+        gap: 1.25rem;
     }
 
-    .times-icon {
-        width: 1.75rem;
-        height: 1.75rem;
-    }
-
-    .times-grid {
-        padding: 1.5rem 1.5rem;
+    .info-card {
+        padding: 1.5rem;
         border-radius: var(--radius-md);
     }
 
-    .time-row {
-        padding: 0.875rem 0;
+    .info-header {
+        gap: 0.625rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
     }
 
-    .day-name,
-    .time-hours {
-        font-size: 0.9375rem;
+    .info-icon {
+        width: 1.375rem;
+        height: 1.375rem;
     }
 
-    .time-separator {
-        margin: 0 0.75rem;
+    .info-title {
+        font-size: 1.25rem;
     }
 
-    .times-note {
-        font-size: 0.9375rem;
+    .hours-item {
+        padding: 0.75rem 0;
+    }
+
+    .hours-days,
+    .hours-time {
+        font-size: 0.875rem;
+    }
+
+    .location-name {
+        font-size: 1rem;
+    }
+
+    .location-address {
+        font-size: 0.875rem;
+    }
+
+    .location-note {
+        font-size: 0.875rem;
     }
 }
 
@@ -232,22 +302,220 @@
    ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
-    .time-row {
+    .info-card,
+    .hours-item,
+    .location-address {
         transition: none;
     }
 
-    .time-row:hover {
+    .info-card:hover,
+    .hours-item:hover,
+    .location-address:hover {
         transform: none;
     }
 }
 
 /* High contrast support */
 @media (prefers-contrast: high) {
-    .times-grid {
+    .info-card {
         border: 2px solid var(--honey);
     }
 
-    .time-row {
+    .hours-item {
         border-bottom-width: 2px;
+    }
+
+    .info-header {
+        border-bottom-width: 2px;
+    }
+}
+
+/* ============================================
+   CONTACT INFO SECTION (KEPT FROM ORIGINAL)
+   ============================================ */
+
+.contact-info {
+    padding: 5rem 0;
+    background: linear-gradient(
+        180deg,
+        var(--cream) 0%,
+        var(--cream-dark) 100%
+    );
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.contact-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-center {
+    text-align: center;
+    align-items: center;
+}
+
+.contact-heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--butterscotch);
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--honey);
+}
+
+.contact-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--honey);
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--espresso-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-value {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--espresso);
+}
+
+.contact-tagline {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--espresso-light);
+    max-width: 400px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border: 1px solid var(--butterscotch);
+    border-radius: 50%;
+    color: var(--espresso);
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background: var(--honey);
+    color: var(--white);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.social-link svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.quick-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--espresso);
+    padding: 0.625rem 1rem;
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--butterscotch);
+    transition: var(--transition);
+    text-align: left;
+}
+
+.quick-link:hover {
+    background: var(--honey-lighter);
+    color: var(--espresso);
+    transform: translateX(4px);
+    border-color: var(--honey);
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        padding: 4rem 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .contact-heading {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info {
+        padding: 3rem 0;
+    }
+
+    .contact-grid {
+        gap: 2rem;
+    }
+
+    .contact-item {
+        padding: 1rem;
+    }
+
+    .contact-value {
+        font-size: 1rem;
+    }
+
+    .contact-tagline {
+        font-size: 0.9375rem;
     }
 }

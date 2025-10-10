@@ -43,7 +43,6 @@
     </header>
 
     <main>
-    <main>
         <!-- Hero Section -->
         <section class="cafe-hero">
             <div class="hero-image-container">
@@ -58,55 +57,52 @@
             </div>
         </section>
 
-        <!-- Opening Hours Section -->
-        <section class="cafe-times">
+        <!-- Cafe Info Section - Opening Hours & Location -->
+        <section class="cafe-info-section">
             <div class="container">
-                <div class="times-content">
-                    <div class="times-header">
-                        <svg class="times-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                        <h2 class="times-title">Åpningstider</h2>
+                <div class="info-grid">
+                    <!-- Opening Hours -->
+                    <div class="info-card">
+                        <div class="info-header">
+                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <h2 class="info-title">Åpningstider</h2>
+                        </div>
+                        <ul class="hours-list">
+                            <li class="hours-item">
+                                <span class="hours-days">Mandag - Fredag</span>
+                                <span class="hours-time">08:00 - 18:00</span>
+                            </li>
+                            <li class="hours-item weekend">
+                                <span class="hours-days">Lørdag - Søndag</span>
+                                <span class="hours-time">09:00 - 18:00</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="times-grid">
-                        <div class="time-row">
-                            <span class="day-name">Mandag</span>
-                            <span class="time-separator"></span>
-                            <span class="time-hours">08 - 18</span>
+
+                    <!-- Location -->
+                    <div class="info-card">
+                        <div class="info-header">
+                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <h2 class="info-title">Besøk oss</h2>
                         </div>
-                        <div class="time-row">
-                            <span class="day-name">Tirsdag</span>
-                            <span class="time-separator"></span>
-                            <span class="time-hours">08 - 18</span>
-                        </div>
-                        <div class="time-row">
-                            <span class="day-name">Onsdag</span>
-                            <span class="time-separator"></span>
-                            <span class="time-hours">08 - 18</span>
-                        </div>
-                        <div class="time-row">
-                            <span class="day-name">Torsdag</span>
-                            <span class="time-separator"></span>
-                            <span class="time-hours">08 - 18</span>
-                        </div>
-                        <div class="time-row">
-                            <span class="day-name">Fredag</span>
-                            <span class="time-separator"></span>
-                            <span class="time-hours">08 - 18</span>
-                        </div>
-                        <div class="time-row weekend">
-                            <span class="day-name">Lørdag</span>
-                            <span class="time-separator"></span>
-                            <span class="time-hours">09 - 18</span>
-                        </div>
-                        <div class="time-row weekend">
-                            <span class="day-name">Søndag</span>
-                            <span class="time-separator"></span>
-                            <span class="time-hours">09 - 18</span>
+                        <div class="location-content">
+                            <p class="location-name">WITH brød & kaffe</p>
+                            <a href="https://maps.app.goo.gl/5giPNg4azWkEryim8" 
+                               class="location-address"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Storgata 29<br>
+                                3126 Tønsberg
+                            </a>
+                            <p class="location-note">Velkommen til en kopp kaffe og nybakt bakst</p>
                         </div>
                     </div>
-                    <p class="times-note">Velkommen til en kopp kaffe og nybakt bakst</p>
                 </div>
             </div>
         </section>

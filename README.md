@@ -534,3 +534,4 @@ I'm making a cozy café website, the website has three different locations. I no
 
 ---
 
+Since monday to friday all have the same opening times, and saturday and sunday, streamline and clean up the design of the info section. Update the cafeInfo section to also include an address. The address has an underline, and clicking it opens the location in google maps/ apple maps. Decrease the overall height of the cafeInfo section and improve it's visual design with the new location and opening times. Use styling from main.css.
