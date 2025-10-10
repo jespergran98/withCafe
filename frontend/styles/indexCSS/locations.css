@@ -14,7 +14,7 @@
     left: -50%;
     right: -50%;
     bottom: -50%;
-    background: radial-gradient(circle at 50% 50%, rgba(50, 101, 122, 0.12) 0%, transparent 50%);
+    background: radial-gradient(circle at 50% 50%, var(--ocean-teal-12) 0%, transparent 50%);
     pointer-events: none;
     animation: warmGlow 10s ease-in-out infinite;
 }
@@ -36,41 +36,41 @@
         repeating-linear-gradient(
             45deg,
             /* Wide light plank surface with subtle highlight */
-            rgba(50, 101, 122, 0.025) 0px,
-            rgba(60, 115, 138, 0.035) 20px,
-            rgba(65, 120, 142, 0.04) 40px,
-            rgba(60, 115, 138, 0.035) 60px,
-            rgba(50, 101, 122, 0.025) 74px,
+            var(--ocean-teal-025) 0px,
+            var(--sky-azure-035) 20px,
+            var(--ocean-deep-04) 40px,
+            var(--sky-azure-035) 60px,
+            var(--ocean-teal-025) 74px,
             
             /* Deep shadow groove between planks */
-            rgba(20, 35, 45, 0.22) 74px,
-            rgba(15, 25, 35, 0.32) 77px,
-            rgba(8, 15, 22, 0.45) 80px,
-            rgba(15, 25, 35, 0.32) 83px,
-            rgba(20, 35, 45, 0.22) 86px,
+            var(--shadow-deep-22) 74px,
+            var(--shadow-deeper-32) 77px,
+            var(--shadow-deepest-45) 80px,
+            var(--shadow-deeper-32) 83px,
+            var(--shadow-deep-22) 86px,
             
             /* Next wide light plank with highlight */
-            rgba(50, 101, 122, 0.025) 86px,
-            rgba(60, 115, 138, 0.035) 106px,
-            rgba(65, 120, 142, 0.04) 126px,
-            rgba(60, 115, 138, 0.035) 146px,
-            rgba(50, 101, 122, 0.025) 160px,
+            var(--ocean-teal-025) 86px,
+            var(--sky-azure-035) 106px,
+            var(--ocean-deep-04) 126px,
+            var(--sky-azure-035) 146px,
+            var(--ocean-teal-025) 160px,
             
             /* Shadow groove */
-            rgba(20, 35, 45, 0.22) 160px,
-            rgba(15, 25, 35, 0.32) 163px,
-            rgba(8, 15, 22, 0.45) 166px,
-            rgba(15, 25, 35, 0.32) 169px,
-            rgba(20, 35, 45, 0.22) 172px,
+            var(--shadow-deep-22) 160px,
+            var(--shadow-deeper-32) 163px,
+            var(--shadow-deepest-45) 166px,
+            var(--shadow-deeper-32) 169px,
+            var(--shadow-deep-22) 172px,
             
             /* Return to start */
-            rgba(50, 101, 122, 0.025) 172px
+            var(--ocean-teal-025) 172px
         ),
         /* Subtle perpendicular grain texture */
         repeating-linear-gradient(
             135deg,
             transparent 0px,
-            rgba(50, 101, 122, 0.015) 1px,
+            var(--ocean-teal-015) 1px,
             transparent 2px,
             transparent 240px
         );
@@ -84,7 +84,7 @@
     right: 5%;
     width: 450px;
     height: 450px;
-    background: radial-gradient(circle, rgba(50, 101, 122, 0.08) 0%, transparent 65%);
+    background: radial-gradient(circle, var(--ocean-teal-10) 0%, transparent 65%);
     border-radius: 50%;
     filter: blur(90px);
     pointer-events: none;
@@ -99,7 +99,7 @@
 
 .locations .section-title {
     color: var(--white);
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 4px 20px var(--black-40);
 }
 
 .locations .container {
@@ -122,7 +122,7 @@
     border-radius: var(--radius-xl);
     overflow: hidden;
     transition: var(--transition-bounce);
-    border: 1px solid rgba(50, 101, 122, 0.25);
+    border: 1px solid var(--ocean-teal-25);
     position: relative;
     backdrop-filter: blur(16px);
     display: flex;
@@ -130,8 +130,8 @@
     opacity: 0;
     transform: translateY(30px);
     box-shadow: 
-        0 12px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        0 12px 32px var(--black-30),
+        inset 0 1px 0 var(--white-05);
 }
 
 .location-card.animate-in {
@@ -170,9 +170,9 @@
     position: absolute;
     inset: -1px;
     background: linear-gradient(135deg, 
-        rgba(50, 101, 122, 0.45) 0%, 
-        rgba(64, 130, 156, 0.35) 50%, 
-        rgba(50, 101, 122, 0.45) 100%);
+        var(--ocean-teal-45) 0%, 
+        var(--sky-azure-40) 50%, 
+        var(--ocean-teal-45) 100%);
     border-radius: var(--radius-xl);
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -183,11 +183,11 @@
 
 .location-card:hover {
     transform: translateY(-8px) scale(1.01);
-    border-color: rgba(50, 101, 122, 0.4);
+    border-color: var(--ocean-teal-30);
     box-shadow: 
-        0 20px 48px rgba(0, 0, 0, 0.4),
-        0 12px 28px rgba(50, 101, 122, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        0 20px 48px var(--black-40),
+        0 12px 28px var(--ocean-teal-20),
+        inset 0 1px 0 var(--white-10);
 }
 
 .location-card:hover::before {
@@ -204,7 +204,7 @@
     height: 100%;
     background: linear-gradient(90deg, 
         transparent, 
-        rgba(50, 101, 122, 0.12), 
+        var(--ocean-teal-12), 
         transparent);
     transition: left 0.8s;
     pointer-events: none;
@@ -268,8 +268,8 @@
 
 .location-badge {
     background: linear-gradient(135deg, 
-        rgba(50, 101, 122, 0.95) 0%, 
-        rgba(64, 130, 156, 0.9) 100%);
+        var(--ocean-teal-95) 0%, 
+        var(--sky-azure-98) 100%);
     color: var(--white);
     padding: 0.5rem 1.2rem;
     border-radius: 50px;
@@ -278,22 +278,22 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     box-shadow: 
-        0 4px 16px rgba(0, 0, 0, 0.35),
-        inset 0 1px 1px rgba(255, 255, 255, 0.25);
+        0 4px 16px var(--black-40),
+        inset 0 1px 1px var(--white-25);
     backdrop-filter: blur(8px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--white-25);
     transition: var(--transition-bounce);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px var(--black-20);
 }
 
 .location-card:hover .location-badge {
     transform: scale(1.08) translateY(-3px);
     box-shadow: 
-        0 6px 20px rgba(0, 0, 0, 0.4),
-        inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        0 6px 20px var(--black-40),
+        inset 0 1px 1px var(--white-25);
     background: linear-gradient(135deg, 
-        rgba(50, 101, 122, 1) 0%, 
-        rgba(64, 130, 156, 0.95) 100%);
+        var(--ocean-teal) 0%, 
+        var(--sky-azure) 100%);
 }
 
 /* Content Section */
@@ -305,8 +305,8 @@
     position: relative;
     flex-grow: 1;
     background: linear-gradient(to bottom, 
-        rgba(16, 26, 31, 0.15) 0%, 
-        rgba(16, 26, 31, 0.25) 100%);
+        var(--ocean-teal-015) 0%, 
+        var(--ocean-teal-025) 100%);
 }
 
 .location-card h3 {
@@ -319,7 +319,7 @@
     flex-wrap: wrap;
     gap: 0.4rem;
     margin-bottom: 0.25rem;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 8px var(--black-40);
 }
 
 .location-card h3 .with-text {
@@ -335,7 +335,7 @@
 
 .location-card:hover h3 {
     color: var(--cool-breeze);
-    text-shadow: 0 3px 12px rgba(50, 101, 122, 0.4);
+    text-shadow: 0 3px 12px var(--ocean-teal-30);
 }
 
 .location-address {
@@ -355,11 +355,11 @@
     flex-shrink: 0;
     stroke: var(--arctic-frost);
     stroke-width: 2.5;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 2px 4px var(--black-30));
 }
 
 .location-description {
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--white-85);
     line-height: 1.6;
     font-size: 0.875rem;
     margin-top: 0.35rem;
@@ -368,29 +368,31 @@
 }
 
 .location-card:hover .location-description {
-    color: rgba(255, 255, 255, 0.92);
+    color: var(--white-95);
 }
 
-/* CTA Button - Cool & Inviting */
+/* CTA Button - Matching MapSection Style */
 .location-cta {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.6rem;
-    color: var(--white);
+    color: var(--midnight);
     font-weight: 600;
     font-size: 0.8rem;
     margin-top: 0.65rem;
     padding: 0.7rem 1.4rem;
     background: linear-gradient(135deg, 
-        rgba(50, 101, 122, 0.22) 0%, 
-        rgba(50, 101, 122, 0.15) 100%);
-    border-radius: 50px;
-    border: 2px solid rgba(50, 101, 122, 0.4);
-    transition: var(--transition-bounce);
+        var(--twilight-bright) 0%, 
+        var(--arctic-frost) 100%);
+    border-radius: var(--radius-md);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
     align-self: flex-start;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 12px var(--azure-glow-30);
+    z-index: 2;
 }
 
 .location-cta::before {
@@ -398,18 +400,17 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, 
-        rgba(50, 101, 122, 0.45) 0%, 
-        rgba(64, 130, 156, 0.35) 100%);
+        var(--white-10) 0%, 
+        var(--white-05) 100%);
     opacity: 0;
-    transition: opacity 0.4s ease;
-    border-radius: 50px;
+    transition: opacity 0.3s ease;
 }
 
 .location-cta svg {
     width: 16px;
     height: 16px;
-    transition: var(--transition-bounce);
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+    stroke-width: 2.5;
     position: relative;
     z-index: 1;
 }
@@ -420,10 +421,8 @@
 }
 
 .location-cta:hover {
-    color: var(--white);
-    border-color: var(--steel-blue);
-    transform: translateX(5px) scale(1.03);
-    box-shadow: 0 5px 18px rgba(50, 101, 122, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--azure-glow-40);
 }
 
 .location-cta:hover::before {
@@ -431,11 +430,11 @@
 }
 
 .location-cta:hover svg {
-    transform: translateX(5px);
+    transform: translateX(3px);
 }
 
 .location-cta:active {
-    transform: translateX(5px) scale(0.98);
+    transform: translateY(-1px) scale(0.98);
 }
 
 /* Responsive Design - Tablet */
@@ -491,8 +490,8 @@
     .location-card {
         border-width: 1.5px;
         box-shadow: 
-            0 10px 28px rgba(0, 0, 0, 0.35),
-            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            0 10px 28px var(--black-40),
+            inset 0 1px 0 var(--white-10);
     }
     
     .location-image {
@@ -526,7 +525,7 @@
         font-size: 0.8rem;
         line-height: 1.55;
         margin-top: 0.25rem;
-        color: rgba(255, 255, 255, 0.82);
+        color: var(--white-85);
     }
 
     /* Mobile CTA text change to "Les mer" */
@@ -553,7 +552,7 @@
         position: relative;
         z-index: 2;
         font-weight: 600;
-        color: var(--white);
+        color: var(--midnight);
         order: -1;
     }
 
@@ -593,8 +592,8 @@
     .location-card:hover {
         transform: none;
         box-shadow: 
-            0 10px 28px rgba(0, 0, 0, 0.35),
-            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            0 10px 28px var(--black-40),
+            inset 0 1px 0 var(--white-10);
     }
 
     .location-card:hover::before {
@@ -607,16 +606,16 @@
     
     .location-card:hover h3 {
         color: var(--white);
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        text-shadow: 0 2px 8px var(--black-40);
     }
     
     .location-card:hover .location-description {
-        color: rgba(255, 255, 255, 0.82);
+        color: var(--white-85);
     }
     
     .location-cta:hover {
         transform: none;
-        border-color: rgba(50, 101, 122, 0.4);
+        box-shadow: 0 4px 12px var(--azure-glow-30);
     }
     
     .location-cta:hover::before {
@@ -676,7 +675,7 @@
         font-size: 0.775rem;
         line-height: 1.5;
         margin-top: 0.2rem;
-        color: rgba(255, 255, 255, 0.8);
+        color: var(--white-85);
     }
 
     /* Improved mobile CTA */

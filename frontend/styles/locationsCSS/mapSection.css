@@ -45,22 +45,38 @@
     background: 
         repeating-linear-gradient(
             45deg,
+            /* Wide light plank surface with subtle highlight */
             var(--ocean-teal-025) 0px,
             var(--sky-azure-035) 20px,
             var(--ocean-deep-04) 40px,
             var(--sky-azure-035) 60px,
             var(--ocean-teal-025) 74px,
+            
+            /* Deep shadow groove between planks */
             var(--shadow-deep-22) 74px,
             var(--shadow-deeper-32) 77px,
             var(--shadow-deepest-45) 80px,
             var(--shadow-deeper-32) 83px,
             var(--shadow-deep-22) 86px,
+            
+            /* Next wide light plank with highlight */
             var(--ocean-teal-025) 86px,
             var(--sky-azure-035) 106px,
             var(--ocean-deep-04) 126px,
             var(--sky-azure-035) 146px,
-            var(--ocean-teal-025) 160px
+            var(--ocean-teal-025) 160px,
+            
+            /* Shadow groove */
+            var(--shadow-deep-22) 160px,
+            var(--shadow-deeper-32) 163px,
+            var(--shadow-deepest-45) 166px,
+            var(--shadow-deeper-32) 169px,
+            var(--shadow-deep-22) 172px,
+            
+            /* Return to start */
+            var(--ocean-teal-025) 172px
         ),
+        /* Subtle perpendicular grain texture */
         repeating-linear-gradient(
             135deg,
             transparent 0px,
