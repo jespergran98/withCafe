@@ -527,3 +527,4 @@ Add two buttons to each card: "Les mer ->" and "Åpne i Maps". clicking "Les mer
 brød & kaffe: https://maps.app.goo.gl/5giPNg4azWkEryim8
 bok & kaffe: https://maps.app.goo.gl/JXQ5EGL2xrizdM9d6
 brunsj & kaffe: https://maps.app.goo.gl/iCgr4oSVEzeE4tE86
+
