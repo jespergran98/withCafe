@@ -531,3 +531,6 @@ brunsj & kaffe: https://maps.app.goo.gl/iCgr4oSVEzeE4tE86
 ---
 
 I'm making a cozy café website, the website has three different locations. I now want to make a page showcasing one of the locations named "WITH brød og kaffe". I now want you to create the hero section of this page. The hero is located under the header, above the contact section.  Positioned in the center of the header is the logo for the café. WITH should be in font Bowlby One SC and color --espresso appearing in a large text on top, below it brød & kaffe should also appear in color  --espresso, but the & symbol in color --honey (with the default skranji font).  Use warm color palette from main.css to create the header. The header must be warm and welcoming and showcase the location nicely.  The header image is imported from assets/images/brodOgKaffe/brodOgKaffeHeader.jpg  Provide the full updated brodOgkaffe.html and the css file named "cafeHeader.css" located in styles/cafePageCSS.
+
+---
+

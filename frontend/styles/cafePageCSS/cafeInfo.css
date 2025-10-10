@@ -1,0 +1,253 @@
+/* ============================================
+   CAFE OPENING HOURS SECTION
+   ============================================ */
+
+.cafe-times {
+    background-color: var(--espresso);
+    padding: 5rem 0;
+    position: relative;
+}
+
+.cafe-times::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--honey-light) 50%,
+        transparent 100%
+    );
+    opacity: 0.3;
+}
+
+.times-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.times-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.times-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--honey);
+    stroke-width: 2;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.times-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 600;
+    color: var(--cream);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   TIMES GRID
+   ============================================ */
+
+.times-grid {
+    background: linear-gradient(
+        135deg,
+        var(--espresso-light) 0%,
+        var(--espresso-medium) 100%
+    );
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 3rem;
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 var(--white-15);
+    border: 1px solid var(--espresso-light);
+    margin-bottom: 2rem;
+}
+
+.time-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--white-10);
+    transition: all 0.3s ease;
+}
+
+.time-row:last-child {
+    border-bottom: none;
+}
+
+.time-row:hover {
+    transform: translateX(4px);
+}
+
+.time-row.weekend {
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--honey-dark) 2%,
+        transparent 98%
+    );
+    opacity: 0.95;
+}
+
+.time-row.weekend .day-name {
+    color: var(--honey-light);
+}
+
+.day-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--cream);
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.time-separator {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--honey-dark) 20%,
+        var(--honey-dark) 80%,
+        transparent 100%
+    );
+    margin: 0 1.5rem;
+    opacity: 0.3;
+}
+
+.time-hours {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--honey);
+    letter-spacing: 1px;
+    text-align: right;
+    min-width: 80px;
+}
+
+/* ============================================
+   NOTE
+   ============================================ */
+
+.times-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--cream);
+    opacity: 0.8;
+    margin: 0;
+    font-style: italic;
+    letter-spacing: 0.3px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .cafe-times {
+        padding: 4rem 0;
+    }
+
+    .times-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .times-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .times-grid {
+        padding: 2rem 2rem;
+    }
+
+    .day-name,
+    .time-hours {
+        font-size: 1rem;
+    }
+
+    .time-separator {
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cafe-times {
+        padding: 3rem 0;
+    }
+
+    .times-header {
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .times-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    .times-grid {
+        padding: 1.5rem 1.5rem;
+        border-radius: var(--radius-md);
+    }
+
+    .time-row {
+        padding: 0.875rem 0;
+    }
+
+    .day-name,
+    .time-hours {
+        font-size: 0.9375rem;
+    }
+
+    .time-separator {
+        margin: 0 0.75rem;
+    }
+
+    .times-note {
+        font-size: 0.9375rem;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY & MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .time-row {
+        transition: none;
+    }
+
+    .time-row:hover {
+        transform: none;
+    }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+    .times-grid {
+        border: 2px solid var(--honey);
+    }
+
+    .time-row {
+        border-bottom-width: 2px;
+    }
+}
