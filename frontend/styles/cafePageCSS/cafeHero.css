@@ -1,0 +1,193 @@
+/* ============================================
+   CAFE HERO SECTION
+   ============================================ */
+
+.cafe-hero {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    min-height: 500px;
+    max-height: 800px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(28, 20, 16, 0.25) 0%,
+        rgba(28, 20, 16, 0.15) 50%,
+        rgba(28, 20, 16, 0.35) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* ============================================
+   HERO LOGO
+   ============================================ */
+
+.hero-logo {
+    display: inline-block;
+    padding: 2.5rem 4rem;
+    background: linear-gradient(
+        135deg,
+        var(--espresso) 0%,
+        var(--espresso-medium) 100%
+    );
+    border-radius: var(--radius-lg);
+    box-shadow: 
+        0 8px 32px rgba(28, 20, 16, 0.4),
+        0 16px 48px rgba(28, 20, 16, 0.3),
+        0 2px 8px rgba(28, 20, 16, 0.25),
+        inset 0 1px 0 var(--white-15),
+        inset 0 -1px 0 var(--black-20);
+    border: 2px solid var(--espresso-light);
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    animation: fadeInScale 0.8s ease-out;
+}
+
+.hero-logo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        var(--honey-light) 0%,
+        var(--honey) 50%,
+        var(--honey-dark) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.hero-logo-top {
+    font-family: 'Bowlby One SC', cursive;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 0.1rem;
+    letter-spacing: 2px;
+    text-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.3),
+        0 4px 16px rgba(0, 0, 0, 0.2),
+        0 1px 3px rgba(217, 168, 86, 0.2);
+}
+
+.hero-logo-bottom {
+    font-family: 'Skranji', cursive;
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    color: var(--cream);
+    line-height: 1.2;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.25),
+        0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero-accent {
+    color: var(--honey);
+    font-weight: 700;
+    font-size: 1.15em;
+    margin: 0 0.15em;
+    display: inline-block;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .cafe-hero {
+        height: 60vh;
+        min-height: 450px;
+    }
+
+    .hero-logo {
+        padding: 2rem 3rem;
+    }
+
+    .hero-logo-top {
+        letter-spacing: 1px;
+    }
+
+    .hero-logo-bottom {
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cafe-hero {
+        height: 50vh;
+        min-height: 400px;
+    }
+
+    .hero-logo {
+        padding: 1.5rem 2rem;
+        border-radius: var(--radius-md);
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY & MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-logo {
+        animation: none;
+    }
+}
