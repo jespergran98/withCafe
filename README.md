@@ -535,3 +535,18 @@ I'm making a cozy café website, the website has three different locations. I no
 ---
 
 Since monday to friday all have the same opening times, and saturday and sunday, streamline and clean up the design of the info section. Update the cafeInfo section to also include an address. The address has an underline, and clicking it opens the location in google maps/ apple maps. Decrease the overall height of the cafeInfo section and improve it's visual design with the new location and opening times. Use styling from main.css.
+
+--
+
+Create a new section below the café info section that fills the entire width of the section using this map:
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+
+create a styles/cafePageCSS/cafePageMap.css file that styles the map and marker. The marker should appear in the location of WITH brød og kaffe: lat: 59.26694458677926, lng: 10.40858159245786.
+
+At the bottom of the map, a button should say "se alle våre lokasjoner". Clicking this leads the user to locations.css
+
+Create a new js file in js/cafePageJS/cafePageMap.js that handles the map.
+
+Use the main.css file's color for the styling of the marker and button.

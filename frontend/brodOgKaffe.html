@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="./styles/mainCSS/importMain.css">
     <link rel="stylesheet" href="./styles/cafePageCSS/cafeHero.css">
     <link rel="stylesheet" href="./styles/cafePageCSS/cafeInfo.css">
+    <link rel="stylesheet" href="./styles/cafePageCSS/cafePageMap.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Bowlby+One+SC&family=Skranji:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
 </head>
 <body>
 
@@ -106,6 +112,12 @@
                 </div>
             </div>
         </section>
+
+        <!-- Map Section -->
+        <section class="cafe-map-section">
+            <div id="cafe-map"></div>
+            <a href="locations.html" class="map-bottom-button">se alle våre lokasjoner</a>
+        </section>
         
         <!-- Contact Details -->
         <section id="kontakt" class="contact-info">
@@ -186,6 +198,11 @@
         </div>
     </footer>
 
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
     <!-- JavaScript -->
     <script src="./js/mainJS/hamburger.js"></script>
     <script src="./js/indexJS/hero.js"></script>
@@ -196,5 +213,6 @@
     <script src="./js/indexJS/locations.js"></script>
     <script src="./js/mainJS/marquee.js"></script>
     <script src="./js/mainJS/copyrightYear.js"></script>
+    <script src="./js/cafePageJS/cafePageMap.js"></script>
 </body>
 </html>
