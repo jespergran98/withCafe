@@ -790,36 +790,75 @@
 }
 
 /* ============================================
-   RESPONSIVE DESIGN - MOBILE DEVICES
+   RESPONSIVE DESIGN - MOBILE DEVICES (506px and below)
+   Cards stack vertically above map
    ============================================ */
 
-@media (max-width: 640px) {
+@media (max-width: 506px) {
     .locations-section {
-        margin-top: 88px;
+        margin-top: 128px;
+        min-height: auto;
+        padding: 1.5rem 0;
     }
 
     .locations-container {
-        padding: 1.25rem 1rem;
-        height: calc(100vh - 80px - 2.5rem);
-        max-height: calc(100vh - 80px - 2.5rem);
+        padding: 0 1rem;
+        height: auto;
+        max-height: none;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 1.25rem;
     }
 
     .location-cards {
-        gap: 0.65rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        max-height: none;
+        height: auto;
+        overflow: visible;
+        padding-right: 0;
+        order: 1;
+    }
+
+    .location-card {
+        flex-shrink: 1;
+    }
+
+    .location-card {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 0;
+        overflow: hidden;
     }
 
     .card-image {
-        height: 100px;
-        min-height: 80px;
+        height: 100%;
+        min-height: 160px;
+        grid-row: 1 / 3;
+        width: 140px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-image img {
+        height: 100%;
+        width: 100%;
+        flex: 1;
     }
 
     .card-content {
         padding: 0.75rem;
-        gap: 0.5rem;
+        gap: 0.45rem;
+        grid-column: 2;
+        grid-row: 1;
     }
 
     .location-name {
-        padding-bottom: 0.5rem;
+        padding-bottom: 0.4rem;
+        gap: 0.15rem;
+        margin: 0 0 0.2rem 0;
+        border-bottom: 1px solid var(--ocean-teal-20);
     }
 
     .name-with {
@@ -831,44 +870,55 @@
     }
 
     .location-detail {
-        font-size: 0.66rem;
+        font-size: 0.68rem;
+        gap: 0.4rem;
+        line-height: 1.2;
     }
 
     .detail-icon {
         width: 13px;
         height: 13px;
+        min-width: 13px;
     }
 
     .card-buttons {
-        gap: 0.45rem;
-        margin-top: 0.35rem;
-        padding-top: 0.5rem;
+        gap: 0.4rem;
+        margin-top: 0.3rem;
+        padding-top: 0.4rem;
+        flex-direction: row;
+        grid-column: 2;
+        grid-row: 2;
+        align-self: stretch;
+        border-top: 1px solid var(--ocean-teal-20);
+        white-space: nowrap;
     }
 
     .card-btn {
-        font-size: 0.72rem;
-        padding: 0.55rem 0.75rem;
+        font-size: 0.7rem;
+        padding: 0.5rem 0.65rem;
     }
 
     .btn-icon,
     .btn-icon-left {
-        width: 12px;
-        height: 12px;
+        width: 13px;
+        height: 13px;
     }
 
     .map-container {
-        min-height: 250px;
+        height: 320px;
+        min-height: 320px;
+        order: 2;
     }
 
     .marker-pin {
-        width: 125px;
-        height: 70px;
+        width: 130px;
+        height: 72px;
     }
 
     .marker-content {
         padding: 9px 12px 10px;
         border-width: 2.5px;
-        min-width: 105px;
+        min-width: 110px;
     }
 
     .marker-content::after {

@@ -585,3 +585,7 @@ In the background of the location section on the index.html page I have a backgr
 --
 
 Create a new file inside js/cafePageJS named "openingInfo.js". this js file is responsible for checking the current day ant time of the user's PC and compare it to the opening times of the café. If the café currently is open, it says "stenger om...", if the store currently is closed, it says "Åpner om..." This text is placed inside the "Åpningstider" card, below the Mandag-Fredag and Lørdag- Søndag items.
+
+--
+
+For the locations.html page, change the positioning of the three location cards at 506px witdth and below to be located vertical of each other above the map. All other code must remain the same.
