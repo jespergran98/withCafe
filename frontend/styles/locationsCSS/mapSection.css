@@ -797,14 +797,14 @@
 }
 
 /* ============================================
-   RESPONSIVE DESIGN - MOBILE DEVICES (506px and below)
+   RESPONSIVE DESIGN - MOBILE DEVICES (544px and below)
    Cards stack vertically above map
    ============================================ */
 
 @media (max-width: 544px) {
     .locations-section {
         margin-top: 128px;
-        min-height: auto;
+        min-height: 90vh;
         padding: 1.5rem 0;
     }
 
