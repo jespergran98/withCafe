@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize map
     const map = L.map('cafe-map', {
         center: [cafeLocation.lat, cafeLocation.lng],
-        zoom: 16,
+        zoom: 17,
         zoomControl: true,
         scrollWheelZoom: false,
         dragging: true,

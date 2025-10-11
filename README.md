@@ -554,3 +554,7 @@ Use the main.css file's color for the styling of the marker and button.
 ---
 
 In the background of the location section on the index.html page I have a background using coffee and bread icons. You now have to make a similar feature for the cafe page map section named "osebergAndSlottsfjell.js", that creates a similar backround as the breadAndWheat.js, but with two other images in assets/images: oseberg-icon.png and slottsfjell-icon.png. "osebergAndSlottsfjell.js" will be located in js/cafePageJS/osebergAndSlottsfjell.js.
+
+--
+
+Create a new file inside js/cafePageJS named "openingInfo.js". this js file is responsible for checking the current day ant time of the user's PC and compare it to the opening times of the café. If the café currently is open, it says "stenger om...", if the store currently is closed, it says "Åpner om..." This text is placed inside the "Åpningstider" card, below the Mandag-Fredag and Lørdag- Søndag items.

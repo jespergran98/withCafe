@@ -99,7 +99,7 @@ class MapBackgroundPattern {
                     rotation: Math.random() * Math.PI * 2,
                     scale: 0.75 + Math.random() * 0.5,
                     size: iconSize,
-                    opacity: 0.3 + Math.random() * 0.3
+                    opacity: 0.2 + Math.random() * 0.2
                 });
             }
         }
