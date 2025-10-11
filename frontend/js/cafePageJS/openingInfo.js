@@ -86,20 +86,16 @@
     function formatTimeMessage(now, targetTime, isOpening) {
         const diffMs = targetTime - now;
         const diffMinutes = Math.floor(diffMs / (1000 * 60));
-        const diffHours = Math.floor(diffMinutes / 60);
-        const remainingMinutes = diffMinutes % 60;
+        const diffHours = Math.round(diffMinutes / 60);
 
         let timeText = '';
         
-        if (diffHours > 0) {
-            timeText = `${diffHours} time${diffHours > 1 ? 'r' : ''}`;
-            if (remainingMinutes > 0) {
-                timeText += ` og ${remainingMinutes} minutt${remainingMinutes > 1 ? 'er' : ''}`;
-            }
-        } else if (diffMinutes > 0) {
-            timeText = `${diffMinutes} minutt${diffMinutes > 1 ? 'er' : ''}`;
+        if (diffMinutes < 60) {
+            // Less than an hour - show minutes
+            timeText = `${diffMinutes} minutt${diffMinutes !== 1 ? 'er' : ''}`;
         } else {
-            timeText = 'mindre enn ett minutt';
+            // One hour or more - show rounded hours only
+            timeText = `${diffHours} time${diffHours !== 1 ? 'r' : ''}`;
         }
 
         return isOpening 
