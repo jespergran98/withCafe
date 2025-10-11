@@ -35,9 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const customIcon = L.divIcon({
         className: 'custom-marker-wrapper',
         html: `
-            <svg class="custom-marker-icon" width="48" height="64" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Pin shadow -->
-                <ellipse cx="24" cy="60" rx="8" ry="3" fill="#1C1410" opacity="0.3"/>
+            <svg class="custom-marker-icon" width="96" height="128" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+
                 
                 <!-- Pin body -->
                 <path d="M24 2C15.716 2 9 8.716 9 17C9 28.25 24 48 24 48C24 48 39 28.25 39 17C39 8.716 32.284 2 24 2Z" 
@@ -73,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         stroke-width="0.5" opacity="0.5"/>
             </svg>
         `,
-        iconSize: [48, 64],
-        iconAnchor: [24, 60],
-        popupAnchor: [0, -60]
+        iconSize: [48, 128],
+        iconAnchor: [48, 96],
+        popupAnchor: [0, -96]
     });
 
     // Add marker to map

@@ -163,15 +163,6 @@
     overflow: hidden;
 }
 
-.leaflet-popup-content-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--honey), var(--honey-dark), var(--espresso));
-}
 
 .leaflet-popup-content {
     margin: 0 !important;
