@@ -24,20 +24,6 @@
     animation: fadeInUp 0.8s ease-out;
 }
 
-.map-tag {
-    display: inline-block;
-    font-size: 0.875rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    padding: 0.5rem 1.5rem;
-    background: linear-gradient(135deg, var(--honey), var(--honey-dark));
-    color: var(--cream);
-    border-radius: 50px;
-    box-shadow: var(--shadow-md);
-}
-
 .map-title {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
