@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         center: [cafeLocation.lat, cafeLocation.lng],
         zoom: 17,
         zoomControl: true,
-        scrollWheelZoom: false,
+        scrollWheelZoom: true, // Enable by default
         dragging: true,
         tap: true,
         minZoom: 12,
@@ -109,15 +109,25 @@ document.addEventListener('DOMContentLoaded', function() {
         offset: [0, -5]
     });
 
-    // Enable scroll wheel zoom when user clicks on map
-    map.on('click', function() {
-        map.scrollWheelZoom.enable();
+    // Enhanced scroll control - prevent page scroll when hovering over map
+    const mapElement = document.getElementById('cafe-map');
+    let isMouseOverMap = false;
+
+    // Track mouse position over map
+    mapElement.addEventListener('mouseenter', function() {
+        isMouseOverMap = true;
     });
 
-    // Disable scroll wheel zoom when mouse leaves map
-    map.on('mouseout', function() {
-        map.scrollWheelZoom.disable();
+    mapElement.addEventListener('mouseleave', function() {
+        isMouseOverMap = false;
     });
+
+    // Prevent page scroll when scrolling over map
+    mapElement.addEventListener('wheel', function(e) {
+        if (isMouseOverMap) {
+            e.stopPropagation();
+        }
+    }, { passive: false });
 
     // Add subtle bounce animation to marker on hover
     let markerElement;
