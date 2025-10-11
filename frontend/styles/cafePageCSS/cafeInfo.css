@@ -348,7 +348,6 @@
 /* Disable the yellow left border on hover for status item */
 .hours-item.status-item::before {
     display: none;
-}
     content: '';
     position: absolute;
     inset: -2px;
@@ -361,6 +360,7 @@
         var(--honey) 100%
     );
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     opacity: 0;
