@@ -5,223 +5,415 @@
 .cafe-map-section {
     position: relative;
     width: 100%;
-    height: 500px;
-    margin: 0;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--honey-lighter) 100%);
     padding: 0;
+    margin: 0;
     overflow: hidden;
+}
+
+.map-container-wrapper {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.map-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.map-tag {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+    color: var(--cream);
+    border-radius: 50px;
+    box-shadow: var(--shadow-md);
+}
+
+.map-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--espresso);
+    margin-bottom: 0.75rem;
+    letter-spacing: -1px;
+}
+
+.map-description {
+    font-size: clamp(0.95rem, 2vw, 1.125rem);
+    color: var(--espresso-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.map-content {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    border: 3px solid var(--espresso);
+    background: var(--white);
 }
 
 #cafe-map {
     width: 100%;
-    height: 100%;
+    height: 550px;
     z-index: 1;
+}
+
+/* Decorative Corner Accents */
+.map-content::before,
+.map-content::after {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.map-content::before {
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--espresso) 0%, transparent 100%);
+    opacity: 0.1;
+}
+
+.map-content::after {
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(-135deg, var(--espresso) 0%, transparent 100%);
+    opacity: 0.1;
 }
 
 /* Map Controls Styling */
 .leaflet-control-zoom {
-    border: none !important;
-    box-shadow: var(--shadow-md) !important;
+    border: 2px solid var(--espresso) !important;
+    border-radius: var(--radius-md) !important;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg) !important;
 }
 
 .leaflet-control-zoom a {
     background-color: var(--cream) !important;
     color: var(--espresso) !important;
-    border: 1px solid var(--butterscotch) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--espresso-medium) !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
     transition: var(--transition) !important;
+    width: 34px !important;
+    height: 34px !important;
+    line-height: 34px !important;
+}
+
+.leaflet-control-zoom a:last-child {
+    border-bottom: none !important;
 }
 
 .leaflet-control-zoom a:hover {
-    background-color: var(--honey-lighter) !important;
-    color: var(--espresso) !important;
+    background: linear-gradient(135deg, var(--honey), var(--honey-dark)) !important;
+    color: var(--cream) !important;
 }
 
 .leaflet-control-attribution {
-    background-color: var(--vanilla-foam) !important;
-    border-top: 1px solid var(--butterscotch) !important;
+    background-color: rgba(251, 248, 242, 0.95) !important;
+    border-top: 2px solid var(--espresso-medium) !important;
+    padding: 4px 8px !important;
     font-family: 'Skranji', cursive !important;
-    font-size: 0.75rem !important;
+    font-size: 0.7rem !important;
     color: var(--espresso-light) !important;
+    backdrop-filter: blur(8px);
 }
 
 .leaflet-control-attribution a {
-    color: var(--honey-dark) !important;
+    color: var(--espresso) !important;
+    font-weight: 700 !important;
 }
 
-/* Custom Marker Styling */
-.custom-marker {
-    background: linear-gradient(135deg, var(--honey), var(--honey-dark));
-    border: 3px solid var(--cream);
-    border-radius: 50% 50% 50% 0;
-    width: 40px;
-    height: 40px;
-    transform: rotate(-45deg);
-    box-shadow: var(--shadow-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+/* Custom SVG Marker - Coffee Cup Pin */
+.custom-marker-icon {
+    filter: drop-shadow(0 4px 12px rgba(28, 20, 16, 0.4));
     transition: var(--transition);
 }
 
-.custom-marker:hover {
-    transform: rotate(-45deg) scale(1.1);
-    box-shadow: var(--shadow-xl);
-}
-
-.custom-marker::before {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: var(--cream);
-    border-radius: 50%;
-    transform: rotate(45deg);
+.custom-marker-icon:hover {
+    filter: drop-shadow(0 8px 20px rgba(28, 20, 16, 0.5));
+    transform: translateY(-4px);
 }
 
 /* Marker Popup Styling */
 .leaflet-popup-content-wrapper {
-    background-color: var(--cream) !important;
-    border: 2px solid var(--honey) !important;
-    border-radius: var(--radius-md) !important;
+    background: linear-gradient(135deg, var(--cream), var(--honey-lighter)) !important;
+    border: 3px solid var(--espresso) !important;
+    border-radius: var(--radius-lg) !important;
     box-shadow: var(--shadow-xl) !important;
     font-family: 'Skranji', cursive !important;
     padding: 0 !important;
+    overflow: hidden;
+}
+
+.leaflet-popup-content-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--honey), var(--honey-dark), var(--espresso));
 }
 
 .leaflet-popup-content {
     margin: 0 !important;
-    padding: 1.5rem !important;
-    min-width: 220px;
+    padding: 1.75rem 1.5rem !important;
+    min-width: 240px;
+}
+
+.leaflet-popup-close-button {
+    color: var(--espresso) !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    padding: 8px 12px !important;
+    transition: var(--transition) !important;
+}
+
+.leaflet-popup-close-button:hover {
+    color: var(--honey-dark) !important;
+    background-color: transparent !important;
 }
 
 .marker-popup-title {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--espresso);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 
 .marker-popup-address {
-    font-size: 0.875rem;
-    color: var(--espresso-light);
-    line-height: 1.5;
-    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--espresso-medium);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.marker-popup-address::before {
+    content: '📍';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1rem;
 }
 
 .marker-popup-link {
     display: inline-block;
     font-size: 0.875rem;
-    color: var(--honey-dark);
+    color: var(--cream);
     font-weight: 700;
-    padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, var(--mocha-mist), var(--cappuccino-cream));
-    border: 1px solid var(--butterscotch);
-    border-radius: var(--radius-sm);
-    transition: var(--transition);
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--espresso), var(--espresso-medium));
+    border: 2px solid var(--espresso);
+    border-radius: var(--radius-md);
+    transition: var(--transition-bounce);
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
 }
 
 .marker-popup-link:hover {
-    background: linear-gradient(135deg, var(--honey-lighter), var(--honey-light));
+    background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+    color: var(--espresso);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
 }
 
 .leaflet-popup-tip {
-    background-color: var(--cream) !important;
-    border: 2px solid var(--honey) !important;
+    background: linear-gradient(135deg, var(--cream), var(--honey-lighter)) !important;
+    border: 3px solid var(--espresso) !important;
     border-top: none !important;
     border-right: none !important;
+    box-shadow: -2px 2px 4px rgba(28, 20, 16, 0.15) !important;
 }
 
-/* Map Bottom Button */
+/* Map Bottom CTA Section */
+.map-cta-section {
+    text-align: center;
+    padding: 3rem 0 0 0;
+}
+
+.map-cta-content {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.map-cta-text {
+    font-size: 1.125rem;
+    color: var(--espresso-light);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
 .map-bottom-button {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+    display: inline-block;
+    background: linear-gradient(135deg, var(--espresso), var(--espresso-medium));
     color: var(--cream);
-    padding: 1rem 2.5rem;
+    padding: 1.25rem 3rem;
     border-radius: var(--radius-xl);
     font-family: 'Skranji', cursive;
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: lowercase;
     box-shadow: var(--shadow-xl);
-    border: 2px solid var(--cream);
+    border: 3px solid var(--espresso);
     cursor: pointer;
     transition: var(--transition-bounce);
     text-decoration: none;
-    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-bottom-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(217, 168, 86, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.map-bottom-button:hover::before {
+    left: 100%;
 }
 
 .map-bottom-button:hover {
-    transform: translateX(-50%) translateY(-4px) scale(1.05);
+    transform: translateY(-4px) scale(1.03);
     box-shadow: 0 20px 40px rgba(28, 20, 16, 0.3);
-    background: linear-gradient(135deg, var(--honey-dark), var(--honey));
+    background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+    color: var(--espresso);
 }
 
 .map-bottom-button:active {
-    transform: translateX(-50%) translateY(-2px) scale(1.02);
+    transform: translateY(-2px) scale(1.01);
+}
+
+/* Decorative Elements */
+.map-decoration {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.08;
+}
+
+.map-decoration.top-left {
+    top: 2rem;
+    left: 2rem;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, var(--espresso) 0%, transparent 70%);
+}
+
+.map-decoration.bottom-right {
+    bottom: 2rem;
+    right: 2rem;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, var(--honey-dark) 0%, transparent 70%);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .map-container-wrapper {
+        padding: 3rem 1.5rem;
+    }
+    
+    #cafe-map {
+        height: 480px;
+    }
+}
+
 @media (max-width: 768px) {
-    .cafe-map-section {
-        height: 400px;
+    .map-container-wrapper {
+        padding: 2.5rem 1rem;
+    }
+    
+    .map-header {
+        margin-bottom: 2rem;
+    }
+    
+    #cafe-map {
+        height: 420px;
     }
     
     .map-bottom-button {
-        padding: 0.875rem 2rem;
-        font-size: 0.9rem;
-        bottom: 1.5rem;
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
     }
     
-    .custom-marker {
-        width: 35px;
-        height: 35px;
+    .map-cta-text {
+        font-size: 1rem;
     }
     
-    .custom-marker::before {
-        width: 14px;
-        height: 14px;
+    .map-decoration {
+        display: none;
     }
 }
 
 @media (max-width: 480px) {
-    .cafe-map-section {
-        height: 350px;
+    .map-container-wrapper {
+        padding: 2rem 0.75rem;
+    }
+    
+    #cafe-map {
+        height: 380px;
+    }
+    
+    .map-content::before,
+    .map-content::after {
+        width: 50px;
+        height: 50px;
     }
     
     .map-bottom-button {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.85rem;
-        bottom: 1rem;
-    }
-    
-    .custom-marker {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .custom-marker::before {
-        width: 12px;
-        height: 12px;
-    }
-    
-    .leaflet-popup-content {
-        padding: 1rem !important;
-        min-width: 180px;
+        padding: 0.875rem 2rem;
+        font-size: 0.95rem;
     }
     
     .marker-popup-title {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     
     .marker-popup-address {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
+    }
+    
+    .leaflet-popup-content {
+        padding: 1.5rem 1.25rem !important;
+        min-width: 200px;
     }
 }
