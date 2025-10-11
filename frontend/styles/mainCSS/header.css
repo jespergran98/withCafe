@@ -1,24 +1,32 @@
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, var(--warm-linen), var(--porcelain));
+    background: var(--glass-warm-light);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: 1.75rem 0;
-    border-bottom: 1px solid var(--whisper);
+    border-bottom: 1px solid var(--glass-warm-border);
+    box-shadow: 
+        0 1px 0 var(--glass-border-light),
+        0 4px 24px var(--glass-shadow),
+        inset 0 1px 0 var(--glass-border-light);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 1px 0 var(--whisper);
-    transition: padding 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 header.scrolled {
     padding: 1.4rem 0;
-    background: rgba(250, 248, 245, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background: var(--glass-warm);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 
+        0 1px 0 var(--glass-warm-border),
+        0 8px 32px var(--glass-shadow-hover),
+        inset 0 1px 0 var(--glass-border-light);
+    border-bottom: 1px solid var(--glass-warm-border);
 }
 
 header .container {
@@ -397,10 +405,13 @@ a.nav-cta {
         right: -100%;
         width: 260px;
         height: 100vh;
-        background: rgba(250, 248, 245, 0.95);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
+        background: var(--glass-warm);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 
+            -8px 0 32px var(--glass-shadow-hover),
+            inset 1px 0 0 var(--glass-border-light);
+        border-left: 1px solid var(--glass-warm-border);
         transition: right 0.3s ease;
         z-index: 999;
         padding: 5.5rem 1.5rem 1.5rem;
@@ -445,7 +456,7 @@ a.nav-cta {
         content: '';
         position: fixed;
         inset: 0;
-        background: rgba(30, 20, 10, 0.4);
+        background: var(--overlay-dark);
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
         z-index: 998;

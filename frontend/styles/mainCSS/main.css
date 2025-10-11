@@ -29,18 +29,27 @@
     --roasted-shadow: rgba(28, 20, 16, 0.28);
     
     /* Additional Warm Tones mainly used for glass effect */
-    --warm-linen: #FAF7F3;
-    --morning-mist: rgba(250, 247, 243, 0.40);
-    --porcelain: #FFFFFF;
-    --cotton: rgba(255, 255, 255, 0.75);
-    --silk: rgba(255, 255, 255, 0.65);
-    --lace: rgba(255, 255, 255, 0.35);
-    --pearl: rgba(255, 255, 255, 0.28);
-    --whisper: rgba(28, 20, 16, 0.05);
-    --soft-shadow: rgba(28, 20, 16, 0.10);
-    --gentle-shadow: rgba(28, 20, 16, 0.04);
-    --amber-glow: rgba(217, 168, 86, 0.35);
-    --amber-shine: rgba(217, 168, 86, 0.45);
+    --warm-linen: rgba(250, 247, 243, 0.8);
+    --morning-mist: rgba(250, 247, 243, 0.32);
+    --porcelain: rgba(255, 255, 255, 0.8);
+    --cotton: rgba(255, 255, 255, 0.6);
+    --silk: rgba(255, 255, 255, 0.52);
+    --lace: rgba(255, 255, 255, 0.28);
+    --pearl: rgba(255, 255, 255, 0.22);
+    --whisper: rgba(28, 20, 16, 0.04);
+    --soft-shadow: rgba(28, 20, 16, 0.08);
+    --gentle-shadow: rgba(28, 20, 16, 0.03);
+    --amber-glow: rgba(217, 168, 86, 0.28);
+    --amber-shine: rgba(217, 168, 86, 0.36);
+    /* Enhanced Glass Effect Colors */
+    --glass-warm: rgba(250, 245, 238, 0.6);
+    --glass-warm-light: rgba(251, 248, 242, 0.66);
+    --glass-warm-border: rgba(217, 168, 86, 0.12);
+    --glass-border-light: rgba(255, 255, 255, 0.4);
+    --glass-shadow: rgba(28, 20, 16, 0.06);
+    --glass-shadow-hover: rgba(28, 20, 16, 0.1);
+    --glass-inner-glow: rgba(217, 168, 86, 0.06);
+    --overlay-dark: rgba(30, 20, 10, 0.32);
     
 
     /* Contrasting Cool Blue Palette - Evening Sky & Twilight Tones */
