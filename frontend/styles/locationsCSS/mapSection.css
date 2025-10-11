@@ -804,7 +804,7 @@
 @media (max-width: 544px) {
     .locations-section {
         margin-top: 128px;
-        min-height: 90vh;
+        min-height: auto;
         padding: 1.5rem 0;
     }
 
@@ -1075,7 +1075,7 @@
 @media (max-width: 432px) {
     .locations-section {
         margin-top: 4em;
-        min-height: 95vh;
+        min-height: auto;
     }
     .map-container {
         height: 450px;
