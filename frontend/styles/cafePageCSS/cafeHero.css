@@ -37,9 +37,9 @@
     height: 100%;
     background: linear-gradient(
         180deg,
-        rgba(28, 20, 16, 0.25) 0%,
-        rgba(28, 20, 16, 0.15) 50%,
-        rgba(28, 20, 16, 0.35) 100%
+        rgba(0, 0, 0, 0.25) 0%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0.35) 100%
     );
 }
 
@@ -56,7 +56,7 @@
 
 .hero-logo {
     display: inline-block;
-    padding: 2.5rem 4rem;
+    padding: 1.5rem 2rem;
     background: linear-gradient(
         135deg,
         var(--espresso) 0%,
@@ -73,7 +73,6 @@
     position: relative;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    animation: fadeInScale 0.8s ease-out;
 }
 
 .hero-logo::before {
