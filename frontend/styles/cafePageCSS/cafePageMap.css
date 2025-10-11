@@ -138,53 +138,118 @@
     transform: translateY(-4px);
 }
 
-/* Marker Popup Styling */
+/* ============================================
+   ENHANCED MARKER POPUP STYLING
+   ============================================ */
+
 .leaflet-popup-content-wrapper {
-    background: linear-gradient(135deg, var(--cream), var(--honey-lighter)) !important;
-    border: 3px solid var(--espresso) !important;
+    background: var(--cream) !important;
+    border: none !important;
     border-radius: var(--radius-lg) !important;
-    box-shadow: var(--shadow-xl) !important;
+    box-shadow: 0 20px 60px rgba(28, 20, 16, 0.25), 
+                0 0 0 3px var(--espresso),
+                inset 0 1px 0 var(--white-25) !important;
     font-family: 'Skranji', cursive !important;
     padding: 0 !important;
     overflow: hidden;
+    position: relative;
 }
 
+/* Decorative gradient overlay on popup */
+.leaflet-popup-content-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--honey) 0%, 
+        var(--honey-dark) 25%, 
+        var(--espresso) 50%, 
+        var(--honey-dark) 75%, 
+        var(--honey) 100%);
+    z-index: 1;
+}
+
+/* Subtle coffee bean pattern in background */
+.leaflet-popup-content-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, var(--honey-lighter) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, var(--cappuccino-cream) 0%, transparent 50%);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+}
 
 .leaflet-popup-content {
     margin: 0 !important;
-    padding: 1.75rem 1.5rem !important;
-    min-width: 240px;
+    padding: 2rem 1.75rem 1.75rem !important;
+    min-width: 280px;
+    position: relative;
+    z-index: 2;
 }
 
 .leaflet-popup-close-button {
     color: var(--espresso) !important;
-    font-size: 24px !important;
-    font-weight: 700 !important;
-    padding: 8px 12px !important;
+    font-size: 28px !important;
+    font-weight: 400 !important;
+    padding: 12px 16px !important;
     transition: var(--transition) !important;
+    z-index: 3;
+    background: transparent !important;
+    width: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
 }
 
 .leaflet-popup-close-button:hover {
-    color: var(--honey-dark) !important;
-    background-color: transparent !important;
+    color: var(--white) !important;
+    background: var(--honey) !important;
+    transform: rotate(90deg);
 }
 
+/* Popup Title with decorative underline */
 .marker-popup-title {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
     font-weight: 700;
     color: var(--espresso);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     letter-spacing: -0.5px;
-    line-height: 1.2;
+    line-height: 1.3;
+    position: relative;
+    padding-bottom: 0.75rem;
 }
 
+.marker-popup-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--honey) 0%, var(--honey-light) 100%);
+    border-radius: 2px;
+}
+
+/* Address section with icon */
 .marker-popup-address {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--espresso-medium);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
+    line-height: 1.7;
+    margin: 1.25rem 0;
+    padding-left: 2rem;
     position: relative;
+    font-weight: 400;
 }
 
 .marker-popup-address::before {
@@ -192,36 +257,86 @@
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    filter: grayscale(100%) sepia(100%) hue-rotate(10deg) saturate(400%);
 }
 
+/* Enhanced CTA Button */
 .marker-popup-link {
-    display: inline-block;
-    font-size: 0.875rem;
-    color: var(--cream);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--espresso);
     font-weight: 700;
-    padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, var(--espresso), var(--espresso-medium));
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, var(--honey-light) 0%, var(--honey) 100%);
     border: 2px solid var(--espresso);
     border-radius: var(--radius-md);
     transition: var(--transition-bounce);
     text-transform: lowercase;
     letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(217, 168, 86, 0.3);
+    position: relative;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+/* Shimmer effect on button */
+.marker-popup-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.4) 50%, 
+        transparent 100%);
+    transition: left 0.6s ease;
+}
+
+.marker-popup-link:hover::before {
+    left: 100%;
 }
 
 .marker-popup-link:hover {
-    background: linear-gradient(135deg, var(--honey), var(--honey-dark));
-    color: var(--espresso);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
+    color: var(--cream);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(217, 168, 86, 0.5);
+    border-color: var(--honey-dark);
 }
 
+.marker-popup-link:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(217, 168, 86, 0.4);
+}
+
+/* Enhanced Popup Tip (arrow pointing down) */
 .leaflet-popup-tip {
-    background: linear-gradient(135deg, var(--cream), var(--honey-lighter)) !important;
+    background: var(--cream) !important;
     border: 3px solid var(--espresso) !important;
     border-top: none !important;
     border-right: none !important;
-    box-shadow: -2px 2px 4px rgba(28, 20, 16, 0.15) !important;
+    box-shadow: -3px 3px 8px rgba(28, 20, 16, 0.15) !important;
+}
+
+/* Subtle animation for popup entrance - removed transform to fix positioning bug */
+.leaflet-popup {
+    animation: popupFadeIn 0.3s ease-out;
+}
+
+@keyframes popupFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Map Bottom CTA Section */
@@ -288,29 +403,6 @@
     transform: translateY(-2px) scale(1.01);
 }
 
-/* Decorative Elements */
-.map-decoration {
-    position: absolute;
-    pointer-events: none;
-    opacity: 0.08;
-}
-
-.map-decoration.top-left {
-    top: 2rem;
-    left: 2rem;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, var(--espresso) 0%, transparent 70%);
-}
-
-.map-decoration.bottom-right {
-    bottom: 2rem;
-    right: 2rem;
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle, var(--honey-dark) 0%, transparent 70%);
-}
-
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -359,6 +451,15 @@
     .map-decoration {
         display: none;
     }
+    
+    .leaflet-popup-content {
+        padding: 1.75rem 1.5rem 1.5rem !important;
+        min-width: 260px;
+    }
+    
+    .marker-popup-title {
+        font-size: 1.25rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -382,15 +483,25 @@
     }
     
     .marker-popup-title {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
     }
     
     .marker-popup-address {
-        font-size: 0.875rem;
+        font-size: 0.9rem;
+        padding-left: 1.75rem;
+    }
+    
+    .marker-popup-address::before {
+        font-size: 1.1rem;
     }
     
     .leaflet-popup-content {
         padding: 1.5rem 1.25rem !important;
-        min-width: 200px;
+        min-width: 240px;
+    }
+    
+    .marker-popup-link {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
     }
 }

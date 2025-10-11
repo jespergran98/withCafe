@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
                target="_blank" 
                rel="noopener noreferrer"
                class="marker-popup-link">
-                åpne i google maps →
+                Åpne i Maps →
             </a>
         </div>
     `;

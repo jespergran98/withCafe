@@ -16,7 +16,8 @@
         const items = Array.from(track.children);
         const itemData = items.map(item => ({
             text: item.querySelector('.marquee-text')?.textContent || '',
-            icon: item.querySelector('.marquee-icon')?.src || ''
+            icon: item.querySelector('.marquee-icon')?.src || '',
+            alternateIcon: item.querySelector('.marquee-icon')?.dataset.alternateIcon || ''
         }));
         
         // Clear track
@@ -32,6 +33,9 @@
         let cachedGap = 0;
         let viewportWidth = 0;
         let lastUpdateTime = 0;
+        
+        // Track which icon to use for items with alternates
+        let iconToggleState = {};
         
         // Get actual gap from CSS
         function getGap() {
@@ -59,9 +63,28 @@
             
             const icon = document.createElement('img');
             icon.className = 'marquee-icon';
-            icon.src = data.icon;
             icon.alt = '';
             icon.loading = 'eager';
+            
+            // Handle alternating icons
+            if (data.alternateIcon) {
+                // Initialize toggle state for this text if not exists
+                if (!(data.text in iconToggleState)) {
+                    iconToggleState[data.text] = false;
+                }
+                
+                // Use alternate icon on every other occurrence
+                if (iconToggleState[data.text]) {
+                    icon.src = data.alternateIcon;
+                } else {
+                    icon.src = data.icon;
+                }
+                
+                // Toggle for next time
+                iconToggleState[data.text] = !iconToggleState[data.text];
+            } else {
+                icon.src = data.icon;
+            }
             
             item.appendChild(text);
             item.appendChild(icon);
@@ -220,6 +243,7 @@
                 currentIndex = 0;
                 currentX = 0;
                 cachedItemWidths = [];
+                iconToggleState = {};
                 track.style.transform = 'translate3d(0, 0, 0)';
                 fillViewport();
                 setTimeout(() => {
