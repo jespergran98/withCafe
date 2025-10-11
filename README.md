@@ -7,10 +7,14 @@ File structure:
 WITHCAFE/
 ├── .qodo/
 ├── frontend/
-│   ├── index.html
-│   ├── menu.html
+│   ├── bokOgKaffe.html
+│   ├── brodOgKaffe.html
+│   ├── brunsjOgKaffe.html
 │   ├── catering.html
 │   ├── fontExplorer.html
+│   ├── index.html
+│   ├── locations.html
+│   ├── menu.html
 │   ├── assets/
 │   │   └── images/
 │   │       ├── menu/
@@ -38,12 +42,19 @@ WITHCAFE/
 │   │       ├── wheat-icon-high-res.png
 │   │       └── wheat-icon.png
 │   ├── js/
+│   │   ├── cafePageJS/
+│   │   │   ├── cafePageMap.js
+│   │   │   ├── openingInfo.js
+│   │   │   └── osebergAndSlottsfjell.js
 │   │   ├── cateringJS/
 │   │   │   └── catering.js
 │   │   ├── indexJS/
 │   │   │   ├── features.js
 │   │   │   ├── hero.js
-│   │   │   └── locations.js
+│   │   │   ├── locations.js
+│   │   │   └── map.js
+│   │   ├── locationsJS/
+│   │   │   └── mapSection.js
 │   │   ├── mainJS/
 │   │   │   ├── breadAndWheat.js
 │   │   │   ├── copyrightYear.js
@@ -52,8 +63,22 @@ WITHCAFE/
 │   │   │   ├── marquee.js
 │   │   │   └── scrollHeader.js
 │   │   └── menuJS/
-│   │       └── menu.js
+│   │       ├── menu.js
+│   │       ├── menuAccessibility.js
+│   │       ├── menuContent.js
+│   │       ├── menuExtras.js
+│   │       ├── menuHero.js
+│   │       ├── menuImages.js
+│   │       ├── menuItems.js
+│   │       ├── menuLayout.js
+│   │       ├── menuResponsive.js
+│   │       └── menuSpecial.js
 │   └── styles/
+│       ├── cafePageCSS/
+│       │   ├── cafeHero.css
+│       │   ├── cafeInfo.css
+│       │   ├── cafePageMap.css
+│       │   └── importCafePage.css
 │       ├── cateringCSS/
 │       │   └── catering.css
 │       ├── indexCSS/
@@ -61,6 +86,8 @@ WITHCAFE/
 │       │   ├── features.css
 │       │   ├── hero.css
 │       │   └── locations.css
+│       ├── locationsCSS/
+│       │   └── mapSection.css
 │       ├── mainCSS/
 │       │   ├── importMain.css
 │       │   ├── contact.css
