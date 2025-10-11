@@ -137,16 +137,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 250);
     });
 
-    // Smooth entrance animation - open popup briefly on load
-    setTimeout(function() {
-        marker.openPopup();
-    }, 1000);
-
-    // Auto-close popup after 5 seconds
-    setTimeout(function() {
-        marker.closePopup();
-    }, 6000);
-
     // Add pulsing animation to marker periodically
     setInterval(function() {
         if (markerElement && !map.isPopupOpen()) {
