@@ -550,3 +550,7 @@ At the bottom of the map, a button should say "se alle våre lokasjoner". Clicki
 Create a new js file in js/cafePageJS/cafePageMap.js that handles the map.
 
 Use the main.css file's color for the styling of the marker and button.
+
+---
+
+In the background of the location section on the index.html page I have a background using coffee and bread icons. You now have to make a similar feature for the cafe page map section named "osebergAndSlottsfjell.js", that creates a similar backround as the breadAndWheat.js, but with two other images in assets/images: oseberg-icon.png and slottsfjell-icon.png. "osebergAndSlottsfjell.js" will be located in js/cafePageJS/osebergAndSlottsfjell.js.
