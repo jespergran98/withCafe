@@ -1,25 +1,79 @@
-// Opening Hours Status Checker for WITH brød & kaffe
-// Displays real-time status: "Åpner om..." or "Stenger om..."
+// Opening Hours Status Checker - Dynamic Version
+// Reads opening hours from HTML and displays real-time status
 
 (function() {
     'use strict';
 
-    // Opening hours configuration
-    const OPENING_HOURS = {
-        weekday: { open: 8, close: 18 }, // Monday-Friday: 08:00 - 18:00
-        weekend: { open: 9, close: 18 }  // Saturday-Sunday: 09:00 - 18:00
-    };
+    /**
+     * Parse time string (e.g., "08:00", "18:00") to hour number
+     * @param {string} timeStr - Time in HH:MM format
+     * @returns {number} Hour as number
+     */
+    function parseTimeToHour(timeStr) {
+        const [hour] = timeStr.split(':').map(Number);
+        return hour;
+    }
 
     /**
-     * Get current opening hours based on day of week
-     * @param {number} dayOfWeek - 0 (Sunday) to 6 (Saturday)
-     * @returns {Object} Opening hours for the day
+     * Parse opening hours from HTML
+     * @returns {Object} Parsed opening hours by day
      */
-    function getHoursForDay(dayOfWeek) {
-        // Sunday = 0, Saturday = 6
-        return (dayOfWeek === 0 || dayOfWeek === 6) 
-            ? OPENING_HOURS.weekend 
-            : OPENING_HOURS.weekday;
+    function parseOpeningHoursFromHTML() {
+        const hoursList = document.querySelector('.hours-list');
+        if (!hoursList) {
+            console.warn('Hours list not found in HTML');
+            return null;
+        }
+
+        const hoursItems = hoursList.querySelectorAll('.hours-item:not(.status-item)');
+        const schedule = {};
+
+        hoursItems.forEach(item => {
+            const daysText = item.querySelector('.hours-days')?.textContent.trim();
+            const timeText = item.querySelector('.hours-time')?.textContent.trim();
+
+            if (!daysText || !timeText) return;
+
+            // Parse time range (e.g., "08:00 - 18:00")
+            const timeMatch = timeText.match(/(\d{2}:\d{2})\s*-\s*(\d{2}:\d{2})/);
+            if (!timeMatch) return;
+
+            const [, openTime, closeTime] = timeMatch;
+            const hours = {
+                open: parseTimeToHour(openTime),
+                close: parseTimeToHour(closeTime),
+                openMinutes: parseInt(openTime.split(':')[1]) || 0,
+                closeMinutes: parseInt(closeTime.split(':')[1]) || 0
+            };
+
+            // Map day names to day numbers
+            const daysLower = daysText.toLowerCase();
+            
+            if (daysLower.includes('mandag') && daysLower.includes('fredag')) {
+                // Monday-Friday
+                [1, 2, 3, 4, 5].forEach(day => schedule[day] = hours);
+            } else if (daysLower.includes('mandag') && daysLower.includes('torsdag')) {
+                // Monday-Thursday
+                [1, 2, 3, 4].forEach(day => schedule[day] = hours);
+            } else if (daysLower.includes('fredag') && daysLower.includes('lørdag')) {
+                // Friday-Saturday
+                [5, 6].forEach(day => schedule[day] = hours);
+            } else if (daysLower.includes('lørdag') && daysLower.includes('søndag')) {
+                // Saturday-Sunday
+                [6, 0].forEach(day => schedule[day] = hours);
+            } else if (daysLower.includes('fredag')) {
+                // Friday only
+                schedule[5] = hours;
+            } else if (daysLower.includes('lørdag')) {
+                // Saturday only
+                schedule[6] = hours;
+            } else if (daysLower.includes('søndag')) {
+                // Sunday only
+                schedule[0] = hours;
+            }
+        });
+
+        return schedule;
     }
 
     /**
@@ -56,21 +110,24 @@
     /**
      * Get next opening time when café is closed
      * @param {Date} now - Current time
+     * @param {Object} schedule - Opening hours schedule
      * @returns {Date} Next opening time
      */
-    function getNextOpeningTime(now) {
+    function getNextOpeningTime(now, schedule) {
         const nextDay = new Date(now);
         nextDay.setDate(nextDay.getDate() + 1);
         
         let daysChecked = 0;
         while (daysChecked < 7) {
             const dayOfWeek = nextDay.getDay();
-            const hours = getHoursForDay(dayOfWeek);
+            const hours = schedule[dayOfWeek];
             
-            nextDay.setHours(hours.open, 0, 0, 0);
-            
-            if (nextDay > now) {
-                return nextDay;
+            if (hours) {
+                nextDay.setHours(hours.open, hours.openMinutes || 0, 0, 0);
+                
+                if (nextDay > now) {
+                    return nextDay;
+                }
             }
             
             nextDay.setDate(nextDay.getDate() + 1);
@@ -82,18 +139,31 @@
 
     /**
      * Check if café is currently open and generate status message
+     * @param {Object} schedule - Opening hours schedule
      * @returns {Object} Status object with message and isOpen flag
      */
-    function getCafeStatus() {
+    function getCafeStatus(schedule) {
+        if (!schedule) {
+            return { message: 'Åpningstider ikke tilgjengelig', isOpen: false, statusClass: 'status-closed' };
+        }
+
         const now = new Date();
         const dayOfWeek = now.getDay();
         const currentHour = now.getHours();
         const currentMinute = now.getMinutes();
         const currentTimeInMinutes = currentHour * 60 + currentMinute;
 
-        const hours = getHoursForDay(dayOfWeek);
-        const openTimeInMinutes = hours.open * 60;
-        const closeTimeInMinutes = hours.close * 60;
+        const hours = schedule[dayOfWeek];
+        
+        // Check if café is open today
+        if (!hours) {
+            const openingTime = getNextOpeningTime(now, schedule);
+            const message = formatTimeMessage(now, openingTime, true);
+            return { message, isOpen: false, statusClass: 'status-closed' };
+        }
+
+        const openTimeInMinutes = hours.open * 60 + (hours.openMinutes || 0);
+        const closeTimeInMinutes = hours.close * 60 + (hours.closeMinutes || 0);
 
         const isOpen = currentTimeInMinutes >= openTimeInMinutes && 
                       currentTimeInMinutes < closeTimeInMinutes;
@@ -104,7 +174,7 @@
         if (isOpen) {
             // Café is open - calculate closing time
             const closingTime = new Date(now);
-            closingTime.setHours(hours.close, 0, 0, 0);
+            closingTime.setHours(hours.close, hours.closeMinutes || 0, 0, 0);
             
             message = formatTimeMessage(now, closingTime, false);
             statusClass = 'status-open';
@@ -115,10 +185,10 @@
             if (currentTimeInMinutes < openTimeInMinutes) {
                 // Opening today
                 openingTime = new Date(now);
-                openingTime.setHours(hours.open, 0, 0, 0);
+                openingTime.setHours(hours.open, hours.openMinutes || 0, 0, 0);
             } else {
                 // Opening tomorrow or later
-                openingTime = getNextOpeningTime(now);
+                openingTime = getNextOpeningTime(now, schedule);
             }
             
             message = formatTimeMessage(now, openingTime, true);
@@ -162,13 +232,14 @@
 
     /**
      * Update status display
+     * @param {Object} schedule - Opening hours schedule
      */
-    function updateStatus() {
+    function updateStatus(schedule) {
         const statusItem = document.querySelector('.status-item');
         
         if (!statusItem) return;
 
-        const { message, isOpen, statusClass } = getCafeStatus();
+        const { message, isOpen, statusClass } = getCafeStatus(schedule);
         
         const statusText = statusItem.querySelector('.status-text');
         const statusIndicator = statusItem.querySelector('.status-indicator');
@@ -187,124 +258,6 @@
     }
 
     /**
-     * Add dynamic styles for status element
-     */
-    function injectStyles() {
-        const style = document.createElement('style');
-        style.textContent = `
-            .status-item {
-                margin-top: 1rem !important;
-                padding: 1.25rem 1rem !important;
-                background: rgba(255, 255, 255, 0.05) !important;
-                border: 1px solid rgba(255, 255, 255, 0.08) !important;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .status-item::before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                width: 4px;
-                transition: transform 0.3s ease;
-            }
-
-            .status-item.status-open::before {
-                background: linear-gradient(180deg, #4ade80 0%, #22c55e 100%);
-                transform: scaleY(1);
-            }
-
-            .status-item.status-closed::before {
-                background: linear-gradient(180deg, #fb923c 0%, #f97316 100%);
-                transform: scaleY(1);
-            }
-
-            .status-text {
-                font-size: 1.0625rem;
-                font-weight: 600;
-                color: var(--cream);
-                letter-spacing: 0.3px;
-                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-                flex: 1;
-            }
-
-            .status-item.status-open .status-text {
-                color: #4ade80;
-            }
-
-            .status-item.status-closed .status-text {
-                color: #fb923c;
-            }
-
-            .status-indicator {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.1);
-                transition: all 0.3s ease;
-            }
-
-            .status-indicator svg {
-                width: 16px;
-                height: 16px;
-            }
-
-            .status-item.status-open .status-indicator {
-                background: rgba(74, 222, 128, 0.15);
-                color: #4ade80;
-                box-shadow: 0 0 12px rgba(74, 222, 128, 0.3);
-            }
-
-            .status-item.status-closed .status-indicator {
-                background: rgba(251, 146, 60, 0.15);
-                color: #fb923c;
-                box-shadow: 0 0 12px rgba(251, 146, 60, 0.3);
-            }
-
-            .status-item:hover .status-indicator {
-                transform: scale(1.1);
-            }
-
-            @media (max-width: 480px) {
-                .status-item {
-                    padding: 1rem 0.875rem !important;
-                }
-
-                .status-text {
-                    font-size: 0.9375rem;
-                }
-
-                .status-indicator {
-                    width: 24px;
-                    height: 24px;
-                }
-
-                .status-indicator svg {
-                    width: 14px;
-                    height: 14px;
-                }
-            }
-
-            @media (prefers-reduced-motion: reduce) {
-                .status-item,
-                .status-indicator {
-                    transition: none;
-                }
-
-                .status-item:hover .status-indicator {
-                    transform: none;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-
-    /**
      * Initialize the status checker
      */
     function init() {
@@ -314,8 +267,13 @@
             return;
         }
 
-        // Inject styles
-        injectStyles();
+        // Parse opening hours from HTML
+        const schedule = parseOpeningHoursFromHTML();
+        
+        if (!schedule) {
+            console.warn('Could not parse opening hours from HTML');
+            return;
+        }
 
         // Create status element
         const statusElement = createStatusElement();
@@ -323,10 +281,10 @@
         if (!statusElement) return;
 
         // Initial update
-        updateStatus();
+        updateStatus(schedule);
 
         // Update every minute
-        setInterval(updateStatus, 60000);
+        setInterval(() => updateStatus(schedule), 60000);
 
         console.log('✓ Opening hours status checker initialized');
     }

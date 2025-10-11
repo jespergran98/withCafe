@@ -5,9 +5,9 @@
 .cafe-hero {
     position: relative;
     width: 100%;
-    height: 75vh;
-    min-height: 500px;
-    max-height: 800px;
+    height: 80vh;
+    min-height: 550px;
+    max-height: 900px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -27,6 +27,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    animation: subtleZoom 20s ease-in-out infinite alternate;
 }
 
 .hero-overlay {
@@ -35,12 +36,19 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.25) 0%,
-        rgba(0, 0, 0, 0.15) 50%,
-        rgba(0, 0, 0, 0.35) 100%
-    );
+    background: 
+        radial-gradient(
+            ellipse at center,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.4) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(28, 20, 16, 0.3) 0%,
+            rgba(28, 20, 16, 0.1) 40%,
+            rgba(28, 20, 16, 0.2) 70%,
+            rgba(28, 20, 16, 0.5) 100%
+        );
 }
 
 .hero-content {
@@ -48,6 +56,7 @@
     z-index: 2;
     text-align: center;
     padding: 2rem;
+    animation: fadeInScale 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
 }
 
 /* ============================================
@@ -56,74 +65,115 @@
 
 .hero-logo {
     display: inline-block;
-    padding: 1.5rem 2rem;
-    background: linear-gradient(
-        135deg,
-        var(--espresso) 0%,
-        var(--espresso-medium) 100%
-    );
-    border-radius: var(--radius-lg);
+    padding: 1rem 2rem;
+    background: 
+        linear-gradient(
+            135deg,
+            rgba(28, 20, 16, 0.95) 0%,
+            rgba(52, 40, 32, 0.92) 50%,
+            rgba(28, 20, 16, 0.95) 100%
+        );
+    border-radius: var(--radius-xl);
     box-shadow: 
-        0 8px 32px rgba(28, 20, 16, 0.4),
-        0 16px 48px rgba(28, 20, 16, 0.3),
-        0 2px 8px rgba(28, 20, 16, 0.25),
-        inset 0 1px 0 var(--white-15),
-        inset 0 -1px 0 var(--black-20);
-    border: 2px solid var(--espresso-light);
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 10px 30px rgba(0, 0, 0, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+    border: 3px solid transparent;
+    background-clip: padding-box;
     position: relative;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Animated golden border */
 .hero-logo::before {
     content: '';
     position: absolute;
-    inset: 0;
-    border-radius: var(--radius-lg);
-    padding: 2px;
+    inset: -3px;
+    border-radius: var(--radius-xl);
+    padding: 3px;
     background: linear-gradient(
         135deg,
-        var(--honey-light) 0%,
-        var(--honey) 50%,
-        var(--honey-dark) 100%
+        var(--honey-lighter) 0%,
+        var(--honey) 25%,
+        var(--honey-dark) 50%,
+        var(--honey) 75%,
+        var(--honey-lighter) 100%
     );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    opacity: 0.4;
+    opacity: 0.6;
     pointer-events: none;
+    animation: borderShine 3s ease-in-out infinite;
+}
+
+/* Subtle glow effect */
+.hero-logo::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: var(--radius-xl);
+    background: radial-gradient(
+        ellipse at center,
+        rgba(217, 168, 86, 0.3) 0%,
+        transparent 70%
+    );
+    opacity: 0.5;
+    pointer-events: none;
+    animation: glowPulse 4s ease-in-out infinite;
+}
+
+.hero-logo:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 
+        0 25px 70px rgba(0, 0, 0, 0.6),
+        0 15px 40px rgba(0, 0, 0, 0.5),
+        0 8px 16px rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .hero-logo-top {
     font-family: 'Bowlby One SC', cursive;
-    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-size: clamp(5rem, 9vw, 7.5rem);
     color: var(--cream);
-    line-height: 1;
-    margin-bottom: 0.1rem;
-    letter-spacing: 2px;
+    line-height: 0.7;
+    margin-top: 2rem;
+    letter-spacing: 3px;
     text-shadow: 
-        0 2px 8px rgba(0, 0, 0, 0.3),
-        0 4px 16px rgba(0, 0, 0, 0.2),
-        0 1px 3px rgba(217, 168, 86, 0.2);
+        0 3px 10px rgba(0, 0, 0, 0.5),
+        0 6px 20px rgba(0, 0, 0, 0.3),
+        0 1px 3px rgba(217, 168, 86, 0.4),
+        2px 2px 0 rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(0 0 20px rgba(217, 168, 86, 0.2));
+    animation: textFloat 3s ease-in-out infinite;
 }
 
 .hero-logo-bottom {
     font-family: 'Skranji', cursive;
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: clamp(1.75rem, 4vw, 3rem);
     color: var(--cream);
-    line-height: 1.2;
-    letter-spacing: 1px;
+    line-height: 1.3;
+    letter-spacing: 2px;
     font-weight: 400;
     text-shadow: 
-        0 2px 6px rgba(0, 0, 0, 0.25),
-        0 1px 3px rgba(0, 0, 0, 0.3);
+        0 2px 8px rgba(0, 0, 0, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        0 1px 3px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0 0 15px rgba(217, 168, 86, 0.15));
 }
 
 .hero-accent {
     color: var(--honey);
     font-weight: 700;
-    font-size: 1.15em;
-    margin: 0 0.15em;
+    font-size: 1.2em;
+    margin: 0 0.2em;
     display: inline-block;
 }
 
@@ -134,11 +184,65 @@
 @keyframes fadeInScale {
     from {
         opacity: 0;
-        transform: scale(0.95) translateY(20px);
+        transform: scale(0.9) translateY(40px);
     }
     to {
         opacity: 1;
         transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes subtleZoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes borderShine {
+    0%, 100% {
+        opacity: 0.6;
+        background-position: 0% 50%;
+    }
+    50% {
+        opacity: 0.8;
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes textFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes accentGlow {
+    from {
+        text-shadow: 
+            0 0 10px rgba(217, 168, 86, 0.6),
+            0 0 20px rgba(217, 168, 86, 0.4);
+    }
+    to {
+        text-shadow: 
+            0 0 20px rgba(217, 168, 86, 0.8),
+            0 0 30px rgba(217, 168, 86, 0.6),
+            0 0 40px rgba(217, 168, 86, 0.4);
     }
 }
 
@@ -148,36 +252,65 @@
 
 @media (max-width: 768px) {
     .cafe-hero {
-        height: 60vh;
-        min-height: 450px;
+        height: 70vh;
+        min-height: 500px;
     }
 
     .hero-logo {
-        padding: 2rem 3rem;
+        padding: 0.8rem 1.6rem;
+        border-radius: var(--radius-lg);
     }
 
     .hero-logo-top {
-        letter-spacing: 1px;
+        letter-spacing: 2px;
+        margin-top: 1.6rem;
+        margin-bottom: 0.15rem;
     }
 
     .hero-logo-bottom {
-        letter-spacing: 0.5px;
+        letter-spacing: 1.5px;
+        font-size: 2.1rem;
+    }
+
+    .hero-accent {
+        font-size: 1.15em;
     }
 }
 
 @media (max-width: 480px) {
     .cafe-hero {
-        height: 50vh;
-        min-height: 400px;
+        height: 70vh;
+        min-height: 500px;
     }
 
     .hero-logo {
-        padding: 1.5rem 2rem;
-        border-radius: var(--radius-md);
+        padding: 0.6rem 1.2rem;
+        border-radius: var(--radius-lg);
+    }
+
+    .hero-logo::after {
+        inset: -15px;
     }
 
     .hero-content {
         padding: 1rem;
+    }
+
+    .hero-logo-top {
+        letter-spacing: 2px;
+        margin-top: 1.2rem;
+        margin-bottom: 0.1rem;
+        letter-spacing: 1px;
+        font size: 3.5rem;
+    }
+
+    .hero-logo-bottom {
+        letter-spacing: 1px;
+        font-size: 2rem;
+    }
+
+    .hero-accent {
+        margin: 0 0.1em;
     }
 }
 
@@ -186,7 +319,20 @@
    ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-logo {
-        animation: none;
+    .hero-logo,
+    .hero-image,
+    .hero-content,
+    .hero-logo-top,
+    .hero-accent {
+        animation: none !important;
+    }
+
+    .hero-logo::before,
+    .hero-logo::after {
+        animation: none !important;
+    }
+
+    .hero-logo:hover {
+        transform: none;
     }
 }

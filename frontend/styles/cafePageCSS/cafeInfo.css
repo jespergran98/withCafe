@@ -325,6 +325,273 @@
 }
 
 /* ============================================
+   STATUS ITEM - UNIQUE COUNTDOWN STYLING
+   ============================================ */
+
+.hours-item.status-item {
+    margin-top: 1.5rem;
+    padding: 1.5rem 1.25rem;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.03) 100%
+    );
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Disable the yellow left border on hover for status item */
+.hours-item.status-item::before {
+    display: none;
+}
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        var(--honey) 0%,
+        var(--honey-light) 50%,
+        var(--honey) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.hours-item.status-item:hover::after {
+    opacity: 0.6;
+    animation: borderPulse 2s ease-in-out infinite;
+}
+
+@keyframes borderPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+}
+
+/* Status text styling */
+.status-text {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Status indicator (icon container) */
+.status-indicator {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.status-indicator svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Pulsing ring animation for indicator */
+.status-indicator::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: ringPulse 2s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 0.1;
+    }
+}
+
+/* Open status styling */
+.hours-item.status-open {
+    background: linear-gradient(
+        135deg,
+        rgba(46, 204, 113, 0.15) 0%,
+        rgba(39, 174, 96, 0.08) 100%
+    );
+    border-color: rgba(46, 204, 113, 0.3);
+}
+
+.hours-item.status-open .status-text {
+    color: #4ade80;
+    text-shadow: 
+        0 0 10px rgba(74, 222, 128, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hours-item.status-open .status-indicator {
+    background: linear-gradient(
+        135deg,
+        rgba(46, 204, 113, 0.25) 0%,
+        rgba(39, 174, 96, 0.15) 100%
+    );
+    box-shadow: 
+        0 0 20px rgba(46, 204, 113, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.hours-item.status-open .status-indicator svg {
+    stroke: #4ade80;
+    animation: checkMark 0.5s ease-out;
+}
+
+.hours-item.status-open .status-indicator::before {
+    background: radial-gradient(
+        circle,
+        rgba(46, 204, 113, 0.4) 0%,
+        transparent 70%
+    );
+}
+
+@keyframes checkMark {
+    0% {
+        transform: scale(0.8) rotate(-5deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* Closed status styling */
+.hours-item.status-closed {
+    background: linear-gradient(
+        135deg,
+        rgba(239, 68, 68, 0.12) 0%,
+        rgba(220, 38, 38, 0.06) 100%
+    );
+    border-color: rgba(239, 68, 68, 0.25);
+}
+
+.hours-item.status-closed .status-text {
+    color: #fca5a5;
+    text-shadow: 
+        0 0 10px rgba(252, 165, 165, 0.2),
+        0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hours-item.status-closed .status-indicator {
+    background: linear-gradient(
+        135deg,
+        rgba(239, 68, 68, 0.2) 0%,
+        rgba(220, 38, 38, 0.12) 100%
+    );
+    box-shadow: 
+        0 0 20px rgba(239, 68, 68, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+.hours-item.status-closed .status-indicator svg {
+    stroke: #fca5a5;
+    animation: alertShake 0.6s ease-out;
+}
+
+.hours-item.status-closed .status-indicator::before {
+    background: radial-gradient(
+        circle,
+        rgba(239, 68, 68, 0.35) 0%,
+        transparent 70%
+    );
+}
+
+@keyframes alertShake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-3px);
+    }
+    75% {
+        transform: translateX(3px);
+    }
+}
+
+/* Hover effects for status item */
+.hours-item.status-item:hover {
+    transform: translateX(0) translateY(-4px);
+    box-shadow: 
+        0 12px 32px rgba(0, 0, 0, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+.hours-item.status-open:hover {
+    border-color: rgba(46, 204, 113, 0.5);
+    box-shadow: 
+        0 12px 32px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(46, 204, 113, 0.2);
+}
+
+.hours-item.status-closed:hover {
+    border-color: rgba(239, 68, 68, 0.4);
+    box-shadow: 
+        0 12px 32px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(239, 68, 68, 0.15);
+}
+
+.hours-item.status-item:hover .status-indicator {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Animated shimmer effect on status text */
+.status-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%
+    );
+    animation: shimmerText 3s ease-in-out infinite;
+}
+
+@keyframes shimmerText {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+/* ============================================
    LOCATION - PREMIUM STYLING
    ============================================ */
 
@@ -357,8 +624,6 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 193, 7, 0.2);
 }
-
-
 
 .location-address:hover {
     color: var(--honey);
@@ -431,6 +696,24 @@
         padding: 1rem 0.875rem;
     }
 
+    .hours-item.status-item {
+        padding: 1.25rem 1rem;
+    }
+
+    .status-text {
+        font-size: 1rem;
+    }
+
+    .status-indicator {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .status-indicator svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
     .location-name {
         font-size: 1.125rem;
     }
@@ -474,9 +757,29 @@
         margin-bottom: 0.5rem;
     }
 
+    .hours-item.status-item {
+        padding: 1.125rem 0.875rem;
+        margin-top: 1rem;
+    }
+
     .hours-days,
     .hours-time {
         font-size: 0.9375rem;
+    }
+
+    .status-text {
+        font-size: 0.9375rem;
+        gap: 0.5rem;
+    }
+
+    .status-indicator {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .status-indicator svg {
+        width: 1.125rem;
+        height: 1.125rem;
     }
 
     .location-name {
@@ -503,7 +806,10 @@
     .hours-item,
     .location-address,
     .info-icon,
-    .cafe-info-section::before {
+    .cafe-info-section::before,
+    .status-indicator,
+    .status-indicator::before,
+    .status-text::before {
         animation: none;
         transition: none;
     }
@@ -524,6 +830,10 @@
 
     .hours-item {
         border-width: 2px;
+    }
+
+    .hours-item.status-item {
+        border-width: 3px;
     }
 
     .info-header {
