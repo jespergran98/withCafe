@@ -28,8 +28,8 @@
     background-image: url('../../assets/images/wheat-field.png');
     background-repeat: repeat-x;
     background-position: bottom left;
-    background-size: auto 250px;
-    filter: invert(90%) sepia(15%) saturate(150%) hue-rotate(340deg);
+    background-size: auto 300px;
+    filter: invert(87%) sepia(19%) saturate(150%) hue-rotate(340deg);
     opacity: 1;
     pointer-events: none;
     z-index: 0;

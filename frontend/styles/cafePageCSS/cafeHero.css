@@ -247,8 +247,6 @@
     font-size: 1.2em;
     margin: 0 0.2em;
     display: inline-block;
-    animation: accentGlow 2.5s ease-in-out infinite alternate;
-    filter: drop-shadow(0 0 12px rgba(217, 168, 86, 0.6));
 }
 
 /* ============================================
