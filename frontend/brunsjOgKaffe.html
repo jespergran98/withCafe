@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WITH</title>
+    <title>WITH brunsj & kaffe - Tønsberg</title>
     <link rel="stylesheet" href="./styles/mainCSS/importMain.css">
-    <link rel="stylesheet" href="./styles/indexCSS/importIndex.css">
+    <link rel="stylesheet" href="./styles/cafePageCSS/cafeHero.css">
+    <link rel="stylesheet" href="./styles/cafePageCSS/cafeInfo.css">
+    <link rel="stylesheet" href="./styles/cafePageCSS/cafePageMap.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Bowlby+One+SC&family=Skranji:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
 </head>
 <body>
 
@@ -18,7 +25,7 @@
             <a href="index.html" class="logo-link">
                 <div class="logo">
                     <div class="logo-top">WITH</div>
-                    <div class="logo-bottom">brød <span class="accent">&</span> kaffe</div>
+                    <div class="logo-bottom">brunsj <span class="accent">&</span> kaffe</div>
                 </div>
             </a>
             
@@ -40,6 +47,102 @@
             </nav>
         </div>
     </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="cafe-hero">
+            <div class="hero-image-container">
+                <img src="assets/images/brunsjOgKaffe/brunsjOgKaffeHero.jpg" alt="WITH brunsj & kaffe lokasjon" class="hero-image">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <div class="hero-logo-top">WITH</div>
+                    <div class="hero-logo-bottom">brunsj <span class="hero-accent">&</span> kaffe</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cafe Info Section - Opening Hours & Location -->
+        <section class="cafe-info-section">
+            <div class="container">
+                <div class="info-grid">
+                    <!-- Opening Hours -->
+                    <div class="info-card">
+                        <div class="info-header">
+                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <h2 class="info-title">Åpningstider</h2>
+                        </div>
+                        <ul class="hours-list">
+                            <li class="hours-item">
+                                <span class="hours-days">Mandag - Lørdag</span>
+                                <span class="hours-time">10:00 - 16:00</span>
+                            </li>
+                            <li class="hours-item weekend">
+                                <span class="hours-days">Søndag</span>
+                                <span class="hours-time">12:00 - 16:00</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="info-card">
+                        <div class="info-header">
+                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <h2 class="info-title">Besøk oss</h2>
+                        </div>
+                        <div class="location-content">
+                            <p class="location-name">WITH brunsj & kaffe</p>
+                            <a href="https://maps.app.goo.gl/5giPNg4azWkEryim8" 
+                               class="location-address"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Storgata 29<br>
+                                3126 Tønsberg
+                            </a>
+                            <p class="location-note">Vår flaggskipbutikk hvor alt bakes fra bunnen hver dag. Her finner du vårt fulle utvalg av håndverksbakst og spesialkaffe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="cafe-map-section">
+            <div class="map-decoration top-left"></div>
+            <div class="map-decoration bottom-right"></div>
+            
+            <div class="map-container-wrapper">
+                <div class="map-header">
+                    <span class="section-tag">finn oss</span>
+                    <h2 class="map-title">Kom innom</h2>
+                    <p class="map-description">
+                        WITH brunsj og kaffe er sentralt plassert i hjertet av Tønsberg like ved torvet. Vi gleder oss til å se deg!
+                    </p>
+                </div>
+                
+                <div class="map-content">
+                    <div id="cafe-map"></div>
+                </div>
+                
+                <div class="map-cta-section">
+                    <div class="map-cta-content">
+                        <p class="map-cta-text">
+                            Vi har flere loksjoner i Tønsberg. Utforsk alle våre kafeer og bakerier.
+                        </p>
+                    </div>
+                    <a href="locations.html" class="map-bottom-button">
+                        se alle våre lokasjoner
+                    </a>
+                </div>
+            </div>
+        </section>
         
         <!-- Contact Details -->
         <section id="kontakt" class="contact-info">
@@ -112,7 +215,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <div class="logo-top">WITH</div>
-                    <div class="logo-bottom">brød <span class="accent">&</span> kaffe</div>
+                    <div class="logo-bottom">brunsj <span class="accent">&</span> kaffe</div>
                 </div>
                 <div class="footer-divider"></div>
                 <p>&copy; <span id="copyright-year"></span> WITH. Alle rettigheter reservert.</p>
@@ -120,14 +223,18 @@
         </div>
     </footer>
 
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
     <!-- JavaScript -->
     <script src="./js/mainJS/hamburger.js"></script>
-    <script src="./js/indexJS/hero.js"></script>
     <script src="./js/mainJS/scrollHeader.js"></script>
-    <script src="./js/mainJS/breadAndWheat.js"></script>
     <script src="./js/mainJS/logoAnimation.js"></script>
-    <script src="./js/indexJS/features.js"></script>
-    <script src="./js/indexJS/locations.js"></script>
+    <script src="./js/cafePageJS/openingInfo.js"></script>
+    <script src="./js/cafePageJS/cafePageMap.js"></script>
+    <script src="./js/cafePageJS/osebergAndSlottsfjell.js"></script>
     <script src="./js/mainJS/copyrightYear.js"></script>
 </body>
 </html>

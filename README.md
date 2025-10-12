@@ -605,3 +605,8 @@ height: 82vh
 432:
 margin top: 70px
 height: 89vh
+
+--
+
+I currently import brodOgKaffeHero.jpg as the header.
+Update the code so that if the viewport width is more than 900px, I import brodOgKaffeHeroHorizontal.jpg, and below 900px I import brodOgKaffeHeroVertical.jpg
