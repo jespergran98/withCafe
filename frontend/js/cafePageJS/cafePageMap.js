@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
             mapsUrl: 'https://maps.app.goo.gl/5giPNg4azWkEryim8'
         },
         'brunsjOgKaffe': {
-            lat: 59.269995481439274,
-            lng: 10.407405253049253,
+            lat: 59.269997513679236,
+            lng: 10.40747786487033,
             name: 'WITH brunsj & kaffe',
             address: 'Tollbodgaten 19<br>3111 Tønsberg',
             mapsUrl: 'https://maps.app.goo.gl/iCgr4oSVEzeE4tE86'

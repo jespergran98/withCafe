@@ -632,3 +632,5 @@ Keep it the same location and text for brodOgKaffe.html as it is currently.
             type: 'brunsj og kaffe',
             lat: 59.269995481439274,
             lng: 10.407405253049253,
+
+I've made a new image in assets/images folder named "wheat-field.png". this is a tiny portion of a wheat field that I want to be copy pasted over 5 times horizontally as a decoration on the contact section, making it look like wheat is growing out of the footer. The image is a black PNG wheat field, I want you to make it in a honey color.

@@ -28,8 +28,8 @@ function initMap() {
         {
             name: 'WITH brunsj og kaffe',
             type: 'brunsj og kaffe',
-            lat: 59.269995481439274,
-            lng: 10.407405253049253,
+            lat: 59.269997513679236,
+            lng: 10.40747786487033,
         }
     ];
 

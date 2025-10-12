@@ -3,6 +3,7 @@
     padding: 4rem 0;
     background: var(--cream);
     position: relative;
+    overflow: hidden;
 }
 
 .contact-info::before {
@@ -15,11 +16,32 @@
     background: linear-gradient(90deg, transparent, var(--soft-shadow), transparent);
 }
 
+/* Wheat Field Decoration */
+.contact-info::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 350px;
+    background-image: url('../../assets/images/wheat-field.png');
+    background-repeat: repeat-x;
+    background-position: bottom left;
+    background-size: auto 350px;
+    filter: invert(89%) sepia(18%) saturate(150%) hue-rotate(340deg);
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 4rem;
     align-items: start;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-column {
@@ -196,6 +218,11 @@
     .contact-info {
         padding: 3.5rem 0;
     }
+
+    .contact-info::after {
+        height: 300px;
+        background-size: auto 300px;
+    }
     
     .contact-grid {
         grid-template-columns: 1fr 1fr;
@@ -228,6 +255,11 @@
 @media (max-width: 768px) {
     .contact-info {
         padding: 3rem 0;
+    }
+
+    .contact-info::after {
+        height: 260px;
+        background-size: auto 260px;
     }
     
     .contact-grid {
@@ -318,6 +350,11 @@
     .contact-info {
         padding: 2.5rem 0;
     }
+
+    .contact-info::after {
+        height: 220px;
+        background-size: auto 220px;
+    }
     
     .contact-grid {
         gap: 2rem;
@@ -379,6 +416,11 @@
 @media (max-width: 360px) {
     .contact-info {
         padding: 2rem 0;
+    }
+
+    .contact-info::after {
+        height: 180px;
+        background-size: auto 180px;
     }
     
     .contact-grid {
