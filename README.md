@@ -634,3 +634,7 @@ Keep it the same location and text for brodOgKaffe.html as it is currently.
             lng: 10.407405253049253,
 
 I've made a new image in assets/images folder named "wheat-field.png". this is a tiny portion of a wheat field that I want to be copy pasted over 5 times horizontally as a decoration on the contact section, making it look like wheat is growing out of the footer. The image is a black PNG wheat field, I want you to make it in a honey color.
+
+--
+
+Update the animation when the user opens the menu page. The "menu-hero-title::after" has some visual bugs when it annimates into the screen. Improve the animations and provide the updated file.

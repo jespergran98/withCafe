@@ -5,18 +5,18 @@
     'use strict';
 
     /**
-     * Parse time string (e.g., "08:00", "18:00") to hour number
+     * Parse time string (e.g., "08:00", "18:00") to minutes since midnight
      * @param {string} timeStr - Time in HH:MM format
-     * @returns {number} Hour as number
+     * @returns {number} Minutes since midnight
      */
-    function parseTimeToHour(timeStr) {
-        const [hour] = timeStr.split(':').map(Number);
-        return hour;
+    function parseTimeToMinutes(timeStr) {
+        const [hour, minute] = timeStr.split(':').map(Number);
+        return hour * 60 + minute;
     }
 
     /**
      * Parse opening hours from HTML
-     * @returns {Object} Parsed opening hours by day
+     * @returns {Object} Parsed opening hours by day (0=Sunday, 1=Monday, etc.)
      */
     function parseOpeningHoursFromHTML() {
         const hoursList = document.querySelector('.hours-list');
@@ -40,27 +40,49 @@
 
             const [, openTime, closeTime] = timeMatch;
             const hours = {
-                open: parseTimeToHour(openTime),
-                close: parseTimeToHour(closeTime),
-                openMinutes: parseInt(openTime.split(':')[1]) || 0,
-                closeMinutes: parseInt(closeTime.split(':')[1]) || 0
+                open: parseTimeToMinutes(openTime),
+                close: parseTimeToMinutes(closeTime)
             };
 
-            // Map day names to day numbers
+            // Map day names to day numbers (0=Sunday, 1=Monday, etc.)
             const daysLower = daysText.toLowerCase();
             
+            // Handle all possible day range combinations
             if (daysLower.includes('mandag') && daysLower.includes('fredag')) {
-                // Monday-Friday
-                [1, 2, 3, 4, 5].forEach(day => schedule[day] = hours);
+                // Monday-Friday (1-5)
+                for (let day = 1; day <= 5; day++) {
+                    schedule[day] = hours;
+                }
             } else if (daysLower.includes('mandag') && daysLower.includes('torsdag')) {
-                // Monday-Thursday
-                [1, 2, 3, 4].forEach(day => schedule[day] = hours);
+                // Monday-Thursday (1-4)
+                for (let day = 1; day <= 4; day++) {
+                    schedule[day] = hours;
+                }
+            } else if (daysLower.includes('mandag') && daysLower.includes('lørdag')) {
+                // Monday-Saturday (1-6)
+                for (let day = 1; day <= 6; day++) {
+                    schedule[day] = hours;
+                }
             } else if (daysLower.includes('fredag') && daysLower.includes('lørdag')) {
-                // Friday-Saturday
-                [5, 6].forEach(day => schedule[day] = hours);
+                // Friday-Saturday (5-6)
+                schedule[5] = hours;
+                schedule[6] = hours;
             } else if (daysLower.includes('lørdag') && daysLower.includes('søndag')) {
-                // Saturday-Sunday
-                [6, 0].forEach(day => schedule[day] = hours);
+                // Saturday-Sunday (6, 0)
+                schedule[6] = hours;
+                schedule[0] = hours;
+            } else if (daysLower.includes('mandag')) {
+                // Monday only
+                schedule[1] = hours;
+            } else if (daysLower.includes('tirsdag')) {
+                // Tuesday only
+                schedule[2] = hours;
+            } else if (daysLower.includes('onsdag')) {
+                // Wednesday only
+                schedule[3] = hours;
+            } else if (daysLower.includes('torsdag')) {
+                // Thursday only
+                schedule[4] = hours;
             } else if (daysLower.includes('fredag')) {
                 // Friday only
                 schedule[5] = hours;
@@ -77,125 +99,122 @@
     }
 
     /**
-     * Calculate time difference and format message
-     * @param {Date} now - Current time
-     * @param {Date} targetTime - Target time (opening or closing)
-     * @param {boolean} isOpening - True if calculating opening time
-     * @returns {string} Formatted message
+     * Format time difference into human-readable text
+     * @param {number} minutes - Minutes until event
+     * @returns {string} Formatted time string
      */
-    function formatTimeMessage(now, targetTime, isOpening) {
-        const diffMs = targetTime - now;
-        const diffMinutes = Math.floor(diffMs / (1000 * 60));
-        const diffHours = Math.round(diffMinutes / 60);
-
-        let timeText = '';
-        
-        if (diffMinutes < 60) {
-            // Less than an hour - show minutes
-            timeText = `${diffMinutes} minutt${diffMinutes !== 1 ? 'er' : ''}`;
-        } else {
-            // One hour or more - show rounded hours only
-            timeText = `${diffHours} time${diffHours !== 1 ? 'r' : ''}`;
+    function formatTimeDifference(minutes) {
+        if (minutes < 60) {
+            return `${minutes} minutt${minutes !== 1 ? 'er' : ''}`;
         }
-
-        return isOpening 
-            ? `Åpner om ${timeText}` 
-            : `Stenger om ${timeText}`;
+        
+        const hours = Math.round(minutes / 60);
+        return `${hours} time${hours !== 1 ? 'r' : ''}`;
     }
 
     /**
-     * Get next opening time when café is closed
-     * @param {Date} now - Current time
+     * Get the next opening time when café is closed
+     * @param {Date} now - Current date/time
      * @param {Object} schedule - Opening hours schedule
-     * @returns {Date} Next opening time
+     * @returns {Date|null} Next opening date/time, or null if not found
      */
     function getNextOpeningTime(now, schedule) {
-        const nextDay = new Date(now);
-        nextDay.setDate(nextDay.getDate() + 1);
+        const nowMinutes = now.getHours() * 60 + now.getMinutes();
+        const currentDay = now.getDay();
         
-        let daysChecked = 0;
-        while (daysChecked < 7) {
-            const dayOfWeek = nextDay.getDay();
-            const hours = schedule[dayOfWeek];
-            
-            if (hours) {
-                nextDay.setHours(hours.open, hours.openMinutes || 0, 0, 0);
-                
-                if (nextDay > now) {
-                    return nextDay;
-                }
-            }
-            
-            nextDay.setDate(nextDay.getDate() + 1);
-            daysChecked++;
+        // Check if opening later today
+        const todayHours = schedule[currentDay];
+        if (todayHours && nowMinutes < todayHours.open) {
+            const openingTime = new Date(now);
+            openingTime.setHours(Math.floor(todayHours.open / 60), todayHours.open % 60, 0, 0);
+            return openingTime;
         }
         
-        return nextDay;
+        // Check next 7 days
+        for (let i = 1; i <= 7; i++) {
+            const checkDate = new Date(now);
+            checkDate.setDate(checkDate.getDate() + i);
+            const checkDay = checkDate.getDay();
+            const hours = schedule[checkDay];
+            
+            if (hours) {
+                checkDate.setHours(Math.floor(hours.open / 60), hours.open % 60, 0, 0);
+                return checkDate;
+            }
+        }
+        
+        return null;
     }
 
     /**
      * Check if café is currently open and generate status message
      * @param {Object} schedule - Opening hours schedule
-     * @returns {Object} Status object with message and isOpen flag
+     * @returns {Object} Status object with message, isOpen flag, and statusClass
      */
     function getCafeStatus(schedule) {
-        if (!schedule) {
-            return { message: 'Åpningstider ikke tilgjengelig', isOpen: false, statusClass: 'status-closed' };
+        if (!schedule || Object.keys(schedule).length === 0) {
+            return { 
+                message: 'Åpningstider ikke tilgjengelig', 
+                isOpen: false, 
+                statusClass: 'status-closed' 
+            };
         }
 
         const now = new Date();
         const dayOfWeek = now.getDay();
-        const currentHour = now.getHours();
-        const currentMinute = now.getMinutes();
-        const currentTimeInMinutes = currentHour * 60 + currentMinute;
-
+        const currentMinutes = now.getHours() * 60 + now.getMinutes();
         const hours = schedule[dayOfWeek];
         
-        // Check if café is open today
+        // Check if café has hours today
         if (!hours) {
-            const openingTime = getNextOpeningTime(now, schedule);
-            const message = formatTimeMessage(now, openingTime, true);
-            return { message, isOpen: false, statusClass: 'status-closed' };
+            // Closed today - find next opening
+            const nextOpening = getNextOpeningTime(now, schedule);
+            if (nextOpening) {
+                const diffMs = nextOpening - now;
+                const diffMinutes = Math.floor(diffMs / (1000 * 60));
+                const message = `Åpner om ${formatTimeDifference(diffMinutes)}`;
+                return { message, isOpen: false, statusClass: 'status-closed' };
+            }
+            return { 
+                message: 'Åpner snart', 
+                isOpen: false, 
+                statusClass: 'status-closed' 
+            };
         }
 
-        const openTimeInMinutes = hours.open * 60 + (hours.openMinutes || 0);
-        const closeTimeInMinutes = hours.close * 60 + (hours.closeMinutes || 0);
-
-        const isOpen = currentTimeInMinutes >= openTimeInMinutes && 
-                      currentTimeInMinutes < closeTimeInMinutes;
-
-        let message = '';
-        let statusClass = '';
+        // Check if currently open
+        const isOpen = currentMinutes >= hours.open && currentMinutes < hours.close;
 
         if (isOpen) {
-            // Café is open - calculate closing time
-            const closingTime = new Date(now);
-            closingTime.setHours(hours.close, hours.closeMinutes || 0, 0, 0);
-            
-            message = formatTimeMessage(now, closingTime, false);
-            statusClass = 'status-open';
+            // Calculate minutes until closing
+            const minutesUntilClose = hours.close - currentMinutes;
+            const message = `Stenger om ${formatTimeDifference(minutesUntilClose)}`;
+            return { message, isOpen: true, statusClass: 'status-open' };
+        } else if (currentMinutes < hours.open) {
+            // Opening later today
+            const minutesUntilOpen = hours.open - currentMinutes;
+            const message = `Åpner om ${formatTimeDifference(minutesUntilOpen)}`;
+            return { message, isOpen: false, statusClass: 'status-closed' };
         } else {
-            // Café is closed - calculate next opening time
-            let openingTime;
-            
-            if (currentTimeInMinutes < openTimeInMinutes) {
-                // Opening today
-                openingTime = new Date(now);
-                openingTime.setHours(hours.open, hours.openMinutes || 0, 0, 0);
-            } else {
-                // Opening tomorrow or later
-                openingTime = getNextOpeningTime(now, schedule);
+            // Closed for today - find next opening
+            const nextOpening = getNextOpeningTime(now, schedule);
+            if (nextOpening) {
+                const diffMs = nextOpening - now;
+                const diffMinutes = Math.floor(diffMs / (1000 * 60));
+                const message = `Åpner om ${formatTimeDifference(diffMinutes)}`;
+                return { message, isOpen: false, statusClass: 'status-closed' };
             }
-            
-            message = formatTimeMessage(now, openingTime, true);
-            statusClass = 'status-closed';
+            return { 
+                message: 'Åpner snart', 
+                isOpen: false, 
+                statusClass: 'status-closed' 
+            };
         }
-
-        return { message, isOpen, statusClass };
     }
 
     /**
      * Create and inject status element into the DOM
+     * @returns {HTMLElement|null} Created status element or null
      */
     function createStatusElement() {
         const hoursList = document.querySelector('.hours-list');
@@ -205,8 +224,14 @@
             return null;
         }
 
+        // Check if status item already exists
+        let statusItem = hoursList.querySelector('.status-item');
+        if (statusItem) {
+            return statusItem;
+        }
+
         // Create status item
-        const statusItem = document.createElement('li');
+        statusItem = document.createElement('li');
         statusItem.className = 'hours-item status-item';
         statusItem.setAttribute('aria-live', 'polite');
         statusItem.setAttribute('aria-atomic', 'true');
@@ -233,7 +258,10 @@
     function updateStatus(schedule) {
         const statusItem = document.querySelector('.status-item');
         
-        if (!statusItem) return;
+        if (!statusItem) {
+            console.warn('Status item not found');
+            return;
+        }
 
         const { message, isOpen, statusClass } = getCafeStatus(schedule);
         
@@ -246,7 +274,7 @@
             // Update classes
             statusItem.className = `hours-item status-item ${statusClass}`;
             
-            // Update indicator
+            // Update indicator icon
             statusIndicator.innerHTML = isOpen 
                 ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>'
                 : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>';
@@ -266,15 +294,20 @@
         // Parse opening hours from HTML
         const schedule = parseOpeningHoursFromHTML();
         
-        if (!schedule) {
+        if (!schedule || Object.keys(schedule).length === 0) {
             console.warn('Could not parse opening hours from HTML');
             return;
         }
 
+        console.log('Parsed schedule:', schedule);
+
         // Create status element
         const statusElement = createStatusElement();
         
-        if (!statusElement) return;
+        if (!statusElement) {
+            console.warn('Could not create status element');
+            return;
+        }
 
         // Initial update
         updateStatus(schedule);
