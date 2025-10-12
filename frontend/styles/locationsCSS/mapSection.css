@@ -10,7 +10,7 @@
         var(--midnight) 100%);
     position: relative;
     overflow: hidden;
-    min-height: 91vh;
+    min-height: 93vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -706,7 +706,7 @@
 
 @media (max-width: 900px) {
     .locations-section {
-        min-height: 89vh;
+        min-height: 90vh;
         margin-top: 128px;
     }
 
@@ -958,7 +958,7 @@
 @media (max-width: 480px) {
     .locations-section {
         margin-top: 108px;
-        min-height: 90vh;
+        min-height: 92vh;
         padding: 1.5rem 0;
     }
     .locations-container {
