@@ -52,7 +52,11 @@
         <!-- Hero Section -->
         <section class="cafe-hero">
             <div class="hero-image-container">
-                <img src="assets/images/brodOgKaffe/brodOgKaffeHero.jpg" alt="WITH brød & kaffe lokasjon" class="hero-image">
+                <picture>
+                    <source media="(min-width: 901px)" srcset="assets/images/brodOgKaffe/brodOgKaffeHeroHorizontal.jpg">
+                    <source media="(max-width: 900px)" srcset="assets/images/brodOgKaffe/brodOgKaffeHeroVertical.webp">
+                    <img src="assets/images/brodOgKaffe/brodOgKaffeHeroHorizontal.jpg" alt="WITH brød & kaffe lokasjon" class="hero-image">
+                </picture>
                 <div class="hero-overlay"></div>
             </div>
             <div class="hero-content">
