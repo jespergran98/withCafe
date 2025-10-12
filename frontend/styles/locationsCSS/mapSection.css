@@ -10,11 +10,11 @@
         var(--midnight) 100%);
     position: relative;
     overflow: hidden;
-    min-height: 95vh;
+    min-height: 91vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 88px;
+    margin-top: 100px;
 }
 
 /* Ambient Background Effects */
@@ -465,7 +465,7 @@
     box-shadow: var(--shadow-xl);
     border: 3px solid var(--ocean-teal-30);
     transition: var(--transition);
-    min-height: 400px;
+    min-height: 200px;
     order: 2;
 }
 
@@ -695,7 +695,7 @@
     }
 
     .map-container {
-        min-height: 350px;
+        min-height: 200px;
     }
 }
 
@@ -706,7 +706,7 @@
 
 @media (max-width: 900px) {
     .locations-section {
-        min-height: 87vh;
+        min-height: 89vh;
         margin-top: 128px;
     }
 
@@ -787,7 +787,7 @@
     }
 
     .map-container {
-        min-height: 300px;
+        min-height: 200px;
         order: 2;
     }
 
@@ -1012,7 +1012,7 @@
     }
 
     .map-container {
-        min-height: 50px;
+        min-height: 400px;
     }
 
     .marker-pin {
@@ -1074,7 +1074,7 @@
 /* Responsive Design */
 @media (max-width: 432px) {
     .locations-section {
-        margin-top: 3.5em;
+        margin-top: 70px;
         min-height: auto;
     }
     .map-container {

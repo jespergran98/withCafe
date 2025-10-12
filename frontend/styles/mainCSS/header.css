@@ -18,7 +18,7 @@ header {
 }
 
 header.scrolled {
-    padding: 1.4rem 0;
+    padding: 1.2rem 0;
     background: var(--glass-warm);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);

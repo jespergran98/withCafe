@@ -589,3 +589,19 @@ Create a new file inside js/cafePageJS named "openingInfo.js". this js file is r
 --
 
 For the locations.html page, change the positioning of the three location cards at 506px witdth and below to be located vertical of each other above the map. All other code must remain the same.
+
+---
+
+hero values:
+
+default:
+margin top: 100px
+height: 85vh
+
+900px:
+margin top: 128px
+height: 82vh
+
+432:
+margin top: 70px
+height: 89vh
