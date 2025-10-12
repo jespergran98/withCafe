@@ -610,3 +610,25 @@ height: 89vh
 
 I currently import brodOgKaffeHero.jpg as the header.
 Update the code so that if the viewport width is more than 900px, I import brodOgKaffeHeroHorizontal.jpg, and below 900px I import brodOgKaffeHeroVertical.jpg
+
+--
+
+The marker is correctly placed on the brodOgkaffe.html page, but not on the bokOgKaffe.html or brunsjOgKaffe.html pages, it also displays the wrong information in the pop-up on other pages.
+
+Make sure on brunsjOgKaffe.html it says: Tollbodgaten 19, 3111 Tønsberg, located at lat: 59.269995481439274, lng: 10.407405253049253.
+
+Make sure on bokOgKaffe.html it says: Storgaten 16, 3126 Tønsberg, located at lat: 59.2658847584103, lng: 10.409450787493633.
+
+Keep it the same location and text for brodOgKaffe.html as it is currently.
+
+
+            name: 'WITH bok og kaffe',
+            type: 'bok og kaffe',
+            lat: 59.2658847584103,
+            lng: 10.409450787493633,
+        },
+        {
+            name: 'WITH brunsj og kaffe',
+            type: 'brunsj og kaffe',
+            lat: 59.269995481439274,
+            lng: 10.407405253049253,

@@ -42,11 +42,3 @@
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(28, 20, 16, 0.08);
 }
-
-.extra-item:hover {
-    background: linear-gradient(135deg, var(--honey), var(--honey-dark));
-    border-color: var(--honey-dark);
-    color: var(--white);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 16px rgba(217, 168, 86, 0.4);
-}

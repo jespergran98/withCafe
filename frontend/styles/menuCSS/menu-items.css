@@ -41,11 +41,6 @@
     padding-bottom: 0;
 }
 
-.menu-item:hover {
-    transform: translateX(8px);
-    padding-left: 8px;
-}
-
 .menu-item-header {
     display: flex;
     justify-content: space-between;

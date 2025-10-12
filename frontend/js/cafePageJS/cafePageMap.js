@@ -1,4 +1,4 @@
-// Cafe Map Initialization
+// Cafe Map Initialization - Multi-location Support
 document.addEventListener('DOMContentLoaded', function() {
     // Check if Leaflet is loaded
     if (typeof L === 'undefined') {
@@ -6,18 +6,41 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // WITH brød & kaffe coordinates
-    const cafeLocation = {
-        lat: 59.26694458677926,
-        lng: 10.40858159245786
+    // Define all cafe locations
+    const locations = {
+        'brodOgKaffe': {
+            lat: 59.26694458677926,
+            lng: 10.40858159245786,
+            name: 'WITH brød & kaffe',
+            address: 'Storgaten 29<br>3126 Tønsberg',
+            mapsUrl: 'https://maps.app.goo.gl/5giPNg4azWkEryim8'
+        },
+        'brunsjOgKaffe': {
+            lat: 59.269995481439274,
+            lng: 10.407405253049253,
+            name: 'WITH brunsj & kaffe',
+            address: 'Tollbodgaten 19<br>3111 Tønsberg',
+            mapsUrl: 'https://maps.app.goo.gl/iCgr4oSVEzeE4tE86'
+        },
+        'bokOgKaffe': {
+            lat: 59.2658847584103,
+            lng: 10.409450787493633,
+            name: 'WITH bok & kaffe',
+            address: 'Storgaten 16<br>3126 Tønsberg',
+            mapsUrl: 'https://maps.app.goo.gl/JXQ5EGL2xrizdM9d6'
+        }
     };
+
+    // Detect which page we're on based on the URL
+    const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
+    const cafeLocation = locations[currentPage] || locations['brodOgKaffe']; // Default to brød & kaffe
 
     // Initialize map
     const map = L.map('cafe-map', {
         center: [cafeLocation.lat, cafeLocation.lng],
         zoom: 17,
         zoomControl: true,
-        scrollWheelZoom: true, // Enable by default
+        scrollWheelZoom: true,
         dragging: true,
         tap: true,
         minZoom: 12,
@@ -36,8 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
         className: 'custom-marker-wrapper',
         html: `
             <svg class="custom-marker-icon" width="96" height="128" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-                
                 <!-- Pin body -->
                 <path d="M24 2C15.716 2 9 8.716 9 17C9 28.25 24 48 24 48C24 48 39 28.25 39 17C39 8.716 32.284 2 24 2Z" 
                       fill="#1C1410" stroke="#D9A856" stroke-width="1.5"/>
@@ -80,19 +101,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add marker to map
     const marker = L.marker([cafeLocation.lat, cafeLocation.lng], {
         icon: customIcon,
-        title: 'WITH brød & kaffe',
+        title: cafeLocation.name,
         riseOnHover: true
     }).addTo(map);
 
-    // Create popup content
+    // Create popup content with dynamic location data
     const popupContent = `
         <div class="marker-popup">
-            <h3 class="marker-popup-title">WITH brød & kaffe</h3>
+            <h3 class="marker-popup-title">${cafeLocation.name}</h3>
             <p class="marker-popup-address">
-                Storgata 29<br>
-                3126 Tønsberg
+                ${cafeLocation.address}
             </p>
-            <a href="https://maps.app.goo.gl/5giPNg4azWkEryim8" 
+            <a href="${cafeLocation.mapsUrl}" 
                target="_blank" 
                rel="noopener noreferrer"
                class="marker-popup-link">
