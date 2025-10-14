@@ -8,8 +8,6 @@ function initMap() {
 
   if (viewportWidth > 900) {
     zoom = 16;
-  } else if (viewportWidth > 544 && viewportWidth <= 900) {
-    zoom = 14;
   } else {
     zoom = 15;
   }
