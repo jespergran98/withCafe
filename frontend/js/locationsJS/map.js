@@ -2,8 +2,19 @@
 let map;
 
 function initMap() {
-  // Create map centered on Tønsberg
-  map = L.map("map").setView([59.2685, 10.4085], 15.5);
+  // Create map centered on TÃ¸nsberg with responsive zoom
+  let zoom;
+  const viewportWidth = window.innerWidth;
+
+  if (viewportWidth > 900) {
+    zoom = 16;
+  } else if (viewportWidth > 544 && viewportWidth <= 900) {
+    zoom = 14;
+  } else {
+    zoom = 15;
+  }
+
+  map = L.map("map").setView([59.2684, 10.4085], zoom);
 
   // Add OpenStreetMap tiles
   L.tileLayer(
