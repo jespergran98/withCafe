@@ -159,6 +159,8 @@ Felix Roasting Co. - https://lahuella.coffee (unique circle design)
 Campos Coffee - https://www.camposcoffee.com
 NOC Coffee - https://noc.coffee/en
 
+good deisgn: https://dribbble.com/shots/26431247-Coffee-Shop-Website-Design
+
 Andre kaféer i Tønsberg:
 Bare Barista Kaffebar - https://www.barebarista.no/
 Cafe-M - https://cafe-m.no/
