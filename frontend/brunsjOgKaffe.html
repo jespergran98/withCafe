@@ -1,257 +1,365 @@
 <!DOCTYPE html>
 <html lang="no">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WITH brunsj & kaffe - Tønsberg</title>
-    <link rel="stylesheet" href="./styles/mainCSS/importMain.css">
-    <link rel="stylesheet" href="./styles/cafePageCSS/cafeHero.css">
-    <link rel="stylesheet" href="./styles/cafePageCSS/cafeInfo.css">
-    <link rel="stylesheet" href="./styles/cafePageCSS/cafePageMap.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Bowlby+One+SC&family=Skranji:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-          crossorigin=""/>
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/mainCSS/importMain.css" />
+    <link rel="stylesheet" href="./styles/cafePageCSS/cafeHero.css" />
+    <link rel="stylesheet" href="./styles/cafePageCSS/cafeInfo.css" />
+    <link rel="stylesheet" href="./styles/cafePageCSS/cafePageMap.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Bowlby+One+SC&family=Skranji:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <div class="container">
-            <a href="index.html" class="logo-link">
-                <div class="logo">
-                    <div class="logo-top">WITH</div>
-                    <div class="logo-bottom">brunsj <span class="accent">&</span> kaffe</div>
-                </div>
-            </a>
-            
-            <!-- Hamburger Menu Button -->
-            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="menu.html">Meny</a></li>
-                    <li><a href="catering.html">Catering</a></li>
-                    <li><a href="locations.html">Lokasjoner</a></li>
-                    <li><a href="#">Om oss</a></li>
-                    <li><a href="#kontakt" class="nav-cta"><span>Kontakt</span></a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container">
+        <a href="index.html" class="logo-link">
+          <div class="logo">
+            <div class="logo-top">WITH</div>
+            <div class="logo-bottom">
+              brunsj <span class="accent">&</span> kaffe
+            </div>
+          </div>
+        </a>
+
+        <!-- Hamburger Menu Button -->
+        <button
+          class="hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="menu.html">Meny</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="locations.html">Lokasjoner</a></li>
+            <li><a href="#">Om oss</a></li>
+            <li>
+              <a href="#kontakt" class="nav-cta"><span>Kontakt</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="cafe-hero">
-            <div class="hero-image-container">
-                <picture>
-                    <source media="(min-width: 901px)" srcset="assets/images/brunsjOgKaffe/brunsjOgKaffeHeroHorizontal.jpg">
-                    <source media="(max-width: 900px)" srcset="assets/images/brunsjOgKaffe/brunsjOgKaffeHeroVertical.jpg">
-                    <img src="assets/images/brodOgKaffe/brodOgKaffeHeroHorizontal.jpg" alt="WITH brunsj & kaffe lokasjon" class="hero-image">
-                </picture>
-                <div class="hero-overlay"></div>
+      <!-- Hero Section -->
+      <section class="cafe-hero">
+        <div class="hero-image-container">
+          <picture>
+            <source
+              media="(min-width: 901px)"
+              srcset="
+                assets/images/brunsjOgKaffe/brunsjOgKaffeHeroHorizontal.jpg
+              "
+            />
+            <source
+              media="(max-width: 900px)"
+              srcset="assets/images/brunsjOgKaffe/brunsjOgKaffeHeroVertical.jpg"
+            />
+            <img
+              src="assets/images/brodOgKaffe/brodOgKaffeHeroHorizontal.jpg"
+              alt="WITH brunsj & kaffe lokasjon"
+              class="hero-image"
+            />
+          </picture>
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <div class="hero-logo">
+            <div class="hero-logo-top">WITH</div>
+            <div class="hero-logo-bottom">
+              brunsj <span class="hero-accent">&</span> kaffe
             </div>
-            <div class="hero-content">
-                <div class="hero-logo">
-                    <div class="hero-logo-top">WITH</div>
-                    <div class="hero-logo-bottom">brunsj <span class="hero-accent">&</span> kaffe</div>
-                </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cafe Info Section - Opening Hours & Location -->
+      <section class="cafe-info-section">
+        <div class="container">
+          <div class="info-grid">
+            <!-- Opening Hours -->
+            <div class="info-card">
+              <div class="info-header">
+                <svg
+                  class="info-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <h2 class="info-title">Åpningstider</h2>
+              </div>
+              <ul class="hours-list">
+                <li class="hours-item">
+                  <span class="hours-days">Mandag - Lørdag</span>
+                  <span class="hours-time">10:00 - 16:00</span>
+                </li>
+                <li class="hours-item weekend">
+                  <span class="hours-days">Søndag</span>
+                  <span class="hours-time">12:00 - 16:00</span>
+                </li>
+              </ul>
             </div>
-        </section>
 
-        <!-- Cafe Info Section - Opening Hours & Location -->
-        <section class="cafe-info-section">
-            <div class="container">
-                <div class="info-grid">
-                    <!-- Opening Hours -->
-                    <div class="info-card">
-                        <div class="info-header">
-                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                            <h2 class="info-title">Åpningstider</h2>
-                        </div>
-                        <ul class="hours-list">
-                            <li class="hours-item">
-                                <span class="hours-days">Mandag - Lørdag</span>
-                                <span class="hours-time">10:00 - 16:00</span>
-                            </li>
-                            <li class="hours-item weekend">
-                                <span class="hours-days">Søndag</span>
-                                <span class="hours-time">12:00 - 16:00</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Location -->
-                    <div class="info-card">
-                        <div class="info-header">
-                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            <h2 class="info-title">Besøk oss</h2>
-                        </div>
-                        <div class="location-content">
-                            <p class="location-name">WITH brunsj & kaffe</p>
-                            <a href="https://maps.app.goo.gl/iCgr4oSVEzeE4tE86" 
-                               class="location-address"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                Tollbodgaten 19 (Bydelshuset)<br>
-                                3111 Tønsberg
-                            </a>
-                            <p class="location-note">Start dagen riktig med vår hearty brunsj og nybrygg kaffe i hjertelige omgivelser.</p>
-                        </div>
-                    </div>
-                </div>
+            <!-- Location -->
+            <div class="info-card">
+              <div class="info-header">
+                <svg
+                  class="info-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <h2 class="info-title">Besøk oss</h2>
+              </div>
+              <div class="location-content">
+                <p class="location-name">WITH brunsj & kaffe</p>
+                <a
+                  href="https://maps.app.goo.gl/iCgr4oSVEzeE4tE86"
+                  class="location-address"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tollbodgaten 19 (Bydelshuset)<br />
+                  3111 Tønsberg
+                </a>
+                <p class="location-note">
+                  Start dagen riktig med vår hearty brunsj og nybrygg kaffe i
+                  hjertelige omgivelser.
+                </p>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Map Section -->
-        <section class="cafe-map-section">
-            <div class="map-decoration top-left"></div>
-            <div class="map-decoration bottom-right"></div>
-            
-            <div class="map-container-wrapper">
-                <div class="map-header">
-                    <span class="section-tag">finn oss</span>
-                    <h2 class="map-title">Kom innom</h2>
-                    <p class="map-description">
-                        WITH brunsj og kaffe holder til i Bydelshuset — et lyst og innbydende møtested midt i Tønsberg. Vi gleder oss til å ta imot deg!
-                    </p>
-                </div>
-                
-                <div class="map-content">
-                    <div id="cafe-map"></div>
-                </div>
-                
-                <div class="map-cta-section">
-                    <div class="map-cta-content">
-                        <p class="map-cta-text">
-                            Vi har flere loksjoner i Tønsberg. Utforsk alle våre kafeer og bakerier.
-                        </p>
-                    </div>
-                    <a href="locations.html" class="map-bottom-button">
-                        se alle våre lokasjoner
-                    </a>
-                </div>
+      <!-- Map Section -->
+      <section class="cafe-map-section">
+        <div class="map-decoration top-left"></div>
+        <div class="map-decoration bottom-right"></div>
+
+        <div class="map-container-wrapper">
+          <div class="map-header">
+            <span class="section-tag">finn oss</span>
+            <h2 class="map-title">Kom innom</h2>
+            <p class="map-description">
+              WITH brunsj og kaffe holder til i Bydelshuset — et lyst og
+              innbydende møtested midt i Tønsberg. Vi gleder oss til å ta imot
+              deg!
+            </p>
+          </div>
+
+          <div class="map-content">
+            <div id="cafe-map"></div>
+          </div>
+
+          <div class="map-cta-section">
+            <div class="map-cta-content">
+              <p class="map-cta-text">
+                Vi har flere loksjoner i Tønsberg. Utforsk alle våre kafeer og
+                bakerier.
+              </p>
             </div>
-        </section>
+            <a href="locations.html" class="map-bottom-button">
+              se alle våre lokasjoner
+            </a>
+          </div>
+        </div>
+      </section>
 
-        <!-- Marquee Section -->
-        <section class="marquee-section">
-            <div class="marquee-container">
-                <div class="marquee-track">
-                    <div class="marquee-item">
-                        <span class="marquee-text">Ferske bakevarer hver dag</span>
-                        <img src="assets/images/wheat-icon.png" alt="" class="marquee-icon">
-                    </div>
-                    <div class="marquee-item">
-                        <span class="marquee-text">Kvalitetskaffe fra bærekraftige gårder</span>
-                        <img src="assets/images/coffee-icon.png" alt="" class="marquee-icon">
-                    </div>
-                    <div class="marquee-item">
-                        <span class="marquee-text">Koselig møteplass i Tønsberg</span>
-                        <img src="assets/images/slottsfjell-icon.png" alt="" class="marquee-icon" data-alternate-icon="assets/images/oseberg-icon.png">
-                    </div>
-                </div>
+      <!-- Marquee Section -->
+      <section class="marquee-section">
+        <div class="marquee-container">
+          <div class="marquee-track">
+            <div class="marquee-item">
+              <span class="marquee-text">Ferske bakevarer hver dag</span>
+              <img
+                src="assets/images/wheat-icon.png"
+                alt=""
+                class="marquee-icon"
+              />
             </div>
-        </section>
-        
-        <!-- Contact Details -->
-        <section id="kontakt" class="contact-info">
-            <div class="container">
-                <div class="contact-grid">
-
-                    <!-- Left: Contact Details -->
-                    <div class="contact-column">
-                        <h3 class="contact-heading">Kontakt oss</h3>
-                        <div class="contact-details">
-                            <a href="tel:98901886" class="contact-item">
-                                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                                <div class="contact-text">
-                                    <span class="contact-label">Telefon</span>
-                                    <span class="contact-value">989 01 886</span>
-                                </div>
-                            </a>
-                            <a href="mailto:kjerstiwith@hotmail.com" class="contact-item">
-                                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                                <div class="contact-text">
-                                    <span class="contact-label">E-post</span>
-                                    <span class="contact-value">kjerstiwith@hotmail.com</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Center: Purpose & Socials -->
-                    <div class="contact-column contact-center">
-                        <h3 class="contact-heading">Vårt formål</h3>
-                        <p class="contact-tagline">Å skape Tønsbergs varmeste møteplass. Drevet av kjærlighet for håndverksbakst, kvalitetskaffe og de gode samtalene som oppstår når mennesker kommer sammen.</p>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/withbrodogkaffe/?locale=nb_NO" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.instagram.com/withtonsberg/?hl=en" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Right: Quick Links -->
-                    <div class="contact-column">
-                        <h3 class="contact-heading">Utforsk</h3>
-                        <nav class="quick-links">
-                            <a href="#jobb" class="quick-link">Jobb</a>
-                            <a href="#om-oss" class="quick-link">Om oss</a>
-                            <a href="catering.html" class="quick-link">Catering</a>
-                            <a href="menu.html" class="quick-link">Meny</a>
-                            <a href="locations.html" class="quick-link">Lokasjoner</a>
-                            <a href="https://bydelshuset.com/with-bakeri" class="quick-link">Bydelshuset's nettside</a>
-                        </nav>
-                    </div>
-                </div>
+            <div class="marquee-item">
+              <span class="marquee-text"
+                >Kvalitetskaffe fra bærekraftige gårder</span
+              >
+              <img
+                src="assets/images/coffee-icon.png"
+                alt=""
+                class="marquee-icon"
+              />
             </div>
-        </section>
+            <div class="marquee-item">
+              <span class="marquee-text">Koselig møteplass i Tønsberg</span>
+              <img
+                src="assets/images/slottsfjell-icon.png"
+                alt=""
+                class="marquee-icon"
+                data-alternate-icon="assets/images/oseberg-icon.png"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Details -->
+      <section id="kontakt" class="contact-info">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Left: Contact Details -->
+            <div class="contact-column">
+              <h3 class="contact-heading">Kontakt oss</h3>
+              <div class="contact-details">
+                <a href="tel:98901886" class="contact-item">
+                  <svg
+                    class="contact-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                  </svg>
+                  <div class="contact-text">
+                    <span class="contact-label">Telefon</span>
+                    <span class="contact-value">989 01 886</span>
+                  </div>
+                </a>
+                <a href="mailto:kjerstiwith@hotmail.com" class="contact-item">
+                  <svg
+                    class="contact-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <div class="contact-text">
+                    <span class="contact-label">E-post</span>
+                    <span class="contact-value">kjerstiwith@hotmail.com</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Center: Purpose & Socials -->
+            <div class="contact-column contact-center">
+              <h3 class="contact-heading">Vårt formål</h3>
+              <p class="contact-tagline">
+                Å skape Tønsbergs varmeste møteplass. Drevet av kjærlighet for
+                håndverksbakst, kvalitetskaffe og de gode samtalene som oppstår
+                når mennesker kommer sammen.
+              </p>
+              <div class="social-links">
+                <a
+                  href="https://www.facebook.com/withbrodogkaffe/?locale=nb_NO"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link"
+                  aria-label="Facebook"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/withtonsberg/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link"
+                  aria-label="Instagram"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Quick Links -->
+            <div class="contact-column">
+              <h3 class="contact-heading">Utforsk</h3>
+              <nav class="quick-links">
+                <a href="#jobb" class="quick-link">Jobb</a>
+                <a href="#om-oss" class="quick-link">Om oss</a>
+                <a href="catering.html" class="quick-link">Catering</a>
+                <a href="menu.html" class="quick-link">Meny</a>
+                <a href="locations.html" class="quick-link">Lokasjoner</a>
+                <a href="https://bydelshuset.com/with-bakeri" class="quick-link"
+                  >Bydelshuset's nettside</a
+                >
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer logo and copyright -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <a href="index.html" class="footer-logo">
-                    <div class="logo-top">WITH</div>
-                    <div class="logo-bottom">brød <span class="accent">&</span> kaffe</div>
-                </a>
-                <div class="footer-divider"></div>
-                <p>&copy; <span id="copyright-year"></span> WITH. Alle rettigheter reservert.</p>
+      <div class="container">
+        <div class="footer-content">
+          <a href="index.html" class="footer-logo">
+            <div class="logo-top">WITH</div>
+            <div class="logo-bottom">
+              brød <span class="accent">&</span> kaffe
             </div>
+          </a>
+          <div class="footer-divider"></div>
+          <p>
+            &copy; <span id="copyright-year"></span> WITH. Alle rettigheter
+            reservert.
+          </p>
         </div>
+      </div>
     </footer>
 
     <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-            crossorigin=""></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
 
     <!-- JavaScript -->
     <script src="./js/mainJS/hamburger.js"></script>
@@ -262,5 +370,5 @@
     <script src="./js/cafePageJS/osebergAndSlottsfjell.js"></script>
     <script src="./js/mainJS/marquee.js"></script>
     <script src="./js/mainJS/copyrightYear.js"></script>
-</body>
+  </body>
 </html>
