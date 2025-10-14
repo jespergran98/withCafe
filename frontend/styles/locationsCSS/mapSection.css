@@ -10,7 +10,7 @@
         var(--midnight) 100%);
     position: relative;
     overflow: hidden;
-    min-height: 93vh;
+    min-height: 93svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,8 +132,8 @@
     gap: 2rem;
     position: relative;
     z-index: 1;
-    height: calc(100vh - 88px - 4rem);
-    max-height: calc(100vh - 88px - 4rem);
+    height: calc(100svh - 88px - 4rem);
+    max-height: calc(100svh - 88px - 4rem);
 }
 
 /* ============================================
@@ -649,8 +649,8 @@
     .locations-container {
         padding: 1.75rem 1.5rem;
         grid-template-columns: 340px 1fr;
-        height: calc(100vh - 88px - 3.5rem);
-        max-height: calc(100vh - 88px - 3.5rem);
+        height: calc(100svh - 88px - 3.5rem);
+        max-height: calc(100svh - 88px - 3.5rem);
     }
 
     .location-cards {
@@ -706,14 +706,14 @@
 
 @media (max-width: 900px) {
     .locations-section {
-        min-height: 90vh;
+        min-height: 90svh;
         margin-top: 128px;
     }
 
     .locations-container {
         padding: 1.5rem 1rem;
-        height: calc(100vh - 100px - 3rem);
-        max-height: calc(100vh - 100px - 3rem);
+        height: calc(100svh - 100px - 3rem);
+        max-height: calc(100svh - 100px - 3rem);
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
         gap: 1.5rem;
@@ -804,7 +804,7 @@
 @media (max-width: 544px) {
     .locations-section {
         margin-top: 128px;
-        min-height: 90vh;
+        min-height: 90svh;
         padding: 1.5rem 0;
     }
 
@@ -958,7 +958,7 @@
 @media (max-width: 480px) {
     .locations-section {
         margin-top: 108px;
-        min-height: 92vh;
+        min-height: 92svh;
         padding: 1.5rem 0;
     }
     .locations-container {

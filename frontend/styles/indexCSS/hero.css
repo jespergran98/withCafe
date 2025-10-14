@@ -2,7 +2,7 @@
 .hero {
     position: relative;
     overflow: hidden;
-    min-height: 85vh;
+    min-height: 85svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -358,7 +358,7 @@
 /* Responsive Design */
 @media (max-width: 900px) {
     .hero {
-        min-height: 82vh;
+        min-height: 82svh;
         margin-top: 128px;
     }
     
@@ -401,7 +401,7 @@
 
 @media (max-width: 432px) {
     .hero {
-        min-height: 89vh;
+        min-height: 89svh;
         margin-top: 70px;
     }
     .hero h1 {
