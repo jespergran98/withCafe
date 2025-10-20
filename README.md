@@ -1,4 +1,3 @@
-
 (har brukt README til notater enn så lenge, ikke en faktisk readme for repositoriet)
 
 File structure:
@@ -138,16 +137,14 @@ coffeecollective.dk
 
 FONT NAMES:
 WITH: Bumper Sticker Regular https://www.myfonts.com/products/regular-bumper-sticker-220978?queryId=c0c87897976c8c3a40058aa474a8f022&index=universal_search_data&objectIDs=8612785001
-_ og kaffe: Handy Sans https://www.myfonts.com/products/regular-handy-sans-302904?queryId=e25cb21d2949de8e92c331f9d761d5a5&index=universal_search_data&objectIDs=8644481001
+\_ og kaffe: Handy Sans https://www.myfonts.com/products/regular-handy-sans-302904?queryId=e25cb21d2949de8e92c331f9d761d5a5&index=universal_search_data&objectIDs=8644481001
 Original yellow color: #faf207
-
 
 -add awards?
 -add "made fresh every day" marquee line?
 -add opening times below besøk oss i Tønsberg?
 -add opening times under locations?
 -add social media section? "følg oss på sosiale medier med IG API?
-
 
 Top café websites:
 Cafe Patachou - https://www.cafepatachou.com (good locations)
@@ -167,7 +164,6 @@ Cafe-M - https://cafe-m.no/
 Kolonihagen - https://www.kolonihagen.no/
 Skaperverket Kafe - https://frelsesarmeen.no/rusomsorg/skaperverket-og-sapa
 
-
 Vi leverer ferske bakevarer til våre kafeer;
 WITH brød & kaffe i Storgaten 29,
 WITH bok & kaffe på biblioteket,
@@ -175,17 +171,17 @@ WITH brunsj & kaffe på Bydelshuset,
 WITH bakst & kaffe
 
 ting å legge til:
+
 1. fiks font
 2. følg oss på instagram (3x3 grid)
 3. legg til Marquee "Ferske bakevarer hver dag" - "Kvalitetskaffe fra bærekraftige bønner" - "Koselig møteplass i Tønsberg"
 4. legg til åpningstider (finn åpningstidene)
 
 ting å fikse:
+
 1. scrolling too far down when finn lokasjon is clicked
 
-
 Brød & Kaffe:
-
 
 Create code from html, javascript and css. The task is for me to be able to find my optimal font for my logo.
 The app background should be in color #1A1410
@@ -210,7 +206,8 @@ Freeman
 Protest Strike
 Braah One
 Gasoek One
-+ five additional fonts similar to these
+
+- five additional fonts similar to these
 
 And for the "brød & kaffe", the user can swap between these different google fonts:
 
@@ -238,15 +235,15 @@ Wendy One
 Darumadroop One
 Gorditas
 Galindo
-+ five additional fonts similar to these
 
+- five additional fonts similar to these
 
 Best fonts:
 WITH:
 Black Han Sans
 Change One
 
-_ og kaffe:
+\_ og kaffe:
 Londrina Solid
 Belonosima
 Skranji
@@ -261,7 +258,6 @@ Create a new file in styles/indexCSS named "indexSocials.css"
 Create a new file in js/mainJS named "socials.js", this imports the 9 most recent images from https://www.instagram.com/withtonsberg.
 This section is meant for a cozy and modern café website. Take inspiration from the other css files. the background of this section should be cream.
 Provide the updated index.html, and the new indexSocials.css and socials.js files.
-
 
 FROKOST & LUNSJ MENY PÅ WITH
 PÅSMURT
@@ -353,11 +349,9 @@ Og kaffe/te
 79,-
 Allergener: gluten, laktose
 
-
-----
+---
 
 Bilder navn:
-
 pasmurt
 smoreSelv
 mellommaltider
@@ -370,7 +364,7 @@ morgenmat
 
 Create a new menu section for my café website featuring the food at my café. My website is a well designed modern café website with high standards, importing the base css styling from main.css.
 
-Your task now is to improve the menu.html with the menu items and provide a new menu.css file located in styles/menuCSS folder. 
+Your task now is to improve the menu.html with the menu items and provide a new menu.css file located in styles/menuCSS folder.
 
 Here is the full menu, and the images I want you to include for each section in a creative display with alternating images left and right of the menu:
 
@@ -447,9 +441,7 @@ Scones med ost eller syltetøy
 Og kaffe/te
 79,-
 
-
 Improve the visual design on PCs using three columns with custom height for each section depending on how much the section contains. Påsmurt and Smøre selv should appear in the left column, mellommåltider, salat and wrap in the center column and toast and morgenmat tilbut in the right section. Remove the section tag from morgenmat tilbud and simplify its design to match the other cards. Overhaul the menu with a new cozy café aesthetic and utilize the colors from main.css. Provide the updated files.
-
 
 Create a new section above the menu and below the marquee line for the catering description. Create a new catering.css file and update the HTML file. Here is the new text I want you to add. The catering html also imports the main.css, so only use colors from the main.css file:
 
@@ -484,7 +476,7 @@ A large map from leaflet on the right side of the screen.
 
 Three cards positioned vertically on the left side of the screen representing WITH brød og kaffe, WITH bok og kaffe and WITH brunsj og kaffe.
 
-("WITH" written in font Bowlby One SC, "_ og kaffe" written in font Skranji)
+("WITH" written in font Bowlby One SC, "\_ og kaffe" written in font Skranji)
 
 On phones, these three cards are positioned horizontally above the map.
 
@@ -494,9 +486,9 @@ Provide a new mapSection.css file, and update the locations.html.
 
 -
 
-Update the visual style of the markers to match the mapSection.css styling. Include the names of the cafés inside the markers. ("WITH" large on top written in font Bowlby One SC, "_ og kaffe" written smaller in font Skranji). Provide the updated files.
+Update the visual style of the markers to match the mapSection.css styling. Include the names of the cafés inside the markers. ("WITH" large on top written in font Bowlby One SC, "\_ og kaffe" written smaller in font Skranji). Provide the updated files.
 
-Update the visual style of the map section to use a warm palette from main.css. locations.html already imports main.css, so use the var colors from this file. All "WITH" and "_ og kaffe" should be in color --espresso, but the & symbol should be in color --honey. Everything must change to the warmer tone. Also simplify the background and make sure the design is perfect for my cozy modern café website.
+Update the visual style of the map section to use a warm palette from main.css. locations.html already imports main.css, so use the var colors from this file. All "WITH" and "\_ og kaffe" should be in color --espresso, but the & symbol should be in color --honey. Everything must change to the warmer tone. Also simplify the background and make sure the design is perfect for my cozy modern café website.
 
 ---
 
@@ -559,7 +551,7 @@ brunsj & kaffe: https://maps.app.goo.gl/iCgr4oSVEzeE4tE86
 
 ---
 
-I'm making a cozy café website, the website has three different locations. I now want to make a page showcasing one of the locations named "WITH brød og kaffe". I now want you to create the hero section of this page. The hero is located under the header, above the contact section.  Positioned in the center of the header is the logo for the café. WITH should be in font Bowlby One SC and color --espresso appearing in a large text on top, below it brød & kaffe should also appear in color  --espresso, but the & symbol in color --honey (with the default skranji font).  Use warm color palette from main.css to create the header. The header must be warm and welcoming and showcase the location nicely.  The header image is imported from assets/images/brodOgKaffe/brodOgKaffeHeader.jpg  Provide the full updated brodOgkaffe.html and the css file named "cafeHeader.css" located in styles/cafePageCSS.
+I'm making a cozy café website, the website has three different locations. I now want to make a page showcasing one of the locations named "WITH brød og kaffe". I now want you to create the hero section of this page. The hero is located under the header, above the contact section. Positioned in the center of the header is the logo for the café. WITH should be in font Bowlby One SC and color --espresso appearing in a large text on top, below it brød & kaffe should also appear in color --espresso, but the & symbol in color --honey (with the default skranji font). Use warm color palette from main.css to create the header. The header must be warm and welcoming and showcase the location nicely. The header image is imported from assets/images/brodOgKaffe/brodOgKaffeHeader.jpg Provide the full updated brodOgkaffe.html and the css file named "cafeHeader.css" located in styles/cafePageCSS.
 
 ---
 
@@ -622,7 +614,6 @@ Make sure on brunsjOgKaffe.html it says: Tollbodgaten 19, 3111 Tønsberg, locate
 Make sure on bokOgKaffe.html it says: Storgaten 16, 3126 Tønsberg, located at lat: 59.2658847584103, lng: 10.409450787493633.
 
 Keep it the same location and text for brodOgKaffe.html as it is currently.
-
 
             name: 'WITH bok og kaffe',
             type: 'bok og kaffe',
